@@ -70,9 +70,9 @@ Nous avons pris le choix de générer quatre portes de classe `Door` pour chaque
 - Sud - Nord
 - Est - Ouest
 - Ouest - Est
-##### Le cas SewerDrain
+##### 3. Le cas SewerDrain
 Pour la bouche d'égouts nous supprimons la classe `SewerDrain` et optons sur un booléen `canSpawn` présent dans la classe `Street` permettant de savoir si une case représentant une rue peut ou non faire apparaître des zombie, si oui la classe utilisera la méthode `Spawn()` permettant de faire apparaître des zombie, l'affichage de la case en sera impactée.
-##### 3. L'affichage
+##### 4. L'affichage
 Pour l'affichage nous réfléchissons a une implémentation du style `public static final char y = ~~~` que l'on pourra appeler a chaque fois que la case x et de type y.
 #### Algorithme de création du plateau 
 
