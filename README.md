@@ -57,6 +57,39 @@ Nous réfléchissons à l'implémentation des portes et avons deux approches :
 
 ## Semaine 2
 
+### Notes de la seconde séance de projet
+
+#### Implémentation des cases 
+
+##### 1. La classe `Building`
+Il faut oublier l'idée des classes `drugstore` et `Continental` héritant de la classe building car cela posse un problème lors de la création, en effet les pièces étant dans un immeuble mais n'ayant rien de spécial ne peuvent pas être représenté. Nous faisons donc le chois d'avoir trois classes `DrugStore` `Continental` et `Building` représentant des pièces et héritant de la classe  `Case`.
+On oublie donc les attributs `longueur` et `largeur` pour la classe building 
+##### 2. Les portes
+Nous avons pris le choix de générer quatre portes de classe `Door` pour chaque pièce (`Building`, `DrugStore` et `Continental`) cela rend l'implémentation plus simple et ne crée pas de porte entre les routes. Lorsque on essaye de passer d'une pièce a l'autre on utilisera les points cardinaux (NORD, SUD, EST, OUEST) et lorsque l'on veut passer de la porte A vers B : A -> B Il faudra donc vérifier la porte Est de A puis la porte Ouest de B Ce qui nous donne les quartes tuples suivants :
+- Nord - Sud
+- Sud - Nord
+- Est - Ouest
+- Ouest - Est
+##### Le cas SewerDrain
+Pour la bouche d'égouts nous supprimons la classe `SewerDrain` et optons sur un booléen `canSpawn` présent dans la classe `Street` permettant de savoir si une case représentant une rue peut ou non faire apparaître des zombie, si oui la classe utilisera la méthode `Spawn()` permettant de faire apparaître des zombie, l'affichage de la case en sera impactée.
+##### 3. L'affichage
+Pour l'affichage nous réfléchissons a une implémentation du style `public static final char y = ~~~` que l'on pourra appeler a chaque fois que la case x et de type y.
+#### Algorithme de création du plateau 
+
+##### Comment défini t-on un plateau ?
+Le plateau est composée de route et d'immeuble dont voici les contraintes :
+- Une route est forcément de largeur 1
+- Les deux première route vont d'un bord a l'autre en se croisant
+- Les immeubles sont de taille minimum $2\times 2$ et max ?
+- Les routes ne peuvent pas longer les bords
+- Les immeubles ne peuvent pas longer les bords
+- Deux immeubles distinct ne sont forcément séparé par une route
+##### Comment le crée ?
+Pour les deux premières routes nous savons que pour un plateau de taille $n\times m$ nous avons la première route qui part de la case $(i, 0)\text{ avec } 2\leq i\leq n-2$ jusqu'à la case $(i, m)$. Il en va de même pour la deuxième route qui part de la case $(0, j) \text{ avec } 2 \leq j \leq m-2$ jusqu'à $(n,j)$ 
+
+Il nous semble logique de crée les routes puis de définir comme immeuble tous ce qui n'est pas une route.
+
+
 ## Semaine 3
 
 ## Semaine 4
