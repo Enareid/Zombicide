@@ -12,5 +12,13 @@ public class StreetCell extends Cell{
         super();
         this.canSpawn = true;
     }
+
+    /**
+     * Returns if the cell can spawn a zombie. 
+     * @return if the cell cans spawn a zombie. 
+     */
+    public boolean getCanSpawn() {
+        return this.canSpawn;
+    }
     
 }
