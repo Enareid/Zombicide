@@ -38,4 +38,10 @@ public class Cell {
         return this.loots;
     }
 
+    /**
+     * Sets the player in the cell.
+     */
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 }
