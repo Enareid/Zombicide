@@ -65,4 +65,11 @@ public class Cell {
     public void removePlayer() {
         this.player = null;
     }
+
+    /**
+     * Removes a zombie form the cell. 
+     */
+    public void removeZombie() {
+        this.zombie = null;
+    }
 }
