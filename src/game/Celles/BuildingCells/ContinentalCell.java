@@ -13,4 +13,11 @@ public class ContinentalCell extends BuildingCell{
         this.lifePointsRestored = lifePointsRestored;
         this.canAttack = false;
     }
+
+    /**
+     * Regenerates the player's life points.
+     */
+    public void regen() {
+        break;
+    }
 }
