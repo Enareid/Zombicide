@@ -19,4 +19,18 @@ public class Board {
     public Cell getCell(int x, int y) {
         return this.cells[x][y];
     }
+
+    /**
+     * Sets the cell at the given coordinates.
+     */
+    public void setCell(int x, int y, Cell cell) {
+        this.cells[x][y] = cell;
+    }
+
+    /**
+     * Initialize the board with some rules and random cells.
+     */
+    public void initBoard(){
+        // TODO
+    }
 }
