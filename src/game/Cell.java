@@ -58,4 +58,11 @@ public class Cell {
     public void addLoot(Loot loot) {
         this.loots.add(loot);
     }
+
+    /**
+     * Removes a player from the cell.
+     */
+    public void removePlayer() {
+        this.player = null;
+    }
 }
