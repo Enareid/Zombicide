@@ -20,5 +20,12 @@ public class StreetCell extends Cell{
     public boolean getCanSpawn() {
         return this.canSpawn;
     }
+
+    /**
+     * Allows the cell to spawn a zombie. 
+     */
+    public void allowSpawn() {
+        this.canSpawn = true;
+    }
     
 }
