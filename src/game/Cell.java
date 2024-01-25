@@ -19,6 +19,7 @@ public class Cell {
 
     /**
      * Returns the player in the cell.
+     * @return The player in the cell.
      */
     public Player getPlayer() {
         return this.player;
@@ -26,6 +27,7 @@ public class Cell {
 
     /**
      * Returns the zombie in the cell.
+     * @return The zombie in the cell.
      */
     public Zombie getZombie() {
         return this.zombie;
@@ -33,6 +35,7 @@ public class Cell {
 
     /**
      * Returns the loots in the cell.
+     * @return The loots in the cell.
      */
     public List<loot> getLoots() {
         return this.loots;
@@ -40,6 +43,7 @@ public class Cell {
 
     /**
      * Sets the player in the cell.
+     * @param player The player to set.
      */
     public void setPlayer(Player player) {
         this.player = player;
@@ -47,6 +51,7 @@ public class Cell {
 
     /**
      * Sets the zombie in the cell. 
+     * @param zombie The zombie to set.
      */
     public void setZombie(Zombie zombie) {
         this.zombie = zombie;
@@ -54,6 +59,7 @@ public class Cell {
 
     /**
      * Adds a loot in the cell
+     * @param loot The loot to add.
      */
     public void addLoot(Loot loot) {
         this.loots.add(loot);
@@ -71,5 +77,18 @@ public class Cell {
      */
     public void removeZombie() {
         this.zombie = null;
+    }
+
+    /**
+     * Removes a loot from the list of loots in the cell if the loot is in the list.
+     * else, throws an exception.
+     * @param loot The loot to remove.
+     */
+    public void removeLoot(Loot loot) throws Exception {
+        if (this.loots.contains(loot)) {
+            this.loots.remove(loot);
+        } else {
+            throw new Exception("The loot is not in the cell.");
+        }
     }
 }
