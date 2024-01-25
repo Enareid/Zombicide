@@ -51,4 +51,11 @@ public class Cell {
     public void setZombie(Zombie zombie) {
         this.zombie = zombie;
     }
+
+    /**
+     * Adds a loot in the cell
+     */
+    public void addLoot(Loot loot) {
+        this.loots.add(loot);
+    }
 }
