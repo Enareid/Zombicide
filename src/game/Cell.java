@@ -30,5 +30,12 @@ public class Cell {
     public Zombie getZombie() {
         return this.zombie;
     }
-    
+
+    /**
+     * Returns the loots in the cell.
+     */
+    public List<loot> getLoots() {
+        return this.loots;
+    }
+
 }
