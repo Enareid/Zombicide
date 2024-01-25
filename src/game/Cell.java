@@ -16,4 +16,12 @@ public class Cell {
         this.zombie = null;
         this.canAttack = true;
     }
+
+    /**
+     * Returns the player in the cell.
+     */
+    public Player getPlayer() {
+        return this.player;
+    }
+    
 }
