@@ -23,5 +23,12 @@ public class Cell {
     public Player getPlayer() {
         return this.player;
     }
+
+    /**
+     * Returns the zombie in the cell.
+     */
+    public Zombie getZombie() {
+        return this.zombie;
+    }
     
 }
