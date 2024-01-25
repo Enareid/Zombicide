@@ -28,4 +28,10 @@ public class StreetCell extends Cell{
         this.canSpawn = true;
     }
     
+    /**
+     * Disallows the cell to spawn a zombie. 
+     */
+    public void disallowSpawn() {
+        this.canSpawn = false;
+    }
 }
