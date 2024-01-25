@@ -44,4 +44,11 @@ public class Cell {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    /**
+     * Sets the zombie in the cell. 
+     */
+    public void setZombie(Zombie zombie) {
+        this.zombie = zombie;
+    }
 }
