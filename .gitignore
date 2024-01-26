@@ -113,3 +113,10 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/java,osx,windows,macos,linux
+
+
+# To remove at the end
+Player.java
+Zombie.java
+Loot.java
+
