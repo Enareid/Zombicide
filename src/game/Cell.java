@@ -1,4 +1,5 @@
 package src.game;
+import src.game.*;
 
 import java.util.*;
 
@@ -37,7 +38,7 @@ public class Cell {
      * Returns the loots in the cell.
      * @return The loots in the cell.
      */
-    public List<loot> getLoots() {
+    public List<Loot> getLoots() {
         return this.loots;
     }
 
