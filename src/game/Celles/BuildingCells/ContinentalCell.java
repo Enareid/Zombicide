@@ -18,6 +18,6 @@ public class ContinentalCell extends BuildingCell{
      * Regenerates the player's life points.
      */
     public void regen() {
-        break;
+        // TODO
     }
 }

@@ -1,6 +1,6 @@
 package src.game.Celles;
 
-import src.game.Cell;
+import src.game.*;
 
 public class StreetCell extends Cell{
     protected boolean canSpawn;
