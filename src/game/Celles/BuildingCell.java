@@ -1,7 +1,7 @@
-package src.game.Celles;
+package game.Celles;
 
 import java.util.*;
-import src.game.*;
+import game.*;
 
 public class BuildingCell extends Cell{
     protected List<Door> doors;

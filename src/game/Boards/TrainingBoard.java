@@ -1,6 +1,6 @@
-package src.game.Boards;
-import src.game.Board;
-import src.game.Celles.*;
+package game.Boards;
+import game.Board;
+import game.Celles.*;
 
 public class TrainingBoard extends Board{
 

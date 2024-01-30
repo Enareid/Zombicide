@@ -1,6 +1,6 @@
-package src.game;
+package game;
 
-import src.game.Celles.StreetCell;
+import game.Celles.StreetCell;
 
 public class Board {
 

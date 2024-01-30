@@ -1,7 +1,7 @@
-package src.game.Celles;
+package game.Celles;
 
-import src.game.*;
-import src.game.Characters.Zombie;
+import game.*;
+import game.Characters.Zombie;
 
 
 public class StreetCell extends Cell{

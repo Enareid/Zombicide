@@ -1,9 +1,9 @@
-package src.game;
+package game;
 
 import java.util.*;
 
-import src.game.Characters.Player;
-import src.game.Characters.Zombie;
+import game.Characters.Player;
+import game.Characters.Zombie;
 
 public class Cell {
     protected Player player;

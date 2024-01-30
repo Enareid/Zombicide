@@ -1,7 +1,6 @@
-package src.game;
+package game;
 
-import src.game.Boards.*;
-import src.game.Celles.*;
+import game.Boards.*;
 
 public class MainL1 {
     

@@ -1,6 +1,6 @@
-package src.game.Celles.BuildingCells;
+package game.Celles.BuildingCells;
 
-import src.game.Celles.BuildingCell;
+import game.Celles.BuildingCell;
 
 public class ContinentalCell extends BuildingCell{
     protected int lifePointsRestored;
