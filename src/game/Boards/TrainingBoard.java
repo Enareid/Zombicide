@@ -10,6 +10,7 @@ public class TrainingBoard extends Board{
      */
     public TrainingBoard() {
         super(5, 5);
+        this.initBoard();
     }
 
     /**

@@ -1,6 +1,7 @@
 package src.game.Celles;
 
 import src.game.*;
+import src.game.Characters.Zombie;
 
 public class StreetCell extends Cell{
     protected boolean canSpawn;
