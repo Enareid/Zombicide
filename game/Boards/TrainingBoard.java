@@ -1,4 +1,4 @@
-package src.game.Boards;
+package game.Boards;
 
 import src.game.Board;
 import src.game.Celles.*;
