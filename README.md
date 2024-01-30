@@ -49,6 +49,7 @@ N'oubliez pas d'ajouter les autres membres de votre équipe aux membres du proje
 
 Lors de cette première semaine nous avons réfléchi à l'implémentation du plateau et des cases pour en arriver à cette version (non définitif) : 
 
+
 ![UML V1](Images/CaseUML.png "UML case plateau V1")
 
 Nous réfléchissons à l'implémentation des portes et avons deux approches :
@@ -101,6 +102,7 @@ Nous nous somme concentré sur l'algorithme de création de plateau avec, dans u
 Dans un premier temps il nous fallait savoir si l'on faisait une méthode `toString()` dans la classe building qui vérifiant le type de la casses et agissait en consécance ou si l'on métait des méthode `toString()` au sein de chaque classes Cell qui va donc gérer lui même l'affichage de sa case. Nous avons finalement otpé pour la deuxième solution, qui nous semble plus lisible et abordable.
 
 Voici le diagramme UML a la fin de cette séance :
+![UMLS3](Images/UMLS3.png "UML a la fin de la troisième séance")
 
 ## Semaine 4
 
