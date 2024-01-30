@@ -5,8 +5,8 @@ import java.util.*;
 import game.Entities.*;
 
 public class Cell {
-    protected Player player;
-    protected Zombie zombie;
+    protected List<Player> players;
+    protected List<Zombie> zombies;
     protected boolean canAttack;
     protected List<Loot> loots;
 
@@ -14,8 +14,8 @@ public class Cell {
      * Builds a new cell.
      */
     public Cell() {
-        this.player = null;
-        this.zombie = null;
+        this.players = new ArrayList<>(); 
+        this.zombies = new ArrayList<>(); 
         this.canAttack = true;
     }
 
@@ -23,16 +23,16 @@ public class Cell {
      * Returns the player in the cell.
      * @return The player in the cell.
      */
-    public Player getPlayer() {
-        return this.player;
+    public List<Player> getPlayers() {
+        return this.players;
     }
 
     /**
      * Returns the zombie in the cell.
      * @return The zombie in the cell.
      */
-    public Zombie getZombie() {
-        return this.zombie;
+    public List<Zombie> getZombie() {
+        return this.zombies;
     }
 
     /**
@@ -47,16 +47,26 @@ public class Cell {
      * Sets the player in the cell.
      * @param player The player to set.
      */
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setPlayer(Player player) throws Exception{
+        if (!this.players.contains(player)){
+            this.players.add(player);
+        }
+        else{
+            throw new Exception("Player already present");
+        }
     }
 
     /**
      * Sets the zombie in the cell. 
      * @param zombie The zombie to set.
      */
-    public void setZombie(Zombie zombie) {
-        this.zombie = zombie;
+    public void setZombie(Zombie zombie)throws Exception{
+        if (!this.zombies.contains(zombie)){
+            this.zombies.add(zombie);
+        }
+        else{
+            throw new Exception("Zombie already present");
+        }
     }
 
     /**
@@ -70,15 +80,21 @@ public class Cell {
     /**
      * Removes a player from the cell.
      */
-    public void removePlayer() {
-        this.player = null;
+    public void removePlayer(Player player) throws Exception {
+        if (!this.players.remove(player)){
+            throw new Exception("Player not in List");
+        }
+
     }
 
     /**
      * Removes a zombie form the cell. 
      */
-    public void removeZombie() {
-        this.zombie = null;
+    public void removeZombie(Zombie zombie) throws Exception{
+        if (!this.zombies.remove(zombie)){
+            throw new Exception("Zombie not in List");
+        }
+
     }
 
     /**
@@ -93,4 +109,5 @@ public class Cell {
             throw new Exception("The loot is not in the cell.");
         }
     }
+
 }

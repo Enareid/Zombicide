@@ -6,9 +6,8 @@ public class Board {
 
     protected Cell[][] cells;
     private int width;
-    private int height;
-    private static final char street='|';
-    private static final char building='B';
+    private int height; 
+
 
     /**
      * Build an empty board

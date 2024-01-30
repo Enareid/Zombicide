@@ -13,4 +13,18 @@ public class BuildingCell extends Cell{
         super();
         this.doors = new ArrayList<Door>();
     }
+
+    public String toString(){
+        String str="B";
+        if(!this.zombies.isEmpty()){
+            str+="Z"+this.zombies.size();
+        }
+        if(str.length()>1){
+            str+="\n";
+        }
+        if(!this.players.isEmpty()){
+            str+="P"+this.players.size();
+        }
+        return str;
+    }
 }

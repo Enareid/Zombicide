@@ -1,12 +1,22 @@
 package game;
 
 import game.Boards.*;
+import game.Celles.*;
+import game.Entities.*;
 
 public class MainL1 {
     
     public static void main(String[] args){
-        Board board = new TrainingBoard();
-        System.out.println(board.toString());
-        System.out.println("test");
+        try{
+            Cell cell = new BuildingCell();
+            cell.setZombie(new Zombie());
+            cell.setPlayer(new Player());
+            System.out.println(cell.toString());
+
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
     }
 }

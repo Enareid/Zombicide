@@ -7,6 +7,7 @@ import game.Entities.*;
 public class StreetCell extends Cell{
     protected boolean canSpawn;
 
+
     /**
      * Builds a new street cell. 
      */
@@ -41,6 +42,7 @@ public class StreetCell extends Cell{
      * spawns a zombie in the cell.
      */
     public void spawnZombie() {
-        this.zombie = new Zombie();
+        this.zombies.add(new Zombie());
     }
+    
 }

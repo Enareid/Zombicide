@@ -18,7 +18,7 @@ public class TrainingBoard extends Board{
     public void initBoard(){
         for(int i = 0; i < this.cells.length; i++){
             for(int j = 0; j < this.cells[i].length; j++){
-                if(i == 3 || j == 3) {
+                if(i == 2 || j == 2) {
                     this.cells[i][j] = new StreetCell();
                 }
                 else {
@@ -45,7 +45,7 @@ public class TrainingBoard extends Board{
                     str += " ";
                 }
             }
-            str += "\n ";
+            str += "\n";
         }
         return str;
     }
