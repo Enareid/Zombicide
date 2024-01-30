@@ -2,8 +2,7 @@ package game;
 
 import java.util.*;
 
-import game.Characters.Player;
-import game.Characters.Zombie;
+import game.Entities.*;
 
 public class Cell {
     protected Player player;
