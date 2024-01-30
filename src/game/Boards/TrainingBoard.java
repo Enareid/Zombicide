@@ -46,7 +46,7 @@ public class TrainingBoard extends Board{
                     str += " ";
                 }
             }
-            str += "\n";
+            str += "\n ";
         }
         return str;
     }
