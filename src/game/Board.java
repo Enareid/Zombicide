@@ -4,7 +4,7 @@ import src.game.Celles.StreetCell;
 
 public class Board {
 
-    protected Cell[][] Board;
+    protected Cell[][] cells;
     private int width;
     private int height;
     private static final char street='|';
@@ -16,10 +16,10 @@ public class Board {
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
-        this.Board = new Cell[width][height];
+        this.cells = new Cell[width][height];
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                this.Board[x][y] = new Cell();
+                this.cells[x][y] = new Cell();
             }
         }
     }
@@ -38,7 +38,7 @@ public class Board {
                 board[random1][j]=new StreetCell();
             }
             for(int i=x1;i<length;i++){
-                this.Board[i][random2]=new StreetCell();
+                this.cells[i][random2]=new StreetCell();
             }
             decoup(board, x1, x2, y1, y2);
             
@@ -53,14 +53,14 @@ public class Board {
      * @return The cell at the given coordinates.
      */
     public Cell getCell(int x, int y) {
-        return this.Board[x][y];
+        return this.cells[x][y];
     }
 
     /**
      * Sets the cell at the given coordinates.
      */
     public void setCell(int x, int y, Cell cell) {
-        this.Board[x][y] = cell;
+        this.cells[x][y] = cell;
     }
 
 }
