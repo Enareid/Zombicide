@@ -92,6 +92,16 @@ Il nous semble logique de crée les routes puis de définir comme immeuble tous 
 
 ## Semaine 3
 
+Lors de cette séance nous avons revu la conception expliqué lors de la semaine 2. La case Building (maintenant appelé `BuildingCell`) est de nouveau d'actualité. En effet cette classe est devenue une case building simple et les case continental et drug store (respectivement `ContinentalCell` et `DrugStoreCell`) héritent de nouveau de Building. 
+
+Nous nous somme concentré sur l'algorithme de création de plateau avec, dans un premier temps, l'affichage du TrainingBoard qui semble plus simple car posséde des cases prédéfinie. Nous nous sommes rendu compte d'un problème majeurs : comment afficher le plateau. Actuellement deux idées s'offre a nous :
+1. Afficher ligne par ligne 
+2. Afficher cases pasr cases
+
+Dans un premier temps il nous fallait savoir si l'on faisait une méthode `toString()` dans la classe building qui vérifiant le type de la casses et agissait en consécance ou si l'on métait des méthode `toString()` au sein de chaque classes Cell qui va donc gérer lui même l'affichage de sa case. Nous avons finalement otpé pour la deuxième solution, qui nous semble plus lisible et abordable.
+
+Voici le diagramme UML a la fin de cette séance :
+
 ## Semaine 4
 
 ## Semaine 5
