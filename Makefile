@@ -7,7 +7,6 @@ JAVAC = javac
 JAVA = java
 
 JAVAC_FLAGS = -d $(CLASS_DIR) -sourcepath $(SRC_DIR)
-RMFLAGS = -rf
 
 all: compile run
 
@@ -18,4 +17,4 @@ run:
 	$(JAVA) -cp $(CLASS_DIR) $(PACKAGE_DIR).$(MAIN_CLASS)
 
 clean:
-	$(RM) $(RMFLAGS)  $(CLASS_DIR)
+	rm -rf $(CLASS_DIR)
