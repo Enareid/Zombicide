@@ -28,26 +28,4 @@ public class TrainingBoard extends Board{
         }
     }
 
-    /**
-     * Board to string
-     */
-    public String toString(){
-        String str = "";
-        for(int i = 0; i < this.cells.length; i++){
-            for(int j = 0; j < this.cells[i].length; j++){
-                if (this.cells[i][j] instanceof BuildingCell) {
-                    str += "B";
-                }
-                else if (this.cells[i][j] instanceof StreetCell) {
-                    str += "S";
-                }
-                else {
-                    str += " ";
-                }
-            }
-            str += "\n";
-        }
-        return str;
-    }
-
 }

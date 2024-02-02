@@ -62,5 +62,14 @@ public class Board {
         this.cells[x][y] = cell;
     }
 
+    /**
+     * Print the board
+     * @return the board
+     */
+    public String toString(){
+        
+        return str;
+    }
+
 }
 

@@ -12,7 +12,6 @@ public class MainL1 {
             cell.setZombie(new Zombie());
             /* cell.setPlayer(new Player()); */
             System.out.println(cell.toString());
-
         }
         catch(Exception e){
             System.out.println(e);
