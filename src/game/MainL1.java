@@ -10,7 +10,7 @@ public class MainL1 {
         try{
             Cell cell = new BuildingCell();
             cell.setZombie(new Zombie());
-            cell.setPlayer(new Player());
+            /* cell.setPlayer(new Player()); */
             System.out.println(cell.toString());
 
         }
