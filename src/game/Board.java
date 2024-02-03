@@ -1,5 +1,7 @@
 package game;
 
+
+import java.util.Random;
 import game.Celles.BuildingCell;
 import game.Celles.StreetCell;
 
@@ -16,35 +18,15 @@ public class Board {
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
-        this.cells = new Cell[width][height];
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                this.cells[x][y] = new Cell();
+        this.cells = new Cell[height][width];
+        for (int x = 0; x < height; x++) {
+            for (int y = 0; y < width; y++) {
+                this.cells[x][y] = new BuildingCell();
             }
         }
+        initBoard(0,0,height-1,width-1);
     }
 
-    public Cell[][] decoup(Cell[][] board,int x1, int x2,int y1, int y2){
-        int length=x2-x1;
-        int width=y2-y1;
-        if (width<5 || length<5){
-            
-            return board;
-        }
-        else{
-            int random1 = (int)(Math.random()*length);
-            int random2 = (int)(Math.random()*width);
-            for(int j=y1;j<width;j++){
-                board[random1][j]=new StreetCell();
-            }
-            for(int i=x1;i<length;i++){
-                this.cells[i][random2]=new StreetCell();
-            }
-            decoup(board, x1, x2, y1, y2);
-            
-        }
-        return board;
-    }
 
     /**
      * Returns the cell at the given coordinates. 
@@ -63,14 +45,38 @@ public class Board {
         this.cells[x][y] = cell;
     }
 
+    public void initBoard(int x1, int y1, int x2, int y2) {
+        if ((x2 - x1) >= 4 && (y2 - y1) >= 4) {
+            Random rand = new Random();
+            int newX = rand.nextInt(x1+2 , x2-1);
+            int newY = rand.nextInt(y1+2 , y2-1);
+            for (int y = y1; y <= y2; y++) {
+                this.cells[newX][y]=new StreetCell();
+            }
+            for (int x = x1; x <= x2; x++) {
+                this.cells[x][newY]=new StreetCell();
+            }           
+            // récursivité
+            // carré haut-gauche
+            initBoard(x1, y1, newX - 1, newY - 1);
+            // carré haut-droite
+            initBoard(x1, newY + 1, newX - 1, y2);
+            // carré bas-gauche
+            initBoard(newX + 1, y1, x2, newY - 1);
+            // carré bas-droite
+            initBoard(newX + 1, newY + 1, x2, y2);
+        }
+    }
+
     /**
      * Print the board
      * @return the board
      */
-    // j'ai tout fait avec des instanceof buildingCell : dans le cas ou on aurait un moyen de les différencier avec les streetCell, on pourrait vérifier un attribut de cell ou autre
+    // j'ai tout fait avec des instanceof buildingCell : dans le cas ou on aurait un moyen de les différencier avec les streetCell,
+    // on pourrait vérifier un attribut de cell ou autre
     public String toString(){
         //première ligne de "-"
-        String str="-".repeat(height*3+height+1);        
+        String str="-".repeat(width*3+width+1);        
         for (int i=0; i<height; i++){
             // on itére deux fois pour avoir les deux lignes de chaque cases
             for(int k=0;k<2;k++){
@@ -106,7 +112,7 @@ public class Board {
             str+="\n-";
             //cas pour éviter les ArrayindexOUB : ligne de "-"
             if(i==height-1){
-                str+="-".repeat(height*3+height);
+                str+="-".repeat(width*3+width);
             }
             // si on a une case streetCell et que celle d'en dessous l'est aussi alors on laisse des espaces et pas de bordures
             else{
@@ -119,7 +125,7 @@ public class Board {
                             str+="-".repeat(4);
                         } 
                     }
-                    // cas ou on est sur une case != Streetcell
+                    // cas où on est sur une case != Streetcell
                     else{
                         str+="-".repeat(4);
                     }

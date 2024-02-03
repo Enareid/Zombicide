@@ -13,7 +13,7 @@ public class StreetCell extends Cell{
      */
     public StreetCell() {
         super();
-        this.canSpawn = true;
+        this.canSpawn = false;
     }
 
     /**
