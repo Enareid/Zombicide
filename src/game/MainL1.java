@@ -1,26 +1,24 @@
 package game;
-
-import game.Celles.*;
-import game.Entities.*;
+import java.util.Scanner;
 
 public class MainL1 {
     
     public static void main(String[] args){
-        try{
-            Cell cell = new BuildingCell();
-            cell.setZombie(new Zombie());
-            cell.setPlayer(new Player());
-            System.out.println(cell.toString());
-            Board board=new Board(10,10);
-            board.getCell(5, 5).setPlayer(null);
-            board.getCell(5, 5).setZombie(null);
-            board.getCell(4, 5).setPlayer(null);
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Entrez la largeur du plateau : ");
+            int width = scanner.nextInt();
+
+            System.out.print("Entrez la hauteur du plateau : ");
+            int height = scanner.nextInt();
+
+            Board board = new Board(width, height);
             System.out.println(board);
 
-        }
-        catch(Exception e){
+            scanner.close();
+        } catch(Exception e) {
             System.out.println(e);
         }
-
     }
 }
