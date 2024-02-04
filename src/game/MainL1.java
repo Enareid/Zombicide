@@ -1,6 +1,8 @@
 package game;
 import java.util.Scanner;
 
+import game.Boards.ClassicalBoard;
+
 public class MainL1 {
     
     public static void main(String[] args){
@@ -13,7 +15,7 @@ public class MainL1 {
             System.out.print("Entrez la hauteur du plateau : ");
             int height = scanner.nextInt();
 
-            Board board = new Board(width, height);
+            Board board = new ClassicalBoard(width, height);
             System.out.println(board);
 
             scanner.close();
