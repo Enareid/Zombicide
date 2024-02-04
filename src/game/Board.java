@@ -42,10 +42,10 @@ public abstract class Board {
         this.cells[x][y] = cell;
     }
 
-    public void fillBoard(int x1, int y1, int x2, int y2) {
+    protected void fillBoard(int x1, int y1, int x2, int y2) {
     }
 
-    public void initBoard(){
+    protected void initBoard(){
     }
 
 
