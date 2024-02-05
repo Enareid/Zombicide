@@ -104,22 +104,23 @@ Dans un premier temps il nous fallait savoir si l'on faisait une méthode `toStr
 Voici le diagramme UML a la fin de cette séance :
 ![UMLS3](Images/UMLS3.png "UML a la fin de la troisième séance")
 
-#### Maj Dimanche 4 Février 2024
+
+#### Maj dimanche 4 février 2024
 
 Nous sommes vers la fin du premier livré.
 
-**Méthodes toString()**
-Nous avons implémenté une méthode `toString()` dans chaque cells, ces méthodes nous assure d'avoir une chaîne de caractére a la fin contenant 6 caractères exactement de la forme "Tzn sn" avec :
-- T le type de la case
-- zn le nombre de zombie
-- sn le nombre de survivant
+**Méthodes `toString()` :**
+Nous avons implémenté une méthode `toString()` dans chaque cells, ces méthodes nous assure d'avoir une chaîne de caractère à la fin contenant 6 caractères exactement de la forme "Tzn sn" avec :
+- T le type de la case.
+- zn le nombre de zombie.
+- sn le nombre de survivant.
 
-Toutes ces méthode `toString()` sont appelée dans la méthode `toString()` de la classe Board : en créant premièrement la première ligne de "-" représentant les murs supérieurs, puis pour chaque ligne on ajoute une porte "|" si besoin puis les info qui nous intéresse. On récupere les info grace `toString().substring()` des cells.
+Toutes ces méthode `toString()` sont appelée dans la méthode `toString()` de la classe Board : en créant premièrement la première ligne de "-" représentant les murs supérieurs, puis pour chaque ligne, on ajoute une porte "|" si besoin puis les infos qui nous intéressent. On récupère les info grâce `toString().substring()` des cells.
 
-**Algorithme de création du plateau**
-Pour crée un plateau aléatoir on utilise trois méthode. Le constructeur board qui va remplir le plateau de `BuildingCell()` ensuite la méthode récursive `fillBoard()` va rajouter les street en commancant avec le plateau de base. On aura deux ligne de street traversant le plateau de part et d'autre, ensuite on rapelle la fonction avec les quatres nouveau mini plateau puis on réitère jusqu'a ce qu'on ne puisse plus crée de street, dans notre cas, lorsque la longueur ou la largeur est inférieur à 5. Puis on fini avec la méthode `initBoard()` qui va prendre deux cases building aléatoire et les modifié en `ContinentalCell()` ou `DrugStoreCell()`.
+**Algorithme de création du plateau :**
+Pour créer un plateau aléatoire, on utilise trois méthodes. Le constructeur board qui va remplir le plateau de `BuildingCell()` ensuite la méthode récursive `fillBoard()` va rajouter les street en commençant avec le plateau de base. On aura deux ligne de street traversant le plateau de part et d'autre, ensuite on rappelle la fonction avec les quatre nouveaux minis plateaux puis on réitère jusqu'à ce qu'on ne puisse plus crée de street, dans notre cas, lorsque la longueur ou la largeur est inférieur à 5. Puis on fini avec la méthode `initBoard()` qui va prendre deux cases building aléatoire et les modifié en `ContinentalCell()` ou `DrugStoreCell()`.
 
-Voici a quoi ressemble notre diagramme a la fin de cette troisième semaine : 
+Voici à quoi ressemble notre diagramme à la fin de cette troisième semaine :
 ![UMLFinS3](Images/UMLFinS3.png "Le diagramme a la fin de la troisième semaine")
 
 
