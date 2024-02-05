@@ -1,6 +1,7 @@
 package game.Boards;
 
 import java.util.Random;
+import java.lang.Math;
 
 import game.Board;
 import game.Celles.StreetCell;
@@ -16,9 +17,13 @@ public class ClassicalBoard extends Board{
         super(width, height);
     }
 
+    /**
+     * Add StreetCell on the Board
+     */
     public void fillBoard(int x1, int y1, int x2, int y2) {
         if ((x2 - x1) >= 4 && (y2 - y1) >= 4) {
             Random rand = new Random();
+
             int newX = rand.nextInt(x1+2 , x2-1);
             int newY = rand.nextInt(y1+2 , y2-1);
             for (int y = y1; y <= y2; y++) {
@@ -39,6 +44,9 @@ public class ClassicalBoard extends Board{
         }
     }
 
+    /**
+     * 
+     */
     public void initBoard(){
         fillBoard(0,0,height-1,width-1);
         Random rand = new Random();
