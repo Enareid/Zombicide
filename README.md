@@ -120,7 +120,7 @@ Toutes ces méthode `toString()` sont appelée dans la méthode `toString()` de 
 Pour crée un plateau aléatoir on utilise trois méthode. Le constructeur board qui va remplir le plateau de `BuildingCell()` ensuite la méthode récursive `fillBoard()` va rajouter les street en commancant avec le plateau de base. On aura deux ligne de street traversant le plateau de part et d'autre, ensuite on rapelle la fonction avec les quatres nouveau mini plateau puis on réitère jusqu'a ce qu'on ne puisse plus crée de street, dans notre cas, lorsque la longueur ou la largeur est inférieur à 5. Puis on fini avec la méthode `initBoard()` qui va prendre deux cases building aléatoire et les modifié en `ContinentalCell()` ou `DrugStoreCell()`.
 
 Voici a quoi ressemble notre diagramme a la fin de cette troisième semaine : 
-![UMLFinS3](Images/UMLFinS3.png "Le diagramme a la fin de la troisième semaine)
+![UMLFinS3](Images/UMLFinS3.png "Le diagramme a la fin de la troisième semaine")
 
 
 ## Semaine 4
