@@ -22,10 +22,10 @@ public class ClassicalBoard extends Board{
      */
     public void fillBoard(int x1, int y1, int x2, int y2) {
         if ((x2 - x1) >= 4 && (y2 - y1) >= 4) {
-            Random rand = new Random();
-
-            int newX = rand.nextInt(x1+2 , x2-1);
-            int newY = rand.nextInt(y1+2 , y2-1);
+            Random rand= new Random();
+            // nombre random entre 0 et x2-x1-2 inclus + ajout de x1+2 = nombre entre x1+2 et x2-1 exclus
+            int newX = rand.nextInt((x2-x1-3))+x1+2;
+            int newY= rand.nextInt((y2-y1-3))+y1+2;
             for (int y = y1; y <= y2; y++) {
                 this.cells[newX][y]=new StreetCell();
             }
@@ -41,6 +41,7 @@ public class ClassicalBoard extends Board{
             fillBoard(newX + 1, y1, x2, newY - 1);
             // carré bas-droite
             fillBoard(newX + 1, newY + 1, x2, y2);
+
         }
     }
 
@@ -55,8 +56,11 @@ public class ClassicalBoard extends Board{
         int randomX2 = rand.nextInt(width);
         int randomY2 = rand.nextInt(height);
         while (((randomX1 == randomX2) && (randomY1 == randomY2)) || ((this.cells[randomX1][randomY1] instanceof StreetCell) || (this.cells[randomX2][randomY2] instanceof StreetCell))){
+            randomX1 = rand.nextInt(width);
+            randomY1 = rand.nextInt(height);
             randomX2 = rand.nextInt(width);
             randomY2 = rand.nextInt(height);
+
         }
         this.cells[randomX1][randomY1] = new ContinentalCell(10);
         this.cells[randomX2][randomY2] = new DrugStoreCell();
