@@ -12,9 +12,9 @@ public abstract class Board {
     /**
      * Build an empty board
      */
-    public Board(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public Board(int size) {
+        this.width = size;
+        this.height = size;
         this.cells = new Cell[height][width];
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {

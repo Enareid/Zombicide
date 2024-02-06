@@ -13,8 +13,8 @@ public class ClassicalBoard extends Board{
     /**
      * Build an empty board
      */
-    public ClassicalBoard(int width, int height) {
-        super(width, height);
+    public ClassicalBoard(int size) {
+        super(size);
     }
 
     /**
