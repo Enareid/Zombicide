@@ -1,12 +1,12 @@
-package game.Celles.BuildingCells;
+package game.Cells.BuildingCells;
 
-import game.Celles.BuildingCell;
+import game.Cells.BuildingCell;
 
 public class ContinentalCell extends BuildingCell{
     protected int lifePointsRestored;
 
     /**
-     * Builds a new continental cell. 
+     * Builds a new continental cell.
      */
     public ContinentalCell(int lifePointsRestored) {
         super();

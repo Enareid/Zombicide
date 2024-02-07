@@ -3,12 +3,12 @@ package game.Boards;
 import java.util.Random;
 
 import game.Board;
-import game.Celles.StreetCell;
-import game.Celles.BuildingCells.ContinentalCell;
-import game.Celles.BuildingCells.DrugStoreCell;
+import game.Cells.StreetCell;
+import game.Cells.BuildingCells.ContinentalCell;
+import game.Cells.BuildingCells.DrugStoreCell;
 
 public class ClassicalBoard extends Board{
-    
+
     /**
      * Build an empty board
      */
@@ -30,7 +30,7 @@ public class ClassicalBoard extends Board{
             }
             for (int x = x1; x <= x2; x++) {
                 this.cells[x][newY]=new StreetCell();
-            }           
+            }
             // récursivité
             // carré haut-gauche
             fillBoard(x1, y1, newX - 1, newY - 1);
@@ -45,7 +45,7 @@ public class ClassicalBoard extends Board{
     }
 
     /**
-     * 
+     *
      */
     public void initBoard(){
         fillBoard(0,0,height-1,width-1);
@@ -63,6 +63,6 @@ public class ClassicalBoard extends Board{
         }
         this.cells[randomX1][randomY1] = new ContinentalCell(10);
         this.cells[randomX2][randomY2] = new DrugStoreCell();
-    }    
+    }
 
 }

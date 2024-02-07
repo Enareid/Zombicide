@@ -1,4 +1,4 @@
-package game.Celles;
+package game.Cells;
 
 import java.util.*;
 import game.*;
@@ -7,7 +7,7 @@ public class BuildingCell extends Cell{
     protected Map<Door,Direction> doors;
 
     /**
-     * Builds a new building cell. 
+     * Builds a new building cell.
      */
     public BuildingCell() {
         super();

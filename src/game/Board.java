@@ -1,12 +1,12 @@
 package game;
 
-import game.Celles.BuildingCell;
+import game.Cells.BuildingCell;
 
 public abstract class Board {
 
     protected Cell[][] cells;
     protected int width;
-    protected int height; 
+    protected int height;
 
 
     /**
@@ -26,7 +26,7 @@ public abstract class Board {
 
 
     /**
-     * Returns the cell at the given coordinates. 
+     * Returns the cell at the given coordinates.
      * @param x The x coordinate of the cell.
      * @param y The y coordinate of the cell.
      * @return The cell at the given coordinates.
@@ -57,7 +57,7 @@ public abstract class Board {
     // on pourrait vérifier un attribut de cell ou autre
     public String toString(){
         //première ligne de "-"
-        String str="-".repeat(width*3+width+1);        
+        String str="-".repeat(width*3+width+1);
         for (int i=0; i<height; i++){
             // on itére deux fois pour avoir les deux lignes de chaque cases
             for(int k=0;k<2;k++){
@@ -71,7 +71,7 @@ public abstract class Board {
                         str+="|";
                     }
 
-                    else{ 
+                    else{
                         // sinon si la case est une S, on veut ne pas mettre de porte si la case suivante est une S aussi
                         if(!(this.cells[i][j] instanceof BuildingCell)){
                             if (this.cells[i][j+1] instanceof BuildingCell){
@@ -104,14 +104,14 @@ public abstract class Board {
                         }
                         else{
                             str+="-".repeat(4);
-                        } 
+                        }
                     }
                     // cas où on est sur une case != Streetcell
                     else{
                         str+="-".repeat(4);
                     }
                 }
-                }    
+                }
         }
         return str;
     }
