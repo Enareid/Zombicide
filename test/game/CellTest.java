@@ -32,4 +32,14 @@ public class CellTest {
         }
     }
 
+    @Test
+    public void testGetZombie(){
+        try {
+            this.cell.setZombie(this.zombie);
+            assertEquals(this.zombie, this.cell.getZombie().get(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
