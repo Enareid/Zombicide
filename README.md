@@ -22,8 +22,20 @@ N'oubliez pas d'ajouter les autres membres de votre équipe aux membres du proje
 ## Livrable 1
 
 ### Atteinte des objectifs
+- L'UML pour ce livrable est disponible dans le compte rendu de la semaine 3
+- Le plateau se génére aléatoirement, en respectant les règles du jeu. La taille du plateau est demandé au joueur.
+
+Un Makefile est mis a disposition avec les commandes suivante :
+- `make` qui va lancer le "jeu" en créeant automatiquement le .jar 
+- `make compile` : qui va compiler toutes les classes présentes
+- `make jar` : qui va crée le jar
+- `make run` : qui va exécuté le jar 
+- `make test` : qui va exécuté les test
+- `make doc` : qui va généré la doc (qui crée une erreur actuellement)
+- `make clean` : supprimant les dossier doc et classes
 
 ### Difficultés restant à résoudre
+- Théoriquement nous devrons encore touché a la fonction `Board` lorsque'on aura réussi a implémenté les portes
 
 ## Livrable 2
 
