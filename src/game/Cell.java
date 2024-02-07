@@ -14,8 +14,8 @@ public class Cell {
      * Builds a new cell.
      */
     public Cell() {
-        this.players = new ArrayList<>(); 
-        this.zombies = new ArrayList<>(); 
+        this.players = new ArrayList<>();
+        this.zombies = new ArrayList<>();
         this.canAttack = true;
     }
 
@@ -57,7 +57,7 @@ public class Cell {
     }
 
     /**
-     * Sets the zombie in the cell. 
+     * Sets the zombie in the cell.
      * @param zombie The zombie to set.
      */
     public void setZombie(Zombie zombie)throws Exception{
@@ -88,7 +88,7 @@ public class Cell {
     }
 
     /**
-     * Removes a zombie form the cell. 
+     * Removes a zombie form the cell.
      */
     public void removeZombie(Zombie zombie) throws Exception{
         if (!this.zombies.remove(zombie)){
