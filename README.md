@@ -31,7 +31,7 @@ Un Makefile est mis a disposition avec les commandes suivante :
 - `make jar` : qui va crée le jar
 - `make run` : qui va exécuté le jar 
 - `make test` : qui va exécuté les test
-- `make doc` : qui va généré la doc (qui crée une erreur actuellement)
+- `make doc` : qui va généré la doc
 - `make clean` : supprimant les dossier doc et classes
 
 ### Difficultés restant à résoudre
