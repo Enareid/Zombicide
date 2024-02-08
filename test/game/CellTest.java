@@ -65,4 +65,15 @@ public class CellTest {
         }
     }
 
+    @Test
+    public void testRemoveZombie(){
+        try {
+            this.cell.setZombie(this.zombie);
+            this.cell.removeZombie(this.zombie);
+            assertEquals(0, this.cell.getZombie().size());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
