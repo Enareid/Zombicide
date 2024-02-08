@@ -87,4 +87,9 @@ public class CellTest {
         }
     }
 
+    @Test
+    public void testToString(){
+        assertEquals("B     ", this.cell.toString());
+    }
+
 }
