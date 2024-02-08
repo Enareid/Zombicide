@@ -11,6 +11,10 @@ public class DrugStoreCell extends BuildingCell{
         super();
     }
 
+    /**
+     * Returns the string representation of the cell.
+     * @return the string representation of the cell.
+     */
     public String toString(){
         String str="D";
         if(!this.zombies.isEmpty()){

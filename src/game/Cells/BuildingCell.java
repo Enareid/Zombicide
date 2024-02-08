@@ -4,6 +4,8 @@ import java.util.*;
 import game.*;
 
 public class BuildingCell extends Cell{
+
+    /** The doors of the building */
     protected Map<Door,Direction> doors;
 
     /**
@@ -14,6 +16,10 @@ public class BuildingCell extends Cell{
         this.doors = new HashMap<>();
     }
 
+    /**
+     * Returns the string representation of the cell.
+     * @return the string representation of the cell.
+     */
     public String toString(){
         String str="B";
         if(!this.zombies.isEmpty()){

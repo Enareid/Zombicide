@@ -5,6 +5,8 @@ import game.Entities.*;
 
 
 public class StreetCell extends Cell{
+
+    /** If the cell can spawn a zombie */
     protected boolean canSpawn;
 
 
@@ -45,6 +47,10 @@ public class StreetCell extends Cell{
         this.zombies.add(new Zombie());
     }
 
+    /**
+     * Returns the string representation of the cell.
+     * @return the string representation of the cell.
+     */
     public String toString(){
         String str="S";
         if(!this.zombies.isEmpty()){

@@ -4,7 +4,9 @@ import game.Cells.BuildingCell;
 
 public abstract class Board {
 
+    /** The cells of the board */
     protected Cell[][] cells;
+    /** The size of the board */
     protected int size;
 
 

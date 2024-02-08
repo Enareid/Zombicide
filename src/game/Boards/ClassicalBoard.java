@@ -45,7 +45,7 @@ public class ClassicalBoard extends Board{
     }
 
     /**
-     *
+     * Initialize the board with StreetCell, ContinentalCell and DrugStoreCell
      */
     public void initBoard(){
         fillBoard(0,0,size-1,size-1);

@@ -5,9 +5,14 @@ import java.util.*;
 import game.Entities.*;
 
 public class Cell {
+
+    /** The players in the cell */
     protected List<Player> players;
+    /** The zombies in the cell */
     protected List<Zombie> zombies;
+    /** If the player can attack in this cell */
     protected boolean canAttack;
+    /** The loots in the cell */
     protected List<Loot> loots;
 
     /**
