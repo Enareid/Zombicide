@@ -115,3 +115,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/java,osx,windows,macos,linux
 
 .vscode
+
+# Documentation
+docs/

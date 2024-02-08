@@ -26,7 +26,7 @@ jar: compile
 	jar cvfe Livrable1.jar $(PACKAGE_DIR).$(MAIN_CLASS) -C $(CLASS_DIR) $(PACKAGE_DIR)
 
 doc: compile
-	javadoc -sourcepath $(SRC_DIR) -subpackages $(PACKAGE_DIR) -d doc
+	javadoc -sourcepath $(SRC_DIR) -subpackages $(PACKAGE_DIR) -d docs
 
 clean:
 	rm -rf $(CLASS_DIR) doc
