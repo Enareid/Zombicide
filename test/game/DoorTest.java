@@ -17,4 +17,10 @@ public class DoorTest {
     public void testIsLocked(){
         assertTrue(this.door.isLocked());
     }
+
+    @Test
+    public void testUnlock(){
+        this.door.unlock();
+        assertFalse(this.door.isLocked());
+    }
 }
