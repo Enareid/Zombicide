@@ -30,4 +30,9 @@ public class DoorTest {
         this.door.lock();
         assertTrue(this.door.isLocked());
     }
+
+    @Test
+    public void testGetDirection(){
+        assertEquals(Direction.UP, this.door.getDirection());
+    }
 }
