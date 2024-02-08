@@ -14,6 +14,7 @@ public class MainL1 {
             Board board = new ClassicalBoard(size);
             System.out.println(board);
 
+            scanner.close();
         } catch(Exception e) {
             System.out.println(e);
         }

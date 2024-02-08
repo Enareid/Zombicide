@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 
 import game.Boards.*;
 import game.Cells.BuildingCell;
-import game.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
