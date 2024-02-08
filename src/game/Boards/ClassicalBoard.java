@@ -48,17 +48,17 @@ public class ClassicalBoard extends Board{
      *
      */
     public void initBoard(){
-        fillBoard(0,0,height-1,width-1);
+        fillBoard(0,0,size-1,size-1);
         Random rand = new Random();
-        int randomX1 = rand.nextInt(width);
-        int randomY1 = rand.nextInt(height);
-        int randomX2 = rand.nextInt(width);
-        int randomY2 = rand.nextInt(height);
+        int randomX1 = rand.nextInt(size);
+        int randomY1 = rand.nextInt(size);
+        int randomX2 = rand.nextInt(size);
+        int randomY2 = rand.nextInt(size);
         while (((randomX1 == randomX2) && (randomY1 == randomY2)) || ((this.cells[randomX1][randomY1] instanceof StreetCell) || (this.cells[randomX2][randomY2] instanceof StreetCell))){
-            randomX1 = rand.nextInt(width);
-            randomY1 = rand.nextInt(height);
-            randomX2 = rand.nextInt(width);
-            randomY2 = rand.nextInt(height);
+            randomX1 = rand.nextInt(size);
+            randomY1 = rand.nextInt(size);
+            randomX2 = rand.nextInt(size);
+            randomY2 = rand.nextInt(size);
 
         }
         this.cells[randomX1][randomY1] = new ContinentalCell(10);

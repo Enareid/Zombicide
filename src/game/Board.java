@@ -5,19 +5,17 @@ import game.Cells.BuildingCell;
 public abstract class Board {
 
     protected Cell[][] cells;
-    protected int width;
-    protected int height;
+    protected int size;
 
 
     /**
      * Build an empty board
      */
     public Board(int size) {
-        this.width = size;
-        this.height = size;
-        this.cells = new Cell[height][width];
-        for (int x = 0; x < height; x++) {
-            for (int y = 0; y < width; y++) {
+        this.size = size;
+        this.cells = new Cell[size][size];
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
                 this.cells[x][y] = new BuildingCell();
             }
         }
@@ -57,17 +55,17 @@ public abstract class Board {
     // on pourrait vérifier un attribut de cell ou autre
     public String toString(){
         //première ligne de "-"
-        String str="-".repeat(width*3+width+1);
-        for (int i=0; i<height; i++){
+        String str="-".repeat(size*3+size+1);
+        for (int i=0; i<size; i++){
             // on itére deux fois pour avoir les deux lignes de chaque cases
             for(int k=0;k<2;k++){
                 //je commence par faire un \n et ajouter la première "porte" aka bordure du plateau
                 str+="\n|";
-                for (int j=0; j<width; j++){
+                for (int j=0; j<size; j++){
                     //ajout des infos de la case
                     str+=this.cells[i][j].toString().substring(k*3,3+k*3);
                     // pour éviter les arrayindexOUB on ajoute une bordure si la case est la dernière
-                    if(j==width-1){
+                    if(j==size-1){
                         str+="|";
                     }
 
@@ -92,12 +90,12 @@ public abstract class Board {
             // ajout de la troisième ligne en dessous des cases qui représente les portes
             str+="\n-";
             //cas pour éviter les ArrayindexOUB : ligne de "-"
-            if(i==height-1){
-                str+="-".repeat(width*3+width);
+            if(i==size-1){
+                str+="-".repeat(size*3+size);
             }
             // si on a une case streetCell et que celle d'en dessous l'est aussi alors on laisse des espaces et pas de bordures
             else{
-                for (int j=0; j<width; j++){
+                for (int j=0; j<size; j++){
                     if(!(this.cells[i][j] instanceof BuildingCell)){
                         if(!(this.cells[i+1][j] instanceof BuildingCell)){
                             str+="   -";
