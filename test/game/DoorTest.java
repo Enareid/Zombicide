@@ -23,4 +23,11 @@ public class DoorTest {
         this.door.unlock();
         assertFalse(this.door.isLocked());
     }
+
+    @Test
+    public void testLock(){
+        this.door.unlock();
+        this.door.lock();
+        assertTrue(this.door.isLocked());
+    }
 }
