@@ -29,4 +29,4 @@ doc: compile
 	javadoc -d doc $(SRC_DIR)/$(PACKAGE_DIR)/*.java
 
 clean:
-	rm -rf $(CLASS_DIR)
+	rm -rf $(CLASS_DIR) doc

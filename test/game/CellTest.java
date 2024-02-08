@@ -54,4 +54,15 @@ public class CellTest {
         }
     }
 
+    @Test
+    public void testRemovePlayer(){
+        try {
+            this.cell.setPlayer(this.player);
+            this.cell.removePlayer(this.player);
+            assertEquals(0, this.cell.getPlayers().size());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
