@@ -76,4 +76,15 @@ public class CellTest {
         }
     }
 
+    @Test
+    public void testRemoveLoot(){
+        try {
+            this.cell.addLoot(this.loot);
+            this.cell.removeLoot(this.loot);
+            assertEquals(0, this.cell.getLoots().size());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
