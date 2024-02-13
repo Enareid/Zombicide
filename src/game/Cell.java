@@ -20,15 +20,9 @@ public class Cell {
      * Builds a new cell.
      */
     public Cell() {
-<<<<<<< HEAD
         this.players = new ArrayList<>(); 
         this.zombies = new ArrayList<>(); 
-        this.loots = new ArrayList<>();
         this.doors = new ArrayList<>();
-=======
-        this.players = new ArrayList<>();
-        this.zombies = new ArrayList<>();
->>>>>>> 473e6098f3dbba111fb45f4c83a5427699f24ebc
         this.canAttack = true;
         for (Direction direction : Direction.values()) {
             this.doors.add(new Door(direction)); // Initialise toutes les portes
