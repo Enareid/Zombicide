@@ -9,6 +9,7 @@ public class Cell {
     protected List<Zombie> zombies;
     protected boolean canAttack;
     protected List<Loot> loots;
+    protected List<Door> doors; // Liste des portes dans la cellule
 
     /**
      * Builds a new cell.
@@ -16,9 +17,14 @@ public class Cell {
     public Cell() {
         this.players = new ArrayList<>(); 
         this.zombies = new ArrayList<>(); 
+        this.loots = new ArrayList<>();
+        this.doors = new ArrayList<>();
         this.canAttack = true;
+        for (Direction direction : Direction.values()) {
+            this.doors.add(new Door(direction)); // Initialise toutes les portes
+        }
     }
-
+    
     /**
      * Returns the player in the cell.
      * @return The player in the cell.
@@ -110,4 +116,31 @@ public class Cell {
         }
     }
 
+     /**
+     * Méthode pour casser une porte dans une direction donnée
+     */
+    public void casserPorte(Direction direction) {
+        for (Door door : doors) {
+            if (door.getDirection() == direction) {
+                door.lock(); // Casse la porte en la verrouillant
+                break;
+            }
+        }
+    }
+
+    /**
+     * Méthode pour vérifier si une porte dans une direction donnée est intacte
+     */
+    public boolean isPorteIntacte(Direction direction) {
+        for (Door door : doors) {
+            if (door.getDirection() == direction) {
+                return door.isLocked();
+            }
+        }
+        return false;
+    }
 }
+
+
+
+

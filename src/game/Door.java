@@ -1,4 +1,5 @@
 package game;
+import game.Direction;
 
 public class Door {
     private boolean isLocked;

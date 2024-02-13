@@ -36,7 +36,11 @@ public abstract class Board {
     }
 
     /**
-     * Sets the cell at the given coordinates.
+     * Définit la cellule aux coordonnées spécifiées.
+     *
+     * @param x    La coordonnée x de la cellule.
+     * @param y    La coordonnée y de la cellule.
+     * @param cell La cellule à définir.
      */
     public void setCell(int x, int y, Cell cell) {
         this.cells[x][y] = cell;
