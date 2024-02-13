@@ -1,5 +1,11 @@
 package game;
 
 public class entity {
-    public entity(){}
+
+    /**
+     * Builds a new entity.
+     */
+    public entity(){
+
+    }
 }

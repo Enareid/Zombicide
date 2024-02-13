@@ -1,12 +1,14 @@
-package game.Celles.BuildingCells;
+package game.Cells.BuildingCells;
 
-import game.Celles.BuildingCell;
+import game.Cells.BuildingCell;
 
 public class ContinentalCell extends BuildingCell{
+
+    /** The number of life points restored */
     protected int lifePointsRestored;
 
     /**
-     * Builds a new continental cell. 
+     * Builds a new continental cell.
      */
     public ContinentalCell(int lifePointsRestored) {
         super();
@@ -20,6 +22,12 @@ public class ContinentalCell extends BuildingCell{
     public void regen() {
         // TODO
     }
+
+
+    /**
+     * Returns the string representation of the cell.
+     * @return the string representation of the cell.
+     */
     public String toString(){
         String str="C";
         if(!this.zombies.isEmpty()){

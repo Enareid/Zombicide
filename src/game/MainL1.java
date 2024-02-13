@@ -1,21 +1,17 @@
 package game;
-import java.util.Scanner;
 
 import game.Boards.ClassicalBoard;
+import java.util.Scanner;
 
 public class MainL1 {
-    
+
     public static void main(String[] args){
         try {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("Entrez la taille du plateau:");
+            int size = scanner.nextInt();
 
-            System.out.print("Entrez la largeur du plateau : ");
-            int width = scanner.nextInt();
-
-            System.out.print("Entrez la hauteur du plateau : ");
-            int height = scanner.nextInt();
-
-            Board board = new ClassicalBoard(width, height);
+            Board board = new ClassicalBoard(size);
             System.out.println(board);
 
             scanner.close();

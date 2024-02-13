@@ -22,8 +22,20 @@ N'oubliez pas d'ajouter les autres membres de votre équipe aux membres du proje
 ## Livrable 1
 
 ### Atteinte des objectifs
+- L'UML pour ce livrable est disponible dans le compte rendu de la semaine 3
+- Le plateau se génére aléatoirement, en respectant les règles du jeu. La taille du plateau est demandé au joueur.
+
+Un Makefile est mis a disposition avec les commandes suivante :
+- `make` qui va lancer le "jeu" en créeant automatiquement le .jar 
+- `make compile` : qui va compiler toutes les classes présentes
+- `make jar` : qui va crée le jar
+- `make run` : qui va exécuté le jar 
+- `make test` : qui va exécuté les test
+- `make doc` : qui va généré la doc
+- `make clean` : supprimant les dossier doc et classes
 
 ### Difficultés restant à résoudre
+- Théoriquement nous devrons encore touché a la fonction `Board` lorsque'on aura réussi a implémenté les portes
 
 ## Livrable 2
 
@@ -125,6 +137,15 @@ Voici à quoi ressemble notre diagramme à la fin de cette troisième semaine :
 
 
 ## Semaine 4
+
+Lors de la séance de la quatrième semaine, nous avons premièrement réglé trois problème concernant la génération de notre plateau. 
+- En effet, parfois, la création du plateau était infinie, cela était dû au code de la méthode `initBoard()` qui ne vérifiait si deux coordonnées aléatoires étaient des StreetCell, lorsque c'est le cas, on rengrenait deux coordonnées aléatoires, l'erreur venait sur le fait qu'on ne changeait pas les deux coordonnée, mais une seule.
+- Le deuxième problème était du a une modification de la méthode `random.nextInt()` d'une version de Java a une autre. En effet sur nos machines, on utilisait nextInt avec deux arguments, ce qui n'existe pas sur les machines de TP, on a dû revoir notre code pour fixer ce problème.
+- Le dernier problème était dû au plateau rectangulaire, ce problème étant plus complexe avec notre implémentation, on a pris la liberté d'empêcher les plateaux rectangulaires pour ne permettre que des plateaux carré.
+
+Après avoir réglé ces problèmes, nous avons de nouveau réfléchi à l'implémentation des portes. Avec deux idées majeures :
+1. Inclure des portes EST, OUEST pour toutes les coordonnées dont l'abscisse est paire. Inclure des portes NORD, SUD pour toutes les coordonnées dont l'ordonnée est paire. Avec cette implémentation pour passer d'une pièce à une autre, on vérifie si notre pièce possède une porte vers l'autre pièce ou inversement.
+2. Inclure des portes vers les points cardinaux dans toutes les cases building. L'implémentation d'une méthode (`canMove()`) par exemple, renvoyant toujours True si la case est une StreetCell. Cette méthode renvoie True ou False en fonction de l'ouverture ou non de la porte dans la case BuildingCell. Pour se déplacer d'une case a une autre, on vérifie si la méthode `canMove()` de la case de départ est True puis la méthode `canMove()` de la case d'arrivé est True.
 
 ## Semaine 5
 

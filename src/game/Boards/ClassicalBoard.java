@@ -1,20 +1,24 @@
 package game.Boards;
 
 import java.util.Random;
-import java.lang.Math;
 
 import game.Board;
-import game.Celles.StreetCell;
-import game.Celles.BuildingCells.ContinentalCell;
-import game.Celles.BuildingCells.DrugStoreCell;
+import game.Cells.StreetCell;
+import game.Cells.BuildingCells.ContinentalCell;
+import game.Cells.BuildingCells.DrugStoreCell;
 
+<<<<<<< HEAD
 public class ClassicalBoard extends Board {
     
+=======
+public class ClassicalBoard extends Board{
+
+>>>>>>> 473e6098f3dbba111fb45f4c83a5427699f24ebc
     /**
      * Build an empty board
      */
-    public ClassicalBoard(int width, int height) {
-        super(width, height);
+    public ClassicalBoard(int size) {
+        super(size);
     }
 
     /**
@@ -22,15 +26,27 @@ public class ClassicalBoard extends Board {
      */
     public void fillBoard(int x1, int y1, int x2, int y2) {
         if ((x2 - x1) >= 4 && (y2 - y1) >= 4) {
+<<<<<<< HEAD
             Random rand = new Random();
             int newX = rand.nextInt(x2 - x1 - 2) + x1 + 1;
             int newY = rand.nextInt(y2 - y1 - 2) + y1 + 1;
+=======
+            Random rand= new Random();
+            // nombre random entre 0 et x2-x1-2 inclus + ajout de x1+2 = nombre entre x1+2 et x2-1 exclus
+            int newX = rand.nextInt((x2-x1-3))+x1+2;
+            int newY= rand.nextInt((y2-y1-3))+y1+2;
+>>>>>>> 473e6098f3dbba111fb45f4c83a5427699f24ebc
             for (int y = y1; y <= y2; y++) {
                 this.cells[newX][y] = new StreetCell();
             }
             for (int x = x1; x <= x2; x++) {
+<<<<<<< HEAD
                 this.cells[x][newY] = new StreetCell();
             }           
+=======
+                this.cells[x][newY]=new StreetCell();
+            }
+>>>>>>> 473e6098f3dbba111fb45f4c83a5427699f24ebc
             // récursivité
             // carré haut-gauche
             fillBoard(x1, y1, newX - 1, newY - 1);
@@ -40,10 +56,12 @@ public class ClassicalBoard extends Board {
             fillBoard(newX + 1, y1, x2, newY - 1);
             // carré bas-droite
             fillBoard(newX + 1, newY + 1, x2, y2);
+
         }
     }
 
     /**
+<<<<<<< HEAD
      * Initialize the board with cells
      */
     public void initBoard(){
@@ -62,4 +80,26 @@ public class ClassicalBoard extends Board {
         this.cells[randomX1][randomY1] = new ContinentalCell(10);
         this.cells[randomX2][randomY2] = new DrugStoreCell();
     }    
+=======
+     * Initialize the board with StreetCell, ContinentalCell and DrugStoreCell
+     */
+    public void initBoard(){
+        fillBoard(0,0,size-1,size-1);
+        Random rand = new Random();
+        int randomX1 = rand.nextInt(size);
+        int randomY1 = rand.nextInt(size);
+        int randomX2 = rand.nextInt(size);
+        int randomY2 = rand.nextInt(size);
+        while (((randomX1 == randomX2) && (randomY1 == randomY2)) || ((this.cells[randomX1][randomY1] instanceof StreetCell) || (this.cells[randomX2][randomY2] instanceof StreetCell))){
+            randomX1 = rand.nextInt(size);
+            randomY1 = rand.nextInt(size);
+            randomX2 = rand.nextInt(size);
+            randomY2 = rand.nextInt(size);
+
+        }
+        this.cells[randomX1][randomY1] = new ContinentalCell(10);
+        this.cells[randomX2][randomY2] = new DrugStoreCell();
+    }
+
+>>>>>>> 473e6098f3dbba111fb45f4c83a5427699f24ebc
 }

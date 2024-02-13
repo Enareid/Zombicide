@@ -5,9 +5,14 @@ import java.util.*;
 import game.Entities.*;
 
 public class Cell {
+
+    /** The players in the cell */
     protected List<Player> players;
+    /** The zombies in the cell */
     protected List<Zombie> zombies;
+    /** If the player can attack in this cell */
     protected boolean canAttack;
+    /** The loots in the cell */
     protected List<Loot> loots;
     protected List<Door> doors; // Liste des portes dans la cellule
 
@@ -15,10 +20,15 @@ public class Cell {
      * Builds a new cell.
      */
     public Cell() {
+<<<<<<< HEAD
         this.players = new ArrayList<>(); 
         this.zombies = new ArrayList<>(); 
         this.loots = new ArrayList<>();
         this.doors = new ArrayList<>();
+=======
+        this.players = new ArrayList<>();
+        this.zombies = new ArrayList<>();
+>>>>>>> 473e6098f3dbba111fb45f4c83a5427699f24ebc
         this.canAttack = true;
         for (Direction direction : Direction.values()) {
             this.doors.add(new Door(direction)); // Initialise toutes les portes
@@ -63,7 +73,7 @@ public class Cell {
     }
 
     /**
-     * Sets the zombie in the cell. 
+     * Sets the zombie in the cell.
      * @param zombie The zombie to set.
      */
     public void setZombie(Zombie zombie)throws Exception{
@@ -94,7 +104,7 @@ public class Cell {
     }
 
     /**
-     * Removes a zombie form the cell. 
+     * Removes a zombie form the cell.
      */
     public void removeZombie(Zombie zombie) throws Exception{
         if (!this.zombies.remove(zombie)){

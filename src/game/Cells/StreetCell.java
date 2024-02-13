@@ -1,15 +1,17 @@
-package game.Celles;
+package game.Cells;
 
 import game.*;
 import game.Entities.*;
 
 
 public class StreetCell extends Cell{
+
+    /** If the cell can spawn a zombie */
     protected boolean canSpawn;
 
 
     /**
-     * Builds a new street cell. 
+     * Builds a new street cell.
      */
     public StreetCell() {
         super();
@@ -17,22 +19,22 @@ public class StreetCell extends Cell{
     }
 
     /**
-     * Returns if the cell can spawn a zombie. 
-     * @return if the cell cans spawn a zombie. 
+     * Returns if the cell can spawn a zombie.
+     * @return if the cell cans spawn a zombie.
      */
     public boolean getCanSpawn() {
         return this.canSpawn;
     }
 
     /**
-     * Allows the cell to spawn a zombie. 
+     * Allows the cell to spawn a zombie.
      */
     public void allowSpawn() {
         this.canSpawn = true;
     }
-    
+
     /**
-     * Disallows the cell to spawn a zombie. 
+     * Disallows the cell to spawn a zombie.
      */
     public void disallowSpawn() {
         this.canSpawn = false;
@@ -45,6 +47,10 @@ public class StreetCell extends Cell{
         this.zombies.add(new Zombie());
     }
 
+    /**
+     * Returns the string representation of the cell.
+     * @return the string representation of the cell.
+     */
     public String toString(){
         String str="S";
         if(!this.zombies.isEmpty()){
@@ -59,5 +65,5 @@ public class StreetCell extends Cell{
         }
         return str;
     }
-    
+
 }

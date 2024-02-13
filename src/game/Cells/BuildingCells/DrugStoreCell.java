@@ -1,16 +1,20 @@
-package game.Celles.BuildingCells;
+package game.Cells.BuildingCells;
 
-import game.Celles.BuildingCell;
+import game.Cells.BuildingCell;
 
 public class DrugStoreCell extends BuildingCell{
 
     /**
-     * Builds a new drug store cell. 
+     * Builds a new drug store cell.
      */
     public DrugStoreCell() {
         super();
     }
 
+    /**
+     * Returns the string representation of the cell.
+     * @return the string representation of the cell.
+     */
     public String toString(){
         String str="D";
         if(!this.zombies.isEmpty()){
