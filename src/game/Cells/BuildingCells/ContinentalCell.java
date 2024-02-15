@@ -9,6 +9,7 @@ public class ContinentalCell extends BuildingCell{
 
     /**
      * Builds a new continental cell.
+     * @param lifePointsRestored the number of life points restored.
      */
     public ContinentalCell(int lifePointsRestored) {
         super();

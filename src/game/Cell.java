@@ -56,6 +56,7 @@ public class Cell {
     /**
      * Sets the player in the cell.
      * @param player The player to set.
+     * @throws Exception if the player is already in the cell.
      */
     public void setPlayer(Player player) throws Exception{
         if (!this.players.contains(player)){
@@ -69,6 +70,7 @@ public class Cell {
     /**
      * Sets the zombie in the cell.
      * @param zombie The zombie to set.
+     * @throws Exception if the zombie is already in the cell.
      */
     public void setZombie(Zombie zombie)throws Exception{
         if (!this.zombies.contains(zombie)){
@@ -89,6 +91,8 @@ public class Cell {
 
     /**
      * Removes a player from the cell.
+     * @param player The player to remove.
+     * @throws Exception if the player is not in the cell.
      */
     public void removePlayer(Player player) throws Exception {
         if (!this.players.remove(player)){
@@ -99,6 +103,8 @@ public class Cell {
 
     /**
      * Removes a zombie form the cell.
+     * @param zombie The zombie to remove.
+     * @throws Exception if the zombie is not in the cell.
      */
     public void removeZombie(Zombie zombie) throws Exception{
         if (!this.zombies.remove(zombie)){
@@ -111,6 +117,7 @@ public class Cell {
      * Removes a loot from the list of loots in the cell if the loot is in the list.
      * else, throws an exception.
      * @param loot The loot to remove.
+     * @throws Exception if the loot is not in the cell.
      */
     public void removeLoot(Loot loot) throws Exception {
         if (this.loots.contains(loot)) {

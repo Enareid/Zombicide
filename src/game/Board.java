@@ -12,6 +12,7 @@ public abstract class Board {
 
     /**
      * Build an empty board
+     * @param size the size of the board
      */
     public Board(int size) {
         this.size = size;
