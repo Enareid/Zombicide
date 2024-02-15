@@ -1,10 +1,10 @@
 package game;
 
-public class Loot {
+public class Equipement {
 
     /**
      * Builds a new loot.
      */
-    public Loot(){}
+    public Equipement(){}
 
 }

@@ -12,14 +12,14 @@ public class CellTest {
     private BuildingCell cell;
     private Player player;
     private Zombie zombie;
-    private Loot loot;
+    private Equipement equipement;
 
     @BeforeEach
     public void before(){
         this.cell = new BuildingCell();
         this.player = new Player();
         this.zombie = new Zombie();
-        this.loot = new Loot();
+        this.equipement = new Equipement();
     }
 
     @Test
@@ -45,8 +45,8 @@ public class CellTest {
     @Test
     public void testGetLoots(){
         try {
-            this.cell.addLoot(this.loot);
-            assertEquals(this.loot, this.cell.getLoots().get(0));
+            this.cell.addEquipement(this.equipement);
+            assertEquals(this.equipement, this.cell.getEquipements().get(0));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -77,9 +77,9 @@ public class CellTest {
     @Test
     public void testRemoveLoot(){
         try {
-            this.cell.addLoot(this.loot);
-            this.cell.removeLoot(this.loot);
-            assertEquals(0, this.cell.getLoots().size());
+            this.cell.addEquipement(this.equipement);
+            this.cell.removeEquipement(this.equipement);
+            assertEquals(0, this.cell.getEquipements().size());
         } catch (Exception e) {
             e.printStackTrace();
         }

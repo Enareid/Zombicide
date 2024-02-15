@@ -13,8 +13,12 @@ public abstract class Board {
     /**
      * Build an empty board
      * @param size the size of the board
+     * @throws IllegalArgumentException if the size is less than 5
      */
-    public Board(int size) {
+    public Board(int size) throws IllegalArgumentException{
+        if (size < 5) {
+            throw new IllegalArgumentException("The size of the board must be at least 4");
+        }
         this.size = size;
         this.cells = new Cell[size][size];
         for (int x = 0; x < size; x++) {

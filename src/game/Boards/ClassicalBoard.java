@@ -13,7 +13,7 @@ public class ClassicalBoard extends Board{
      * Build an empty board
      * @param size the size of the board
      */
-    public ClassicalBoard(int size) {
+    public ClassicalBoard(int size) throws IllegalArgumentException{
         super(size);
     }
 

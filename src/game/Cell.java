@@ -13,7 +13,7 @@ public class Cell {
     /** If the player can attack in this cell */
     protected boolean canAttack;
     /** The loots in the cell */
-    protected List<Loot> loots;
+    protected List<Equipement> equipements;
     protected List<Door> doors; // Liste des portes dans la cellule
 
     /**
@@ -49,8 +49,8 @@ public class Cell {
      * Returns the loots in the cell.
      * @return The loots in the cell.
      */
-    public List<Loot> getLoots() {
-        return this.loots;
+    public List<Equipement> getEquipements() {
+        return this.equipements;
     }
 
     /**
@@ -85,8 +85,8 @@ public class Cell {
      * Adds a loot in the cell
      * @param loot The loot to add.
      */
-    public void addLoot(Loot loot) {
-        this.loots.add(loot);
+    public void addEquipement(Equipement equipement) {
+        this.equipements.add(equipement);
     }
 
     /**
@@ -119,9 +119,9 @@ public class Cell {
      * @param loot The loot to remove.
      * @throws Exception if the loot is not in the cell.
      */
-    public void removeLoot(Loot loot) throws Exception {
-        if (this.loots.contains(loot)) {
-            this.loots.remove(loot);
+    public void removeEquipement(Equipement equipement) throws Exception {
+        if (this.equipements.contains(equipement)) {
+            this.equipements.remove(equipement);
         } else {
             throw new Exception("The loot is not in the cell.");
         }
