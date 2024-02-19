@@ -149,6 +149,33 @@ Après avoir réglé ces problèmes, nous avons de nouveau réfléchi à l'impl�
 
 ## Semaine 5
 
+Après avoir eu un retour sur notre premier livrable, nous avons réglé les petits problèmes de conception (interdiction de faire un plateau de taille inférieur à 5). Une fois cela fait nous avons réfléchi sur l'implémentation des acteurs et des équipement sans pour l'instant réfléchir aux méthodes utiles.
+Nous avons donc :
+- Une classe mère `Equipement`
+    - Une sous classe `Weapon`
+        1. Une sous classe `Crowbar`
+        2. Une sous classe `Gun`
+        3. Une sous classe `Rifle`
+        4. Une sous classe `Axe`
+        5. Une sous classe `Chainsaw`
+    - Une sous classe `Item`
+        1. Une sous classe `HealingVial`
+        2. Une sous classe `MasterKey`
+        3. Une sous classe `FirstAidKit`
+        4. Une sous classe `Map`
+        5. Une sous classe `InfraredGlasses`
+- Une classe mère `Entities`
+    - Une sous classe `Zombie`
+        1. Une sous classe `Walkers`
+        2. Une sous classe `Runners`
+        3. Une sous classe `Broom`
+        4. Une sous classe `Abomination`
+    - Une sous classe `Player`
+        1. Une sous classe `Snooper`
+        2. Une sous classe `Lucky`
+        3. Une sous classe `Fighter`
+        4. Une sous classe `Healer`
+
 ## Semaine 6
 
 ## Semaine 7
