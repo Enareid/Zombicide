@@ -176,6 +176,9 @@ Nous avons donc :
         3. Une sous classe `Fighter`
         4. Une sous classe `Healer`
 
+Voici l'UML à la fin de cette semain :
+![UMLS5](Images/UMLS5.png "L'UML lors de la cinquième semaine")
+
 ## Semaine 6
 
 ## Semaine 7
