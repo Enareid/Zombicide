@@ -14,7 +14,7 @@ public abstract class Entity {
     }
 
     public void moveNorth() throws Exception{
-        if (this.cell.getcoord()[0]==0 || this.cell.getcoord()[0]){
+        if (this.cell.getcoord()[0]==0 || this.cell.getcoord()[0]==0){
             throw new Exception("C'est pas légal");
         }
 
