@@ -1,8 +1,8 @@
 package game.Entities;
 
-import game.entity;
+import game.Entity;
 
-public abstract class Zombie extends entity {
+public abstract class Zombie extends Entity {
 
     /**
      * Builds a new zombie.

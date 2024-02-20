@@ -1,11 +1,11 @@
 package game;
 
-public abstract class entity {
+public abstract class Entity {
 
     /**
      * Builds a new entity.
      */
-    public entity(){
+    public Entity(){
 
     }
 }
