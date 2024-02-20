@@ -1,10 +1,12 @@
 package game;
 
-public class Equipement {
+public abstract class Equipement {
 
     /**
      * Builds a new loot.
      */
-    public Equipement(){}
+    public Equipement(){
+
+    }
 
 }

@@ -2,7 +2,7 @@ package game.Entities;
 
 import game.entity;
 
-public class Zombie extends entity {
+public abstract class Zombie extends entity {
 
     /**
      * Builds a new zombie.

@@ -2,7 +2,8 @@ package game.Entities;
 
 import game.entity;
 
-public class Player extends entity{
+public abstract class Player extends entity{
+    protected List<Equipement> bag;
 
     /**
      * Builds a new player.
