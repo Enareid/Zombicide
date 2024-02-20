@@ -7,8 +7,8 @@ public class DrugStoreCell extends BuildingCell{
     /**
      * Builds a new drug store cell.
      */
-    public DrugStoreCell() {
-        super();
+    public DrugStoreCell(int x, int y) {
+        super(x,y);
     }
 
     /**

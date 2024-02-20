@@ -15,15 +15,19 @@ public class Cell {
     /** The loots in the cell */
     protected List<Equipement> equipements;
     protected List<Door> doors; // Liste des portes dans la cellule
+    protected int[] coord;
 
     /**
      * Builds a new cell.
      */
-    public Cell() {
+    public Cell(int x,int y) {
         this.players = new ArrayList<>(); 
         this.zombies = new ArrayList<>(); 
         this.doors = new ArrayList<>();
         this.canAttack = true;
+        this.coord=new int[2];
+        this.coord[0]=x;
+        this.coord[1]=y;
         for (Direction direction : Direction.values()) {
             this.doors.add(new Door(direction)); // Initialise toutes les portes
         }

@@ -31,10 +31,10 @@ public class ClassicalBoard extends Board{
             int newX = rand.nextInt((x2-x1-3))+x1+2;
             int newY= rand.nextInt((y2-y1-3))+y1+2;
             for (int y = y1; y <= y2; y++) {
-                this.cells[newX][y] = new StreetCell();
+                this.cells[newX][y] = new StreetCell(newX,y);
             }
             for (int x = x1; x <= x2; x++) {
-                this.cells[x][newY]=new StreetCell();
+                this.cells[x][newY]=new StreetCell(x,newY);
             }
             // récursivité
             // carré haut-gauche
@@ -66,8 +66,8 @@ public class ClassicalBoard extends Board{
             randomY2 = rand.nextInt(size);
 
         }
-        this.cells[randomX1][randomY1] = new ContinentalCell(10);
-        this.cells[randomX2][randomY2] = new DrugStoreCell();
+        this.cells[randomX1][randomY1] = new ContinentalCell(10,randomX1,randomY1);
+        this.cells[randomX2][randomY2] = new DrugStoreCell(randomX2,randomY2);
     }
 
 }

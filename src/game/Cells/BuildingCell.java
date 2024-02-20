@@ -11,8 +11,8 @@ public class BuildingCell extends Cell{
     /**
      * Builds a new building cell.
      */
-    public BuildingCell() {
-        super();
+    public BuildingCell(int x, int y) {
+        super(x,y);
         this.doors = new HashMap<>();
     }
 

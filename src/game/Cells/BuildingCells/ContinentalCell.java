@@ -11,8 +11,8 @@ public class ContinentalCell extends BuildingCell{
      * Builds a new continental cell.
      * @param lifePointsRestored the number of life points restored.
      */
-    public ContinentalCell(int lifePointsRestored) {
-        super();
+    public ContinentalCell(int lifePointsRestored,int x, int y) {
+        super(x,y);
         this.lifePointsRestored = lifePointsRestored;
         this.canAttack = false;
     }
