@@ -1,20 +1,17 @@
 package game;
-import game.Direction;
 
 public class Door {
 
     /** If the door is locked */
     private boolean isLocked;
-    /** The direction of the door */
-    private Direction direction;
+
 
     /**
      * Builds a new door.
      * @param direction the direction of the door.
      */
-    public Door(Direction direction) {
+    public Door() {
         this.isLocked = true;
-        this.direction = direction;
     }
 
     /**
@@ -39,11 +36,4 @@ public class Door {
         return this.isLocked;
     }
 
-    /**
-     * Returns the direction of the door.
-     * @return the direction of the door.
-     */
-    public Direction getDirection() {
-        return this.direction;
-    }
 }

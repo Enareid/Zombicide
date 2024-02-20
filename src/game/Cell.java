@@ -14,7 +14,7 @@ public class Cell {
     protected boolean canAttack;
     /** The loots in the cell */
     protected List<Equipement> equipements;
-    protected List<Door> doors; // Liste des portes dans la cellule
+    protected Map<Direction,Door> doors; // Liste des portes dans la cellule
     protected int[] coord;
 
     /**
@@ -23,13 +23,13 @@ public class Cell {
     public Cell(int x,int y) {
         this.players = new ArrayList<>(); 
         this.zombies = new ArrayList<>(); 
-        this.doors = new ArrayList<>();
+        this.doors = new HashMap<>();
         this.canAttack = true;
         this.coord=new int[2];
         this.coord[0]=x;
         this.coord[1]=y;
         for (Direction direction : Direction.values()) {
-            this.doors.add(new Door(direction)); // Initialise toutes les portes
+            this.doors.put(direction,new Door()); // Initialise toutes les portes
         }
     }
     
@@ -39,6 +39,10 @@ public class Cell {
      */
     public List<Player> getPlayers() {
         return this.players;
+    }
+
+    public int[] getcoord(){
+        return this.coord;
     }
 
     /**
@@ -132,27 +136,21 @@ public class Cell {
     }
 
      /**
-     * Méthode pour casser une porte dans une direction donnée
+     * Méthode pour ouvrir une porte dans une direction donnée
      */
-    public void casserPorte(Direction direction) {
-        for (Door door : doors) {
-            if (door.getDirection() == direction) {
-                door.lock(); // Casse la porte en la verrouillant
-                break;
+    public void openDoor(Direction direction) {
+            this.doors.get(direction).unlock(); // Casse la porte en l'ouvrant
             }
-        }
-    }
-
+        
     /**
      * Méthode pour vérifier si une porte dans une direction donnée est intacte
      */
     public boolean isPorteIntacte(Direction direction) {
-        for (Door door : doors) {
-            if (door.getDirection() == direction) {
-                return door.isLocked();
-            }
-        }
-        return false;
+        return this.doors.get(direction).isLocked();
+    }
+
+    public Map<Direction,Door> getdoor(){
+        return this.doors;
     }
 }
 

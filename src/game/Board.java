@@ -23,7 +23,7 @@ public abstract class Board {
         this.cells = new Cell[size][size];
         for (int x = 0; x < size; x++) {
             for (int y = 0; y < size; y++) {
-                this.cells[x][y] = new BuildingCell();
+                this.cells[x][y] = new BuildingCell(x,y);
             }
         }
         initBoard();
