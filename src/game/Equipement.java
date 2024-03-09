@@ -1,12 +1,21 @@
 package game;
 
-public abstract class Equipement {
+public abstract class Equipement <E>{
 
     /**
      * Builds a new loot.
      */
-    public Equipement(){
-
-    }
+    protected boolean isUsed ;
+	
+	public Equipement() {
+		this.isUsed = false;
+	}
+	
+	public boolean isUsed() {
+		return this.isUsed;
+	}
+	public void use() {
+		this.isUsed = true;
+	}
 
 }
