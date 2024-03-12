@@ -4,14 +4,16 @@ public class Door {
 
     /** If the door is locked */
     private boolean isLocked;
+    private Direction direction;
 
 
     /**
      * Builds a new door.
      * @param direction the direction of the door.
      */
-    public Door() {
+    public Door(Direction direction) {
         this.isLocked = true;
+        this.direction = direction;
     }
 
     /**
@@ -34,6 +36,10 @@ public class Door {
      */
     public boolean isLocked() {
         return this.isLocked;
+    }
+
+    public Direction getDirection(){
+        return this.direction;
     }
 
 }

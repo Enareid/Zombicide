@@ -1,6 +1,6 @@
 package game;
 
-public abstract class Equipement <E>{
+public abstract class Equipement{
 
     /**
      * Builds a new loot.

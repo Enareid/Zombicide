@@ -4,6 +4,9 @@ import org.junit.jupiter.api.*;
 
 import game.Cells.BuildingCell;
 import game.Entities.*;
+import game.Entities.Players.*;
+import game.Entities.Zombies.*;
+import game.Equipements.Items.MasterKey;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,10 +19,10 @@ public class CellTest {
 
     @BeforeEach
     public void before(){
-        this.cell = new BuildingCell();
-        this.player = new Player();
-        this.zombie = new Zombie();
-        this.equipement = new Equipement();
+        this.cell = new BuildingCell(0,0);
+        this.player = new Fighter(10, this.cell, 1, 2);
+        this.zombie = new Walker(10, this.cell);
+        this.equipement = new MasterKey();
     }
 
     @Test

@@ -19,7 +19,7 @@ public class BoardTest {
 
     @Test
     public void testGetAndSetCell(){
-        Cell cell = new BuildingCell();
+        Cell cell = new BuildingCell(0,0);
         this.board.setCell(0, 0, cell);
         assertEquals(cell, this.board.getCell(0, 0));
     }

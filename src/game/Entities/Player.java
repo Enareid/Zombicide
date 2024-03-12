@@ -21,36 +21,80 @@ public abstract class Player extends Entity{
         this.bag = new ArrayList<>();
     }
     
+	/**
+	 * Gets the action points of the player.
+	 * @return the action points of the player.
+	 */
     public int getActionPoints() {
 		return this.actionPoints;
 	}
     
+	/**
+	 * Sets the action points of the player.
+	 * @param actionPoints the action points of the player.
+	 */
 	public void setActionPoints(int actionPoints) {
 		this.actionPoints = actionPoints;
 	}
     
+	/**
+	 * Gets the expertise level of the player.
+	 * @return the expertise level of the player.
+	 */
 	public int getExpertiseLevel() {
 		return this.expertiseLevel;
 	}
 
+	/**
+	 * Sets the expertise level of the player.
+	 * @param expertiseLevel the expertise level of the player.
+	 */
 	public void setExpertiseLevel(int expertiseLevel) {
 		this.expertiseLevel = expertiseLevel;
 	}
 
+	/**
+	 * Gets the life level of the player.
+	 * @return the life level of the player.
+	 */
     public int getLifeLevel() {
 		return this.Lifepoints;
 	}
    
+	/**
+	 * Sets the life level of the player.
+	 * @param Lifepoints the life level of the player.
+	 */
 	public void setLifeLevel(int Lifepoints) {
 		this.Lifepoints = Lifepoints;
 	}
     
+	/**
+	 * Gets the bag of the player.
+	 * @return the bag of the player.
+	 */
 	public List<Equipement> getEquipments() {
 		return this.bag;
 	}
-    public void setEquipment(Equipement bag) {
-		this.bag.add(bag);
+
+	/**
+	 * Adds an equipment to the bag of the player.
+	 * @param Equipement the equipment to add to the bag of the player.
+	 */
+    public void setEquipment(Equipement Equipement) {
+		this.bag.add(Equipement);
 	}
+
+	public void removeEquipement(Equipement Equipement) {
+		if (this.bag.contains(Equipement)) {
+			this.bag.remove(Equipement);
+		}
+	}
+
+	/**
+	 * Get the maximum life level of the player.
+	 * @return the maximum life level of the player.
+	 */
     public int getMaxLifeLevel() {
 		return MAX_LIFE_LEVEL;
 	}

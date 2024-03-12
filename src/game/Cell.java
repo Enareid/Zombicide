@@ -29,7 +29,7 @@ public class Cell {
         this.coord[0]=x;
         this.coord[1]=y;
         for (Direction direction : Direction.values()) {
-            this.doors.put(direction,new Door()); // Initialise toutes les portes
+            this.doors.put(direction,new Door(direction)); // Initialise toutes les portes
         }
     }
     
