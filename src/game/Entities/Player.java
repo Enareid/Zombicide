@@ -22,7 +22,7 @@ public abstract class Player extends Entity{
     }
     
     public int getActionPoints() {
-		return actionPoints;
+		return this.actionPoints;
 	}
     
 	public void setActionPoints(int actionPoints) {
@@ -30,7 +30,7 @@ public abstract class Player extends Entity{
 	}
     
 	public int getExpertiseLevel() {
-		return expertiseLevel;
+		return this.expertiseLevel;
 	}
 
 	public void setExpertiseLevel(int expertiseLevel) {
@@ -38,7 +38,7 @@ public abstract class Player extends Entity{
 	}
 
     public int getLifeLevel() {
-		return Lifepoints;
+		return this.Lifepoints;
 	}
    
 	public void setLifeLevel(int Lifepoints) {
@@ -46,7 +46,7 @@ public abstract class Player extends Entity{
 	}
     
 	public List<Equipement> getEquipments() {
-		return bag;
+		return this.bag;
 	}
     public void setEquipment(Equipement bag) {
 		this.bag.add(bag);

@@ -2,7 +2,7 @@ package game.Cells;
 
 import game.*;
 import game.Entities.*;
-import game.Entities.Zombies.Walker;
+import game.Entities.Zombies.*;
 
 
 public class StreetCell extends Cell{
@@ -41,11 +41,14 @@ public class StreetCell extends Cell{
         this.canSpawn = false;
     }
 
+
     /**
      * spawns a zombie in the cell.
      */
     public void spawnZombie() {
-        this.zombies.add(new Walker());
+        if(this.canSpawn){
+            this.zombies.add(new Walker(1,this));
+        }
     }
 
     /**
