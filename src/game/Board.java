@@ -1,6 +1,8 @@
 package game;
 
 import game.Cells.BuildingCell;
+import java.util.*;
+import game.Entities.*;
 
 public abstract class Board {
 
@@ -8,14 +10,16 @@ public abstract class Board {
     protected Cell[][] cells;
     /** The size of the board */
     protected int size;
+    /** The Player in the board */
+    protected List<Player> players;
 
 
     /**
      * Build an empty board
      * @param size the size of the board
-     * @throws IllegalArgumentException if the size is less than 5
+     * @throws Exception 
      */
-    public Board(int size) throws IllegalArgumentException{
+    public Board(int size, List<Player> players) throws Exception{
         if (size < 5) {
             throw new IllegalArgumentException("The size of the board must be at least 4");
         }
@@ -26,7 +30,8 @@ public abstract class Board {
                 this.cells[x][y] = new BuildingCell(x,y);
             }
         }
-        initBoard();
+        this.players = players;
+        initBoard(players);
     }
 
 
@@ -51,10 +56,10 @@ public abstract class Board {
         this.cells[x][y] = cell;
     }
 
-    protected void fillBoard(int x1, int y1, int x2, int y2) {
+    protected void fillBoard(int x1, int y1, int x2, int y2, boolean firstCall, List<Player> players) throws Exception {
     }
 
-    protected void initBoard(){
+    protected void initBoard(List<Player> players) throws Exception {
     }
 
 
