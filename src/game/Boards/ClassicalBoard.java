@@ -37,10 +37,10 @@ public class ClassicalBoard extends Board{
                 this.cells[x][newY]=new StreetCell(x,newY);
             }
             if (firstCall){
-                StreetCell cell1 = (StreetCell)this.cells[newX][y1];
-                StreetCell cell2 = (StreetCell)this.cells[newX][y2];
-                cell1.allowSpawn();
-                cell2.allowSpawn();
+                ((StreetCell) this.cells[newX][y1]).allowSpawn();
+                ((StreetCell) this.cells[newX][y2]).allowSpawn();
+                ((StreetCell) this.cells[x1][newY]).allowSpawn();
+                ((StreetCell) this.cells[x2][newY]).allowSpawn();
             }
             // récursivité
             // carré haut-gauche

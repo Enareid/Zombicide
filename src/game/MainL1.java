@@ -22,6 +22,7 @@ public class MainL1 {
                 }
                 System.out.println(board);
                 scanner.close();
+                break;
             }
             catch(Exception e) {
                 System.out.println(e);
