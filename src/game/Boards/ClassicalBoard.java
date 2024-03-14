@@ -48,6 +48,7 @@ public class ClassicalBoard extends Board{
                 // prendre la case au centre des streetCell et y rajouter les joueurs
                 for(int i = 0; i < players.size(); i++){
                     ((StreetCell) this.cells[newX][newY]).setPlayer(players.get(i));
+                    players.get(i).setCell(this.cells[newX][newY]);
                 }
             }
             // récursivité

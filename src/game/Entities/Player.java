@@ -9,6 +9,7 @@ public abstract class Player extends Entity{
     private int actionPoints;
 	private int expertiseLevel;
     static final int MAX_LIFE_LEVEL = 5;
+	private Cell cell;
 
 
     /**
@@ -19,6 +20,7 @@ public abstract class Player extends Entity{
         this.expertiseLevel = expertiseLevel;
         this.actionPoints = actionPoints;
         this.bag = new ArrayList<>();
+		this.cell = cell;
     }
     
 	/**
@@ -27,6 +29,14 @@ public abstract class Player extends Entity{
 	 */
     public int getActionPoints() {
 		return this.actionPoints;
+	}
+
+	public Cell getCell() {
+		return this.cell;
+	}
+
+	public void setCell(Cell cell) {
+		this.cell = cell;
 	}
     
 	/**
@@ -98,7 +108,5 @@ public abstract class Player extends Entity{
     public int getMaxLifeLevel() {
 		return MAX_LIFE_LEVEL;
 	}
-
-
 
 }

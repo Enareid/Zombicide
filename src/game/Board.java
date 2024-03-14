@@ -130,7 +130,9 @@ public abstract class Board {
         return str;
     }
 
-
+    public void moveNorth(){
+        
+    }
 
 }
 
