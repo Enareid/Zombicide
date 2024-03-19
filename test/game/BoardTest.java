@@ -2,8 +2,12 @@ package game;
 
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import game.Boards.*;
 import game.Cells.BuildingCell;
+import game.Entities.Player;
+import game.Entities.Players.Fighter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,8 +17,11 @@ public class BoardTest {
     private Board board;
 
     @BeforeEach
-    public void before(){
-        this.board = new ClassicalBoard(5);
+    public void before() throws Exception{
+        List<Player> players = new ArrayList<Player>();
+        Player player = new Fighter(5,null,0,0);
+        players.add(player);
+        this.board = new ClassicalBoard(5,players);
     }
 
     @Test
