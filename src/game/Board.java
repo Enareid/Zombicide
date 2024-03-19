@@ -23,7 +23,7 @@ public abstract class Board {
      */
     public Board(int size, List<Player> players) throws Exception{
         if (size < 5) {
-            throw new IllegalArgumentException("The size of the board must be at least 4");
+            throw new IllegalArgumentException("The size of the board must be at least 5");
         }
         this.size = size;
         this.cells = new Cell[size][size];
@@ -132,9 +132,73 @@ public abstract class Board {
     }
 
 
-    public void moveNorth(){
-        
+    public void moveNorth(Player player){
+        Cell cell = player.getCell();
+        int x = cell.getcoord()[0];
+        int y = cell.getcoord()[1];
+        if (x > 0){
+            if (this.cells[x][y].isPorteIntacte(Direction.UP) && this.cells[x-1][y].isPorteIntacte(Direction.DOWN)){
+                try {
+                    this.cells[x][y].removePlayer(player);
+                    this.cells[x-1][y].setPlayer(player);
+                    player.setCell(this.cells[x-1][y]);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
     }
+
+    public void moveSouth(Player player){
+        Cell cell = player.getCell();
+        int x = cell.getcoord()[0];
+        int y = cell.getcoord()[1];
+        if (x < this.size-1){
+            if (this.cells[x][y].isPorteIntacte(Direction.DOWN) && this.cells[x+1][y].isPorteIntacte(Direction.UP)){
+                try {
+                    this.cells[x][y].removePlayer(player);
+                    this.cells[x+1][y].setPlayer(player);
+                    player.setCell(this.cells[x+1][y]);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
+    public void moveEast(Player player){
+        Cell cell = player.getCell();
+        int x = cell.getcoord()[0];
+        int y = cell.getcoord()[1];
+        if (y < this.size-1){
+            if (this.cells[x][y].isPorteIntacte(Direction.RIGHT) && this.cells[x][y+1].isPorteIntacte(Direction.LEFT)){
+                try {
+                    this.cells[x][y].removePlayer(player);
+                    this.cells[x][y+1].setPlayer(player);
+                    player.setCell(this.cells[x][y+1]);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
+    public void moveWest(Player player){
+        Cell cell = player.getCell();
+        int x = cell.getcoord()[0];
+        int y = cell.getcoord()[1];
+        if (y > 0){
+            if (this.cells[x][y].isPorteIntacte(Direction.LEFT) && this.cells[x][y-1].isPorteIntacte(Direction.RIGHT)){
+                try {
+                    this.cells[x][y].removePlayer(player);
+                    this.cells[x][y-1].setPlayer(player);
+                    player.setCell(this.cells[x][y-1]);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }   
 
 }
 

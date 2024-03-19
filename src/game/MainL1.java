@@ -10,12 +10,14 @@ import java.util.*;
 public class MainL1 {
 
     public static void main(String[] args){
-        while(true){
+        int nbEssais = 0;
+        while(nbEssais < 4){
             try {
                 List<Player> players = new ArrayList<Player>();
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Entrez la taille du plateau:");
                 int size = scanner.nextInt();
+                nbEssais++;
                 Player player = new Fighter(10, null, 0, 0);
                 players.add(player);
                 Board board = new ClassicalBoard(size, players);
@@ -26,6 +28,8 @@ public class MainL1 {
                         }
                     }
                 }
+                System.out.println(board);
+                board.moveWest(player);
                 System.out.println(board);
                 scanner.close();
                 break;
