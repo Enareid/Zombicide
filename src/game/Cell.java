@@ -14,8 +14,12 @@ public class Cell {
     protected boolean canAttack;
     /** The loots in the cell */
     protected List<Equipement> equipements;
+    /** The doors of the cell */
     protected Map<Direction,Door> doors; // Liste des portes dans la cellule
+    /** The coordinates of the cell */
     protected int[] coord;
+    /** The noise level of this cell */
+    protected int noiseLevel;
 
     /**
      * Builds a new cell.
@@ -28,6 +32,7 @@ public class Cell {
         this.coord=new int[2];
         this.coord[0]=x;
         this.coord[1]=y;
+        this.noiseLevel = 0;
         for (Direction direction : Direction.values()) {
             this.doors.put(direction,new Door(direction)); // Initialise toutes les portes
         }
