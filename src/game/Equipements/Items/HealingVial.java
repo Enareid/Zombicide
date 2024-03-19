@@ -1,13 +1,13 @@
 package game.Equipements.Items;
 import game.Equipement;
+import game.Entities.Player;
 
 public class HealingVial extends Equipement{
     
-    protected int HealAmount;
 
-    public HealingVial(int HealAmount){
-        super();
-        this.HealAmount=HealAmount;
+    public void use(Player player){
+        player.setLifeLevel(player.getLifeLevel()+1);
+        
     }
     
 }
