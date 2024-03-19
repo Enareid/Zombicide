@@ -131,6 +131,12 @@ public abstract class Board {
         return str;
     }
 
+    /**
+     * Move the player in the given direction
+     * 
+     * @param player the player to move
+     * @param direction the direction to move the player
+     */
     public void movePlayer(Player player, Direction direction){
         switch (direction){
             case NORTH:
@@ -148,6 +154,11 @@ public abstract class Board {
         }
     }
     
+    /**
+     * Move the player to the north
+     * 
+     * @param player The player to move
+     */
     public void moveNorth(Player player){
         Cell cell = player.getCell();
         int x = cell.getcoord()[0];
@@ -165,6 +176,11 @@ public abstract class Board {
         }
     }
 
+    /**
+     * Move the player to the south
+     * 
+     * @param player The player to move
+     */
     public void moveSouth(Player player){
         Cell cell = player.getCell();
         int x = cell.getcoord()[0];
@@ -182,6 +198,11 @@ public abstract class Board {
         }
     }
 
+    /**
+     * Move the player to the east
+     * 
+     * @param player The player to move
+     */
     public void moveEast(Player player){
         Cell cell = player.getCell();
         int x = cell.getcoord()[0];
@@ -199,6 +220,11 @@ public abstract class Board {
         }
     }
 
+    /**
+     * Move the player to the west
+     * 
+     * @param player The player to move
+     */
     public void moveWest(Player player){
         Cell cell = player.getCell();
         int x = cell.getcoord()[0];
