@@ -34,6 +34,8 @@ public class MainL1 {
                 System.out.println(board);
                 board.movePlayer(player, Direction.NORTH);
                 System.out.println(board);
+                board.movePlayer(player, Direction.EAST);
+                System.out.println(board);
                 scanner.close();
                 break;
             }

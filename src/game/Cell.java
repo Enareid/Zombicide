@@ -150,7 +150,7 @@ public class Cell {
     /**
      * Méthode pour vérifier si une porte dans une direction donnée est intacte
      */
-    public boolean isPorteIntacte(Direction direction) {
+    public boolean isLocked(Direction direction) {
         return this.doors.get(direction).isLocked();
     }
 

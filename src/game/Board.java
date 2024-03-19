@@ -93,7 +93,7 @@ public abstract class Board {
                     else{
                         // sinon si la case est une S, on veut ne pas mettre de porte si la case suivante est une S aussi
                         // on met une porte lorsque les deux portes associées du droite et gauche sont intactes
-                        if ((this.cells[i][j].isPorteIntacte(Direction.EAST)) && (this.cells[i][j+1].isPorteIntacte(Direction.WEST))
+                        if ((this.cells[i][j].isLocked(Direction.EAST)) && (this.cells[i][j+1].isLocked(Direction.WEST))
                         && !((this.cells[i][j] instanceof StreetCell) && (this.cells[i][j+1] instanceof StreetCell))){                   
                                 str+="|";
                             }
@@ -116,7 +116,7 @@ public abstract class Board {
             else{
                 for (int j=0; j<size; j++){
                     // on met une porte si les deux portes associées du bas et du haut sont intactes
-                    if((this.cells[i][j].isPorteIntacte(Direction.SOUTH)) && (this.cells[i+1][j].isPorteIntacte(Direction.NORTH))
+                    if((this.cells[i][j].isLocked(Direction.SOUTH)) && (this.cells[i+1][j].isLocked(Direction.NORTH))
                     && !((this.cells[i][j] instanceof StreetCell) && (this.cells[i+1][j] instanceof StreetCell))){
                             str+="·---";
                         }
@@ -164,7 +164,7 @@ public abstract class Board {
         int x = cell.getcoord()[0];
         int y = cell.getcoord()[1];
         if (x > 0){
-            if (this.cells[x][y].isPorteIntacte(Direction.NORTH) && this.cells[x-1][y].isPorteIntacte(Direction.SOUTH)){
+            if (this.cells[x][y].isLocked(Direction.NORTH) && this.cells[x-1][y].isLocked(Direction.SOUTH)){
                 try {
                     this.cells[x][y].removePlayer(player);
                     this.cells[x-1][y].setPlayer(player);
@@ -186,7 +186,7 @@ public abstract class Board {
         int x = cell.getcoord()[0];
         int y = cell.getcoord()[1];
         if (x < this.size-1){
-            if (this.cells[x][y].isPorteIntacte(Direction.SOUTH) && this.cells[x+1][y].isPorteIntacte(Direction.NORTH)){
+            if (this.cells[x][y].isLocked(Direction.SOUTH) && this.cells[x+1][y].isLocked(Direction.NORTH)){
                 try {
                     this.cells[x][y].removePlayer(player);
                     this.cells[x+1][y].setPlayer(player);
@@ -208,7 +208,7 @@ public abstract class Board {
         int x = cell.getcoord()[0];
         int y = cell.getcoord()[1];
         if (y < this.size-1){
-            if (this.cells[x][y].isPorteIntacte(Direction.EAST) && this.cells[x][y+1].isPorteIntacte(Direction.WEST)){
+            if (this.cells[x][y].isLocked(Direction.EAST) && this.cells[x][y+1].isLocked(Direction.WEST)){
                 try {
                     this.cells[x][y].removePlayer(player);
                     this.cells[x][y+1].setPlayer(player);
@@ -230,7 +230,7 @@ public abstract class Board {
         int x = cell.getcoord()[0];
         int y = cell.getcoord()[1];
         if (y > 0){
-            if (this.cells[x][y].isPorteIntacte(Direction.WEST) && this.cells[x][y-1].isPorteIntacte(Direction.EAST)){
+            if (this.cells[x][y].isLocked(Direction.WEST) && this.cells[x][y-1].isLocked(Direction.EAST)){
                 try {
                     this.cells[x][y].removePlayer(player);
                     this.cells[x][y-1].setPlayer(player);
