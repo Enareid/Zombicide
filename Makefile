@@ -30,3 +30,4 @@ doc: compile
 
 clean:
 	rm -rf $(CLASS_DIR) docs
+	rm -f $(TEST_DIR)/$(PACKAGE_DIR)/*.class
