@@ -19,7 +19,7 @@ public class BoardTest {
     @BeforeEach
     public void before() throws Exception{
         List<Player> players = new ArrayList<Player>();
-        Player player = new Fighter(5,null,0,0);
+        Player player = new Fighter(5,null);
         players.add(player);
         this.board = new ClassicalBoard(5,players);
     }

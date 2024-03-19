@@ -10,7 +10,7 @@ public class DoorTest {
 
     @BeforeEach
     public void before(){
-        this.door = new Door(Direction.UP);
+        this.door = new Door(Direction.NORTH);
     }
 
     @Test
@@ -33,6 +33,6 @@ public class DoorTest {
 
     @Test
     public void testGetDirection(){
-        assertEquals(Direction.UP, this.door.getDirection());
+        assertEquals(Direction.NORTH, this.door.getDirection());
     }
 }
