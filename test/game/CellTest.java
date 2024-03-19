@@ -81,8 +81,8 @@ public class CellTest {
             assertEquals(0, this.cell.getZombie().size());
     }
 
-    @Test (expected: Exception )
-    public void testRemoveZombieEmptyCell(){
+    @Test
+    public void testRemoveZombieEmptyCell() throws Exception{
             assertEquals(0, this.cell.getZombie().size());
             this.cell.removeZombie(this.zombie);
             assertThrows(Exception.class, () -> this.cell.removeZombie(this.zombie));
