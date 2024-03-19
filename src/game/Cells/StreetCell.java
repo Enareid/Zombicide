@@ -59,6 +59,10 @@ public class StreetCell extends Cell{
         if(!this.zombies.isEmpty()){
             str+="z"+this.zombies.size();
         }
+        else {
+            str+="  ";
+        }
+        str+=" ";
         if(!this.players.isEmpty()){
             str+="p"+this.players.size();
         }
@@ -68,5 +72,6 @@ public class StreetCell extends Cell{
         }
         return str;
     }
+
 
 }

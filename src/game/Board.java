@@ -1,6 +1,8 @@
 package game;
 
 import game.Cells.BuildingCell;
+import game.Cells.StreetCell;
+
 import java.util.*;
 import game.Entities.*;
 
@@ -63,17 +65,20 @@ public abstract class Board {
     }
 
 
-    /**
+/**
      * Print the board
      * @return the board
      */
     // j'ai tout fait avec des instanceof buildingCell : dans le cas ou on aurait un moyen de les différencier avec les streetCell,
     // on pourrait vérifier un attribut de cell ou autre
     public String toString(){
-        //première ligne de "-"
-        String str="-".repeat(size*3+size+1);
+        //première ligne de "·---·"
+        String str="·---".repeat(size);
+        str += "·";
         for (int i=0; i<size; i++){
-            // on itére deux fois pour avoir les deux lignes de chaque cases
+            // on itére deux fois pour avoir les deux lignes de chaque cases,
+            // la ligne des info de la case & zombie(s)
+            // et la ligne des survivants
             for(int k=0;k<2;k++){
                 //je commence par faire un \n et ajouter la première "porte" aka bordure du plateau
                 str+="\n|";
@@ -87,48 +92,45 @@ public abstract class Board {
 
                     else{
                         // sinon si la case est une S, on veut ne pas mettre de porte si la case suivante est une S aussi
-                        if(!(this.cells[i][j] instanceof BuildingCell)){
-                            if (this.cells[i][j+1] instanceof BuildingCell){
+                        // on met une porte lorsque les deux portes associées du droite et gauche sont intactes
+                        if ((this.cells[i][j].isPorteIntacte(Direction.RIGHT)) && (this.cells[i][j+1].isPorteIntacte(Direction.LEFT))
+                        && !((this.cells[i][j] instanceof StreetCell) && (this.cells[i][j+1] instanceof StreetCell))){                   
                                 str+="|";
                             }
-                            // cas j+1 = streetCell
+                            // cas j = streetCell && j+1 = streetCell ou porte cassé
                             else{
                                 str+=" ";
                             }
                         }
-                        //cas case!= Streetcell : il y a forcément une porte après
-                        else{
-                            str+="|";
-                        }
                     }
                 }
-            }
+            
             // ajout de la troisième ligne en dessous des cases qui représente les portes
-            str+="\n-";
-            //cas pour éviter les ArrayindexOUB : ligne de "-"
+            str+="\n";
+            //cas pour éviter les ArrayindexOUB : ligne de "·---·"
             if(i==size-1){
-                str+="-".repeat(size*3+size);
+                str+="·---".repeat(size);
+                str+="·";
             }
             // si on a une case streetCell et que celle d'en dessous l'est aussi alors on laisse des espaces et pas de bordures
             else{
                 for (int j=0; j<size; j++){
-                    if(!(this.cells[i][j] instanceof BuildingCell)){
-                        if(!(this.cells[i+1][j] instanceof BuildingCell)){
-                            str+="   -";
+                    // on met une porte si les deux portes associées du bas et du haut sont intactes
+                    if((this.cells[i][j].isPorteIntacte(Direction.DOWN)) && (this.cells[i+1][j].isPorteIntacte(Direction.UP))
+                    && !((this.cells[i][j] instanceof StreetCell) && (this.cells[i+1][j] instanceof StreetCell))){
+                            str+="·---";
                         }
+                        // cas i = streetCell && i+1 = streetCell ou porte cassé
                         else{
-                            str+="-".repeat(4);
+                            str+="·   ";
                         }
-                    }
-                    // cas où on est sur une case != Streetcell
-                    else{
-                        str+="-".repeat(4);
-                    }
                 }
+                str+="·";
                 }
         }
         return str;
     }
+
 
     public void moveNorth(){
         

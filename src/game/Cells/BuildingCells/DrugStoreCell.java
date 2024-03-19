@@ -20,6 +20,10 @@ public class DrugStoreCell extends BuildingCell{
         if(!this.zombies.isEmpty()){
             str+="z"+this.zombies.size();
         }
+        else {
+            str+="  ";
+        }
+        str+=" ";
         if(!this.players.isEmpty()){
             str+="p"+this.players.size();
         }
@@ -29,4 +33,5 @@ public class DrugStoreCell extends BuildingCell{
         }
         return str;
     }
+
 }
