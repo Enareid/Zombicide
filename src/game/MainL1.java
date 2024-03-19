@@ -5,6 +5,8 @@ import java.util.Scanner;
 import game.Cells.StreetCell;
 import game.Entities.*;
 import game.Entities.Players.Fighter;
+import game.Equipements.Items.MasterKey;
+
 import java.util.*;
 
 public class MainL1 {
@@ -19,6 +21,7 @@ public class MainL1 {
                 int size = scanner.nextInt();
                 nbEssais++;
                 Player player = new Fighter(10, null);
+                Equipement eq= new MasterKey();
                 players.add(player);
                 Board board = new ClassicalBoard(size, players);
                 for (int x = 0; x < size; x++) {

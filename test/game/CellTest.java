@@ -20,7 +20,7 @@ public class CellTest {
     @BeforeEach
     public void before(){
         this.cell = new BuildingCell(0,0);
-        this.player = new Fighter(10, this.cell, 1, 2);
+        this.player = new Fighter(10, this.cell);
         this.zombie = new Walker(10, this.cell);
         this.equipement = new MasterKey();
     }
