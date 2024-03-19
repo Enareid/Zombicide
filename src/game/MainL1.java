@@ -18,7 +18,7 @@ public class MainL1 {
                 System.out.println("Entrez la taille du plateau:");
                 int size = scanner.nextInt();
                 nbEssais++;
-                Player player = new Fighter(10, null, 0, 0);
+                Player player = new Fighter(10, null);
                 players.add(player);
                 Board board = new ClassicalBoard(size, players);
                 for (int x = 0; x < size; x++) {

@@ -15,10 +15,10 @@ public abstract class Player extends Entity{
     /**
      * Builds a new player.
      */
-    public Player(int Lifepoints, Cell cell, int expertiseLevel, int actionPoints){
+    public Player(int Lifepoints, Cell cell){
         super(Lifepoints,cell);
-        this.expertiseLevel = expertiseLevel;
-        this.actionPoints = actionPoints;
+        this.expertiseLevel = 0;
+        this.actionPoints = 3;
         this.bag = new ArrayList<>();
 		this.cell = cell;
     }
