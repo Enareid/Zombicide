@@ -29,7 +29,7 @@ public class MainL1 {
                     }
                 }
                 System.out.println(board);
-                board.moveWest(player);
+                board.movePlayer(player, Direction.NORTH);
                 System.out.println(board);
                 scanner.close();
                 break;
