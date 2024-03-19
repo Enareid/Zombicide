@@ -9,7 +9,10 @@ public class ContinentalCell extends BuildingCell{
 
     /**
      * Builds a new continental cell.
+     * 
      * @param lifePointsRestored the number of life points restored.
+     * @param x The x coordinate of the cell.
+     * @param y The y coordinate of the cell.
      */
     public ContinentalCell(int lifePointsRestored,int x, int y) {
         super(x,y);

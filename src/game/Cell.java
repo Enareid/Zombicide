@@ -23,6 +23,9 @@ public class Cell {
 
     /**
      * Builds a new cell.
+     * 
+     * @param x The x coordinate of the cell.
+     * @param y The y coordinate of the cell.
      */
     public Cell(int x,int y) {
         this.players = new ArrayList<>(); 
@@ -95,8 +98,8 @@ public class Cell {
     }
 
     /**
-     * Adds a loot in the cell
-     * @param loot The loot to add.
+     * Adds a equipement in the cell
+     * @param equipement The equipement to add.
      */
     public void addEquipement(Equipement equipement) {
         this.equipements.add(equipement);
@@ -127,10 +130,10 @@ public class Cell {
     }
 
     /**
-     * Removes a loot from the list of loots in the cell if the loot is in the list.
+     * Removes a equipement from the list of equipements in the cell if the equipement is in the list.
      * else, throws an exception.
-     * @param loot The loot to remove.
-     * @throws Exception if the loot is not in the cell.
+     * @param equipement The equipement to remove.
+     * @throws Exception if the equipement is not in the cell.
      */
     public void removeEquipement(Equipement equipement) throws Exception {
         if (this.equipements.contains(equipement)) {
@@ -141,14 +144,19 @@ public class Cell {
     }
 
      /**
-     * Méthode pour ouvrir une porte dans une direction donnée
+     * Opens a door in a given direction
+     * 
+     * @param direction the direction of the door to open
      */
     public void openDoor(Direction direction) {
             this.doors.get(direction).unlock(); // Casse la porte en l'ouvrant
             }
         
     /**
-     * Méthode pour vérifier si une porte dans une direction donnée est intacte
+     * Give if door is locked
+     * 
+     * @param direction the direction of the door to test
+     * @return true if the door is locked, false otherwise
      */
     public boolean isLocked(Direction direction) {
         return this.doors.get(direction).isLocked();

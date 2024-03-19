@@ -18,8 +18,10 @@ public abstract class Board {
 
     /**
      * Build an empty board
+     * 
      * @param size the size of the board
-     * @throws Exception 
+     * @param players the players in the board
+     * @throws Exception if the size is less than 5
      */
     public Board(int size, List<Player> players) throws Exception{
         if (size < 5) {

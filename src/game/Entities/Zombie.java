@@ -10,12 +10,12 @@ public abstract class Zombie extends Entity {
 
     /**
      * Builds a new zombie.
+     * 
+     * @param Lifepoints the lifepoints of the zombie.
+     * @param cell the cell of the zombie.
      */
     public Zombie(int Lifepoints, Cell cell){
         super(Lifepoints,cell);
     }
-    public int getDamage() {
-		return this.Damage;
-	}
     
 }

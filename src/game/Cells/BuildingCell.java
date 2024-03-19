@@ -10,6 +10,9 @@ public class BuildingCell extends Cell{
 
     /**
      * Builds a new building cell.
+     * 
+     * @param x The x coordinate of the cell.
+     * @param y The y coordinate of the cell.
      */
     public BuildingCell(int x, int y) {
         super(x,y);

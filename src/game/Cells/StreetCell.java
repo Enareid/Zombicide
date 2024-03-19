@@ -12,6 +12,9 @@ public class StreetCell extends Cell{
 
     /**
      * Builds a new street cell.
+     * 
+     * @param x The x coordinate of the cell.
+     * @param y The y coordinate of the cell.
      */
     public StreetCell(int x, int y) {
         super(x,y);

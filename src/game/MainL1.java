@@ -21,7 +21,7 @@ public class MainL1 {
                 int size = scanner.nextInt();
                 nbEssais++;
                 Player player = new Fighter(10, null);
-                Equipement eq= new MasterKey();
+                Equipement eg= new MasterKey();
                 players.add(player);
                 Board board = new ClassicalBoard(size, players);
                 for (int x = 0; x < size; x++) {

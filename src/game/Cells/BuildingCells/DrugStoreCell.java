@@ -6,6 +6,9 @@ public class DrugStoreCell extends BuildingCell{
 
     /**
      * Builds a new drug store cell.
+     * 
+     * @param x The x coordinate of the cell.
+     * @param y The y coordinate of the cell.
      */
     public DrugStoreCell(int x, int y) {
         super(x,y);

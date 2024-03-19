@@ -14,6 +14,9 @@ public abstract class Player extends Entity{
 
     /**
      * Builds a new player.
+	 * 
+	 * @param Lifepoints the lifepoints of the player.
+	 * @param cell the cell of the player.
      */
     public Player(int Lifepoints, Cell cell){
         super(Lifepoints,cell);
@@ -31,10 +34,20 @@ public abstract class Player extends Entity{
 		return this.actionPoints;
 	}
 
+	/**
+	 * Gets the cell of the player.
+	 * 
+	 * @return the cell of the player.
+	 */
 	public Cell getCell() {
 		return this.cell;
 	}
 
+	/**
+	 * Sets the cell of the player.
+	 * 
+	 * @param cell the cell of the player.
+	 */
 	public void setCell(Cell cell) {
 		this.cell = cell;
 	}
@@ -95,6 +108,11 @@ public abstract class Player extends Entity{
 		this.bag.add(Equipement);
 	}
 
+	/**
+	 * Removes an equipment from the bag of the player.
+	 * 
+	 * @param Equipement the equipment to remove from the bag of the player.
+	 */
 	public void removeEquipement(Equipement Equipement) {
 		if (this.bag.contains(Equipement)) {
 			this.bag.remove(Equipement);

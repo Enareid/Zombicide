@@ -12,8 +12,10 @@ public class ClassicalBoard extends Board{
 
     /**
      * Build an empty board
+     * 
      * @param size the size of the board
-     * @throws Exception 
+     * @param players the players in the board
+     * @throws Exception if the size is less than 5
      */
     public ClassicalBoard(int size, List<Player> players) throws Exception{
         super(size, players);
@@ -25,6 +27,7 @@ public class ClassicalBoard extends Board{
      * @param y1 the y coordinate of the first corner
      * @param x2 the x coordinate of the second corner
      * @param y2 the y coordinate of the second corner
+     * @param firstCall if it's the first call of the function
      * @throws Exception 
      */
     public void fillBoard(int x1, int y1, int x2, int y2, boolean firstCall, List<Player> players) throws Exception {
@@ -66,6 +69,8 @@ public class ClassicalBoard extends Board{
 
     /**
      * Initialize the board with StreetCell, ContinentalCell and DrugStoreCell
+     * 
+     * @param players the players in the board
      * @throws Exception 
      */
     public void initBoard(List<Player> players) throws Exception{
