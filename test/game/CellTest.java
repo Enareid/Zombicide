@@ -67,9 +67,8 @@ public class CellTest {
     }
 
     @Test
-    public void testRemovePlayerEmptyCell() throws Exception{
+    public void testRemovePlayerEmptyCell(){
             assertEquals(0, this.cell.getPlayers().size());
-            this.cell.removePlayer(this.player);
             assertThrows(Exception.class, () -> this.cell.removePlayer(this.player));
     }
 
@@ -82,9 +81,8 @@ public class CellTest {
     }
 
     @Test
-    public void testRemoveZombieEmptyCell() throws Exception{
+    public void testRemoveZombieEmptyCell(){
             assertEquals(0, this.cell.getZombie().size());
-            this.cell.removeZombie(this.zombie);
             assertThrows(Exception.class, () -> this.cell.removeZombie(this.zombie));
     }
 
@@ -97,15 +95,14 @@ public class CellTest {
     }
 
     @Test 
-    public void testRemoveLootEmptyCell() throws Exception{
+    public void testRemoveLootEmptyCell(){
             assertEquals(0, this.cell.getEquipements().size());
-            this.cell.removeEquipement(this.equipement);
             assertThrows(Exception.class, () -> this.cell.removeEquipement(this.equipement));
     }
 
     @Test
     public void testToString(){
-        assertEquals("B     ", this.cell.toString());
+        assertEquals("B        ", this.cell.toString());
     }
 
 }
