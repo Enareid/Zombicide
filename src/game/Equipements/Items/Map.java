@@ -1,12 +1,12 @@
 package game.Equipements.Items;
-import game.Board;
 import game.Equipement;
+import game.Entities.Player;
 
 
  public class Map extends Equipement{
 
-    public void use(Board board){
-        board.toString();
+    public void use(Player player){
+        player.getBoard().toString();
     }
     
 }

@@ -1,6 +1,7 @@
 package game.Equipements;
 
 import game.Equipement;
+import game.Entities.Zombie;
 
 public abstract class Weapon extends Equipement{
 
@@ -18,5 +19,5 @@ public abstract class Weapon extends Equipement{
         this.maxrange = maxrange;
         this.attempts = attempts;
     }
-    
+    public void use(Zombie zombie){}
 }

@@ -1,5 +1,6 @@
 package game;
 
+
 public abstract class Equipement{
 
     /**
@@ -9,7 +10,7 @@ public abstract class Equipement{
 	public Equipement() {
 	}
 
-	public void use() {
+	public void use(Object target) {
 
 	}
 

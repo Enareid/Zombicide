@@ -1,5 +1,6 @@
 package game.Entities;
 import game.Equipement;
+import game.Board;
 import game.Cell;
 import game.Entity;
 import java.util.*;
@@ -9,6 +10,7 @@ public abstract class Player extends Entity{
 		protected Equipement inhand;
     private int actionPoints;
 	private int expertiseLevel;
+	protected Board board;
     static final int MAX_LIFE_LEVEL = 5;
 	private Cell cell;
 
@@ -19,11 +21,11 @@ public abstract class Player extends Entity{
 	 * @param Lifepoints the lifepoints of the player.
 	 * @param cell the cell of the player.
      */
-    public Player(int Lifepoints, Cell cell){
+    public Player(int Lifepoints, Cell cell, Board board){
         super(Lifepoints,cell);
         this.expertiseLevel = 0;
         this.actionPoints = 3;
-        this.bag = new ArrayList<>();
+        this.bag = new ArrayList<Equipement>(5);
 				this.inhand = null;
 				this.cell = cell;
     }
@@ -43,6 +45,15 @@ public abstract class Player extends Entity{
 	 */
 	public Cell getCell() {
 		return this.cell;
+	}
+
+	/**
+	 * Returns the board associated with this player.
+	 *
+	 * @return the board associated with this player
+	 */
+	public Board getBoard() {
+		return this.board;
 	}
 
 	/**
@@ -134,6 +145,21 @@ public abstract class Player extends Entity{
 				this.bag.add(this.inhand);
 			}
 			this.inhand = Equipement;
+		}
+	}
+
+	/**
+	 * Returns the equipment currently held by the player.
+	 *
+	 * @return the equipment in hand
+	 */
+	public Equipement getInHand() {
+		return this.inhand;
+	}
+
+	public void useInHand(Object target) {
+		if (this.inhand != null) {
+			this.inhand.use(target);
 		}
 	}
 

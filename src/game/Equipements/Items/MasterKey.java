@@ -8,4 +8,5 @@ public class MasterKey extends Equipement{
     public void use(Door door){
         door.unlock();
     }
+
 }
