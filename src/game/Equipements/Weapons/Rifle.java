@@ -4,4 +4,7 @@ import game.Equipements.Weapon;
 
 public class Rifle extends Weapon{
     
+      public Rifle(){
+        super(4, 1, 3, 2);
+      }
 }
