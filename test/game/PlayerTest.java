@@ -15,7 +15,7 @@ public class PlayerTest {
         assertEquals(cell, player.getCell()); 
         assertEquals(0, player.getExpertiseLevel()); 
         assertEquals(3, player.getActionPoints()); ; 
-        assertEquals(1, player.getEquipments().size());
+        assertEquals(0, player.getEquipments().size());
     }
 
 }
