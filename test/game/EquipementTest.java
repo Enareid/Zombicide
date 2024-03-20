@@ -1,6 +1,7 @@
 package game;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import game.Equipements.Items.MasterKey;
@@ -17,5 +18,6 @@ public class EquipementTest {
         MasterKey equipement = new MasterKey();
         Door door = new Door(Direction.NORTH);
         equipement.use(door);
+        assertFalse(door.isLocked());
     }
 }

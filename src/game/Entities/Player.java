@@ -6,6 +6,7 @@ import java.util.*;
 
 public abstract class Player extends Entity{
     protected List<Equipement> bag;
+		protected Equipement inhand;
     private int actionPoints;
 	private int expertiseLevel;
     static final int MAX_LIFE_LEVEL = 5;
@@ -23,7 +24,8 @@ public abstract class Player extends Entity{
         this.expertiseLevel = 0;
         this.actionPoints = 3;
         this.bag = new ArrayList<>();
-		this.cell = cell;
+				this.inhand = null;
+				this.cell = cell;
     }
     
 	/**
@@ -116,6 +118,22 @@ public abstract class Player extends Entity{
 	public void removeEquipement(Equipement Equipement) {
 		if (this.bag.contains(Equipement)) {
 			this.bag.remove(Equipement);
+		}
+	}
+
+	/**
+	 * Sets the specified equipment as the currently held equipment by the player.
+	 * If the equipment is present in the player's bag, it is removed from the bag and set as the in-hand equipment.
+	 *
+	 * @param equipment The equipment to be set as the in-hand equipment.
+	 */
+	public void setInHand(Equipement Equipement) {
+		if(this.bag.contains(Equipement)){
+			this.removeEquipement(Equipement);
+			if (this.inhand != null) {
+				this.bag.add(this.inhand);
+			}
+			this.inhand = Equipement;
 		}
 	}
 
