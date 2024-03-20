@@ -36,6 +36,7 @@ public class Cell {
         this.coord[0]=x;
         this.coord[1]=y;
         this.noiseLevel = 0;
+        this.equipements = new ArrayList<>();
         for (Direction direction : Direction.values()) {
             this.doors.put(direction,new Door(direction)); // Initialise toutes les portes
         }

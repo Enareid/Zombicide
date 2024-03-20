@@ -25,7 +25,7 @@ public abstract class Player extends Entity{
         super(Lifepoints,cell);
         this.expertiseLevel = 0;
         this.actionPoints = 3;
-        this.bag = new ArrayList<Equipement>(5);
+        this.bag = new ArrayList<Equipement>();
 				this.inhand = null;
 				this.cell = cell;
     }
@@ -56,6 +56,14 @@ public abstract class Player extends Entity{
 		return this.board;
 	}
 
+	/**
+	 * Sets the board for the player.
+	 * 
+	 * @param board the board to set
+	 */
+	public void setBoard(Board board) {
+		this.board = board;
+	}
 	/**
 	 * Sets the cell of the player.
 	 * 
