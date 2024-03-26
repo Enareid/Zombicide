@@ -19,6 +19,11 @@ public class BuildingCell extends Cell{
         this.doors = new HashMap<>();
     }
 
+    public Cell createCopy(){
+        Cell cell = new BuildingCell(this.coord[0],this.coord[1]);
+        return cell;
+    }
+
     /**
      * Returns the string representation of the cell.
      * @return the string representation of the cell.

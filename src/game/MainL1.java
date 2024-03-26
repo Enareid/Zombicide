@@ -1,10 +1,12 @@
 package game;
 
 import game.Boards.ClassicalBoard;
-import java.util.Scanner;
+import game.Cells.BuildingCell;
 import game.Cells.StreetCell;
 import game.Entities.*;
 import game.Entities.Players.*;
+
+import game.Entities.Zombies.Walker;
 import game.Equipements.Items.MasterKey;
 
 import java.util.*;
@@ -34,12 +36,6 @@ public class MainL1 {
                         }
                     }
                 }
-                System.out.println(p1.toString());
-                System.out.println(p2.toString());
-                System.out.println(p3.toString());
-                System.out.println(p4.toString());
-                System.out.println(board);
-
 
                 scanner.close();
                 break;

@@ -20,6 +20,10 @@ public class StreetCell extends Cell{
         super(x,y);
         this.canSpawn = false;
     }
+    public Cell createCopy(){
+        Cell cell = new StreetCell(this.coord[0],this.coord[1]);
+        return cell;
+    }
 
     /**
      * Returns if the cell can spawn a zombie.
@@ -49,7 +53,7 @@ public class StreetCell extends Cell{
      */
     public void spawnZombie() {
         if(this.canSpawn){
-            this.zombies.add(new Walker(1,this));
+            this.zombies.add(new Walker(this));
         }
     }
 

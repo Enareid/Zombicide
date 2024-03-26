@@ -1,5 +1,6 @@
 package game.Entities;
 import game.Equipement;
+import game.Boards.ClassicalBoard;
 import game.Board;
 import game.Cell;
 import game.Entity;
@@ -57,11 +58,28 @@ public abstract class Player extends Entity{
 		return this.board;
 	}
 
-	public String lookaround(){
-		Board board = new Board(this.board.getSize()) {
-			
-		};
-	
+	/**
+	 * Returns a string representation of the surrounding cells of the player's current position on the board.
+	 * The surrounding cells include the player's current cell and the adjacent cells in all directions.
+	 * 
+	 * @return a string representation of the surrounding cells
+	 * @throws Exception if an error occurs during the process
+	 */
+	public String lookaround() throws Exception{
+		Board board = new ClassicalBoard(this.board.getSize(), this.board.getPlayers());
+		board.setCells(this.board.createfakeboard());
+		int posx=this.cell.getcoord()[0];
+		int posy=this.cell.getcoord()[1];
+		System.out.println(posx);
+		System.out.println(posy);
+		for(int x=posx-1;x<posx+2;x++){
+			for(int y=posy-1;y<posy+2;y++){
+				if (x>=0 && x<board.getSize() && y>=0 && y<board.getSize()){
+					board.setCell(x, y, this.board.getCell(x, y));
+				}
+			}
+		}
+		return board.toString();
 	}
 
 	/**

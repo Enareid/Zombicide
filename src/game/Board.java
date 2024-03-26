@@ -47,6 +47,51 @@ public abstract class Board {
         return this.size;   
     }
 
+    public Cell[][] createfakeboard(){
+        Cell[][] fakeboard = new Cell[this.size][this.size];
+        for (int x = 0; x< this.size; x++){
+            for (int y = 0; y < this.size; y++) {
+                fakeboard[x][y] = this.cells[x][y].createCopy();
+            }
+        }
+        return fakeboard;
+    }
+
+    /**
+     * Returns the list of players on the board.
+     *
+     * @return the list of players
+     */
+    public List<Player> getPlayers(){
+        return this.players;
+    }
+
+    /**
+     * Returns the 2D array of cells representing the game board.
+     *
+     * @return the 2D array of cells
+     */
+    public Cell[][] getCells(){
+        return this.cells;
+    }
+
+    /**
+     * Sets the list of players for the board.
+     * 
+     * @param players the list of players to set
+     */
+    public void setPlayers(List<Player> players){
+        this.players = players;
+    }
+
+    /**
+     * Sets the cells of the board.
+     * 
+     * @param cells the 2D array of cells to set
+     */
+    public void setCells(Cell[][] cells){
+        this.cells = cells;
+    }
     /**
      * Returns the cell at the given coordinates.
      * @param x The x coordinate of the cell.

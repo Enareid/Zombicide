@@ -50,6 +50,11 @@ public class Cell {
         return this.players;
     }
 
+    public Cell createCopy(){
+        Cell cell = new Cell(this.coord[0],this.coord[1]);
+        return cell;
+    }
+
     public int[] getcoord(){
         return this.coord;
     }
@@ -116,6 +121,10 @@ public class Cell {
             throw new Exception("Player not in List");
         }
 
+    }
+
+    public void removeplayers(){
+        this.players.clear();
     }
 
     /**
