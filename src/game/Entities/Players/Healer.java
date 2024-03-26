@@ -10,4 +10,7 @@ public class Healer extends Player{
         super(Lifepoints,cell, board);
     }
     
+    public String toString() {
+        return "Healer";
+    }
 }

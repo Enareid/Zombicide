@@ -1,5 +1,7 @@
 package game;
 
+import game.Entities.*;
+
 public abstract class Entity {
 
     protected int Lifepoints;
@@ -13,6 +15,16 @@ public abstract class Entity {
     public Entity(int Lifepoints, Cell cell){
         this.Lifepoints=Lifepoints;
         this.cell=cell;
+    }
+
+    public void attack() {
+        switch (this.toString()) {
+            case "Fighter":
+                System.out.println("Fighter !!");
+                break;
+    
+        }
+        System.out.println("OMG !!");
     }
     
 }

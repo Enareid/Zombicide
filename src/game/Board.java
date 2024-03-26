@@ -178,7 +178,7 @@ public abstract class Board {
                     break;    
     
                 case "ATTACK" :
-                    System.out.println("Do attack");
+                    player.attack();
                     break;
             }
         }

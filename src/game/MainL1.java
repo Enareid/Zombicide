@@ -4,7 +4,7 @@ import game.Boards.ClassicalBoard;
 import java.util.Scanner;
 import game.Cells.StreetCell;
 import game.Entities.*;
-import game.Entities.Players.Fighter;
+import game.Entities.Players.*;
 import game.Equipements.Items.MasterKey;
 
 import java.util.*;
@@ -20,9 +20,12 @@ public class MainL1 {
                 System.out.println("Entrez la taille du plateau:");
                 int size = scanner.nextInt();
                 nbEssais++;
-                Player player = new Fighter(10, null,null);
+                Player p1 = new Fighter(10, null,null);
+                Player p2 = new Healer(10, null,null);
+                Player p3 = new Lucky(10, null,null);
+                Player p4 = new Snooper(10, null,null);
                 Equipement eg= new MasterKey();
-                players.add(player);
+                players.add(p1);
                 Board board = new ClassicalBoard(size, players);
                 for (int x = 0; x < size; x++) {
                     for (int y = 0; y < size; y++) {
@@ -31,13 +34,12 @@ public class MainL1 {
                         }
                     }
                 }
-
+                System.out.println(p1.toString());
+                System.out.println(p2.toString());
+                System.out.println(p3.toString());
+                System.out.println(p4.toString());
                 System.out.println(board);
 
-                board.actionPlayer(player);
-                board.actionPlayer(player);
-                System.out.println(board);
-                System.out.println(board);
 
                 scanner.close();
                 break;

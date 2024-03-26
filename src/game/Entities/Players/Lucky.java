@@ -10,4 +10,7 @@ public class Lucky extends Player{
         super(Lifepoints,cell, board);
     }
     
+    public String toString() {
+        return "Lucky";
+    }
 }

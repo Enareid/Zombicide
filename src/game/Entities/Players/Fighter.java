@@ -9,4 +9,8 @@ public class Fighter extends Player{
     public Fighter(int Lifepoints, Cell cell,Board board){
         super(Lifepoints,cell,board);
     }
+
+    public String toString() {
+        return "Fighter";
+    }
 }
