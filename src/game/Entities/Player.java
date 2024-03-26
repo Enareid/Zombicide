@@ -23,11 +23,12 @@ public abstract class Player extends Entity{
      */
     public Player(int Lifepoints, Cell cell, Board board){
         super(Lifepoints,cell);
+		this.board = board;
         this.expertiseLevel = 0;
         this.actionPoints = 3;
         this.bag = new ArrayList<Equipement>();
-				this.inhand = null;
-				this.cell = cell;
+		this.inhand = null;
+		this.cell = cell;
     }
     
 	/**
@@ -54,6 +55,13 @@ public abstract class Player extends Entity{
 	 */
 	public Board getBoard() {
 		return this.board;
+	}
+
+	public String lookaround(){
+		Board board = new Board(this.board.getSize()) {
+			
+		};
+	
 	}
 
 	/**
