@@ -5,8 +5,8 @@ import game.Entities.Zombie;
 
 public class Walker extends Zombie{
 
-    public Walker(int Lifepoints, Cell cell){
-        super(Lifepoints,cell);
+    public Walker(Cell cell){
+        super(1, 1, 1, cell);
     }
     
 }

@@ -6,7 +6,7 @@ import game.Entities.Zombie;
 public class Runner extends Zombie{
 
     public Runner(int Lifepoints, Cell cell){
-        super(Lifepoints,cell);
+        super(2, 1, 2, cell);
     }
     
 }

@@ -4,8 +4,8 @@ import game.Entities.Zombie;
 
 public class Abomination extends Zombie {
     
-    public Abomination(int Lifepoints, Cell cell){
-        super(Lifepoints,cell);
+    public Abomination(Cell cell){
+        super(6, 3, 1,cell);
     }
     
 }
