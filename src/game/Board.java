@@ -133,28 +133,107 @@ public abstract class Board {
         return str;
     }
 
-    /**
-     * Move the player in the given direction
-     * 
-     * @param player the player to move
-     * @param direction the direction to move the player
-     */
-    public void movePlayer(Player player, Direction direction){
-        switch (direction){
-            case NORTH:
-                moveNorth(player);
+    public void actionPlayer(Player player){
+        Scanner in = new Scanner(System.in);
+        if (player instanceof Player) {
+            System.out.println("Choose your action : ");
+            System.out.println("LOOK AROUND | LOOT | EQUIP | USE | OPEN DOOR | MAKE NOISE | MOVE | ATTACK");
+            String action = in.nextLine();
+    
+            switch (action) {
+                case "LOOK AROUND" :
+                    System.out.println("Do lookAround");
+                    break;
+    
+                case "LOOT" :
+                    System.out.println("Do loot");
+                    break;
+    
+                case "EQUIP" :
+                    System.out.println("Do equip");
+                    break;
+    
+                case "USE" :
+                    System.out.println("Do use");
+                    break;
+                    
+                case "MAKE NOISE" :
+                    System.out.println("Do makeNoise");
+                    break;
+    
+                case "OPEN DOOR" :
+                    System.out.println("Do openDoor");
+                    break;
+    
+                case "MOVE" :
+                    movePlayer(player);
+                    break;    
+    
+                case "ATTACK" :
+                    System.out.println("Do attack");
+                    break;
+            }
+        }
+        else {
+            System.out.println("U are a zombie (move or attack only)");
+        }
+        
+    }
+    
+
+    public void movePlayer(Player player){
+        Cell cell = player.getCell();
+        int x = cell.getcoord()[0];
+        int y = cell.getcoord()[1];
+        boolean canNorth = (this.cells[x-1][y] instanceof StreetCell) || ((this.cells[x-1][y] instanceof BuildingCell) && !(this.cells[x-1][y].isLocked(Direction.SOUTH)));
+        boolean canSouth = (this.cells[x+1][y] instanceof StreetCell) || ((this.cells[x+1][y] instanceof BuildingCell) && !(this.cells[x+1][y].isLocked(Direction.NORTH)));
+        boolean canEast = (this.cells[x][y+1] instanceof StreetCell) || ((this.cells[x][y+1] instanceof BuildingCell) && !(this.cells[x][y+1].isLocked(Direction.WEST)));
+        boolean canWest = (this.cells[x][y-1] instanceof StreetCell) || ((this.cells[x][y-1] instanceof BuildingCell) && !(this.cells[x][y-1].isLocked(Direction.EAST)));
+        Scanner in = new Scanner(System.in);
+        System.out.println("Choose direction : ");
+        String msgDirection = "";
+        if (canNorth) {
+            msgDirection += "NORTH | ";
+        }
+        if (canSouth) {
+            msgDirection += "SOUTH | ";
+        }
+        if (canEast) {
+            msgDirection += "EAST | ";
+        }
+        if (canWest) {
+            msgDirection += "WEST | ";
+        }
+        System.out.println(msgDirection.substring(0,msgDirection.length()-3));
+        String direction = in.nextLine();
+        switch (direction) {
+            case "NORTH":
+                if (canNorth) {
+                    moveNorth(player);
+                }
                 break;
-            case SOUTH:
-                moveSouth(player);
+    
+            case "SOUTH":
+                if (canSouth) {
+                    moveSouth(player);
+                }
                 break;
-            case WEST:
-                moveWest(player);
+    
+            case "WEST":
+                if (canWest) {
+                    moveWest(player);
+                }
                 break;
-            case EAST:
-                moveEast(player);
+    
+            case "EAST":
+                if (canEast) {
+                    moveEast(player);
+                }
                 break;
         }
+        
     }
+    
     
     /**
      * Move the player to the north
@@ -243,5 +322,7 @@ public abstract class Board {
             }
         }
     }
+
+
 }
 
