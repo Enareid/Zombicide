@@ -37,7 +37,15 @@ public abstract class Board {
         this.players = players;
         initBoard(players);
     }
-
+    
+    /**
+     * Returns the size of the board.
+     *
+     * @return the size of the board
+     */
+    public int getSize(){
+        return this.size;   
+    }
 
     /**
      * Returns the cell at the given coordinates.
