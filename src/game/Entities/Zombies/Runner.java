@@ -2,11 +2,13 @@ package game.Entities.Zombies;
 
 import game.Cell;
 import game.Entities.Zombie;
+import game.Board;
+
 
 public class Runner extends Zombie{
 
-    public Runner(int Lifepoints, Cell cell){
-        super(2, 1, 2, false, cell);
+    public Runner(Cell cell, Board board){
+        super(2, 1, board, 2, false, cell);
     }
     
 }

@@ -1,10 +1,11 @@
 package game.Entities.Zombies;
 import game.Cell;
+import game.Board;
 import game.Entities.Zombie;
 
 public class Broom extends Zombie{
     
-    public Broom(int Lifepoints, Cell cell){
-        super(4, 2, 1, true, cell);
+    public Broom(Cell cell, Board board){
+        super(4, 2, board, 1, true, cell);
     }
 }

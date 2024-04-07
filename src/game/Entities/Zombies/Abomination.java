@@ -1,11 +1,14 @@
 package game.Entities.Zombies;
+import game.Board;
 import game.Cell;
+
+
 import game.Entities.Zombie;
 
 public class Abomination extends Zombie {
     
-    public Abomination(Cell cell){
-        super(6, 3, 1, true, cell);
+    public Abomination(Cell cell, Board board){
+        super(6, 3, board, 1, true, cell);
     }
     
 }
