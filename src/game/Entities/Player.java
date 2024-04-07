@@ -1,8 +1,11 @@
 package game.Entities;
 import game.Equipement;
 import game.Boards.ClassicalBoard;
+import game.Cells.BuildingCell;
+import game.Cells.StreetCell;
 import game.Board;
 import game.Cell;
+import game.Direction;
 import game.Entity;
 import java.util.*;
 
@@ -203,6 +206,123 @@ public abstract class Player extends Entity{
 	 */
     public int getMaxLifeLevel() {
 		return MAX_LIFE_LEVEL;
+	}
+
+
+	public void move(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		boolean canMoveNorth = (x > 0) && ((cells[x-1][y] instanceof StreetCell) || ((cells[x-1][y] instanceof BuildingCell) && !(cells[x-1][y].isLocked(Direction.SOUTH))));
+		boolean canMoveSouth = (x < board.getSize() - 1) && ((cells[x+1][y] instanceof StreetCell) || ((cells[x+1][y] instanceof BuildingCell) && !(cells[x+1][y].isLocked(Direction.NORTH))));
+		boolean canMoveEast = (y < board.getSize() - 1) && ((cells[x][y+1] instanceof StreetCell) || ((cells[x][y+1] instanceof BuildingCell) && !(cells[x][y+1].isLocked(Direction.WEST))));
+		boolean canMoveWest = (y > 0) && ((cells[x][y-1] instanceof StreetCell) || ((cells[x][y-1] instanceof BuildingCell) && !(cells[x][y-1].isLocked(Direction.EAST))));
+		Scanner in = new Scanner(System.in);
+		System.out.println("Where to move?");
+		String msgDirection = "";
+		if (canMoveNorth) {
+			msgDirection += "North (N) | ";
+		}
+		if (canMoveSouth) {
+			msgDirection += "South (S) | ";
+		}
+		if (canMoveEast) {
+			msgDirection += "East (E) | ";
+		}
+		if (canMoveWest) {
+			msgDirection += "West (W) | ";
+		}
+		System.out.println(msgDirection.substring(0, msgDirection.length() - 3));
+		String direction = in.nextLine();
+		switch (direction) {
+			case "N":
+				if (canMoveNorth) {
+					this.moveNorth();
+				}
+				break;
+			case "S":
+				if (canMoveSouth) {
+					this.moveSouth();
+				}
+				break;
+			case "E":
+				if (canMoveEast) {
+					this.moveEast();
+				}
+				break;
+			case "W":
+				if (canMoveWest) {
+					this.moveWest();
+				}
+				break;
+			default:
+				System.out.println("Invalid direction");
+				break;
+		}
+	}
+
+	public void moveNorth() {
+		Cell[][] coord = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		if (x > 0) {
+			try{
+				coord[x][y].removePlayer(this);
+				coord[x-1][y].setPlayer(this);
+				this.setCell(coord[x-1][y]);
+			}
+			catch(Exception e){
+				System.out.println(e);
+			}
+		}
+	}
+
+	public void moveSouth() {
+		Cell[][] coord = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		if (x < board.getSize() - 1) {
+			try{
+				coord[x][y].removePlayer(this);
+				coord[x+1][y].setPlayer(this);
+				this.setCell(coord[x+1][y]);
+			}
+			catch(Exception e){
+				System.out.println(e);
+			}
+		}
+	}
+
+	public void moveEast() {
+		Cell[][] coord = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		if (y < board.getSize() - 1) {
+			try{
+				coord[x][y].removePlayer(this);
+				coord[x][y+1].setPlayer(this);
+				this.setCell(coord[x][y+1]);
+			}
+			catch(Exception e){
+				System.out.println(e);
+			}
+		}
+	}
+
+	public void moveWest() {
+		Cell[][] coord = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		if (y > 0) {
+			try{
+				coord[x][y].removePlayer(this);
+				coord[x][y-1].setPlayer(this);
+				this.setCell(coord[x][y-1]);
+			}
+			catch(Exception e){
+				System.out.println(e);
+			}
+		}
 	}
 
 }

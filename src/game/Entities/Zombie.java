@@ -19,5 +19,6 @@ public abstract class Zombie extends Entity {
     public Zombie(int Lifepoints, int Damage, int actionPoint, boolean bool, Cell cell){
         super(Lifepoints,cell);
     }
+
     
 }

@@ -84,6 +84,9 @@ public abstract class Board {
         this.players = players;
     }
 
+    public void addPlayer(Player player){
+        this.players.add(player);
+    }
     /**
      * Sets the cells of the board.
      * 
@@ -219,7 +222,6 @@ public abstract class Board {
                     break;
     
                 case "MOVE" :
-                    movePlayer(player);
                     break;    
     
                 case "ATTACK" :
@@ -231,149 +233,6 @@ public abstract class Board {
             System.out.println("U are a zombie (move or attack only)");
         }
         
-    }
-    
-
-    public void movePlayer(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        boolean canMoveNorth = (x > 0) && ((this.cells[x-1][y] instanceof StreetCell) || ((this.cells[x-1][y] instanceof BuildingCell) && !(this.cells[x-1][y].isLocked(Direction.SOUTH))));
-        boolean canMoveSouth = (x < this.size-1) && ((this.cells[x+1][y] instanceof StreetCell) || ((this.cells[x+1][y] instanceof BuildingCell) && !(this.cells[x+1][y].isLocked(Direction.NORTH))));
-        boolean canMoveEast = (y < this.size-1) && ((this.cells[x][y+1] instanceof StreetCell) || ((this.cells[x][y+1] instanceof BuildingCell) && !(this.cells[x][y+1].isLocked(Direction.WEST))));
-        boolean canMoveWest = (y > 0) && ((this.cells[x][y-1] instanceof StreetCell) || ((this.cells[x][y-1] instanceof BuildingCell) && !(this.cells[x][y-1].isLocked(Direction.EAST))));
-        Scanner in = new Scanner(System.in);
-        System.out.println("Choose direction : ");
-        String msgDirection = "";
-        if (canMoveNorth) {
-            msgDirection += "NORTH | ";
-        }
-        if (canMoveSouth) {
-            msgDirection += "SOUTH | ";
-        }
-        if (canMoveEast) {
-            msgDirection += "EAST | ";
-        }
-        if (canMoveWest) {
-            msgDirection += "WEST | ";
-        }
-        System.out.println(msgDirection.substring(0,msgDirection.length()-3));
-        String direction = in.nextLine();
-        switch (direction) {
-            case "NORTH":
-                if (canMoveNorth) {
-                    moveNorth(player);
-                }
-                break;
-    
-            case "SOUTH":
-                if (canMoveSouth) {
-                    moveSouth(player);
-                }
-                break;
-    
-            case "WEST":
-                if (canMoveWest) {
-                    moveWest(player);
-                }
-                break;
-    
-            case "EAST":
-                if (canMoveEast) {
-                    moveEast(player);
-                }
-                break;
-        }
-        
-    }
-    
-    
-    /**
-     * Move the player to the north
-     * 
-     * @param player The player to move
-     */
-    public void moveNorth(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (x > 0){
-            if (this.cells[x][y].isLocked(Direction.NORTH) && this.cells[x-1][y].isLocked(Direction.SOUTH)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x-1][y].setPlayer(player);
-                    player.setCell(this.cells[x-1][y]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
-
-    /**
-     * Move the player to the south
-     * 
-     * @param player The player to move
-     */
-    public void moveSouth(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (x < this.size-1){
-            if (this.cells[x][y].isLocked(Direction.SOUTH) && this.cells[x+1][y].isLocked(Direction.NORTH)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x+1][y].setPlayer(player);
-                    player.setCell(this.cells[x+1][y]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
-
-    /**
-     * Move the player to the east
-     * 
-     * @param player The player to move
-     */
-    public void moveEast(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (y < this.size-1){
-            if (this.cells[x][y].isLocked(Direction.EAST) && this.cells[x][y+1].isLocked(Direction.WEST)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x][y+1].setPlayer(player);
-                    player.setCell(this.cells[x][y+1]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
-
-    /**
-     * Move the player to the west
-     * 
-     * @param player The player to move
-     */
-    public void moveWest(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (y > 0){
-            if (this.cells[x][y].isLocked(Direction.WEST) && this.cells[x][y-1].isLocked(Direction.EAST)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x][y-1].setPlayer(player);
-                    player.setCell(this.cells[x][y-1]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
     }
 
 
