@@ -238,48 +238,48 @@ public abstract class Board {
         Cell cell = player.getCell();
         int x = cell.getcoord()[0];
         int y = cell.getcoord()[1];
-        boolean canNorth = (this.cells[x-1][y] instanceof StreetCell) || ((this.cells[x-1][y] instanceof BuildingCell) && !(this.cells[x-1][y].isLocked(Direction.SOUTH)));
-        boolean canSouth = (this.cells[x+1][y] instanceof StreetCell) || ((this.cells[x+1][y] instanceof BuildingCell) && !(this.cells[x+1][y].isLocked(Direction.NORTH)));
-        boolean canEast = (this.cells[x][y+1] instanceof StreetCell) || ((this.cells[x][y+1] instanceof BuildingCell) && !(this.cells[x][y+1].isLocked(Direction.WEST)));
-        boolean canWest = (this.cells[x][y-1] instanceof StreetCell) || ((this.cells[x][y-1] instanceof BuildingCell) && !(this.cells[x][y-1].isLocked(Direction.EAST)));
+        boolean canMoveNorth = (x > 0) && ((this.cells[x-1][y] instanceof StreetCell) || ((this.cells[x-1][y] instanceof BuildingCell) && !(this.cells[x-1][y].isLocked(Direction.SOUTH))));
+        boolean canMoveSouth = (x < this.size-1) && ((this.cells[x+1][y] instanceof StreetCell) || ((this.cells[x+1][y] instanceof BuildingCell) && !(this.cells[x+1][y].isLocked(Direction.NORTH))));
+        boolean canMoveEast = (y < this.size-1) && ((this.cells[x][y+1] instanceof StreetCell) || ((this.cells[x][y+1] instanceof BuildingCell) && !(this.cells[x][y+1].isLocked(Direction.WEST))));
+        boolean canMoveWest = (y > 0) && ((this.cells[x][y-1] instanceof StreetCell) || ((this.cells[x][y-1] instanceof BuildingCell) && !(this.cells[x][y-1].isLocked(Direction.EAST))));
         Scanner in = new Scanner(System.in);
         System.out.println("Choose direction : ");
         String msgDirection = "";
-        if (canNorth) {
+        if (canMoveNorth) {
             msgDirection += "NORTH | ";
         }
-        if (canSouth) {
+        if (canMoveSouth) {
             msgDirection += "SOUTH | ";
         }
-        if (canEast) {
+        if (canMoveEast) {
             msgDirection += "EAST | ";
         }
-        if (canWest) {
+        if (canMoveWest) {
             msgDirection += "WEST | ";
         }
         System.out.println(msgDirection.substring(0,msgDirection.length()-3));
         String direction = in.nextLine();
         switch (direction) {
             case "NORTH":
-                if (canNorth) {
+                if (canMoveNorth) {
                     moveNorth(player);
                 }
                 break;
     
             case "SOUTH":
-                if (canSouth) {
+                if (canMoveSouth) {
                     moveSouth(player);
                 }
                 break;
     
             case "WEST":
-                if (canWest) {
+                if (canMoveWest) {
                     moveWest(player);
                 }
                 break;
     
             case "EAST":
-                if (canEast) {
+                if (canMoveEast) {
                     moveEast(player);
                 }
                 break;

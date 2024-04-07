@@ -36,7 +36,13 @@ public class MainL1 {
                         }
                     }
                 }
-
+                System.out.println(board.toString());
+                board.actionPlayer(p1);
+                System.out.println(board.toString());
+                board.actionPlayer(p1);
+                System.out.println(board.toString());
+                board.actionPlayer(p1);
+                System.out.println(board.toString());
                 scanner.close();
                 break;
             }
