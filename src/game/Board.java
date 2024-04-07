@@ -218,51 +218,6 @@ public abstract class Board {
         return str;
     }
 
-    public void actionPlayer(Player player){
-        Scanner in = new Scanner(System.in);
-        if (player instanceof Player) {
-            System.out.println("Choose your action : ");
-            System.out.println("LOOK AROUND | LOOT | EQUIP | USE | OPEN DOOR | MAKE NOISE | MOVE | ATTACK");
-            String action = in.nextLine();
-    
-            switch (action) {
-                case "LOOK AROUND" :
-                    System.out.println("Do lookAround");
-                    break;
-    
-                case "LOOT" :
-                    System.out.println("Do loot");
-                    break;
-    
-                case "EQUIP" :
-                    System.out.println("Do equip");
-                    break;
-    
-                case "USE" :
-                    System.out.println("Do use");
-                    break;
-                    
-                case "MAKE NOISE" :
-                    System.out.println("Do makeNoise");
-                    break;
-    
-                case "OPEN DOOR" :
-                    System.out.println("Do openDoor");
-                    break;
-    
-                case "MOVE" :
-                    break;    
-    
-                case "ATTACK" :
-                    player.attack();
-                    break;
-            }
-        }
-        else {
-            System.out.println("U are a zombie (move or attack only)");
-        }
-        
-    }
 
 
 }

@@ -9,6 +9,7 @@ import game.Entities.Players.*;
 import game.Entities.Zombies.Walker;
 import game.Equipements.Items.InfraredGlasses;
 import game.Equipements.Weapons.Axe;
+import game.Equipements.Items.MasterKey;
 
 import java.util.*;
 
@@ -36,15 +37,17 @@ public class MainL1 {
                 p3.setCell(board.getCell(2, 2));
                 p4.setCell(board.getCell(2, 2));
                 board.addPlayer(p1);
+                MasterKey mk = new MasterKey();
                 ((StreetCell) board.getCell(2, 2)).setPlayer(p1);
 
+                p1.setEquipment(mk);
 
                 for (int i = 0; i < 10; i++) {
                     System.out.println(board.toString());
                     for (Zombie zombie : board.getZombies()) {
                         zombie.move();
                     }
-                    p1.move();
+                    p1.action();
                 }
                 scanner.close();
                 break;

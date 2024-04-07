@@ -8,6 +8,7 @@ import game.Cell;
 import game.Direction;
 import game.Entity;
 import java.util.*;
+import game.Equipements.Items.MasterKey;
 
 public abstract class Player extends Entity{
     protected List<Equipement> bag;
@@ -15,6 +16,7 @@ public abstract class Player extends Entity{
     private int actionPoints;
 	private int expertiseLevel;
     static final int MAX_LIFE_LEVEL = 5;
+	private MasterKey mk = new MasterKey();
 
 
     /**
@@ -74,6 +76,14 @@ public abstract class Player extends Entity{
 		return board.toString();
 	}
 
+	public boolean containsMasterKey() {
+		for (Equipement equipement : this.bag) {
+			if (equipement instanceof MasterKey) {
+				return true;
+			}
+		}
+		return false;
+	}
 	/**
 	 * Sets the board for the player.
 	 * 
@@ -186,6 +196,102 @@ public abstract class Player extends Entity{
 	 */
     public int getMaxLifeLevel() {
 		return MAX_LIFE_LEVEL;
+	}
+
+	public void action(){
+        Scanner in = new Scanner(System.in);
+		System.out.println("What to do ?");
+		String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
+		if(!(this.getCell().getdoor().isEmpty()) && this.containsMasterKey()){
+			msg += " | OPEN DOOR";
+		}
+		System.out.println(msg);
+		String action = in.nextLine();
+        switch (action) {
+            case "LOOK AROUND" :
+                System.out.println("Do lookAround");
+                break;
+    
+            case "LOOT" :
+                System.out.println("Do loot");
+                break;
+    
+            case "EQUIP" :
+                System.out.println("Do equip");
+                break;
+    
+            case "USE" :
+                System.out.println("Do use");
+                break;
+                    
+            case "MAKE NOISE" :
+                System.out.println("Do makeNoise");
+                break;
+    
+            case "OPEN DOOR" :
+				this.openDoor();
+				break;
+    
+            case "MOVE" :
+				this.move();
+				break;
+    
+            case "ATTACK" :
+                this.attack();
+                break;
+            }
+        }
+
+	public void openDoor(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		boolean NorthNotLocked = ((cells[x-1][y] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.NORTH))));
+		boolean SouthNotLocked = ((cells[x+1][y] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.SOUTH))));
+		boolean EastNotLocked = ((cells[x][y+1] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.EAST))));
+		boolean WestNotLocked = ((cells[x][y-1] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.WEST))));
+		Scanner in = new Scanner(System.in);
+		System.out.println("Where to open door?");
+		String msgDirection = "";
+		if (!(NorthNotLocked)) {
+			msgDirection += "North (N) | ";
+		}
+		if (!(SouthNotLocked)) {
+			msgDirection += "South (S) | ";
+		}
+		if (!(EastNotLocked)) {
+			msgDirection += "East (E) | ";
+		}
+		if (!(WestNotLocked)) {
+			msgDirection += "West (W) | ";
+		}
+		System.out.println(msgDirection);
+		String direction = in.nextLine();
+		switch (direction) {
+			case "N":
+				if (!(NorthNotLocked)) {
+					mk.use(this, Direction.NORTH);
+				}
+				break;
+			case "S":
+				if (!(SouthNotLocked)) {
+					mk.use(this, Direction.SOUTH);
+				}
+				break;
+			case "E":
+				if (!(EastNotLocked)) {
+					mk.use(this, Direction.EAST);
+				}
+				break;
+			case "W":
+				if (!(WestNotLocked)) {
+					mk.use(this, Direction.WEST);
+				}
+				break;
+			default:
+				System.out.println("Invalid direction");
+				break;
+		}
 	}
 
 	public void move(){

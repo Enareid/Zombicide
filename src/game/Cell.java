@@ -161,7 +161,7 @@ public class Cell {
      */
     public void openDoor(Direction direction) {
             this.doors.get(direction).unlock(); // Casse la porte en l'ouvrant
-            }
+    }
         
     /**
      * Give if door is locked
