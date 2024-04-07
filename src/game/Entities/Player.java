@@ -11,12 +11,10 @@ import java.util.*;
 
 public abstract class Player extends Entity{
     protected List<Equipement> bag;
-		protected Equipement inhand;
+	protected Equipement inhand;
     private int actionPoints;
 	private int expertiseLevel;
-	protected Board board;
     static final int MAX_LIFE_LEVEL = 5;
-	private Cell cell;
 
 
     /**
@@ -26,13 +24,12 @@ public abstract class Player extends Entity{
 	 * @param cell the cell of the player.
      */
     public Player(int Lifepoints, Cell cell, Board board){
-        super(Lifepoints,cell);
-		this.board = board;
+        super(Lifepoints,cell, board);
         this.expertiseLevel = 0;
         this.actionPoints = 3;
         this.bag = new ArrayList<Equipement>();
 		this.inhand = null;
-		this.cell = cell;
+
     }
     
 	/**
@@ -43,14 +40,6 @@ public abstract class Player extends Entity{
 		return this.actionPoints;
 	}
 
-	/**
-	 * Gets the cell of the player.
-	 * 
-	 * @return the cell of the player.
-	 */
-	public Cell getCell() {
-		return this.cell;
-	}
 
 	/**
 	 * Returns the board associated with this player.
@@ -93,15 +82,6 @@ public abstract class Player extends Entity{
 	public void setBoard(Board board) {
 		this.board = board;
 	}
-	/**
-	 * Sets the cell of the player.
-	 * 
-	 * @param cell the cell of the player.
-	 */
-	public void setCell(Cell cell) {
-		this.cell = cell;
-	}
-    
 	/**
 	 * Sets the action points of the player.
 	 * @param actionPoints the action points of the player.
@@ -208,7 +188,6 @@ public abstract class Player extends Entity{
 		return MAX_LIFE_LEVEL;
 	}
 
-
 	public void move(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getcoord()[0];
@@ -269,7 +248,6 @@ public abstract class Player extends Entity{
 			try{
 				coord[x][y].removePlayer(this);
 				coord[x-1][y].setPlayer(this);
-				this.setCell(coord[x-1][y]);
 			}
 			catch(Exception e){
 				System.out.println(e);
@@ -285,7 +263,6 @@ public abstract class Player extends Entity{
 			try{
 				coord[x][y].removePlayer(this);
 				coord[x+1][y].setPlayer(this);
-				this.setCell(coord[x+1][y]);
 			}
 			catch(Exception e){
 				System.out.println(e);
@@ -301,7 +278,7 @@ public abstract class Player extends Entity{
 			try{
 				coord[x][y].removePlayer(this);
 				coord[x][y+1].setPlayer(this);
-				this.setCell(coord[x][y+1]);
+
 			}
 			catch(Exception e){
 				System.out.println(e);
@@ -317,7 +294,6 @@ public abstract class Player extends Entity{
 			try{
 				coord[x][y].removePlayer(this);
 				coord[x][y-1].setPlayer(this);
-				this.setCell(coord[x][y-1]);
 			}
 			catch(Exception e){
 				System.out.println(e);

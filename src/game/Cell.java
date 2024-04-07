@@ -83,6 +83,7 @@ public class Cell {
     public void setPlayer(Player player) throws Exception{
         if (!this.players.contains(player)){
             this.players.add(player);
+            player.setCell(this);
         }
         else{
             throw new Exception("Player already present");

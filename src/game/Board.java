@@ -5,6 +5,8 @@ import game.Cells.StreetCell;
 
 import java.util.*;
 import game.Entities.*;
+import game.Entities.Players.*;
+import game.Entities.Zombies.*;
 
 public abstract class Board {
 
@@ -14,6 +16,7 @@ public abstract class Board {
     protected int size;
     /** The Player in the board */
     protected List<Player> players;
+    protected List<Zombie> zombies = new ArrayList<Zombie>();
 
 
     /**
@@ -75,6 +78,27 @@ public abstract class Board {
         return this.cells;
     }
 
+    public List<Zombie> getZombies(){
+        return this.zombies;
+    }
+
+    public void spawnZombie(){
+        for (int i = 0; i < this.size; i++){
+            for (int j = 0; j < this.size; j++){
+                if (this.cells[i][j] instanceof StreetCell && ((StreetCell) this.cells[i][j]).getCanSpawn()){
+                    Zombie walker = new Walker(this.cells[i][j], this);
+                    try{
+                        ((StreetCell) this.cells[i][j]).setZombie(walker);
+                        this.zombies.add(walker);
+                    }
+                    catch(Exception e){
+                        System.out.println(e);
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * Sets the list of players for the board.
      * 
@@ -87,6 +111,11 @@ public abstract class Board {
     public void addPlayer(Player player){
         this.players.add(player);
     }
+
+    public void addZombie(Zombie zombie){
+        this.zombies.add(zombie);
+    }
+
     /**
      * Sets the cells of the board.
      * 

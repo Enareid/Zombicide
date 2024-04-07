@@ -24,14 +24,8 @@ public class MainL1 {
                 int size = scanner.nextInt();
                 nbEssais++;
                 Board board = new ClassicalBoard(size, players);
-                for (int x = 0; x < size; x++) {
-                    for (int y = 0; y < size; y++) {
-                        if (board.getCell(x, y) instanceof StreetCell) {
-                            ((StreetCell) board.getCell(x, y)).spawnZombie();
-                        }
-                    }
-                }
-                Player p1 = new Fighter(10, null,board);
+                board.spawnZombie();
+                Player p1 = new Fighter(10, board.getCell(2, 2),board);
                 Player p2 = new Healer(10, null,board);
                 Player p3 = new Lucky(10, null,board);
                 Player p4 = new Snooper(10, null,board);
@@ -44,8 +38,12 @@ public class MainL1 {
                 board.addPlayer(p1);
                 ((StreetCell) board.getCell(2, 2)).setPlayer(p1);
 
+
                 for (int i = 0; i < 10; i++) {
                     System.out.println(board.toString());
+                    for (Zombie zombie : board.getZombies()) {
+                        zombie.move();
+                    }
                     p1.move();
                 }
                 scanner.close();

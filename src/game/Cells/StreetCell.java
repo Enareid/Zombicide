@@ -48,14 +48,6 @@ public class StreetCell extends Cell{
     }
 
 
-    /**
-     * spawns a zombie in the cell.
-     */
-    public void spawnZombie() {
-        if(this.canSpawn){
-            this.zombies.add(new Walker(this));
-        }
-    }
 
     /**
      * Returns the string representation of the cell.
