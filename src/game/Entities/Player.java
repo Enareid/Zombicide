@@ -198,54 +198,60 @@ public abstract class Player extends Entity{
 	}
 
 	public void action(){
-        Scanner in = new Scanner(System.in);
-		System.out.println("What to do ?");
-		String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
-		if(this.containsMasterKey() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
-			msg += " | OPEN DOOR";
-		}
-		System.out.println(msg);
-		String action = in.nextLine();
-        switch (action) {
-            case "LOOK AROUND" :
-				try{
-                	this.lookaround();
-				}
-				catch (Exception e) {
-					System.out.println(e);
-				}
-                break;
+		while (this.actionPoints != 0){
+			Scanner in = new Scanner(System.in);
+			System.out.println("What to do ? / Number of action's points : " + this.actionPoints);
+			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
+			if(this.containsMasterKey() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+				msg += " | OPEN DOOR";
+			}
+			System.out.println(msg);
+			String action = in.nextLine();
+        	switch (action) {
+            	case "LOOK AROUND" :
+					try{
+                		this.lookaround();
+					}
+					catch (Exception e) {
+						System.out.println(e);
+					}
+                	break;
     
-            case "LOOT" :
-                System.out.println("Do loot");
-                break;
+            	case "LOOT" :
+                	System.out.println("Do loot");
+                	break;
     
-            case "EQUIP" :
-                System.out.println("Do equip");
-                break;
+            	case "EQUIP" :
+                	System.out.println("Do equip");
+                	break;
     
-            case "USE" :
-                System.out.println("Do use");
-                break;
+            	case "USE" :
+                	System.out.println("Do use");
+                	break;
                     
-            case "MAKE NOISE" :
-                System.out.println("Do makeNoise");
-                break;
+            	case "MAKE NOISE" :
+                	System.out.println("Do makeNoise");
+                	break;
     
-            case "OPEN DOOR" :
-			if(this.containsMasterKey())
-				this.openDoor();
-				break;
+            	case "OPEN DOOR" :
+				if(this.containsMasterKey())
+					this.openDoor();
+					this.actionPoints -= 1;
+					break;
     
-            case "MOVE" :
-				this.move();
-				break;
+            	case "MOVE" :
+					this.move();
+					this.actionPoints -= 1;
+					break;
     
-            case "ATTACK" :
-                this.attack();
-                break;
-            }
-        }
+            	case "ATTACK" :
+                	this.attack();
+					this.actionPoints -= 1;
+                	break;
+            	}
+			}
+			this.actionPoints = 3;
+    	}
 
 	public void openDoor(){
 		Cell[][] cells = board.getCells();

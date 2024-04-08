@@ -34,8 +34,9 @@ public class MainL1 {
                 MasterKey mk = new MasterKey();
                 p1.setEquipment(mk);
                 
+                System.out.println(board.toString());
+
                 for (int i = 0; i < 10; i++) {
-                    System.out.println(board.toString());
                     for (Zombie zombie : board.getZombies()) {
                         zombie.move();
                     }
