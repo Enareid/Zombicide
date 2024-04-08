@@ -202,7 +202,7 @@ public abstract class Player extends Entity{
         Scanner in = new Scanner(System.in);
 		System.out.println("What to do ?");
 		String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
-		if(!(this.getCell().getdoor().isEmpty()) && this.containsMasterKey()){
+		if(this.containsMasterKey() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 			msg += " | OPEN DOOR";
 		}
 		System.out.println(msg);
@@ -246,45 +246,41 @@ public abstract class Player extends Entity{
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getcoord()[0];
 		int y = this.cell.getcoord()[1];
-		boolean NorthNotLocked = ((cells[x-1][y] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.NORTH))));
-		boolean SouthNotLocked = ((cells[x+1][y] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.SOUTH))));
-		boolean EastNotLocked = ((cells[x][y+1] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.EAST))));
-		boolean WestNotLocked = ((cells[x][y-1] instanceof StreetCell) || (!(cells[x][y].isLocked(Direction.WEST))));
 		Scanner in = new Scanner(System.in);
 		System.out.println("Where to open door?");
 		String msgDirection = "";
-		if (!(NorthNotLocked)) {
+		if (this.northLocked()) {
 			msgDirection += "North (N) | ";
 		}
-		if (!(SouthNotLocked)) {
+		if (this.southLocked()) {
 			msgDirection += "South (S) | ";
 		}
-		if (!(EastNotLocked)) {
+		if (this.eastLocked()) {
 			msgDirection += "East (E) | ";
 		}
-		if (!(WestNotLocked)) {
+		if (this.westLocked()) {
 			msgDirection += "West (W) | ";
 		}
 		System.out.println(msgDirection);
 		String direction = in.nextLine();
 		switch (direction) {
 			case "N":
-				if (!(NorthNotLocked)) {
+				if (this.northLocked()) {
 					mk.use(this, Direction.NORTH);
 				}
 				break;
 			case "S":
-				if (!(SouthNotLocked)) {
+				if (this.southLocked()) {
 					mk.use(this, Direction.SOUTH);
 				}
 				break;
 			case "E":
-				if (!(EastNotLocked)) {
+				if (this.eastLocked()) {
 					mk.use(this, Direction.EAST);
 				}
 				break;
 			case "W":
-				if (!(WestNotLocked)) {
+				if (this.westLocked()) {
 					mk.use(this, Direction.WEST);
 				}
 				break;
@@ -293,6 +289,36 @@ public abstract class Player extends Entity{
 				break;
 		}
 	}
+
+	public boolean northLocked(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		return (cells[x][y].isLocked(Direction.NORTH)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x-1][y] instanceof BuildingCell));
+	}
+
+	public boolean southLocked(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		return (cells[x][y].isLocked(Direction.SOUTH)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x+1][y] instanceof BuildingCell));
+	}
+
+	public boolean eastLocked(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		return (cells[x][y].isLocked(Direction.EAST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y+1] instanceof BuildingCell));
+	}
+
+	public boolean westLocked(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getcoord()[0];
+		int y = this.cell.getcoord()[1];
+		return (cells[x][y].isLocked(Direction.WEST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y-1] instanceof BuildingCell));
+	}
+
+
 
 	public void move(){
 		Cell[][] cells = board.getCells();
