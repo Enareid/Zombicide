@@ -24,22 +24,16 @@ public class MainL1 {
                 System.out.println("Entrez la taille du plateau:");
                 int size = scanner.nextInt();
                 nbEssais++;
+                Player p1 = new Fighter(10, null, null);
+                players.add(p1);
                 Board board = new ClassicalBoard(size, players);
                 board.spawnZombie();
-                Player p1 = new Fighter(10, board.getCell(2, 2),board);
-                Player p2 = new Healer(10, null,board);
-                Player p3 = new Lucky(10, null,board);
-                Player p4 = new Snooper(10, null,board);
                 Equipement axe = new Axe();
                 Equipement Fiole = new InfraredGlasses();
-                p1.setCell(board.getCell(2, 2));
-                p2.setCell(board.getCell(2, 2));
-                p3.setCell(board.getCell(2, 2));
-                p4.setCell(board.getCell(2, 2));
                 board.addPlayer(p1);
                 MasterKey mk = new MasterKey();
                 p1.setEquipment(mk);
-                ((StreetCell) board.getCell(2, 2)).setPlayer(p1);
+                
                 for (int i = 0; i < 10; i++) {
                     System.out.println(board.toString());
                     for (Zombie zombie : board.getZombies()) {

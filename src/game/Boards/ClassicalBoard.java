@@ -48,6 +48,11 @@ public class ClassicalBoard extends Board{
                 ((StreetCell) this.cells[newX][y2]).allowSpawn();
                 ((StreetCell) this.cells[x1][newY]).allowSpawn();
                 ((StreetCell) this.cells[x2][newY]).allowSpawn();
+                // Ajout des joueurs sur le board
+                for (int i = 0; i < players.size(); i++){
+                    players.get(i).setBoard(this);
+                    players.get(i).setCell(this.cells[newX][newY]);
+                }
                 // prendre la case au centre des streetCell et y rajouter les joueurs
                 for(int i = 0; i < players.size(); i++){
                     ((StreetCell) this.cells[newX][newY]).setPlayer(players.get(i));

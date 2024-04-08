@@ -60,7 +60,8 @@ public abstract class Player extends Entity{
 	 * @throws Exception if an error occurs during the process
 	 */
 	public void lookaround() throws Exception{
-		Board board = new ClassicalBoard(this.board.getSize(), this.board.getPlayers());
+		List<Player> players = new ArrayList<Player>();
+		Board board = new ClassicalBoard(this.board.getSize(), players);
 		board.setCells(this.board.createfakeboard());
 		int posx=this.cell.getcoord()[0];
 		int posy=this.cell.getcoord()[1];
