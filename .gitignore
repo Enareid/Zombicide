@@ -10,6 +10,7 @@
 
 # Eclipse
 .projet
+.classpath
 
 # BlueJ files
 *.ctxt
