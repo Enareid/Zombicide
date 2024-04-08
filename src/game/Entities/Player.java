@@ -59,13 +59,11 @@ public abstract class Player extends Entity{
 	 * @return a string representation of the surrounding cells
 	 * @throws Exception if an error occurs during the process
 	 */
-	public String lookaround() throws Exception{
+	public void lookaround() throws Exception{
 		Board board = new ClassicalBoard(this.board.getSize(), this.board.getPlayers());
 		board.setCells(this.board.createfakeboard());
 		int posx=this.cell.getcoord()[0];
 		int posy=this.cell.getcoord()[1];
-		System.out.println(posx);
-		System.out.println(posy);
 		for(int x=posx-1;x<posx+2;x++){
 			for(int y=posy-1;y<posy+2;y++){
 				if (x>=0 && x<board.getSize() && y>=0 && y<board.getSize()){
@@ -73,7 +71,7 @@ public abstract class Player extends Entity{
 				}
 			}
 		}
-		return board.toString();
+		System.out.println(board.toString());
 	}
 
 	public boolean containsMasterKey() {
@@ -209,7 +207,12 @@ public abstract class Player extends Entity{
 		String action = in.nextLine();
         switch (action) {
             case "LOOK AROUND" :
-                System.out.println("Do lookAround");
+				try{
+                	this.lookaround();
+				}
+				catch (Exception e) {
+					System.out.println(e);
+				}
                 break;
     
             case "LOOT" :
@@ -229,6 +232,7 @@ public abstract class Player extends Entity{
                 break;
     
             case "OPEN DOOR" :
+			if(this.containsMasterKey())
 				this.openDoor();
 				break;
     

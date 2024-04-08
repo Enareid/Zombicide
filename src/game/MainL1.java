@@ -38,10 +38,8 @@ public class MainL1 {
                 p4.setCell(board.getCell(2, 2));
                 board.addPlayer(p1);
                 MasterKey mk = new MasterKey();
-                ((StreetCell) board.getCell(2, 2)).setPlayer(p1);
-
                 p1.setEquipment(mk);
-
+                ((StreetCell) board.getCell(2, 2)).setPlayer(p1);
                 for (int i = 0; i < 10; i++) {
                     System.out.println(board.toString());
                     for (Zombie zombie : board.getZombies()) {
