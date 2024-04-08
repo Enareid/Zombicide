@@ -294,6 +294,9 @@ public abstract class Player extends Entity{
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getcoord()[0];
 		int y = this.cell.getcoord()[1];
+		if (x == 0) {
+			return false;
+		}
 		return (cells[x][y].isLocked(Direction.NORTH)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x-1][y] instanceof BuildingCell));
 	}
 
@@ -301,6 +304,9 @@ public abstract class Player extends Entity{
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getcoord()[0];
 		int y = this.cell.getcoord()[1];
+		if (x == board.getSize() - 1) {
+			return false;
+		}
 		return (cells[x][y].isLocked(Direction.SOUTH)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x+1][y] instanceof BuildingCell));
 	}
 
@@ -308,6 +314,9 @@ public abstract class Player extends Entity{
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getcoord()[0];
 		int y = this.cell.getcoord()[1];
+		if (y == board.getSize() - 1) {
+			return false;
+		}
 		return (cells[x][y].isLocked(Direction.EAST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y+1] instanceof BuildingCell));
 	}
 
@@ -315,6 +324,9 @@ public abstract class Player extends Entity{
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getcoord()[0];
 		int y = this.cell.getcoord()[1];
+		if (y == 0) {
+			return false;
+		}
 		return (cells[x][y].isLocked(Direction.WEST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y-1] instanceof BuildingCell));
 	}
 
