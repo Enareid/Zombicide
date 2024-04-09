@@ -9,5 +9,9 @@ public class HealingVial extends Equipement{
         player.setLifeLevel(player.getLifeLevel()+1);
         
     }
+
+    public String toString() {
+        return "HealingVial";
+    }
     
 }

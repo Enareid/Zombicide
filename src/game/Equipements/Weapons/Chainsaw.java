@@ -6,5 +6,9 @@ public class Chainsaw extends Weapon{
     public Chainsaw(){
       super(5, 3,0, 0, 2);
     }
+
+    public String toString() {
+      return "Chainsaw";
+    }
     
 }

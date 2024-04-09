@@ -7,5 +7,9 @@ public class Axe extends Weapon{
   public Axe(){
     super(4, 2,0, 0, 1);
   }
+
+  public String toString() {
+    return "Axe";
+  }
     
 }

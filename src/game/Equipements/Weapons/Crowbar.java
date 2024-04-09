@@ -8,5 +8,7 @@ public class Crowbar extends Weapon{
         super(4, 1,0, 0, 1);
       }
 
-    
+      public String toString() {
+        return "Crowbar";
+      }
 }

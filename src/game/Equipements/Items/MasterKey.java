@@ -34,4 +34,8 @@ public class MasterKey extends Equipement{
         }
     }
 
+    public String toString() {
+        return "MasterKey";
+    }
+
 }
