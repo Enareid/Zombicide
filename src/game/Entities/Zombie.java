@@ -146,5 +146,6 @@ public abstract class Zombie extends Entity {
 			moveWest();
 		}
 	}
+	
 
 }
