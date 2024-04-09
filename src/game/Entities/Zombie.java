@@ -146,6 +146,17 @@ public abstract class Zombie extends Entity {
 			moveWest();
 		}
 	}
+	/**
+      * Method that returns true when a zombie attacks the player
+      reducing player'life points
+      * @param P player to be attacked by zombie
+      @return boolean
+      */
+     public boolean attack(){
+		Player P =getNearestPlayer();
+        P.setLifeLevel(P.getLifeLevel()-this.Damage);
+        return true;
+     }
 	
 
 }
