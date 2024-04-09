@@ -222,7 +222,7 @@ public abstract class Player extends Entity{
                 	break;
     
             	case "EQUIP" :
-                	System.out.println("Do equip");
+                	this.equip();
                 	break;
     
             	case "USE" :
@@ -341,6 +341,31 @@ public abstract class Player extends Entity{
 		return (cells[x][y].isLocked(Direction.WEST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y-1] instanceof BuildingCell));
 	}
 
+
+	public void equip() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("You are holding : " + this.inhand);
+	
+		System.out.print("swap with : ");
+		int i = 1;
+		for (Equipement equipement : this.getEquipments()) {
+			System.out.printf(equipement.toString() + " (%d) | " , i);
+			i++;
+		}
+		System.out.print("quit (Q) \n");
+	
+		String input = in.nextLine();
+		if (!input.equals("Q")) {
+			int choice = Integer.parseInt(input);
+			System.out.println("You are equiping : " + this.getEquipments().get(choice-1).toString());
+			this.setInHand(this.getEquipments().get(choice-1));
+		}
+		else {
+			System.out.println("you do nothing");
+		}
+	
+	}
+	
 
 
 	public void move(){
