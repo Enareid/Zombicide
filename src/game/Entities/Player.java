@@ -35,7 +35,7 @@ public abstract class Player extends Entity{
 
 	public int dice(){
 		Random dice = new Random();
-		return dice.nextInt(6)+1;
+		return dice.nextInt(6);
 	}
     
 	/**
@@ -191,9 +191,8 @@ public abstract class Player extends Entity{
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.actionPoints);
 			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
-			if(this.inhand.toString().equals("MasterKey") && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
-				msg += " | OPEN DOOR";
-			}
+			if((this.inhand.toString().equals("MasterKey")||(this.inhand.toString().equals("Axe") || (this.inhand.toString().equals("Crowbar")) || ((this.inhand.toString().equals("Chainsaw")))&& (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())))){
+
 			System.out.println(msg);
 			String action = in.nextLine();
         	switch (action) {
@@ -240,6 +239,7 @@ public abstract class Player extends Entity{
 			}
 			this.actionPoints = 3;
     	}
+	}
 
 	public void openDoor(){
 		Cell[][] cells = board.getCells();
@@ -265,21 +265,25 @@ public abstract class Player extends Entity{
 		switch (direction) {
 			case "N":
 				if (this.northLocked()) {
+					this.inhand = new MasterKey();
 					((MasterKey)this.inhand).use(this,Direction.NORTH);
 				}
 				break;
 			case "S":
 				if (this.southLocked()) {
+					this.inhand = new MasterKey();
 					((MasterKey)this.inhand).use(this,Direction.SOUTH);
 				}
 				break;
 			case "E":
 				if (this.eastLocked()) {
+					this.inhand = new MasterKey();
 					((MasterKey)this.inhand).use(this,Direction.EAST);
 				}
 				break;
 			case "W":
 				if (this.westLocked()) {
+					this.inhand = new MasterKey();
 					((MasterKey)this.inhand).use(this,Direction.WEST);
 				}
 				break;
