@@ -32,6 +32,11 @@ public abstract class Player extends Entity{
 		this.inhand = null;
 
     }
+
+	public int dice(){
+		Random dice = new Random();
+		return dice.nextInt(6)+1;
+	}
     
 	/**
 	 * Gets the action points of the player.
