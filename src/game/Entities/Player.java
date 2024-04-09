@@ -16,7 +16,6 @@ public abstract class Player extends Entity{
     private int actionPoints;
 	private int expertiseLevel;
     static final int MAX_LIFE_LEVEL = 5;
-	private MasterKey mk = new MasterKey();
 
 
     /**
@@ -73,15 +72,6 @@ public abstract class Player extends Entity{
 			}
 		}
 		System.out.println(board.toString());
-	}
-
-	public boolean containsMasterKey() {
-		for (Equipement equipement : this.bag) {
-			if (equipement instanceof MasterKey) {
-				return true;
-			}
-		}
-		return false;
 	}
 	/**
 	 * Sets the board for the player.
@@ -183,12 +173,6 @@ public abstract class Player extends Entity{
 		return this.inhand;
 	}
 
-	public void useInHand(Object target) {
-		if (this.inhand != null) {
-			this.inhand.use(target);
-		}
-	}
-
 	/**
 	 * Get the maximum life level of the player.
 	 * @return the maximum life level of the player.
@@ -202,7 +186,7 @@ public abstract class Player extends Entity{
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.actionPoints);
 			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
-			if(this.containsMasterKey() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+			if(this.inhand.toString().equals("MasterKey") && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += " | OPEN DOOR";
 			}
 			System.out.println(msg);
@@ -234,7 +218,6 @@ public abstract class Player extends Entity{
                 	break;
     
             	case "OPEN DOOR" :
-				if(this.containsMasterKey())
 					this.openDoor();
 					this.actionPoints -= 1;
 					break;
@@ -277,22 +260,22 @@ public abstract class Player extends Entity{
 		switch (direction) {
 			case "N":
 				if (this.northLocked()) {
-					mk.use(this, Direction.NORTH);
+					((MasterKey)this.inhand).use(this,Direction.NORTH);
 				}
 				break;
 			case "S":
 				if (this.southLocked()) {
-					mk.use(this, Direction.SOUTH);
+					((MasterKey)this.inhand).use(this,Direction.SOUTH);
 				}
 				break;
 			case "E":
 				if (this.eastLocked()) {
-					mk.use(this, Direction.EAST);
+					((MasterKey)this.inhand).use(this,Direction.EAST);
 				}
 				break;
 			case "W":
 				if (this.westLocked()) {
-					mk.use(this, Direction.WEST);
+					((MasterKey)this.inhand).use(this,Direction.WEST);
 				}
 				break;
 			default:

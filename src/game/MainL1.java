@@ -33,6 +33,7 @@ public class MainL1 {
                 board.addPlayer(p1);
                 MasterKey mk = new MasterKey();
                 p1.setEquipment(mk);
+                p1.setInHand(mk);
                 
                 System.out.println(board.toString());
 

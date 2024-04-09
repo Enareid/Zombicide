@@ -1,4 +1,5 @@
 package game;
+import game.Entities.Player;
 
 
 public abstract class Equipement{
@@ -10,7 +11,7 @@ public abstract class Equipement{
 	public Equipement() {
 	}
 
-	public void use(Object target) {
+	public void use(Player player, Object target) {
 
 	}
 
