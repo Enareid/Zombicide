@@ -13,4 +13,6 @@ public class Fighter extends Player{
     public String toString() {
         return "Fighter";
     }
+
+    
 }
