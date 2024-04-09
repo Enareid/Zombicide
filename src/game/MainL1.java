@@ -9,6 +9,7 @@ import game.Entities.Players.*;
 import game.Entities.Zombies.Walker;
 import game.Equipements.Items.InfraredGlasses;
 import game.Equipements.Weapons.Axe;
+import game.Equipements.Weapons.Crowbar;
 import game.Equipements.Items.MasterKey;
 
 import java.util.*;
@@ -29,11 +30,12 @@ public class MainL1 {
                 Board board = new ClassicalBoard(size, players);
                 board.spawnZombie();
                 Equipement axe = new Axe();
+                Equipement Crowbar = new Crowbar();
                 Equipement Fiole = new InfraredGlasses();
                 board.addPlayer(p1);
                 MasterKey mk = new MasterKey();
-                p1.setEquipment(mk);
-                p1.setInHand(mk);
+                p1.setEquipment(Crowbar);
+                p1.setInHand(Crowbar);
                 
                 System.out.println(board.toString());
 

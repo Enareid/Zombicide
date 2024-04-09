@@ -92,7 +92,7 @@ public class ClassicalBoard extends Board{
             randomY2 = rand.nextInt(size);
 
         }
-        this.cells[randomX1][randomY1] = new ContinentalCell(10,randomX1,randomY1);
+        this.cells[randomX1][randomY1] = new ContinentalCell(1,randomX1,randomY1);
         this.cells[randomX2][randomY2] = new DrugStoreCell(randomX2,randomY2);
     }
 
