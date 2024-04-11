@@ -239,6 +239,17 @@ public abstract class Player extends Entity{
 	}
 
 	/**
+	 * Uses the item currently in the player's hand on the specified target.
+	 *
+	 * @param target the target on which to use the item
+	 */
+	public void useInHand(Object target) {
+		if (this.inhand != null) {
+			this.inhand.use(target);
+		}
+	}
+
+	/**
 	 * Get the maximum life level of the player.
 	 * @return the maximum life level of the player.
 	 */

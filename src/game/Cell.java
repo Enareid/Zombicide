@@ -173,6 +173,10 @@ public class Cell {
         return this.doors.get(direction).isLocked();
     }
 
+    /**
+     * 
+     * @return the map of doors of this cell
+     */
     public Map<Direction,Door> getdoor(){
         return this.doors;
     }
