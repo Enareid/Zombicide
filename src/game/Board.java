@@ -90,10 +90,39 @@ public abstract class Board {
         for (int i = 0; i < this.size; i++){
             for (int j = 0; j < this.size; j++){
                 if (this.cells[i][j] instanceof StreetCell && ((StreetCell) this.cells[i][j]).getCanSpawn()){
-                    Zombie walker = new Walker(this.cells[i][j], this);
-                    try{
+                    Random random = new Random();
+                    int z = random.nextInt(4);
+                   try{
+                    switch(z){
+                        case 0:
+                        Zombie walker = new Walker(this.cells[i][j], this);
                         ((StreetCell) this.cells[i][j]).setZombie(walker);
                         this.zombies.add(walker);
+                        break;
+                        
+                        case 1:
+                        Zombie runner = new Runner(this.cells[i][j], this);
+                        ((StreetCell) this.cells[i][j]).setZombie(runner);
+                        this.zombies.add(runner);
+                        break;
+                        
+                        case 2:
+                        Zombie broom = new Broom(this.cells[i][j], this);
+                        ((StreetCell) this.cells[i][j]).setZombie(broom);
+                        this.zombies.add(broom);
+                        break;
+
+                        case 3:
+                        Zombie abomination = new Abomination(this.cells[i][j], this);
+                        ((StreetCell) this.cells[i][j]).setZombie(abomination);
+                        this.zombies.add(abomination);
+                        break;
+
+                        default:
+				        break;
+                    }
+
+                    
                     }
                     catch(Exception e){
                         System.out.println(e);

@@ -210,9 +210,7 @@ public abstract class Zombie extends Entity {
         P.setLifeLevel(P.getLifeLevel()-this.Damage);
      }
 	
-	 public String toString(){
-		return this.name;
-	 }
+	 public abstract String toString();
 
 
 }
