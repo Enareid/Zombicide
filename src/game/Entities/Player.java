@@ -26,13 +26,11 @@ public abstract class Player extends Entity{
 	 * @param Lifepoints the lifepoints of the player.
 	 * @param cell the cell of the player.
      */
-    public Player(int Lifepoints, Cell cell, Board board){
-        super(Lifepoints,cell, board);
+    public Player(int Lifepoints, Cell cell, Board board,int actionPoint=3){
+        super(Lifepoints,cell, board,actionPoint);
         this.expertiseLevel = 0;
-        this.actionPoints = 3;
         this.bag = new ArrayList<Equipement>();
-		this.inhand = null;
-
+				this.inhand = null;
     }
 
 	public void AttackAction(){
@@ -40,7 +38,7 @@ public abstract class Player extends Entity{
 		System.out.println("Which one to attack");
 		String msg = "";
 		for (Zombie zombie : this.cell.getZombie()) {
-			msg += zombie.toString() + " have " + zombie.getLifepoints() + " life points :" + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
+			msg += zombie.toString() + " has " + zombie.getLifepoints() + " life points :" + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
 		}
 		System.out.println(msg);
 		String action = in.nextLine();

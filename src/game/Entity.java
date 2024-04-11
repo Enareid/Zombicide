@@ -13,10 +13,11 @@ public abstract class Entity {
      * @param Lifepoints the lifepoints of the entity.
      * @param cell the cell of the entity.
      */
-    public Entity(int Lifepoints, Cell cell, Board board){
+    public Entity(int Lifepoints, Cell cell, Board board, int actionPoint){
         this.Lifepoints=Lifepoints;
         this.cell=cell;
         this.board = board;
+        this.actionPoint=actionPoint;
     }
 
     public void attack() {
