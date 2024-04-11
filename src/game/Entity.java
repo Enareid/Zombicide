@@ -7,18 +7,18 @@ public abstract class Entity {
     protected int Lifepoints;
     protected Cell cell;
     protected Board board;
-    protected int actionPoint;
+    protected int actionPoints;
 
     /**
      * Builds a new entity.
      * @param Lifepoints the lifepoints of the entity.
      * @param cell the cell of the entity.
      */
-    public Entity(int Lifepoints, Cell cell, Board board, int actionPoint){
+    public Entity(int Lifepoints, Cell cell, Board board, int actionPoints){
         this.Lifepoints=Lifepoints;
         this.cell=cell;
         this.board = board;
-        this.actionPoint=actionPoint;
+        this.actionPoints=actionPoints;
     }
 
     public void attack() {
@@ -58,7 +58,11 @@ public abstract class Entity {
 	 * @return the action points of the Entity.
 	 */
 	public int getActionPoints() {
-		return this.actionPoint;
+		return this.actionPoints;
+	}
+
+	public void setActionPoints(int actionPoints) {
+		this.actionPoints = actionPoints;
 	}
 
     public boolean isDead() {

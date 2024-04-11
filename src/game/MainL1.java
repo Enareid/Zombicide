@@ -33,7 +33,6 @@ public class MainL1 {
                 Equipement gun = new Gun();
                 Equipement rifle = new Rifle();
                 Equipement Chainsaw = new Chainsaw();
-                
                 Equipement Crowbar = new Crowbar();
                 Equipement Fiole = new InfraredGlasses();
                 MasterKey mk = new MasterKey();

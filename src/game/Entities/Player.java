@@ -14,11 +14,11 @@ import java.util.*;
 import game.Equipements.Items.MasterKey;
 
 public abstract class Player extends Entity{
-    protected List<Equipement> bag;
+  protected List<Equipement> bag;
 	protected Equipement inhand;
-    private int actionPoints;
+
 	private int expertiseLevel;
-    static final int MAX_LIFE_LEVEL = 5;
+  static final int MAX_LIFE_LEVEL = 5;
 
 
     /**
@@ -141,9 +141,7 @@ public abstract class Player extends Entity{
 	 * Sets the action points of the player.
 	 * @param actionPoints the action points of the player.
 	 */
-	public void setActionPoints(int actionPoints) {
-		this.actionPoints = actionPoints;
-	}
+
     
 	/**
 	 * Gets the expertise level of the player.
@@ -238,9 +236,9 @@ public abstract class Player extends Entity{
 	}
 
 	public void action(){
-		while (this.actionPoints != 0){
+		while (this.getActionPoints()!= 0){
 			Scanner in = new Scanner(System.in);
-			System.out.println("What to do ? / Number of action's points : " + this.actionPoints);
+			System.out.println("What to do ? / Number of action's points : " + this.getActionPoints());
 			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE ";
 			if( this.inhand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += "| OPEN DOOR ";
