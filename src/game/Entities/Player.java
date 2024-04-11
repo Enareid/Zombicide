@@ -165,6 +165,11 @@ public abstract class Player extends Entity{
 		return this.inhand;
 	}
 
+	/**
+	 * Uses the item currently in the player's hand on the specified target.
+	 *
+	 * @param target the target on which to use the item
+	 */
 	public void useInHand(Object target) {
 		if (this.inhand != null) {
 			this.inhand.use(target);
