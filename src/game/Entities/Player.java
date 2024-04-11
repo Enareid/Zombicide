@@ -72,12 +72,46 @@ public abstract class Player extends Entity{
 			int high = ((Weapon) this.getInHand()).getrange()[1];
 				
 		if(low<distance && distance<high){
+			int zpos= zombie.getCell().getcoord()[1];
+			int spos= this.getCell().getcoord()[1];
 			if(zombie.getCell().getcoord()[0]==this.getCell().getcoord()[0]){
-				return true;
+				if(zpos<spos){
+					for(int i=zpos;i<spos;i++){
+						if (this.board.getCell(zombie.getCell().getcoord()[0], i).isLocked(Direction.NORTH)){
+							return false;
+						}
+					}
+					return true;
+				}
+				else if (spos<zpos){
+					for(int i=spos;i<zpos;i++){
+						if (this.board.getCell(zombie.getCell().getcoord()[0], i).isLocked(Direction.NORTH)){
+							return false;
+						}
+					}
+					return true;
+				}
 			}
 
 			if(zombie.getCell().getcoord()[1]==this.getCell().getcoord()[1]){
-			return true;
+
+				if(zpos<spos){
+					for(int i=zpos;i<spos;i++){
+						if (this.board.getCell(i, zombie.getCell().getcoord()[1]).isLocked(Direction.EAST)){
+							return false;
+						}
+					}
+					return true;
+				}
+				else if (spos<zpos){
+					for(int i=spos;i<zpos;i++){
+						if (this.board.getCell(i, zombie.getCell().getcoord()[1]).isLocked(Direction.EAST)){
+							return false;
+						}
+					}
+					return true;
+				}
+
 			}
  		}	
 	}
