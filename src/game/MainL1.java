@@ -29,10 +29,10 @@ public class MainL1 {
                 players.add(p1);
                 Board board = new ClassicalBoard(size, players);
                 board.spawnZombie();
+                
                 Equipement axe = new Axe();
                 Equipement Crowbar = new Crowbar();
                 Equipement Fiole = new InfraredGlasses();
-                board.addPlayer(p1);
                 MasterKey mk = new MasterKey();
                 p1.setEquipment(Crowbar);
                 p1.setInHand(Crowbar);
