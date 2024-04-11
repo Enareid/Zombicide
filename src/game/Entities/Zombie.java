@@ -17,6 +17,7 @@ public abstract class Zombie extends Entity {
     protected int actionPoint;
     protected boolean superArmor;
 		protected String name;
+		protected int resistance;
 
     /**
      * Builds a new zombie.
@@ -54,7 +55,7 @@ public abstract class Zombie extends Entity {
 	 *
 	 * @return the resistance of the zombie
 	 */
-	public void getresistance(){
+	public int getresistance(){
 		return this.resistance;
 	}
 
@@ -168,22 +169,6 @@ public abstract class Zombie extends Entity {
 		}
 
 		return nearestPlayer;
-	}
-
-	/**
-	 * Calculates the distance between two cells.
-	 * 
-	 * @param cell1 The first cell.
-	 * @param cell2 The second cell.
-	 * @return The distance between the two cells.
-	 */
-	private double calculateDistance(Cell cell1, Cell cell2) {
-		int x1 = cell1.getcoord()[0];
-		int y1 = cell1.getcoord()[1];
-		int x2 = cell2.getcoord()[0];
-		int y2 = cell2.getcoord()[1];
-
-		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 
 	/**

@@ -7,6 +7,7 @@ public abstract class Entity {
     protected int Lifepoints;
     protected Cell cell;
     protected Board board;
+    protected int actionPoint;
 
     /**
      * Builds a new entity.
@@ -55,4 +56,20 @@ public abstract class Entity {
     public boolean isDead() {
         return this.Lifepoints <= 0;
     }
+
+    	/**
+	 * Calculates the distance between two cells.
+	 * 
+	 * @param cell1 The first cell.
+	 * @param cell2 The second cell.
+	 * @return The distance between the two cells.
+	 */
+	public double calculateDistance(Cell cell1, Cell cell2) {
+		int x1 = cell1.getcoord()[0];
+		int y1 = cell1.getcoord()[1];
+		int x2 = cell2.getcoord()[0];
+		int y2 = cell2.getcoord()[1];
+
+		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+	}
 }

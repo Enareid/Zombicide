@@ -7,6 +7,8 @@ import game.Board;
 import game.Cell;
 import game.Direction;
 import game.Entity;
+import game.Equipements.Weapon;
+
 import java.util.*;
 
 import game.Equipements.Weapon;
@@ -26,8 +28,8 @@ public abstract class Player extends Entity{
 	 * @param Lifepoints the lifepoints of the player.
 	 * @param cell the cell of the player.
      */
-    public Player(int Lifepoints, Cell cell, Board board,int actionPoint=3){
-        super(Lifepoints,cell, board,actionPoint);
+    public Player(int Lifepoints, Cell cell, Board board){
+        super(Lifepoints,cell, board,3);
         this.expertiseLevel = 0;
         this.bag = new ArrayList<Equipement>();
 				this.inhand = null;
@@ -62,6 +64,25 @@ public abstract class Player extends Entity{
 				System.out.println("Invalid choice");
 				break;
 		}
+	}
+
+	public boolean canAttackZombie(Zombie zombie){
+		if(this.getInHand().getIsWeapon()){
+				
+	
+		if(zombie.getCell().getcoord()[0]==this.getCell().getcoord()[0]){
+			if(this.calculateDistance(this.getCell(),zombie.getCell())<((Weapon) this.getInHand()).getrange()[1]){
+				return true;
+			}
+
+
+
+		}
+		if(zombie.getCell().getcoord()[1]==this.getCell().getcoord()[1]){
+			return true;
+		}
+	}
+	return false;
 	}
 
 	public void attack(Zombie zombie){

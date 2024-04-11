@@ -7,8 +7,8 @@ import game.Entities.Zombie;
 
 public class Abomination extends Zombie {
     
-    public Abomination(Cell cell, Board board, String name,int resistance=1){
-        super(6, 3, board, 1, true, cell, name,resistance);
+    public Abomination(Cell cell, Board board, String name){
+        super(6, 3, board, 1, true, cell, name,1);
     }
     
 }

@@ -26,8 +26,18 @@ public abstract class Weapon extends Equipement{
         return (int)(Math.random() * 6 + 1);
     }
 
+    public int[] getrange(){
+        int[] res= new int[2];
+        res[0]=this.minrange;
+        res[1]=this.maxrange;
+        return res;
+    }
+
     public void use(Player player, Zombie zombie){
-        if (this.dice() >= this.seuil){
+        if (this.damage<=zombie.getresistance()){
+            System.out.println(zombie+" cannot be damaged by "+this);
+        }
+        else if (this.dice() >= this.seuil){
             zombie.takeDamage(damage);
             System.out.println("You hit the zombie");
         }
