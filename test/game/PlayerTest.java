@@ -1,7 +1,8 @@
 package game;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import game.Board;
 import game.Boards.*;
 import game.Cells.BuildingCell;
 import game.Entities.Player;
+import game.Entities.Zombie;
 import game.Entities.Players.*;
 import game.Equipements.Weapons.*;
 
@@ -46,7 +48,7 @@ public class PlayerTest {
         
     }
 
-    @test
+    @Test
     public void lookaroundtest() throws Exception{
         Cell cell = new BuildingCell(10, 5); 
         Player player = new Fighter(5, cell,null);
@@ -59,7 +61,7 @@ public class PlayerTest {
         assertEquals("You are in a building cell", player.lookaround());
     }
 
-    @test
+    @Test
     public void canAttackZombieTestWhenTrue(){
         Equipement axe = new Axe();
         this.board.getPlayers().get(0).setEquipment(axe);
