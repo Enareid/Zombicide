@@ -1,10 +1,15 @@
 package game;
 
 import game.Boards.ClassicalBoard;
-import java.util.Scanner;
+import game.Cells.BuildingCell;
 import game.Cells.StreetCell;
 import game.Entities.*;
-import game.Entities.Players.Fighter;
+import game.Entities.Players.*;
+
+import game.Entities.Zombies.Walker;
+import game.Equipements.Items.InfraredGlasses;
+import game.Equipements.Weapons.Axe;
+import game.Equipements.Weapons.Crowbar;
 import game.Equipements.Items.MasterKey;
 
 import java.util.*;
@@ -20,22 +25,27 @@ public class MainL1 {
                 System.out.println("Entrez la taille du plateau:");
                 int size = scanner.nextInt();
                 nbEssais++;
-                Player player = new Fighter(10, null,null);
-                Equipement eg= new MasterKey();
-                players.add(player);
+                Player p1 = new Fighter(10, null, null);
+                players.add(p1);
                 Board board = new ClassicalBoard(size, players);
-                for (int x = 0; x < size; x++) {
-                    for (int y = 0; y < size; y++) {
-                        if (board.getCell(x, y) instanceof StreetCell) {
-                            ((StreetCell) board.getCell(x, y)).spawnZombie();
-                        }
+                board.spawnZombie();
+                Equipement axe = new Axe();
+                Equipement Crowbar = new Crowbar();
+                Equipement Fiole = new InfraredGlasses();
+                board.addPlayer(p1);
+                MasterKey mk = new MasterKey();
+                p1.setEquipment(Crowbar);
+                p1.setInHand(Crowbar);
+                
+                System.out.println(board.toString());
+
+                for (int i = 0; i < 10; i++) {
+                    for (Zombie zombie : board.getZombies()) {
+                        zombie.move();
                     }
+                    p1.action();
+                    System.out.println(board.getZombies());
                 }
-                System.out.println(board);
-                board.movePlayer(player, Direction.NORTH);
-                System.out.println(board);
-                board.movePlayer(player, Direction.EAST);
-                System.out.println(board);
                 scanner.close();
                 break;
             }

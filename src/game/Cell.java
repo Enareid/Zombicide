@@ -50,6 +50,11 @@ public class Cell {
         return this.players;
     }
 
+    public Cell createCopy(){
+        Cell cell = new Cell(this.coord[0],this.coord[1]);
+        return cell;
+    }
+
     public int[] getcoord(){
         return this.coord;
     }
@@ -78,6 +83,7 @@ public class Cell {
     public void setPlayer(Player player) throws Exception{
         if (!this.players.contains(player)){
             this.players.add(player);
+            player.setCell(this);
         }
         else{
             throw new Exception("Player already present");
@@ -118,6 +124,10 @@ public class Cell {
 
     }
 
+    public void removeplayers(){
+        this.players.clear();
+    }
+
     /**
      * Removes a zombie form the cell.
      * @param zombie The zombie to remove.
@@ -151,7 +161,7 @@ public class Cell {
      */
     public void openDoor(Direction direction) {
             this.doors.get(direction).unlock(); // Casse la porte en l'ouvrant
-            }
+    }
         
     /**
      * Give if door is locked

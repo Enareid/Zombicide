@@ -29,4 +29,16 @@ public class PlayerTest {
         
     }
 
+    public void lookaroundtest() throws Exception{
+        Cell cell = new BuildingCell(10, 5); 
+        Player player = new Fighter(5, cell,null);
+        List<Player> players = new ArrayList<Player>();
+        players.add(player);
+        Board board= new ClassicalBoard(5, players);
+        player.setBoard(board);
+        board.getCell(0, 0).setPlayer(player);
+        board.toString();
+        assertEquals("You are in a building cell", player.lookaround());
+    }
+
 }

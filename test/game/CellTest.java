@@ -21,7 +21,7 @@ public class CellTest {
     public void before(){
         this.cell = new BuildingCell(0,0);
         this.player = new Fighter(10, this.cell,null);
-        this.zombie = new Walker(10, this.cell);
+        this.zombie = new Walker(this.cell);
         this.equipement = new MasterKey();
     }
 

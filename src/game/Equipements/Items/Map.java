@@ -8,5 +8,8 @@ import game.Entities.Player;
     public void use(Player player){
         player.getBoard().toString();
     }
-    
+
+    public String toString() {
+        return "Map";
+    }
 }

@@ -1,5 +1,6 @@
 package game.Cells.BuildingCells;
 
+import game.Cell;
 import game.Cells.BuildingCell;
 
 public class DrugStoreCell extends BuildingCell{
@@ -14,6 +15,10 @@ public class DrugStoreCell extends BuildingCell{
         super(x,y);
     }
 
+    public Cell createCopy(){
+        Cell cell = new DrugStoreCell(this.coord[0],this.coord[1]);
+        return cell;
+    }
     /**
      * Returns the string representation of the cell.
      * @return the string representation of the cell.

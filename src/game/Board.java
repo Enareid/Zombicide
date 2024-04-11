@@ -5,6 +5,8 @@ import game.Cells.StreetCell;
 
 import java.util.*;
 import game.Entities.*;
+import game.Entities.Players.*;
+import game.Entities.Zombies.*;
 
 public abstract class Board {
 
@@ -14,6 +16,7 @@ public abstract class Board {
     protected int size;
     /** The Player in the board */
     protected List<Player> players;
+    protected List<Zombie> zombies = new ArrayList<Zombie>();
 
 
     /**
@@ -37,8 +40,94 @@ public abstract class Board {
         this.players = players;
         initBoard(players);
     }
+    
+    /**
+     * Returns the size of the board.
+     *
+     * @return the size of the board
+     */
+    public int getSize(){
+        return this.size;   
+    }
 
+    public Cell[][] createfakeboard(){
+        Cell[][] fakeboard = new Cell[this.size][this.size];
+        for (int x = 0; x< this.size; x++){
+            for (int y = 0; y < this.size; y++) {
+                fakeboard[x][y] = this.cells[x][y].createCopy();
+            }
+        }
+        return fakeboard;
+    }
 
+    /**
+     * Returns the list of players on the board.
+     *
+     * @return the list of players
+     */
+    public List<Player> getPlayers(){
+        return this.players;
+    }
+
+    /**
+     * Returns the 2D array of cells representing the game board.
+     *
+     * @return the 2D array of cells
+     */
+    public Cell[][] getCells(){
+        return this.cells;
+    }
+
+    public List<Zombie> getZombies(){
+        return this.zombies;
+    }
+
+    public void removeZombie(Zombie zombie){
+        this.zombies.remove(zombie);
+    }  
+
+    public void spawnZombie(){
+        for (int i = 0; i < this.size; i++){
+            for (int j = 0; j < this.size; j++){
+                if (this.cells[i][j] instanceof StreetCell && ((StreetCell) this.cells[i][j]).getCanSpawn()){
+                    Zombie walker = new Walker(this.cells[i][j], this, "Zombie : " + (this.zombies.size()+1)%10);
+                    try{
+                        ((StreetCell) this.cells[i][j]).setZombie(walker);
+                        this.zombies.add(walker);
+                    }
+                    catch(Exception e){
+                        System.out.println(e);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Sets the list of players for the board.
+     * 
+     * @param players the list of players to set
+     */
+    public void setPlayers(List<Player> players){
+        this.players = players;
+    }
+
+    public void addPlayer(Player player){
+        this.players.add(player);
+    }
+
+    public void addZombie(Zombie zombie){
+        this.zombies.add(zombie);
+    }
+
+    /**
+     * Sets the cells of the board.
+     * 
+     * @param cells the 2D array of cells to set
+     */
+    public void setCells(Cell[][] cells){
+        this.cells = cells;
+    }
     /**
      * Returns the cell at the given coordinates.
      * @param x The x coordinate of the cell.
@@ -133,115 +222,7 @@ public abstract class Board {
         return str;
     }
 
-    /**
-     * Move the player in the given direction
-     * 
-     * @param player the player to move
-     * @param direction the direction to move the player
-     */
-    public void movePlayer(Player player, Direction direction){
-        switch (direction){
-            case NORTH:
-                moveNorth(player);
-                break;
-            case SOUTH:
-                moveSouth(player);
-                break;
-            case WEST:
-                moveWest(player);
-                break;
-            case EAST:
-                moveEast(player);
-                break;
-        }
-    }
-    
-    /**
-     * Move the player to the north
-     * 
-     * @param player The player to move
-     */
-    public void moveNorth(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (x > 0){
-            if (this.cells[x][y].isLocked(Direction.NORTH) && this.cells[x-1][y].isLocked(Direction.SOUTH)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x-1][y].setPlayer(player);
-                    player.setCell(this.cells[x-1][y]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
 
-    /**
-     * Move the player to the south
-     * 
-     * @param player The player to move
-     */
-    public void moveSouth(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (x < this.size-1){
-            if (this.cells[x][y].isLocked(Direction.SOUTH) && this.cells[x+1][y].isLocked(Direction.NORTH)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x+1][y].setPlayer(player);
-                    player.setCell(this.cells[x+1][y]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
 
-    /**
-     * Move the player to the east
-     * 
-     * @param player The player to move
-     */
-    public void moveEast(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (y < this.size-1){
-            if (this.cells[x][y].isLocked(Direction.EAST) && this.cells[x][y+1].isLocked(Direction.WEST)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x][y+1].setPlayer(player);
-                    player.setCell(this.cells[x][y+1]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
-
-    /**
-     * Move the player to the west
-     * 
-     * @param player The player to move
-     */
-    public void moveWest(Player player){
-        Cell cell = player.getCell();
-        int x = cell.getcoord()[0];
-        int y = cell.getcoord()[1];
-        if (y > 0){
-            if (this.cells[x][y].isLocked(Direction.WEST) && this.cells[x][y-1].isLocked(Direction.EAST)){
-                try {
-                    this.cells[x][y].removePlayer(player);
-                    this.cells[x][y-1].setPlayer(player);
-                    player.setCell(this.cells[x][y-1]);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        }
-    }
 }
 

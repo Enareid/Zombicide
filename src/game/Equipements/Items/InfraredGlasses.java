@@ -8,5 +8,9 @@ public class InfraredGlasses extends Equipement{
     public void use(Player player){
         
     }
+
+    public String toString() {
+        return "InfraredGlasses";
+    }
     
 }

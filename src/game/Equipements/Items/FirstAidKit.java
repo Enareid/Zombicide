@@ -14,4 +14,7 @@ public class FirstAidKit extends Equipement {
         
     }
     
+    public String toString() {
+        return "FirstAidKit";
+    }
 }

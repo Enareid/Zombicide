@@ -1,5 +1,6 @@
 package game.Cells.BuildingCells;
 
+import game.Cell;
 import game.Cells.BuildingCell;
 
 public class ContinentalCell extends BuildingCell{
@@ -25,6 +26,11 @@ public class ContinentalCell extends BuildingCell{
      */
     public void regen() {
         // TODO
+    }
+
+    public Cell createCopy(){
+        Cell cell = new ContinentalCell(this.lifePointsRestored,this.coord[0],this.coord[1]);
+        return cell;
     }
 
 
