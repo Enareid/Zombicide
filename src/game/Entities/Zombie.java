@@ -16,7 +16,6 @@ public abstract class Zombie extends Entity {
     protected int Damage;
     protected int actionPoint;
     protected boolean superArmor;
-		protected String name;
 		protected int resistance;
 
     /**
@@ -25,9 +24,8 @@ public abstract class Zombie extends Entity {
      * @param Lifepoints the lifepoints of the zombie.
      * @param cell the cell of the zombie.
      */
-    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, boolean bool, Cell cell, String name,int resistance){
+    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, boolean bool, Cell cell,int resistance){
         super(Lifepoints, cell, board, actionPoint);
-				this.name = name;
 				this.resistance=resistance;
 				this.Damage=Damage;
     }

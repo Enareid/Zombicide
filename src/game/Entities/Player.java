@@ -40,7 +40,7 @@ public abstract class Player extends Entity{
 		System.out.println("Which one to attack");
 		String msg = "";
 		for (Zombie zombie : this.cell.getZombie()) {
-			msg += zombie.toString() + " has " + zombie.getLifepoints() + " life points :" + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
+			msg += zombie.toString()  + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
 		}
 		System.out.println(msg);
 		String action = in.nextLine();

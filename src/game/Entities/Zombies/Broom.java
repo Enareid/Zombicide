@@ -5,7 +5,11 @@ import game.Entities.Zombie;
 
 public class Broom extends Zombie{
     
-    public Broom(Cell cell, Board board, String name){
-        super(4, 2, board, 1, true, cell, name,1);
+    public Broom(Cell cell, Board board){
+        super(4, 2, board, 1, true, cell,1);
+    }
+
+    public String toString(){
+        return "Broom has "+this.getLifepoints()+" Lifepoints";
     }
 }
