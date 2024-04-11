@@ -1,6 +1,7 @@
 package game.Equipements;
 
 import game.Equipement;
+import game.Entities.Player;
 import game.Entities.Zombie;
 
 public abstract class Weapon extends Equipement{
@@ -19,5 +20,20 @@ public abstract class Weapon extends Equipement{
         this.maxrange = maxrange;
         this.attempts = attempts;
     }
-    public void use(Zombie zombie){}
+
+
+    public int dice(){
+        return (int)(Math.random() * 6 + 1);
+    }
+
+    public void use(Player player, Zombie zombie){
+        if (this.dice() >= this.seuil){
+            zombie.takeDamage(damage);
+            System.out.println("You hit the zombie");
+        }
+        else{
+            System.out.println("You missed your shot");
+        }
+        System.out.println(zombie.getLifepoints());
+    }
 }

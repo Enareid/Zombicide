@@ -6,6 +6,8 @@ public class Axe extends Weapon{
 
   public Axe(){
     super(4, 2,0, 0, 1);
+    this.canOpenDoor = true;
+    this.isWeapon = true;
   }
 
   public String toString() {

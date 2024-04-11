@@ -82,11 +82,15 @@ public abstract class Board {
         return this.zombies;
     }
 
+    public void removeZombie(Zombie zombie){
+        this.zombies.remove(zombie);
+    }  
+
     public void spawnZombie(){
         for (int i = 0; i < this.size; i++){
             for (int j = 0; j < this.size; j++){
                 if (this.cells[i][j] instanceof StreetCell && ((StreetCell) this.cells[i][j]).getCanSpawn()){
-                    Zombie walker = new Walker(this.cells[i][j], this);
+                    Zombie walker = new Walker(this.cells[i][j], this, "Zombie : " + (this.zombies.size()+1)%10);
                     try{
                         ((StreetCell) this.cells[i][j]).setZombie(walker);
                         this.zombies.add(walker);

@@ -12,6 +12,7 @@ public abstract class Zombie extends Entity {
     protected int Damage;
     protected int actionPoint;
     protected boolean superArmor;
+	protected String name;
 
     /**
      * Builds a new zombie.
@@ -19,8 +20,9 @@ public abstract class Zombie extends Entity {
      * @param Lifepoints the lifepoints of the zombie.
      * @param cell the cell of the zombie.
      */
-    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, boolean bool, Cell cell){
+    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, boolean bool, Cell cell, String name){
         super(Lifepoints,cell, board);
+		this.name = name;
     }
 
 	public void setCell(Cell cell) {
@@ -29,6 +31,10 @@ public abstract class Zombie extends Entity {
 
 	public Cell getCell() {
 		return this.cell;
+	}
+
+	public void takeDamage(int damage) {
+		this.Lifepoints -= damage;
 	}
 
 
@@ -152,11 +158,14 @@ public abstract class Zombie extends Entity {
       * @param P player to be attacked by zombie
       @return boolean
       */
-     public boolean attack(){
+     public void attack(){
 		Player P =getNearestPlayer();
         P.setLifeLevel(P.getLifeLevel()-this.Damage);
-        return true;
      }
 	
+	 public String toString(){
+		return this.name;
+	 }
+
 
 }

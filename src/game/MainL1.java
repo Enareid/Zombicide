@@ -44,6 +44,7 @@ public class MainL1 {
                         zombie.move();
                     }
                     p1.action();
+                    System.out.println(board.getZombies());
                 }
                 scanner.close();
                 break;

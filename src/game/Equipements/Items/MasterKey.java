@@ -11,6 +11,7 @@ public class MasterKey extends Equipement{
 
     public MasterKey(){
         super();
+        this.canOpenDoor = true;
     }
 
     public void use(Player player, Direction direction){

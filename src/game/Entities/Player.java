@@ -8,6 +8,8 @@ import game.Cell;
 import game.Direction;
 import game.Entity;
 import java.util.*;
+
+import game.Equipements.Weapon;
 import game.Equipements.Items.MasterKey;
 
 public abstract class Player extends Entity{
@@ -33,11 +35,50 @@ public abstract class Player extends Entity{
 
     }
 
-	public int dice(){
-		Random dice = new Random();
-		return dice.nextInt(6);
+	public void AttackAction(){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Which one to attack");
+		String msg = "";
+		for (Zombie zombie : this.cell.getZombie()) {
+			msg += zombie.toString() + " have " + zombie.getLifepoints() + " life points :" + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
+		}
+		System.out.println(msg);
+		String action = in.nextLine();
+		switch (action) {
+			case "0":
+				this.attack(this.board.getZombies().get(0));
+				break;
+			case "1":
+				this.attack(this.board.getZombies().get(1));
+				break;
+			case "2":
+				this.attack(this.board.getZombies().get(2));
+				break;
+			case "3":
+				this.attack(this.board.getZombies().get(3));
+				break;
+			case "4":
+				this.attack(this.board.getZombies().get(4));
+				break;
+			default:
+				System.out.println("Invalid choice");
+				break;
+		}
 	}
-    
+
+	public void attack(Zombie zombie){
+		((Weapon)this.inhand).use(this,zombie);
+		if (zombie.getLifepoints() <= 0) {
+			try {
+				this.board.getZombies().remove(zombie);
+				this.cell.getZombie().remove(zombie);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+		}
+
+
 	/**
 	 * Gets the action points of the player.
 	 * @return the action points of the player.
@@ -190,9 +231,13 @@ public abstract class Player extends Entity{
 		while (this.actionPoints != 0){
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.actionPoints);
-			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE | ATTACK";
-			if((this.inhand.toString().equals("MasterKey")||(this.inhand.toString().equals("Axe") || (this.inhand.toString().equals("Crowbar")) || ((this.inhand.toString().equals("Chainsaw")))&& (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())))){
-
+			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE ";
+			if( this.inhand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+				msg += "| OPEN DOOR ";
+			}
+			if (this.inhand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
+				msg += "| ATTACK ";
+			}
 			System.out.println(msg);
 			String action = in.nextLine();
         	switch (action) {
@@ -222,8 +267,10 @@ public abstract class Player extends Entity{
                 	break;
     
             	case "OPEN DOOR" :
-					this.openDoor();
-					this.actionPoints -= 1;
+					if(this.inhand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+						this.openDoor();
+						this.actionPoints -= 1;
+					}
 					break;
     
             	case "MOVE" :
@@ -232,14 +279,15 @@ public abstract class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-                	this.attack();
-					this.actionPoints -= 1;
+					if(this.inhand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
+                		this.AttackAction();
+						this.actionPoints -= 1;
+					}
                 	break;
             	}
 			}
 			this.actionPoints = 3;
     	}
-	}
 
 	public void openDoor(){
 		Cell[][] cells = board.getCells();
@@ -473,16 +521,16 @@ public abstract class Player extends Entity{
 		}
 	}
 	public boolean isDead() {
-		if (this.LifePoints == 0) {
+		if (this.Lifepoints == 0) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 	public void isattacked(int Damage) {
-		this.LifePoints = this.LifePoints - Damage;   
-		if (this.LifePoints<=0) {
-			this.LifePoints = 0;}
+		this.Lifepoints = this.Lifepoints - Damage;   
+		if (this.Lifepoints<=0) {
+			this.Lifepoints = 0;}
 		isDead();
    
 	}

@@ -46,4 +46,12 @@ public abstract class Entity {
 	public Cell getCell() {
 		return this.cell;
 	}
+
+    public int getLifepoints() {
+        return this.Lifepoints;
+    }
+
+    public boolean isDead() {
+        return this.Lifepoints <= 0;
+    }
 }
