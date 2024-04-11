@@ -8,8 +8,7 @@ import game.Entities.Players.*;
 
 import game.Entities.Zombies.Walker;
 import game.Equipements.Items.InfraredGlasses;
-import game.Equipements.Weapons.Axe;
-import game.Equipements.Weapons.Crowbar;
+import game.Equipements.Weapons.*;
 import game.Equipements.Items.MasterKey;
 
 import java.util.*;
@@ -31,11 +30,15 @@ public class MainL1 {
                 board.spawnZombie();
                 
                 Equipement axe = new Axe();
+                Equipement gun = new Gun();
+                Equipement rifle = new Rifle();
+                Equipement Chainsaw = new Chainsaw();
+                
                 Equipement Crowbar = new Crowbar();
                 Equipement Fiole = new InfraredGlasses();
                 MasterKey mk = new MasterKey();
-                p1.setEquipment(Crowbar);
-                p1.setInHand(Crowbar);
+                p1.setEquipment(gun);
+                p1.setInHand(gun);
                 
                 System.out.println(board.toString());
 

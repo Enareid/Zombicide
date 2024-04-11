@@ -11,7 +11,6 @@ import game.Equipements.Weapon;
 
 import java.util.*;
 
-import game.Equipements.Weapon;
 import game.Equipements.Items.MasterKey;
 
 public abstract class Player extends Entity{
@@ -79,7 +78,9 @@ public abstract class Player extends Entity{
 
 		}
 		if(zombie.getCell().getcoord()[1]==this.getCell().getcoord()[1]){
-			return true;
+			if(this.calculateDistance(this.getCell(),zombie.getCell())<((Weapon) this.getInHand()).getrange()[1]){
+				return true;
+			}
 		}
 	}
 	return false;
@@ -97,14 +98,6 @@ public abstract class Player extends Entity{
 		}
 		}
 
-
-	/**
-	 * Gets the action points of the player.
-	 * @return the action points of the player.
-	 */
-    public int getActionPoints() {
-		return this.actionPoints;
-	}
 
 
 	/**

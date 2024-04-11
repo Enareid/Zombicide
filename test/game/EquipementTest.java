@@ -1,12 +1,31 @@
 package game;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
+import game.Boards.ClassicalBoard;
+import game.Entities.Player;
+import game.Entities.Players.Fighter;
+import game.Entities.Zombies.Runner;
 import game.Equipements.Items.MasterKey;
 
 public class EquipementTest {
+
+    private Board board;
+    private Player player;
+
+    @BeforeEach
+    public void before() throws Exception{
+        List<Player> players = new ArrayList<Player>();
+        Player player = new Fighter(5,null,null);
+        players.add(player);
+        this.board = new ClassicalBoard(5,players);
+        this.player=player;
+    }
 
     @Test
     public void testEquipementInitialization() {
@@ -16,8 +35,11 @@ public class EquipementTest {
     @Test
     public void testEquipement() {
         MasterKey equipement = new MasterKey();
-        Door door = new Door(Direction.NORTH);
-        equipement.use(door);
-        assertFalse(door.isLocked());
-    }
+        this.player.setEquipment(equipement);
+        this.player.setInHand(equipement);
+        assertTrue(this.player.getCell().isLocked(Direction.NORTH));
+        equipement.use(player,Direction.NORTH);
+        assertFalse(this.player.getCell().isLocked(Direction.NORTH));
+    
+     }
 }

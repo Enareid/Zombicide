@@ -53,6 +53,14 @@ public abstract class Entity {
         return this.Lifepoints;
     }
 
+	/**
+	 * Gets the action points of the Entity.
+	 * @return the action points of the Entity.
+	 */
+	public int getActionPoints() {
+		return this.actionPoint;
+	}
+
     public boolean isDead() {
         return this.Lifepoints <= 0;
     }
