@@ -14,6 +14,7 @@ import game.Boards.*;
 import game.Entities.Player;
 import game.Entities.Zombie;
 import game.Entities.Players.*;
+import game.Entities.Zombies.Walker;
 import game.Equipements.Weapons.*;
 
 
@@ -61,11 +62,14 @@ public class PlayerTest {
     }
 
     @Test
-    public void canAttackZombieTestWhenUsingRangeNoObstacles(){
+    public void canAttackZombieTestWhenUsingRangeNoObstacles() throws Exception{
 
         Equipement gun = new Gun();
         this.player.setEquipment(gun);
         this.player.setInHand(gun);
+        Zombie zomb = new Walker(this.board.getCell(1, 1), board);
+        this.board.getCell(1,1).setZombie(zomb);
+        assertFalse(this.player.canAttackZombie(zomb));
         for (Zombie zombie : this.board.getZombies()) {
             zombie.move();
             assertTrue(this.player.canAttackZombie(zombie));

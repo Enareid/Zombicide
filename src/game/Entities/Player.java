@@ -67,24 +67,22 @@ public abstract class Player extends Entity{
 
 	public boolean canAttackZombie(Zombie zombie){
 		if(this.getInHand().getIsWeapon()){
+			Double distance=this.calculateDistance(this.getCell(),zombie.getCell());
+			int low =((Weapon) this.getInHand()).getrange()[0];
+			int high = ((Weapon) this.getInHand()).getrange()[1];
 				
-	
-		if(zombie.getCell().getcoord()[0]==this.getCell().getcoord()[0]){
-			if(this.calculateDistance(this.getCell(),zombie.getCell())<((Weapon) this.getInHand()).getrange()[1]){
+		if(low<distance && distance<high){
+			if(zombie.getCell().getcoord()[0]==this.getCell().getcoord()[0]){
 				return true;
 			}
 
-
-
-		}
-		if(zombie.getCell().getcoord()[1]==this.getCell().getcoord()[1]){
-			if(this.calculateDistance(this.getCell(),zombie.getCell())<((Weapon) this.getInHand()).getrange()[1]){
-				return true;
+			if(zombie.getCell().getcoord()[1]==this.getCell().getcoord()[1]){
+			return true;
 			}
-		}
+ 		}	
 	}
 	return false;
-	}
+}
 
 	public void attack(Zombie zombie){
 		((Weapon)this.inhand).use(this,zombie);
