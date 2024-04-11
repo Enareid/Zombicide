@@ -5,7 +5,7 @@ import game.Entities.Zombie;
 
 public class Broom extends Zombie{
     
-    public Broom(Cell cell, Board board, String name){
+    public Broom(Cell cell, Board board, String name,int resistance=1){
         super(4, 2, board, 1, true, cell, name);
     }
 }
