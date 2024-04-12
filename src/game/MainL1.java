@@ -45,7 +45,6 @@ public class MainL1 {
                     for (Zombie zombie : board.getZombies()) {
                         zombie.move();
                     }
-                    System.out.println("test");
                     p1.action();
                     System.out.println(board.getZombies());
                 }
