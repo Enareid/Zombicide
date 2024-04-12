@@ -1,0 +1,2248 @@
+<?xml version="1.0"?>
+<svg width="2493.73779296875" height="1523" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_665" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="297" id="svg_666" opacity="0.2" width="464.93" x="31" y="23"/>
+   </g>
+   <g id="svg_667" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="297" id="svg_668" width="464.93" x="24" y="16"/>
+   </g>
+   <g id="svg_669" transform="translate(-14,-6) scale(1,1)">
+    <path d="m24,16l464.93,0l0,297l-464.93,0l0,-297zl0,0z" fill="none" id="svg_670" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_671" transform="translate(-14,-6) scale(1,1)">
+    <path d="m24,41l464.93,0" fill="none" id="svg_672" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_673" transform="translate(-14,-6) scale(1,1)">
+    <path d="m24,51l464.93,0" fill="none" id="svg_674" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_675" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_676">
+     <path fill="none" id="svg_677"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="italic" font-weight="bold" id="svg_678" text-decoration="none" x="239.12" y="35.5">Board</text>
+    </g>
+   </g>
+   <g id="svg_679" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_680">
+     <path fill="none" id="svg_681"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_682" text-decoration="none" x="29" y="68.5">+Board(size: int, players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_683" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_684">
+     <path fill="none" id="svg_685"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_686" text-decoration="none" x="29" y="83.5">+getSize(): int</text>
+    </g>
+   </g>
+   <g id="svg_687" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_688">
+     <path fill="none" id="svg_689"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_690" text-decoration="none" x="29" y="98.5">+getCells(): Cell[][]</text>
+    </g>
+   </g>
+   <g id="svg_691" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_692">
+     <path fill="none" id="svg_693"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_694" text-decoration="none" x="29" y="113.5">+setCells(cells: Cell[][])</text>
+    </g>
+   </g>
+   <g id="svg_695" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_696">
+     <path fill="none" id="svg_697"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_698" text-decoration="none" x="29" y="128.5">+getCell(x: int, y: int): Cell</text>
+    </g>
+   </g>
+   <g id="svg_699" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_700">
+     <path fill="none" id="svg_701"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_702" text-decoration="none" x="29" y="143.5">+setCell(x: int, y: int, cell: Cell)</text>
+    </g>
+   </g>
+   <g id="svg_703" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_704">
+     <path fill="none" id="svg_705"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_706" text-decoration="none" x="29" y="158.5">+getZombies(): List&lt;Zombie&gt;</text>
+    </g>
+   </g>
+   <g id="svg_707" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_708">
+     <path fill="none" id="svg_709"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_710" text-decoration="none" x="29" y="173.5">+addZombie(zombie: Zombie)</text>
+    </g>
+   </g>
+   <g id="svg_711" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_712">
+     <path fill="none" id="svg_713"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_714" text-decoration="none" x="29" y="188.5">+removeZombie(zombie: Zombie)</text>
+    </g>
+   </g>
+   <g id="svg_715" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_716">
+     <path fill="none" id="svg_717"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_718" text-decoration="none" x="29" y="203.5">+spawnZombie()</text>
+    </g>
+   </g>
+   <g id="svg_719" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_720">
+     <path fill="none" id="svg_721"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_722" text-decoration="none" x="29" y="218.5">+getPlayers(): List&lt;Player&gt;</text>
+    </g>
+   </g>
+   <g id="svg_723" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_724">
+     <path fill="none" id="svg_725"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_726" text-decoration="none" x="29" y="233.5">+addPlayer(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_727" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_728">
+     <path fill="none" id="svg_729"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_730" text-decoration="none" x="29" y="248.5">+setPlayers(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_731" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_732">
+     <path fill="none" id="svg_733"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_734" text-decoration="none" x="29" y="263.5">#fillBoard(x1: int, y1: int, x2: int, y2: int, firstCall: boolean, players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_735" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_736">
+     <path fill="none" id="svg_737"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_738" text-decoration="none" x="29" y="278.5">#initBoard(players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_739" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_740">
+     <path fill="none" id="svg_741"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_742" text-decoration="none" x="29" y="293.5">+createfakeboard(): Cell[][]</text>
+    </g>
+   </g>
+   <g id="svg_743" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_744">
+     <path fill="none" id="svg_745"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_746" text-decoration="none" x="29" y="308.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_747" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_748" opacity="0.2" width="465.29" x="591" y="127"/>
+   </g>
+   <g id="svg_749" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_750" width="465.29" x="584" y="120"/>
+   </g>
+   <g id="svg_751" transform="translate(-14,-6) scale(1,1)">
+    <path d="m584,120l465.29,0l0,87l-465.29,0l0,-87zl0,0z" fill="none" id="svg_752" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_753" transform="translate(-14,-6) scale(1,1)">
+    <path d="m584,145l465.29,0" fill="none" id="svg_754" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_755" transform="translate(-14,-6) scale(1,1)">
+    <path d="m584,155l465.29,0" fill="none" id="svg_756" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_757" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_758">
+     <path fill="none" id="svg_759"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_760" text-decoration="none" x="773.29" y="139.5">ClassicalBoard</text>
+    </g>
+   </g>
+   <g id="svg_761" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_762">
+     <path fill="none" id="svg_763"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_764" text-decoration="none" x="589" y="172.5">+ClassicalBoard(size: int, players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_765" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_766">
+     <path fill="none" id="svg_767"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_768" text-decoration="none" x="589" y="187.5">+fillBoard(x1: int, y1: int, x2: int, y2: int, firstCall: boolean, players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_769" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_770">
+     <path fill="none" id="svg_771"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_772" text-decoration="none" x="589" y="202.5">+initBoard(players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_773" transform="translate(-14,-6) scale(1,1)">
+    <path d="m583,163l-93,1" fill="none" id="svg_774" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_775" transform="translate(-14,-6) scale(1,1)">
+    <path d="m510.23,155.36l-20.23,8.64l20.41,8.2" fill="#FFFFFF" id="svg_776"/>
+   </g>
+   <g id="svg_777" transform="translate(-14,-6) scale(1,1)">
+    <path d="m510.23,155.36l-20.23,8.64l20.41,8.2l-0.18,-16.84" fill="none" id="svg_778" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_779" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="57" id="svg_780" opacity="0.2" width="227.82" x="1231" y="151"/>
+   </g>
+   <g id="svg_781" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="57" id="svg_782" width="227.82" x="1224" y="144"/>
+   </g>
+   <g id="svg_783" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1224,144l227.82,0l0,57l-227.82,0l0,-57zl0,0z" fill="none" id="svg_784" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_785" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1224,169l227.82,0" fill="none" id="svg_786" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_787" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1224,179l227.82,0" fill="none" id="svg_788" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_789" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_790">
+     <path fill="none" id="svg_791"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_792" text-decoration="none" x="1297.32" y="163.5">TrainingBoard</text>
+    </g>
+   </g>
+   <g id="svg_793" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_794">
+     <path fill="none" id="svg_795"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_796" text-decoration="none" x="1229" y="196.5">+TrainingBoard(players: List&lt;Player&gt;)</text>
+    </g>
+   </g>
+   <g id="svg_797" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1223,170l-173,-3" fill="none" id="svg_798" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_799" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1070.47,158.93l-20.47,8.07l20.18,8.77" fill="#FFFFFF" id="svg_800"/>
+   </g>
+   <g id="svg_801" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1070.47,158.93l-20.47,8.07l20.18,8.77l0.29,-16.84" fill="none" id="svg_802" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_803" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="325" id="svg_804" opacity="0.2" width="282.52" x="591" y="311"/>
+   </g>
+   <g id="svg_805" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="325" id="svg_806" width="282.52" x="584" y="304"/>
+   </g>
+   <g id="svg_807" transform="translate(-14,-6) scale(1,1)">
+    <path d="m584,304l282.52,0l0,325l-282.52,0l0,-325zl0,0z" fill="none" id="svg_808" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_809" transform="translate(-14,-6) scale(1,1)">
+    <path d="m584,329l282.52,0" fill="none" id="svg_810" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_811" transform="translate(-14,-6) scale(1,1)">
+    <path d="m584,382l282.52,0" fill="none" id="svg_812" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_813" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_814">
+     <path fill="none" id="svg_815"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_816" text-decoration="none" x="714.06" y="323.5">Cell</text>
+    </g>
+   </g>
+   <g id="svg_817" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_818">
+     <path fill="none" id="svg_819"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_820" text-decoration="none" x="589" y="346.5">#canAttack: boolean</text>
+    </g>
+   </g>
+   <g id="svg_821" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_822">
+     <path fill="none" id="svg_823"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_824" text-decoration="none" x="589" y="361.5">#coord: int[]</text>
+    </g>
+   </g>
+   <g id="svg_825" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_826">
+     <path fill="none" id="svg_827"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_828" text-decoration="none" x="589" y="376.5">#noiseLevel: int</text>
+    </g>
+   </g>
+   <g id="svg_829" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_830">
+     <path fill="none" id="svg_831"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_832" text-decoration="none" x="589" y="399.5">+Cell(x: int, y: int)</text>
+    </g>
+   </g>
+   <g id="svg_833" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_834">
+     <path fill="none" id="svg_835"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_836" text-decoration="none" x="589" y="414.5">+getPlayers(): List&lt;Player&gt;</text>
+    </g>
+   </g>
+   <g id="svg_837" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_838">
+     <path fill="none" id="svg_839"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_840" text-decoration="none" x="589" y="429.5">+createCopy(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_841" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_842">
+     <path fill="none" id="svg_843"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_844" text-decoration="none" x="589" y="444.5">+getcoord(): int[]</text>
+    </g>
+   </g>
+   <g id="svg_845" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_846">
+     <path fill="none" id="svg_847"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_848" text-decoration="none" x="589" y="459.5">+getZombie(): List&lt;Zombie&gt;</text>
+    </g>
+   </g>
+   <g id="svg_849" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_850">
+     <path fill="none" id="svg_851"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_852" text-decoration="none" x="589" y="474.5">+getEquipements(): List&lt;Equipement&gt;</text>
+    </g>
+   </g>
+   <g id="svg_853" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_854">
+     <path fill="none" id="svg_855"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_856" text-decoration="none" x="589" y="489.5">+setPlayer(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_857" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_858">
+     <path fill="none" id="svg_859"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_860" text-decoration="none" x="589" y="504.5">+setZombie(zombie: Zombie)</text>
+    </g>
+   </g>
+   <g id="svg_861" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_862">
+     <path fill="none" id="svg_863"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_864" text-decoration="none" x="589" y="519.5">+addEquipement(equipement: Equipement)</text>
+    </g>
+   </g>
+   <g id="svg_865" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_866">
+     <path fill="none" id="svg_867"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_868" text-decoration="none" x="589" y="534.5">+removePlayer(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_869" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_870">
+     <path fill="none" id="svg_871"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_872" text-decoration="none" x="589" y="549.5">+removeplayers()</text>
+    </g>
+   </g>
+   <g id="svg_873" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_874">
+     <path fill="none" id="svg_875"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_876" text-decoration="none" x="589" y="564.5">+removeZombie(zombie: Zombie)</text>
+    </g>
+   </g>
+   <g id="svg_877" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_878">
+     <path fill="none" id="svg_879"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_880" text-decoration="none" x="589" y="579.5">+removeEquipement(equipement: Equipement)</text>
+    </g>
+   </g>
+   <g id="svg_881" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_882">
+     <path fill="none" id="svg_883"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_884" text-decoration="none" x="589" y="594.5">+openDoor(direction: Direction)</text>
+    </g>
+   </g>
+   <g id="svg_885" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_886">
+     <path fill="none" id="svg_887"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_888" text-decoration="none" x="589" y="609.5">+isLocked(direction: Direction)</text>
+    </g>
+   </g>
+   <g id="svg_889" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_890">
+     <path fill="none" id="svg_891"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_892" text-decoration="none" x="589" y="624.5">+getdoor(): Map&lt;Direction,Door&gt;</text>
+    </g>
+   </g>
+   <g id="svg_893" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="145" id="svg_894" opacity="0.2" width="186.4" x="895" y="727"/>
+   </g>
+   <g id="svg_895" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="145" id="svg_896" width="186.4" x="888" y="720"/>
+   </g>
+   <g id="svg_897" transform="translate(-14,-6) scale(1,1)">
+    <path d="m888,720l186.4,0l0,145l-186.4,0l0,-145zl0,0z" fill="none" id="svg_898" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_899" transform="translate(-14,-6) scale(1,1)">
+    <path d="m888,745l186.4,0" fill="none" id="svg_900" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_901" transform="translate(-14,-6) scale(1,1)">
+    <path d="m888,768l186.4,0" fill="none" id="svg_902" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_903" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_904">
+     <path fill="none" id="svg_905"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_906" text-decoration="none" x="952.66" y="739.5">StreetCell</text>
+    </g>
+   </g>
+   <g id="svg_907" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_908">
+     <path fill="none" id="svg_909"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_910" text-decoration="none" x="893" y="762.5">#canSpawn: boolean</text>
+    </g>
+   </g>
+   <g id="svg_911" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_912">
+     <path fill="none" id="svg_913"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_914" text-decoration="none" x="893" y="785.5">+StreetCell(x: int, y: int)</text>
+    </g>
+   </g>
+   <g id="svg_915" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_916">
+     <path fill="none" id="svg_917"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_918" text-decoration="none" x="893" y="800.5">+createCopy(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_919" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_920">
+     <path fill="none" id="svg_921"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_922" text-decoration="none" x="893" y="815.5">+getCanSpawn(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_923" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_924">
+     <path fill="none" id="svg_925"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_926" text-decoration="none" x="893" y="830.5">+allowSpawn()</text>
+    </g>
+   </g>
+   <g id="svg_927" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_928">
+     <path fill="none" id="svg_929"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_930" text-decoration="none" x="893" y="845.5">+disallowSpawn()</text>
+    </g>
+   </g>
+   <g id="svg_931" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_932">
+     <path fill="none" id="svg_933"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_934" text-decoration="none" x="893" y="860.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_935" transform="translate(-14,-6) scale(1,1)">
+    <path d="m924,719l-70,-89" fill="none" id="svg_936" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_937" transform="translate(-14,-6) scale(1,1)">
+    <path d="m873.18,640.77l-19.18,-10.77l5.95,21.18" fill="#FFFFFF" id="svg_938"/>
+   </g>
+   <g id="svg_939" transform="translate(-14,-6) scale(1,1)">
+    <path d="m873.18,640.77l-19.18,-10.77l5.95,21.18l13.23,-10.41" fill="none" id="svg_940" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_941" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_942" opacity="0.2" width="196.5" x="519" y="735"/>
+   </g>
+   <g id="svg_943" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_944" width="196.5" x="512" y="728"/>
+   </g>
+   <g id="svg_945" transform="translate(-14,-6) scale(1,1)">
+    <path d="m512,728l196.5,0l0,87l-196.5,0l0,-87zl0,0z" fill="none" id="svg_946" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_947" transform="translate(-14,-6) scale(1,1)">
+    <path d="m512,753l196.5,0" fill="none" id="svg_948" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_949" transform="translate(-14,-6) scale(1,1)">
+    <path d="m512,763l196.5,0" fill="none" id="svg_950" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_951" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_952">
+     <path fill="none" id="svg_953"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_954" text-decoration="none" x="575.92" y="747.5">BuildingCell</text>
+    </g>
+   </g>
+   <g id="svg_955" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_956">
+     <path fill="none" id="svg_957"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_958" text-decoration="none" x="517" y="780.5">+BuildingCell(x: int, y: int)</text>
+    </g>
+   </g>
+   <g id="svg_959" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_960">
+     <path fill="none" id="svg_961"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_962" text-decoration="none" x="517" y="795.5">+createCopy(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_963" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_964">
+     <path fill="none" id="svg_965"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_966" text-decoration="none" x="517" y="810.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_967" transform="translate(-14,-6) scale(1,1)">
+    <path d="m627,727l36,-97" fill="none" id="svg_968" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_969" transform="translate(-14,-6) scale(1,1)">
+    <path d="m663.82,651.98l-0.82,-21.98l-14.97,16.13" fill="#FFFFFF" id="svg_970"/>
+   </g>
+   <g id="svg_971" transform="translate(-14,-6) scale(1,1)">
+    <path d="m663.82,651.98l-0.82,-21.98l-14.97,16.13l15.79,5.85" fill="none" id="svg_972" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_973" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="115" id="svg_974" opacity="0.2" width="349.69" x="247" y="959"/>
+   </g>
+   <g id="svg_975" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="115" id="svg_976" width="349.69" x="240" y="952"/>
+   </g>
+   <g id="svg_977" transform="translate(-14,-6) scale(1,1)">
+    <path d="m240,952l349.69,0l0,115l-349.69,0l0,-115zl0,0z" fill="none" id="svg_978" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_979" transform="translate(-14,-6) scale(1,1)">
+    <path d="m240,977l349.69,0" fill="none" id="svg_980" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_981" transform="translate(-14,-6) scale(1,1)">
+    <path d="m240,1000l349.69,0" fill="none" id="svg_982" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_983" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_984">
+     <path fill="none" id="svg_985"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_986" text-decoration="none" x="370.76" y="971.5">ContinentalCell</text>
+    </g>
+   </g>
+   <g id="svg_987" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_988">
+     <path fill="none" id="svg_989"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_990" text-decoration="none" x="245" y="994.5">#lifePointsRestored: int</text>
+    </g>
+   </g>
+   <g id="svg_991" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_992">
+     <path fill="none" id="svg_993"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_994" text-decoration="none" x="245" y="1017.5">+ContinentalCell(lifePointsRestored: int, x: int, y: int)</text>
+    </g>
+   </g>
+   <g id="svg_995" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_996">
+     <path fill="none" id="svg_997"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_998" text-decoration="none" x="245" y="1032.5">+regen()</text>
+    </g>
+   </g>
+   <g id="svg_999" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1000">
+     <path fill="none" id="svg_1001"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1002" text-decoration="none" x="245" y="1047.5">+createCopy(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_1003" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1004">
+     <path fill="none" id="svg_1005"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1006" text-decoration="none" x="245" y="1062.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1007" transform="translate(-14,-6) scale(1,1)">
+    <path d="m462,951l111,-135" fill="none" id="svg_1008" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1009" transform="translate(-14,-6) scale(1,1)">
+    <path d="m566.59,837.05l6.41,-21.05l-19.41,10.35" fill="#FFFFFF" id="svg_1010"/>
+   </g>
+   <g id="svg_1011" transform="translate(-14,-6) scale(1,1)">
+    <path d="m566.59,837.05l6.41,-21.05l-19.41,10.35l13,10.7" fill="none" id="svg_1012" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1013" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_1014" opacity="0.2" width="209.49" x="679" y="975"/>
+   </g>
+   <g id="svg_1015" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_1016" width="209.49" x="672" y="968"/>
+   </g>
+   <g id="svg_1017" transform="translate(-14,-6) scale(1,1)">
+    <path d="m672,968l209.49,0l0,87l-209.49,0l0,-87zl0,0z" fill="none" id="svg_1018" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1019" transform="translate(-14,-6) scale(1,1)">
+    <path d="m672,993l209.49,0" fill="none" id="svg_1020" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1021" transform="translate(-14,-6) scale(1,1)">
+    <path d="m672,1003l209.49,0" fill="none" id="svg_1022" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1023" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1024">
+     <path fill="none" id="svg_1025"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1026" text-decoration="none" x="735.92" y="987.5">DrugStoreCell</text>
+    </g>
+   </g>
+   <g id="svg_1027" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1028">
+     <path fill="none" id="svg_1029"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1030" text-decoration="none" x="677" y="1020.5">+DrugStoreCell(x: int, y: int)</text>
+    </g>
+   </g>
+   <g id="svg_1031" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1032">
+     <path fill="none" id="svg_1033"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1034" text-decoration="none" x="677" y="1035.5">+CreateCopy(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_1035" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1036">
+     <path fill="none" id="svg_1037"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1038" text-decoration="none" x="677" y="1050.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1039" transform="translate(-14,-6) scale(1,1)">
+    <path d="m746,967l-105,-151" fill="none" id="svg_1040" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1041" transform="translate(-14,-6) scale(1,1)">
+    <path d="m659.52,827.88l-18.52,-11.88l4.69,21.49" fill="#FFFFFF" id="svg_1042"/>
+   </g>
+   <g id="svg_1043" transform="translate(-14,-6) scale(1,1)">
+    <path d="m659.52,827.88l-18.52,-11.88l4.69,21.49l13.83,-9.61" fill="none" id="svg_1044" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1045" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="205" id="svg_1046" opacity="0.2" width="372.1" x="1239" y="263"/>
+   </g>
+   <g id="svg_1047" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="205" id="svg_1048" width="372.1" x="1232" y="256"/>
+   </g>
+   <g id="svg_1049" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1232,256l372.1,0l0,205l-372.1,0l0,-205zl0,0z" fill="none" id="svg_1050" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1051" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1232,281l372.1,0" fill="none" id="svg_1052" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1053" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1232,319l372.1,0" fill="none" id="svg_1054" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1055" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1056">
+     <path fill="none" id="svg_1057"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="italic" font-weight="bold" id="svg_1058" text-decoration="none" x="1401.79" y="275.5">Entity</text>
+    </g>
+   </g>
+   <g id="svg_1059" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1060">
+     <path fill="none" id="svg_1061"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1062" text-decoration="none" x="1237" y="298.5">#LifePoints: int</text>
+    </g>
+   </g>
+   <g id="svg_1063" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1064">
+     <path fill="none" id="svg_1065"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1066" text-decoration="none" x="1237" y="313.5">#actionPoints: int</text>
+    </g>
+   </g>
+   <g id="svg_1067" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1068">
+     <path fill="none" id="svg_1069"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1070" text-decoration="none" x="1237" y="336.5">+Entity(Lifepoints: int, cell: Cell, board: Board, actionPoints: int)</text>
+    </g>
+   </g>
+   <g id="svg_1071" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1072">
+     <path fill="none" id="svg_1073"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1074" text-decoration="none" x="1237" y="351.5">+attack()</text>
+    </g>
+   </g>
+   <g id="svg_1075" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1076">
+     <path fill="none" id="svg_1077"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1078" text-decoration="none" x="1237" y="366.5">+setCell(cell: Cell)</text>
+    </g>
+   </g>
+   <g id="svg_1079" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1080">
+     <path fill="none" id="svg_1081"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1082" text-decoration="none" x="1237" y="381.5">+getCell(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_1083" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1084">
+     <path fill="none" id="svg_1085"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1086" text-decoration="none" x="1237" y="396.5">+getLifepoints(): int</text>
+    </g>
+   </g>
+   <g id="svg_1087" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1088">
+     <path fill="none" id="svg_1089"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1090" text-decoration="none" x="1237" y="411.5">+getActionPoints(): int</text>
+    </g>
+   </g>
+   <g id="svg_1091" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1092">
+     <path fill="none" id="svg_1093"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1094" text-decoration="none" x="1237" y="426.5">+setActionPoints(actionPoints: int)</text>
+    </g>
+   </g>
+   <g id="svg_1095" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1096">
+     <path fill="none" id="svg_1097"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1098" text-decoration="none" x="1237" y="441.5">+isDead(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1099" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1100">
+     <path fill="none" id="svg_1101"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1102" text-decoration="none" x="1237" y="456.5">+celculateDistance(cell1: Cell, cell2: Cell): double</text>
+    </g>
+   </g>
+   <g id="svg_1103" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="295" id="svg_1104" opacity="0.2" width="523.13" x="1159" y="591"/>
+   </g>
+   <g id="svg_1105" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="295" id="svg_1106" width="523.13" x="1152" y="584"/>
+   </g>
+   <g id="svg_1107" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1152,584l523.13,0l0,295l-523.13,0l0,-295zl0,0z" fill="none" id="svg_1108" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1109" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1152,609l523.13,0" fill="none" id="svg_1110" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1111" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1152,677l523.13,0" fill="none" id="svg_1112" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1113" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1114">
+     <path fill="none" id="svg_1115"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="italic" font-weight="bold" id="svg_1116" text-decoration="none" x="1391.89" y="603.5">Zombie</text>
+    </g>
+   </g>
+   <g id="svg_1117" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1118">
+     <path fill="none" id="svg_1119"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1120" text-decoration="none" x="1157" y="626.5">#Damage: int</text>
+    </g>
+   </g>
+   <g id="svg_1121" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1122">
+     <path fill="none" id="svg_1123"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1124" text-decoration="none" x="1157" y="641.5">#actionPoint: int</text>
+    </g>
+   </g>
+   <g id="svg_1125" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1126">
+     <path fill="none" id="svg_1127"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1128" text-decoration="none" x="1157" y="656.5">#superArmor: boolean</text>
+    </g>
+   </g>
+   <g id="svg_1129" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1130">
+     <path fill="none" id="svg_1131"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1132" text-decoration="none" x="1157" y="671.5">#resistance: int</text>
+    </g>
+   </g>
+   <g id="svg_1133" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1134">
+     <path fill="none" id="svg_1135"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1136" text-decoration="none" x="1157" y="694.5">+Zombie(Lifepoints, Damage: int, actionPoint: int, bool: boolean, cell: Cell, resistance: int)</text>
+    </g>
+   </g>
+   <g id="svg_1137" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1138">
+     <path fill="none" id="svg_1139"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1140" text-decoration="none" x="1157" y="709.5">+getCell(): Cell</text>
+    </g>
+   </g>
+   <g id="svg_1141" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1142">
+     <path fill="none" id="svg_1143"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1144" text-decoration="none" x="1157" y="724.5">+setCell(cell: Cell)</text>
+    </g>
+   </g>
+   <g id="svg_1145" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1146">
+     <path fill="none" id="svg_1147"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1148" text-decoration="none" x="1157" y="739.5">+getresistance(): int</text>
+    </g>
+   </g>
+   <g id="svg_1149" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1150">
+     <path fill="none" id="svg_1151"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1152" text-decoration="none" x="1157" y="754.5">+takeDamage(damage: int)</text>
+    </g>
+   </g>
+   <g id="svg_1153" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1154">
+     <path fill="none" id="svg_1155"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1156" text-decoration="none" x="1157" y="769.5">+moveNorth()</text>
+    </g>
+   </g>
+   <g id="svg_1157" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1158">
+     <path fill="none" id="svg_1159"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1160" text-decoration="none" x="1157" y="784.5">+moveSouth()</text>
+    </g>
+   </g>
+   <g id="svg_1161" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1162">
+     <path fill="none" id="svg_1163"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1164" text-decoration="none" x="1157" y="799.5">+moveEast()</text>
+    </g>
+   </g>
+   <g id="svg_1165" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1166">
+     <path fill="none" id="svg_1167"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1168" text-decoration="none" x="1157" y="814.5">+moveWest()</text>
+    </g>
+   </g>
+   <g id="svg_1169" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1170">
+     <path fill="none" id="svg_1171"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1172" text-decoration="none" x="1157" y="829.5">+getNearestPlayer(): Player</text>
+    </g>
+   </g>
+   <g id="svg_1173" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1174">
+     <path fill="none" id="svg_1175"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1176" text-decoration="none" x="1157" y="844.5">+move()</text>
+    </g>
+   </g>
+   <g id="svg_1177" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1178">
+     <path fill="none" id="svg_1179"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1180" text-decoration="none" x="1157" y="859.5">+attack()</text>
+    </g>
+   </g>
+   <g id="svg_1181" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1182">
+     <path fill="none" id="svg_1183"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="italic" font-weight="normal" id="svg_1184" text-decoration="none" x="1157" y="874.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1185" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1415,583l2,-121" fill="none" id="svg_1186" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1187" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1425.08,482.46l-8.08,-20.46l-8.75,20.18" fill="#FFFFFF" id="svg_1188"/>
+   </g>
+   <g id="svg_1189" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1425.08,482.46l-8.08,-20.46l-8.75,20.18l16.83,0.28" fill="none" id="svg_1190" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1191" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="535" id="svg_1192" opacity="0.2" width="283.96" x="1759" y="103"/>
+   </g>
+   <g id="svg_1193" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="535" id="svg_1194" width="283.96" x="1752" y="96"/>
+   </g>
+   <g id="svg_1195" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1752,96l283.96,0l0,535l-283.96,0l0,-535zl0,0z" fill="none" id="svg_1196" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1197" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1752,121l283.96,0" fill="none" id="svg_1198" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1199" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1752,159l283.96,0" fill="none" id="svg_1200" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1201" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1202">
+     <path fill="none" id="svg_1203"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="italic" font-weight="bold" id="svg_1204" text-decoration="none" x="1875.56" y="115.5">Player</text>
+    </g>
+   </g>
+   <g id="svg_1205" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1206">
+     <path fill="none" id="svg_1207"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1208" text-decoration="none" x="1757" y="138.5">-expertiseLevel: int</text>
+    </g>
+   </g>
+   <g id="svg_1209" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1210">
+     <path fill="none" id="svg_1211"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1212" text-decoration="none" x="1757" y="153.5">-MAX_LIFE_LEVEL: int = 5</text>
+     <path d="m1757,153.5l157.89,0" fill="none" id="svg_1213" stroke="#000000" stroke-miterlimit="10"/>
+    </g>
+   </g>
+   <g id="svg_1214" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1215">
+     <path fill="none" id="svg_1216"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1217" text-decoration="none" x="1757" y="176.5">+Player(Lifepoints: int, cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1218" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1219">
+     <path fill="none" id="svg_1220"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1221" text-decoration="none" x="1757" y="191.5">+AttackAction()</text>
+    </g>
+   </g>
+   <g id="svg_1222" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1223">
+     <path fill="none" id="svg_1224"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1225" text-decoration="none" x="1757" y="206.5">+canAttackZombie(zombie: Zombie): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1226" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1227">
+     <path fill="none" id="svg_1228"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1229" text-decoration="none" x="1757" y="221.5">+attack(zombie: Zombie)</text>
+    </g>
+   </g>
+   <g id="svg_1230" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1231">
+     <path fill="none" id="svg_1232"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1233" text-decoration="none" x="1757" y="236.5">+getBoard(): Board</text>
+    </g>
+   </g>
+   <g id="svg_1234" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1235">
+     <path fill="none" id="svg_1236"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1237" text-decoration="none" x="1757" y="251.5">+lookaround()</text>
+    </g>
+   </g>
+   <g id="svg_1238" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1239">
+     <path fill="none" id="svg_1240"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1241" text-decoration="none" x="1757" y="266.5">+setBoard(board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1242" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1243">
+     <path fill="none" id="svg_1244"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1245" text-decoration="none" x="1757" y="281.5">+getExpertiseLevel(): int</text>
+    </g>
+   </g>
+   <g id="svg_1246" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1247">
+     <path fill="none" id="svg_1248"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1249" text-decoration="none" x="1757" y="296.5">+setExpertiseLevel(expertiseLevel: int)</text>
+    </g>
+   </g>
+   <g id="svg_1250" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1251">
+     <path fill="none" id="svg_1252"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1253" text-decoration="none" x="1757" y="311.5">+getLifeLevel(): int</text>
+    </g>
+   </g>
+   <g id="svg_1254" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1255">
+     <path fill="none" id="svg_1256"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1257" text-decoration="none" x="1757" y="326.5">+setLifeLevel(Lifepoints: int)</text>
+    </g>
+   </g>
+   <g id="svg_1258" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1259">
+     <path fill="none" id="svg_1260"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1261" text-decoration="none" x="1757" y="341.5">+getEquipments(): List&lt;Equipement&gt;</text>
+    </g>
+   </g>
+   <g id="svg_1262" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1263">
+     <path fill="none" id="svg_1264"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1265" text-decoration="none" x="1757" y="356.5">+setEquipment(Equipement: Equipement)</text>
+    </g>
+   </g>
+   <g id="svg_1266" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1267">
+     <path fill="none" id="svg_1268"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1269" text-decoration="none" x="1757" y="371.5">+removeEquipement(Equipement: Equipement)</text>
+    </g>
+   </g>
+   <g id="svg_1270" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1271">
+     <path fill="none" id="svg_1272"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1273" text-decoration="none" x="1757" y="386.5">+setInHand(Equipement: Equipement)</text>
+    </g>
+   </g>
+   <g id="svg_1274" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1275">
+     <path fill="none" id="svg_1276"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1277" text-decoration="none" x="1757" y="401.5">+getInHand(): Equipement</text>
+    </g>
+   </g>
+   <g id="svg_1278" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1279">
+     <path fill="none" id="svg_1280"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1281" text-decoration="none" x="1757" y="416.5">+getMaxLifeLevel(): int</text>
+    </g>
+   </g>
+   <g id="svg_1282" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1283">
+     <path fill="none" id="svg_1284"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1285" text-decoration="none" x="1757" y="431.5">+action()</text>
+    </g>
+   </g>
+   <g id="svg_1286" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1287">
+     <path fill="none" id="svg_1288"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1289" text-decoration="none" x="1757" y="446.5">+openDoor()</text>
+    </g>
+   </g>
+   <g id="svg_1290" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1291">
+     <path fill="none" id="svg_1292"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1293" text-decoration="none" x="1757" y="461.5">+northLocked(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1294" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1295">
+     <path fill="none" id="svg_1296"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1297" text-decoration="none" x="1757" y="476.5">+southLocked(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1298" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1299">
+     <path fill="none" id="svg_1300"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1301" text-decoration="none" x="1757" y="491.5">+eastLocked(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1302" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1303">
+     <path fill="none" id="svg_1304"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1305" text-decoration="none" x="1757" y="506.5">+westLocked(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1306" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1307">
+     <path fill="none" id="svg_1308"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1309" text-decoration="none" x="1757" y="521.5">+equip()</text>
+    </g>
+   </g>
+   <g id="svg_1310" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1311">
+     <path fill="none" id="svg_1312"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1313" text-decoration="none" x="1757" y="536.5">+move()</text>
+    </g>
+   </g>
+   <g id="svg_1314" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1315">
+     <path fill="none" id="svg_1316"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1317" text-decoration="none" x="1757" y="551.5">+moveNorth()</text>
+    </g>
+   </g>
+   <g id="svg_1318" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1319">
+     <path fill="none" id="svg_1320"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1321" text-decoration="none" x="1757" y="566.5">+moveSouth()</text>
+    </g>
+   </g>
+   <g id="svg_1322" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1323">
+     <path fill="none" id="svg_1324"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1325" text-decoration="none" x="1757" y="581.5">+moveEast()</text>
+    </g>
+   </g>
+   <g id="svg_1326" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1327">
+     <path fill="none" id="svg_1328"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1329" text-decoration="none" x="1757" y="596.5">+moveWest()</text>
+    </g>
+   </g>
+   <g id="svg_1330" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1331">
+     <path fill="none" id="svg_1332"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1333" text-decoration="none" x="1757" y="611.5">+isDead(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1334" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1335">
+     <path fill="none" id="svg_1336"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1337" text-decoration="none" x="1757" y="626.5">+isattacked(Damage: int)</text>
+    </g>
+   </g>
+   <g id="svg_1338" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1751,362l-146,-2" fill="none" id="svg_1339" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1340" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1625.44,351.86l-20.44,8.14l20.21,8.7" fill="#FFFFFF" id="svg_1341"/>
+   </g>
+   <g id="svg_1342" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1625.44,351.86l-20.44,8.14l20.21,8.7l0.23,-16.84" fill="none" id="svg_1343" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1344" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1345" opacity="0.2" width="229.03" x="943" y="975"/>
+   </g>
+   <g id="svg_1346" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1347" width="229.03" x="936" y="968"/>
+   </g>
+   <g id="svg_1348" transform="translate(-14,-6) scale(1,1)">
+    <path d="m936,968l229.03,0l0,72l-229.03,0l0,-72zl0,0z" fill="none" id="svg_1349" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1350" transform="translate(-14,-6) scale(1,1)">
+    <path d="m936,993l229.03,0" fill="none" id="svg_1351" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1352" transform="translate(-14,-6) scale(1,1)">
+    <path d="m936,1003l229.03,0" fill="none" id="svg_1353" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1354" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1355">
+     <path fill="none" id="svg_1356"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1357" text-decoration="none" x="1014.38" y="987.5">Abomination</text>
+    </g>
+   </g>
+   <g id="svg_1358" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1359">
+     <path fill="none" id="svg_1360"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1361" text-decoration="none" x="941" y="1020.5">+Abomination(cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1362" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1363">
+     <path fill="none" id="svg_1364"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1365" text-decoration="none" x="941" y="1035.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1366" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1099,967l116,-87" fill="none" id="svg_1367" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1368" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1203.79,898.93l11.21,-18.93l-21.31,5.46" fill="#FFFFFF" id="svg_1369"/>
+   </g>
+   <g id="svg_1370" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1203.79,898.93l11.21,-18.93l-21.31,5.46l10.1,13.47" fill="none" id="svg_1371" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1372" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1373" opacity="0.2" width="195.05" x="1239" y="1023"/>
+   </g>
+   <g id="svg_1374" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1375" width="195.05" x="1232" y="1016"/>
+   </g>
+   <g id="svg_1376" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1232,1016l195.05,0l0,72l-195.05,0l0,-72zl0,0z" fill="none" id="svg_1377" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1378" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1232,1041l195.05,0" fill="none" id="svg_1379" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1380" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1232,1051l195.05,0" fill="none" id="svg_1381" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1382" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1383">
+     <path fill="none" id="svg_1384"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1385" text-decoration="none" x="1310.38" y="1035.5">Broom</text>
+    </g>
+   </g>
+   <g id="svg_1386" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1387">
+     <path fill="none" id="svg_1388"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1389" text-decoration="none" x="1237" y="1068.5">+Broom(cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1390" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1391">
+     <path fill="none" id="svg_1392"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1393" text-decoration="none" x="1237" y="1083.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1394" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1339,1015l35,-135" fill="none" id="svg_1395" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1396" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1377.05,901.79l-3.05,-21.79l-13.25,17.56" fill="#FFFFFF" id="svg_1397"/>
+   </g>
+   <g id="svg_1398" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1377.05,901.79l-3.05,-21.79l-13.25,17.56l16.3,4.23" fill="none" id="svg_1399" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1400" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1401" opacity="0.2" width="199.4" x="1591" y="1023"/>
+   </g>
+   <g id="svg_1402" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1403" width="199.4" x="1584" y="1016"/>
+   </g>
+   <g id="svg_1404" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1584,1016l199.4,0l0,72l-199.4,0l0,-72zl0,0z" fill="none" id="svg_1405" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1406" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1584,1041l199.4,0" fill="none" id="svg_1407" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1408" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1584,1051l199.4,0" fill="none" id="svg_1409" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1410" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1411">
+     <path fill="none" id="svg_1412"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1413" text-decoration="none" x="1662.38" y="1035.5">Runner</text>
+    </g>
+   </g>
+   <g id="svg_1414" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1415">
+     <path fill="none" id="svg_1416"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1417" text-decoration="none" x="1589" y="1068.5">+Runner(cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1418" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1419">
+     <path fill="none" id="svg_1420"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1421" text-decoration="none" x="1589" y="1083.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1422" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1652,1015l-114,-135" fill="none" id="svg_1423" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1424" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1557.55,890.1l-19.55,-10.1l6.68,20.96" fill="#FFFFFF" id="svg_1425"/>
+   </g>
+   <g id="svg_1426" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1557.55,890.1l-19.55,-10.1l6.68,20.96l12.87,-10.86" fill="none" id="svg_1427" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1428" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1429" opacity="0.2" width="196.73" x="1863" y="911"/>
+   </g>
+   <g id="svg_1430" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1431" width="196.73" x="1856" y="904"/>
+   </g>
+   <g id="svg_1432" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1856,904l196.73,0l0,72l-196.73,0l0,-72zl0,0z" fill="none" id="svg_1433" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1434" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1856,929l196.73,0" fill="none" id="svg_1435" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1436" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1856,939l196.73,0" fill="none" id="svg_1437" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1438" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1439">
+     <path fill="none" id="svg_1440"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1441" text-decoration="none" x="1934.38" y="923.5">Walker</text>
+    </g>
+   </g>
+   <g id="svg_1442" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1443">
+     <path fill="none" id="svg_1444"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1445" text-decoration="none" x="1861" y="956.5">+Walker(cell: Cell, baord: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1446" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1447">
+     <path fill="none" id="svg_1448"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1449" text-decoration="none" x="1861" y="971.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1450" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1858,903l-182,-70" fill="none" id="svg_1451" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1452" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1697.99,832.44l-21.99,0.56l15.95,15.15" fill="#FFFFFF" id="svg_1453"/>
+   </g>
+   <g id="svg_1454" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1697.99,832.44l-21.99,0.56l15.95,15.15l6.04,-15.71" fill="none" id="svg_1455" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1456" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1457" opacity="0.2" width="281.05" x="1759" y="727"/>
+   </g>
+   <g id="svg_1458" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1459" width="281.05" x="1752" y="720"/>
+   </g>
+   <g id="svg_1460" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1752,720l281.05,0l0,72l-281.05,0l0,-72zl0,0z" fill="none" id="svg_1461" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1462" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1752,745l281.05,0" fill="none" id="svg_1463" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1464" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1752,755l281.05,0" fill="none" id="svg_1465" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1466" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1467">
+     <path fill="none" id="svg_1468"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1469" text-decoration="none" x="1872.29" y="739.5">Fighter</text>
+    </g>
+   </g>
+   <g id="svg_1470" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1471">
+     <path fill="none" id="svg_1472"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1473" text-decoration="none" x="1757" y="772.5">+Fighter(Lifepoints: int, cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1474" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1475">
+     <path fill="none" id="svg_1476"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1477" text-decoration="none" x="1757" y="787.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1478" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1892,719l0,-87" fill="none" id="svg_1479" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1480" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1900.42,652.33l-8.42,-20.33l-8.42,20.33" fill="#FFFFFF" id="svg_1481"/>
+   </g>
+   <g id="svg_1482" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1900.42,652.33l-8.42,-20.33l-8.42,20.33l16.84,0" fill="none" id="svg_1483" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1484" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1485" opacity="0.2" width="278.88" x="2199" y="159"/>
+   </g>
+   <g id="svg_1486" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1487" width="278.88" x="2192" y="152"/>
+   </g>
+   <g id="svg_1488" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2192,152l278.88,0l0,72l-278.88,0l0,-72zl0,0z" fill="none" id="svg_1489" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1490" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2192,177l278.88,0" fill="none" id="svg_1491" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1492" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2192,187l278.88,0" fill="none" id="svg_1493" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1494" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1495">
+     <path fill="none" id="svg_1496"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1497" text-decoration="none" x="2312.29" y="171.5">Healer</text>
+    </g>
+   </g>
+   <g id="svg_1498" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1499">
+     <path fill="none" id="svg_1500"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1501" text-decoration="none" x="2197" y="204.5">+Healer(Lifepoints: int, cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1502" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1503">
+     <path fill="none" id="svg_1504"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1505" text-decoration="none" x="2197" y="219.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1506" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2238,225l-201,80" fill="none" id="svg_1507" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1508" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2052.77,289.66l-15.77,15.34l22,0.31" fill="#FFFFFF" id="svg_1509"/>
+   </g>
+   <g id="svg_1510" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2052.77,289.66l-15.77,15.34l22,0.31l-6.23,-15.65" fill="none" id="svg_1511" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1512" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1513" opacity="0.2" width="274.55" x="2183" y="327"/>
+   </g>
+   <g id="svg_1514" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1515" width="274.55" x="2176" y="320"/>
+   </g>
+   <g id="svg_1516" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2176,320l274.55,0l0,72l-274.55,0l0,-72zl0,0z" fill="none" id="svg_1517" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1518" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2176,345l274.55,0" fill="none" id="svg_1519" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1520" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2176,355l274.55,0" fill="none" id="svg_1521" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1522" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1523">
+     <path fill="none" id="svg_1524"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1525" text-decoration="none" x="2296.29" y="339.5">Lucky</text>
+    </g>
+   </g>
+   <g id="svg_1526" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1527">
+     <path fill="none" id="svg_1528"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1529" text-decoration="none" x="2181" y="372.5">+Lucky(Lifepoints: int, cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1530" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1531">
+     <path fill="none" id="svg_1532"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1533" text-decoration="none" x="2181" y="387.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1534" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2175,358l-138,3" fill="none" id="svg_1535" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1536" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2057.14,352.14l-20.14,8.86l20.5,7.98" fill="#FFFFFF" id="svg_1537"/>
+   </g>
+   <g id="svg_1538" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2057.14,352.14l-20.14,8.86l20.5,7.98l-0.36,-16.84" fill="none" id="svg_1539" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1540" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1541" opacity="0.2" width="289.74" x="2215" y="535"/>
+   </g>
+   <g id="svg_1542" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1543" width="289.74" x="2208" y="528"/>
+   </g>
+   <g id="svg_1544" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2208,528l289.74,0l0,72l-289.74,0l0,-72zl0,0z" fill="none" id="svg_1545" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1546" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2208,553l289.74,0" fill="none" id="svg_1547" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1548" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2208,563l289.74,0" fill="none" id="svg_1549" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1550" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1551">
+     <path fill="none" id="svg_1552"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1553" text-decoration="none" x="2328.29" y="547.5">Snooper</text>
+    </g>
+   </g>
+   <g id="svg_1554" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1555">
+     <path fill="none" id="svg_1556"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1557" text-decoration="none" x="2213" y="580.5">+Snooper(Lifepoints: int, cell: Cell, board: Board)</text>
+    </g>
+   </g>
+   <g id="svg_1558" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1559">
+     <path fill="none" id="svg_1560"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1561" text-decoration="none" x="2213" y="595.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1562" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2268,527l-231,-101" fill="none" id="svg_1563" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1564" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2059,426.43l-22,-0.43l15.25,15.86" fill="#FFFFFF" id="svg_1565"/>
+   </g>
+   <g id="svg_1566" transform="translate(-14,-6) scale(1,1)">
+    <path d="m2059,426.43l-22,-0.43l15.25,15.86l6.75,-15.43" fill="none" id="svg_1567" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1568" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="130" id="svg_1569" opacity="0.2" width="210.23" x="1055" y="1215"/>
+   </g>
+   <g id="svg_1570" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="130" id="svg_1571" width="210.23" x="1048" y="1208"/>
+   </g>
+   <g id="svg_1572" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1048,1208l210.23,0l0,130l-210.23,0l0,-130zl0,0z" fill="none" id="svg_1573" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1574" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1048,1233l210.23,0" fill="none" id="svg_1575" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1576" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1048,1271l210.23,0" fill="none" id="svg_1577" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1578" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1579">
+     <path fill="none" id="svg_1580"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="italic" font-weight="bold" id="svg_1581" text-decoration="none" x="1118.43" y="1227.5">Equipement</text>
+    </g>
+   </g>
+   <g id="svg_1582" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1583">
+     <path fill="none" id="svg_1584"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1585" text-decoration="none" x="1053" y="1250.5">#canOpenDoor: boolean</text>
+    </g>
+   </g>
+   <g id="svg_1586" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1587">
+     <path fill="none" id="svg_1588"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1589" text-decoration="none" x="1053" y="1265.5">#isWeapon: boolean</text>
+    </g>
+   </g>
+   <g id="svg_1590" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1591">
+     <path fill="none" id="svg_1592"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1593" text-decoration="none" x="1053" y="1288.5">+Equipement()</text>
+    </g>
+   </g>
+   <g id="svg_1594" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1595">
+     <path fill="none" id="svg_1596"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1597" text-decoration="none" x="1053" y="1303.5">+use(player: Player, target: Object)</text>
+    </g>
+   </g>
+   <g id="svg_1598" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1599">
+     <path fill="none" id="svg_1600"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1601" text-decoration="none" x="1053" y="1318.5">+getCanOpenDoor(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1602" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1603">
+     <path fill="none" id="svg_1604"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1605" text-decoration="none" x="1053" y="1333.5">+getIsWeapon(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1606" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="175" id="svg_1607" opacity="0.2" width="442.67" x="399" y="1192"/>
+   </g>
+   <g id="svg_1608" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="175" id="svg_1609" width="442.67" x="392" y="1185"/>
+   </g>
+   <g id="svg_1610" transform="translate(-14,-6) scale(1,1)">
+    <path d="m392,1185l442.67,0l0,175l-442.67,0l0,-175zl0,0z" fill="none" id="svg_1611" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1612" transform="translate(-14,-6) scale(1,1)">
+    <path d="m392,1210l442.67,0" fill="none" id="svg_1613" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1614" transform="translate(-14,-6) scale(1,1)">
+    <path d="m392,1293l442.67,0" fill="none" id="svg_1615" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1616" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1617">
+     <path fill="none" id="svg_1618"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1619" text-decoration="none" x="589.24" y="1204.5">Weapon</text>
+    </g>
+   </g>
+   <g id="svg_1620" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1621">
+     <path fill="none" id="svg_1622"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1623" text-decoration="none" x="397" y="1227.5">#seuil: int</text>
+    </g>
+   </g>
+   <g id="svg_1624" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1625">
+     <path fill="none" id="svg_1626"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1627" text-decoration="none" x="397" y="1242.5">#damage: int</text>
+    </g>
+   </g>
+   <g id="svg_1628" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1629">
+     <path fill="none" id="svg_1630"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1631" text-decoration="none" x="397" y="1257.5">#minrange: int</text>
+    </g>
+   </g>
+   <g id="svg_1632" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1633">
+     <path fill="none" id="svg_1634"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1635" text-decoration="none" x="397" y="1272.5">#maxrange: int</text>
+    </g>
+   </g>
+   <g id="svg_1636" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1637">
+     <path fill="none" id="svg_1638"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1639" text-decoration="none" x="397" y="1287.5">#attempts: int</text>
+    </g>
+   </g>
+   <g id="svg_1640" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1641">
+     <path fill="none" id="svg_1642"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1643" text-decoration="none" x="397" y="1310.5">+Weapon(seuil: int, damage: int, minrange: int, maxrange: int, attempts: int)</text>
+    </g>
+   </g>
+   <g id="svg_1644" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1645">
+     <path fill="none" id="svg_1646"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1647" text-decoration="none" x="397" y="1325.5">+dice(): int</text>
+    </g>
+   </g>
+   <g id="svg_1648" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1649">
+     <path fill="none" id="svg_1650"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1651" text-decoration="none" x="397" y="1340.5">+getrange(): int[]</text>
+    </g>
+   </g>
+   <g id="svg_1652" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1653">
+     <path fill="none" id="svg_1654"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1655" text-decoration="none" x="397" y="1355.5">+use(player: Player, zombie: Zombie)</text>
+    </g>
+   </g>
+   <g id="svg_1656" transform="translate(-14,-6) scale(1,1)">
+    <path d="m836,1272l211,1" fill="none" id="svg_1657" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1658" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1026.63,1281.32l20.37,-8.32l-20.29,-8.52" fill="#FFFFFF" id="svg_1659"/>
+   </g>
+   <g id="svg_1660" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1026.63,1281.32l20.37,-8.32l-20.29,-8.52l-0.08,16.84" fill="none" id="svg_1661" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1662" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1663" opacity="0.2" width="137.97" x="399" y="1437"/>
+   </g>
+   <g id="svg_1664" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1665" width="137.97" x="392" y="1430"/>
+   </g>
+   <g id="svg_1666" transform="translate(-14,-6) scale(1,1)">
+    <path d="m392,1430l137.97,0l0,72l-137.97,0l0,-72zl0,0z" fill="none" id="svg_1667" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1668" transform="translate(-14,-6) scale(1,1)">
+    <path d="m392,1455l137.97,0" fill="none" id="svg_1669" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1670" transform="translate(-14,-6) scale(1,1)">
+    <path d="m392,1465l137.97,0" fill="none" id="svg_1671" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1672" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1673">
+     <path fill="none" id="svg_1674"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1675" text-decoration="none" x="449.79" y="1449.5">Axe</text>
+    </g>
+   </g>
+   <g id="svg_1676" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1677">
+     <path fill="none" id="svg_1678"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1679" text-decoration="none" x="397" y="1482.5">+Axe()</text>
+    </g>
+   </g>
+   <g id="svg_1680" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1681">
+     <path fill="none" id="svg_1682"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1683" text-decoration="none" x="397" y="1497.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1684" transform="translate(-14,-6) scale(1,1)">
+    <path d="m489,1429l54,-68" fill="none" id="svg_1685" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1686" transform="translate(-14,-6) scale(1,1)">
+    <path d="m536.95,1382.15l6.05,-21.15l-19.23,10.68" fill="#FFFFFF" id="svg_1687"/>
+   </g>
+   <g id="svg_1688" transform="translate(-14,-6) scale(1,1)">
+    <path d="m536.95,1382.15l6.05,-21.15l-19.23,10.68l13.18,10.47" fill="none" id="svg_1689" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1690" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1691" opacity="0.2" width="137.97" x="546.97" y="1437"/>
+   </g>
+   <g id="svg_1692" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1693" width="137.97" x="539.97" y="1430"/>
+   </g>
+   <g id="svg_1694" transform="translate(-14,-6) scale(1,1)">
+    <path d="m539.97,1430l137.97,0l0,72l-137.97,0l0,-72zl0,0z" fill="none" id="svg_1695" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1696" transform="translate(-14,-6) scale(1,1)">
+    <path d="m539.97,1455l137.97,0" fill="none" id="svg_1697" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1698" transform="translate(-14,-6) scale(1,1)">
+    <path d="m539.97,1465l137.97,0" fill="none" id="svg_1699" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1700" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1701">
+     <path fill="none" id="svg_1702"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1703" text-decoration="none" x="580.42" y="1449.5">Chainsaw</text>
+    </g>
+   </g>
+   <g id="svg_1704" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1705">
+     <path fill="none" id="svg_1706"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1707" text-decoration="none" x="544.97" y="1482.5">+Chainsaw()</text>
+    </g>
+   </g>
+   <g id="svg_1708" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1709">
+     <path fill="none" id="svg_1710"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1711" text-decoration="none" x="544.97" y="1497.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1712" transform="translate(-14,-6) scale(1,1)">
+    <path d="m609,1429l2,-68" fill="none" id="svg_1713" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1714" transform="translate(-14,-6) scale(1,1)">
+    <path d="m618.82,1381.56l-7.82,-20.56l-9.01,20.07" fill="#FFFFFF" id="svg_1715"/>
+   </g>
+   <g id="svg_1716" transform="translate(-14,-6) scale(1,1)">
+    <path d="m618.82,1381.56l-7.82,-20.56l-9.01,20.07l16.83,0.49" fill="none" id="svg_1717" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1718" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1719" opacity="0.2" width="137.97" x="694.94" y="1437"/>
+   </g>
+   <g id="svg_1720" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1721" width="137.97" x="687.94" y="1430"/>
+   </g>
+   <g id="svg_1722" transform="translate(-14,-6) scale(1,1)">
+    <path d="m687.94,1430l137.98,0l0,72l-137.98,0l0,-72zl0,0z" fill="none" id="svg_1723" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1724" transform="translate(-14,-6) scale(1,1)">
+    <path d="m687.94,1455l137.98,0" fill="none" id="svg_1725" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1726" transform="translate(-14,-6) scale(1,1)">
+    <path d="m687.94,1465l137.98,0" fill="none" id="svg_1727" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1728" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1729">
+     <path fill="none" id="svg_1730"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1731" text-decoration="none" x="732.37" y="1449.5">Crowbar</text>
+    </g>
+   </g>
+   <g id="svg_1732" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1733">
+     <path fill="none" id="svg_1734"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1735" text-decoration="none" x="692.94" y="1482.5">+Crowbar()</text>
+    </g>
+   </g>
+   <g id="svg_1736" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1737">
+     <path fill="none" id="svg_1738"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1739" text-decoration="none" x="692.94" y="1497.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1740" transform="translate(-14,-6) scale(1,1)">
+    <path d="m729,1429l-50,-68" fill="none" id="svg_1741" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1742" transform="translate(-14,-6) scale(1,1)">
+    <path d="m697.82,1372.39l-18.82,-11.39l5.26,21.36" fill="#FFFFFF" id="svg_1743"/>
+   </g>
+   <g id="svg_1744" transform="translate(-14,-6) scale(1,1)">
+    <path d="m697.82,1372.39l-18.82,-11.39l5.26,21.36l13.56,-9.97" fill="none" id="svg_1745" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1746" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1747" opacity="0.2" width="137.97" x="842.92" y="1437"/>
+   </g>
+   <g id="svg_1748" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1749" width="137.97" x="835.92" y="1430"/>
+   </g>
+   <g id="svg_1750" transform="translate(-14,-6) scale(1,1)">
+    <path d="m835.92,1430l137.97,0l0,72l-137.97,0l0,-72zl0,0z" fill="none" id="svg_1751" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1752" transform="translate(-14,-6) scale(1,1)">
+    <path d="m835.92,1455l137.97,0" fill="none" id="svg_1753" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1754" transform="translate(-14,-6) scale(1,1)">
+    <path d="m835.92,1465l137.97,0" fill="none" id="svg_1755" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1756" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1757">
+     <path fill="none" id="svg_1758"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1759" text-decoration="none" x="892.61" y="1449.5">Gun</text>
+    </g>
+   </g>
+   <g id="svg_1760" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1761">
+     <path fill="none" id="svg_1762"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1763" text-decoration="none" x="840.92" y="1482.5">+Gun()</text>
+    </g>
+   </g>
+   <g id="svg_1764" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1765">
+     <path fill="none" id="svg_1766"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1767" text-decoration="none" x="840.92" y="1497.5">+toString(String)</text>
+    </g>
+   </g>
+   <g id="svg_1768" transform="translate(-14,-6) scale(1,1)">
+    <path d="m849,1429l-102,-68" fill="none" id="svg_1769" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1770" transform="translate(-14,-6) scale(1,1)">
+    <path d="m768.58,1365.27l-21.58,-4.27l12.24,18.28" fill="#FFFFFF" id="svg_1771"/>
+   </g>
+   <g id="svg_1772" transform="translate(-14,-6) scale(1,1)">
+    <path d="m768.58,1365.27l-21.58,-4.27l12.24,18.28l9.34,-14.01" fill="none" id="svg_1773" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1774" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="72" id="svg_1775" opacity="0.2" width="137.97" x="255" y="1439"/>
+   </g>
+   <g id="svg_1776" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="72" id="svg_1777" width="137.97" x="248" y="1432"/>
+   </g>
+   <g id="svg_1778" transform="translate(-14,-6) scale(1,1)">
+    <path d="m248,1432l137.97,0l0,72l-137.97,0l0,-72zl0,0z" fill="none" id="svg_1779" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1780" transform="translate(-14,-6) scale(1,1)">
+    <path d="m248,1457l137.97,0" fill="none" id="svg_1781" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1782" transform="translate(-14,-6) scale(1,1)">
+    <path d="m248,1467l137.97,0" fill="none" id="svg_1783" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1784" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1785">
+     <path fill="none" id="svg_1786"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1787" text-decoration="none" x="303.98" y="1451.5">Rifle</text>
+    </g>
+   </g>
+   <g id="svg_1788" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1789">
+     <path fill="none" id="svg_1790"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1791" text-decoration="none" x="253" y="1484.5">+Rifle()</text>
+    </g>
+   </g>
+   <g id="svg_1792" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1793">
+     <path fill="none" id="svg_1794"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1795" text-decoration="none" x="253" y="1499.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1796" transform="translate(-14,-6) scale(1,1)">
+    <path d="m372,1431l106,-70" fill="none" id="svg_1797" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1798" transform="translate(-14,-6) scale(1,1)">
+    <path d="m465.68,1379.23l12.32,-18.23l-21.6,4.18" fill="#FFFFFF" id="svg_1799"/>
+   </g>
+   <g id="svg_1800" transform="translate(-14,-6) scale(1,1)">
+    <path d="m465.68,1379.23l12.32,-18.23l-21.6,4.18l9.28,14.05" fill="none" id="svg_1801" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1802" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_1803" opacity="0.2" width="137.97" x="1503" y="1119"/>
+   </g>
+   <g id="svg_1804" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_1805" width="137.97" x="1496" y="1112"/>
+   </g>
+   <g id="svg_1806" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1496,1112l137.97,0l0,87l-137.97,0l0,-87zl0,0z" fill="none" id="svg_1807" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1808" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1496,1137l137.97,0" fill="none" id="svg_1809" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1810" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1496,1147l137.97,0" fill="none" id="svg_1811" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1812" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1813">
+     <path fill="none" id="svg_1814"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1815" text-decoration="none" x="1535.37" y="1131.5">FirstAidKit</text>
+    </g>
+   </g>
+   <g id="svg_1816" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1817">
+     <path fill="none" id="svg_1818"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1819" text-decoration="none" x="1501" y="1164.5">+FirstAidKit()</text>
+    </g>
+   </g>
+   <g id="svg_1820" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1821">
+     <path fill="none" id="svg_1822"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1823" text-decoration="none" x="1501" y="1179.5">+use(receiver: Player)</text>
+    </g>
+   </g>
+   <g id="svg_1824" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1825">
+     <path fill="none" id="svg_1826"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1827" text-decoration="none" x="1501" y="1194.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1828" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1495,1175l-236,67" fill="none" id="svg_1829" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1830" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1276.25,1228.35l-17.25,13.65l21.85,2.55" fill="#FFFFFF" id="svg_1831"/>
+   </g>
+   <g id="svg_1832" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1276.25,1228.35l-17.25,13.65l21.85,2.55l-4.6,-16.2" fill="none" id="svg_1833" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1834" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_1835" opacity="0.2" width="137.97" x="1503" y="1279"/>
+   </g>
+   <g id="svg_1836" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_1837" width="137.97" x="1496" y="1272"/>
+   </g>
+   <g id="svg_1838" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1496,1272l137.97,0l0,87l-137.97,0l0,-87zl0,0z" fill="none" id="svg_1839" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1840" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1496,1297l137.97,0" fill="none" id="svg_1841" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1842" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1496,1307l137.97,0" fill="none" id="svg_1843" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1844" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1845">
+     <path fill="none" id="svg_1846"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1847" text-decoration="none" x="1532.22" y="1291.5">HealingViel</text>
+    </g>
+   </g>
+   <g id="svg_1848" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1849">
+     <path fill="none" id="svg_1850"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1851" text-decoration="none" x="1501" y="1324.5">+HealingVial()</text>
+    </g>
+   </g>
+   <g id="svg_1852" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1853">
+     <path fill="none" id="svg_1854"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1855" text-decoration="none" x="1501" y="1339.5">+use(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_1856" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1857">
+     <path fill="none" id="svg_1858"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1859" text-decoration="none" x="1501" y="1354.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1860" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1495,1308l-236,-24" fill="none" id="svg_1861" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1862" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1280.07,1277.68l-21.07,6.32l19.37,10.43" fill="#FFFFFF" id="svg_1863"/>
+   </g>
+   <g id="svg_1864" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1280.07,1277.68l-21.07,6.32l19.37,10.43l1.7,-16.75" fill="none" id="svg_1865" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1866" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_1867" opacity="0.2" width="137.97" x="1047" y="1431"/>
+   </g>
+   <g id="svg_1868" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_1869" width="137.97" x="1040" y="1424"/>
+   </g>
+   <g id="svg_1870" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1040,1424l137.97,0l0,87l-137.97,0l0,-87zl0,0z" fill="none" id="svg_1871" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1872" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1040,1449l137.97,0" fill="none" id="svg_1873" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1874" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1040,1459l137.97,0" fill="none" id="svg_1875" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1876" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1877">
+     <path fill="none" id="svg_1878"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1879" text-decoration="none" x="1063.1" y="1443.5">InfraredGlasses</text>
+    </g>
+   </g>
+   <g id="svg_1880" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1881">
+     <path fill="none" id="svg_1882"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1883" text-decoration="none" x="1045" y="1476.5">+InfraredGlasses()</text>
+    </g>
+   </g>
+   <g id="svg_1884" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1885">
+     <path fill="none" id="svg_1886"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1887" text-decoration="none" x="1045" y="1491.5">+use(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_1888" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1889">
+     <path fill="none" id="svg_1890"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1891" text-decoration="none" x="1045" y="1506.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1892" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1118,1423l20,-84" fill="none" id="svg_1893" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1894" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1141.48,1360.72l-3.48,-21.72l-12.9,17.82" fill="#FFFFFF" id="svg_1895"/>
+   </g>
+   <g id="svg_1896" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1141.48,1360.72l-3.48,-21.72l-12.9,17.82l16.38,3.9" fill="none" id="svg_1897" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1898" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_1899" opacity="0.2" width="137.97" x="1255" y="1439"/>
+   </g>
+   <g id="svg_1900" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_1901" width="137.97" x="1248" y="1432"/>
+   </g>
+   <g id="svg_1902" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1248,1432l137.97,0l0,87l-137.97,0l0,-87zl0,0z" fill="none" id="svg_1903" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1904" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1248,1457l137.97,0" fill="none" id="svg_1905" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1906" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1248,1467l137.97,0" fill="none" id="svg_1907" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1908" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1909">
+     <path fill="none" id="svg_1910"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1911" text-decoration="none" x="1304.34" y="1451.5">Map</text>
+    </g>
+   </g>
+   <g id="svg_1912" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1913">
+     <path fill="none" id="svg_1914"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1915" text-decoration="none" x="1253" y="1484.5">+Map()</text>
+    </g>
+   </g>
+   <g id="svg_1916" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1917">
+     <path fill="none" id="svg_1918"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1919" text-decoration="none" x="1253" y="1499.5">+use(player: Player)</text>
+    </g>
+   </g>
+   <g id="svg_1920" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1921">
+     <path fill="none" id="svg_1922"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1923" text-decoration="none" x="1253" y="1514.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1924" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1280,1431l-74,-92" fill="none" id="svg_1925" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1926" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1225.3,1349.56l-19.3,-10.56l6.18,21.11" fill="#FFFFFF" id="svg_1927"/>
+   </g>
+   <g id="svg_1928" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1225.3,1349.56l-19.3,-10.56l6.18,21.11l13.12,-10.55" fill="none" id="svg_1929" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1930" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="87" id="svg_1931" opacity="0.2" width="239.85" x="1471" y="1407"/>
+   </g>
+   <g id="svg_1932" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="87" id="svg_1933" width="239.85" x="1464" y="1400"/>
+   </g>
+   <g id="svg_1934" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1464,1400l239.85,0l0,87l-239.85,0l0,-87zl0,0z" fill="none" id="svg_1935" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1936" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1464,1425l239.85,0" fill="none" id="svg_1937" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1938" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1464,1435l239.85,0" fill="none" id="svg_1939" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1940" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1941">
+     <path fill="none" id="svg_1942"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1943" text-decoration="none" x="1552.86" y="1419.5">MasterKey</text>
+    </g>
+   </g>
+   <g id="svg_1944" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1945">
+     <path fill="none" id="svg_1946"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1947" text-decoration="none" x="1469" y="1452.5">+MasterKey()</text>
+    </g>
+   </g>
+   <g id="svg_1948" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1949">
+     <path fill="none" id="svg_1950"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1951" text-decoration="none" x="1469" y="1467.5">+use(player: Player, direction: Direction)</text>
+    </g>
+   </g>
+   <g id="svg_1952" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1953">
+     <path fill="none" id="svg_1954"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1955" text-decoration="none" x="1469" y="1482.5">+toString(): String</text>
+    </g>
+   </g>
+   <g id="svg_1956" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1472,1399l-213,-84" fill="none" id="svg_1957" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1958" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1281,1314.62l-22,0.38l15.82,15.29" fill="#FFFFFF" id="svg_1959"/>
+   </g>
+   <g id="svg_1960" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1281,1314.62l-22,0.38l15.82,15.29l6.18,-15.67" fill="none" id="svg_1961" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1962" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="130" id="svg_1963" opacity="0.2" width="162.54" x="303" y="479"/>
+   </g>
+   <g id="svg_1964" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="130" id="svg_1965" width="162.54" x="296" y="472"/>
+   </g>
+   <g id="svg_1966" transform="translate(-14,-6) scale(1,1)">
+    <path d="m296,472l162.54,0l0,130l-162.54,0l0,-130zl0,0z" fill="none" id="svg_1967" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1968" transform="translate(-14,-6) scale(1,1)">
+    <path d="m296,497l162.54,0" fill="none" id="svg_1969" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1970" transform="translate(-14,-6) scale(1,1)">
+    <path d="m296,520l162.54,0" fill="none" id="svg_1971" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_1972" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1973">
+     <path fill="none" id="svg_1974"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_1975" text-decoration="none" x="363.18" y="491.5">Door</text>
+    </g>
+   </g>
+   <g id="svg_1976" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1977">
+     <path fill="none" id="svg_1978"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1979" text-decoration="none" x="301" y="514.5">+isLocked: boolean</text>
+    </g>
+   </g>
+   <g id="svg_1980" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1981">
+     <path fill="none" id="svg_1982"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1983" text-decoration="none" x="301" y="537.5">+Door(direction: Direction)</text>
+    </g>
+   </g>
+   <g id="svg_1984" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1985">
+     <path fill="none" id="svg_1986"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1987" text-decoration="none" x="301" y="552.5">+lock()</text>
+    </g>
+   </g>
+   <g id="svg_1988" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1989">
+     <path fill="none" id="svg_1990"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1991" text-decoration="none" x="301" y="567.5">+unlock()</text>
+    </g>
+   </g>
+   <g id="svg_1992" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1993">
+     <path fill="none" id="svg_1994"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1995" text-decoration="none" x="301" y="582.5">+isLocked(): boolean</text>
+    </g>
+   </g>
+   <g id="svg_1996" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_1997">
+     <path fill="none" id="svg_1998"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_1999" text-decoration="none" x="301" y="597.5">+getDirection(): Direction</text>
+    </g>
+   </g>
+   <g id="svg_2000" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#C0C0C0" height="115" id="svg_2001" opacity="0.2" width="132.68" x="143" y="695"/>
+   </g>
+   <g id="svg_2002" transform="translate(-14,-6) scale(1,1)">
+    <rect fill="#ffffff" height="115" id="svg_2003" width="132.68" x="136" y="688"/>
+   </g>
+   <g id="svg_2004" transform="translate(-14,-6) scale(1,1)">
+    <path d="m136,688l132.68,0l0,115l-132.68,0l0,-115zl0,0z" fill="none" id="svg_2005" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2006" transform="translate(-14,-6) scale(1,1)">
+    <path d="m136,726l132.68,0" fill="none" id="svg_2007" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2008" transform="translate(-14,-6) scale(1,1)">
+    <path d="m136,794l132.68,0" fill="none" id="svg_2009" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2010" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2011">
+     <path fill="none" id="svg_2012"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2013" text-decoration="none" x="178.85" y="705.5">«enum»</text>
+    </g>
+   </g>
+   <g id="svg_2014" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2015">
+     <path fill="none" id="svg_2016"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="bold" id="svg_2017" text-decoration="none" x="176.69" y="720.5">Direction</text>
+    </g>
+   </g>
+   <g id="svg_2018" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2019">
+     <path fill="none" id="svg_2020"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2021" text-decoration="none" x="141" y="743.5">+NORTH</text>
+    </g>
+   </g>
+   <g id="svg_2022" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2023">
+     <path fill="none" id="svg_2024"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2025" text-decoration="none" x="141" y="758.5">+SOUTH</text>
+    </g>
+   </g>
+   <g id="svg_2026" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2027">
+     <path fill="none" id="svg_2028"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2029" text-decoration="none" x="141" y="773.5">+EAST</text>
+    </g>
+   </g>
+   <g id="svg_2030" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2031">
+     <path fill="none" id="svg_2032"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2033" text-decoration="none" x="141" y="788.5">+WEST</text>
+    </g>
+   </g>
+   <g id="svg_2034" transform="translate(-14,-6) scale(1,1)">
+    <path d="m489,314l94,61" fill="none" id="svg_2035" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2036" transform="translate(-14,-6) scale(1,1)">
+    <path d="m572.18,373l10.82,2l-6.23,-9.06" fill="none" id="svg_2037" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2038" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2039">
+     <path fill="none" id="svg_2040"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2041" text-decoration="none" x="527.5" y="337.5">#cells</text>
+    </g>
+   </g>
+   <g id="svg_2042" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2043">
+     <path fill="none" id="svg_2044"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2045" text-decoration="none" x="548.5" y="379.5">1..*</text>
+    </g>
+   </g>
+   <g id="svg_2046" transform="translate(-14,-6) scale(1,1)">
+    <path d="m566,727l-123,-124" fill="none" id="svg_2047" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2048" transform="translate(-14,-6) scale(1,1)">
+    <path d="m453.15,607.25l-10.15,-4.25l4.17,10.18" fill="none" id="svg_2049" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2050" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2051">
+     <path fill="none" id="svg_2052"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2053" text-decoration="none" x="472.68" y="681.5">#doors</text>
+    </g>
+   </g>
+   <g id="svg_2054" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2055">
+     <path fill="none" id="svg_2056"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2057" text-decoration="none" x="457.5" y="615.5">1..*</text>
+    </g>
+   </g>
+   <g id="svg_2058" transform="translate(-14,-6) scale(1,1)">
+    <path d="m321,603l-70,84" fill="none" id="svg_2059" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2060" transform="translate(-14,-6) scale(1,1)">
+    <path d="m254.27,676.5l-3.27,10.5l9.74,-5.11" fill="none" id="svg_2061" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2062" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2063">
+     <path fill="none" id="svg_2064"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2065" text-decoration="none" x="270.5" y="660.5">-direction</text>
+    </g>
+   </g>
+   <g id="svg_2066" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2067">
+     <path fill="none" id="svg_2068"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2069" text-decoration="none" x="287.5" y="617.5">1..*</text>
+    </g>
+   </g>
+   <g id="svg_2070" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2071">
+     <path fill="none" id="svg_2072"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2073" text-decoration="none" x="251.5" y="668.5">1</text>
+    </g>
+   </g>
+   <g id="svg_2074" transform="translate(-14,-6) scale(1,1)">
+    <path d="m490,255l22,9l360,24l360,295" fill="none" id="svg_2075" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2076" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1221.47,579.81l10.53,3.19l-5.19,-9.7" fill="none" id="svg_2077" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2078" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2079">
+     <path fill="none" id="svg_2080"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2081" text-decoration="none" x="667.68" y="267.5">#zombie</text>
+    </g>
+   </g>
+   <g id="svg_2082" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2083">
+     <path fill="none" id="svg_2084"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2085" text-decoration="none" x="1204.5" y="584.5">*</text>
+    </g>
+   </g>
+   <g id="svg_2086" transform="translate(-14,-6) scale(1,1)">
+    <path d="m490,85l38,-13l632,16l432,112l159,86" fill="none" id="svg_2087" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2088" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1740.06,284.87l10.94,1.13l-6.94,-8.54" fill="none" id="svg_2089" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2090" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2091">
+     <path fill="none" id="svg_2092"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2093" text-decoration="none" x="1138.68" y="79.5">#players</text>
+    </g>
+   </g>
+   <g id="svg_2094" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2095">
+     <path fill="none" id="svg_2096"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2097" text-decoration="none" x="1723.5" y="292.5">*</text>
+    </g>
+   </g>
+   <g id="svg_2098" transform="translate(-14,-6) scale(1,1)">
+    <path d="m868,521l283,109" fill="none" id="svg_2099" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2100" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1140,630.28l11,-0.28l-7.97,-7.58" fill="none" id="svg_2101" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2102" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2103">
+     <path fill="none" id="svg_2104"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2105" text-decoration="none" x="986.68" y="567.5">#zombies</text>
+    </g>
+   </g>
+   <g id="svg_2106" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2107">
+     <path fill="none" id="svg_2108"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2109" text-decoration="none" x="1123.5" y="639.5">*</text>
+    </g>
+   </g>
+   <g id="svg_2110" transform="translate(-14,-6) scale(1,1)">
+    <path d="m868,397l340,-165l376,0l167,71" fill="none" id="svg_2111" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2112" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1740,302.9l11,0.1l-7.71,-7.85" fill="none" id="svg_2113" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2114" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2115">
+     <path fill="none" id="svg_2116"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2117" text-decoration="none" x="1371.68" y="223.5">#players</text>
+    </g>
+   </g>
+   <g id="svg_2118" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2119">
+     <path fill="none" id="svg_2120"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2121" text-decoration="none" x="1723.5" y="312.5">*</text>
+    </g>
+   </g>
+   <g id="svg_2122" transform="translate(-14,-6) scale(1,1)">
+    <path d="m781,630l99,290l24,104l183,183" fill="none" id="svg_2123" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2124" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1076.84,1202.79l10.16,4.21l-4.21,-10.16" fill="none" id="svg_2125" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2126" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2127">
+     <path fill="none" id="svg_2128"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2129" text-decoration="none" x="886.68" y="948.5">#equipements</text>
+    </g>
+   </g>
+   <g id="svg_2130" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2131">
+     <path fill="none" id="svg_2132"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2133" text-decoration="none" x="1059.5" y="1206.5">*</text>
+    </g>
+   </g>
+   <g id="svg_2134" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1231,387l-363,57" fill="none" id="svg_2135" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2136" transform="translate(-14,-6) scale(1,1)">
+    <path d="m877.39,438.26l-9.39,5.74l10.69,2.58" fill="none" id="svg_2137" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2138" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2139">
+     <path fill="none" id="svg_2140"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2141" text-decoration="none" x="1047.68" y="404.5">#cell</text>
+    </g>
+   </g>
+   <g id="svg_2142" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2143">
+     <path fill="none" id="svg_2144"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2145" text-decoration="none" x="883.5" y="434.5">1</text>
+    </g>
+   </g>
+   <g id="svg_2146" transform="translate(-14,-6) scale(1,1)">
+    <path d="m1231,327l-741,-124" fill="none" id="svg_2147" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2148" transform="translate(-14,-6) scale(1,1)">
+    <path d="m500.72,200.53l-10.72,2.47l9.33,5.83" fill="none" id="svg_2149" stroke="#000000" stroke-miterlimit="10"/>
+   </g>
+   <g id="svg_2150" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2151">
+     <path fill="none" id="svg_2152"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2153" text-decoration="none" x="836.5" y="285.5">+board</text>
+    </g>
+   </g>
+   <g id="svg_2154" transform="translate(-14,-6) scale(1,1)">
+    <g id="svg_2155">
+     <path fill="none" id="svg_2156"/>
+     <text fill="#000000" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" id="svg_2157" text-decoration="none" x="509.5" y="200.5">1</text>
+    </g>
+   </g>
+  </g>
+ </g>
+
+</svg>
