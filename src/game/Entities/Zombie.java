@@ -31,24 +31,6 @@ public abstract class Zombie extends Entity {
     }
 
 	/**
-	 * Sets the cell for the zombie.
-	 * 
-	 * @param cell the new cell for the zombie
-	 */
-	public void setCell(Cell cell) {
-		this.cell = cell;
-	}
-
-	/**
-	 * Returns the cell that the zombie is currently occupying.
-	 *
-	 * @return the cell object representing the current position of the zombie
-	 */
-	public Cell getCell() {
-		return this.cell;
-	}
-
-	/**
 	 * Returns the resistance of the zombie.
 	 *
 	 * @return the resistance of the zombie
