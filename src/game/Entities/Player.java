@@ -38,8 +38,10 @@ public abstract class Player extends Entity{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Which one to attack");
 		String msg = "";
-		for (Zombie zombie : this.cell.getZombie()) {
-			msg += zombie.toString()  + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
+		for (Zombie zombie : this.board.getZombies()) {
+			if(canAttackZombie(zombie)){
+				msg += zombie.toString()  + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
+			}
 		}
 		System.out.println(msg);
 		String action = in.nextLine();
@@ -65,58 +67,20 @@ public abstract class Player extends Entity{
 		}
 	}
 
-	public boolean canAttackZombie(Zombie zombie){
-		if(this.getInHand().getIsWeapon()){
-			Double distance=this.calculateDistance(this.getCell(),zombie.getCell());
-			int low =((Weapon) this.getInHand()).getRange()[0];
-			int high = ((Weapon) this.getInHand()).getRange()[1];
-				
-		if(low<distance && distance<high){
-			int zpos= zombie.getCell().getCoord()[1];
-			int spos= this.getCell().getCoord()[1];
-			if(zombie.getCell().getCoord()[0]==this.getCell().getCoord()[0]){
-				if(zpos<spos){
-					for(int i=zpos;i<spos;i++){
-						if (this.board.getCell(zombie.getCell().getCoord()[0], i).isLocked(Direction.NORTH)){
-							return false;
-						}
-					}
-					return true;
-				}
-				else if (spos<zpos){
-					for(int i=spos;i<zpos;i++){
-						if (this.board.getCell(zombie.getCell().getCoord()[0], i).isLocked(Direction.NORTH)){
-							return false;
-						}
-					}
-					return true;
-				}
-			}
-
-			if(zombie.getCell().getCoord()[1]==this.getCell().getCoord()[1]){
-
-				if(zpos<spos){
-					for(int i=zpos;i<spos;i++){
-						if (this.board.getCell(i, zombie.getCell().getCoord()[1]).isLocked(Direction.EAST)){
-							return false;
-						}
-					}
-					return true;
-				}
-				else if (spos<zpos){
-					for(int i=spos;i<zpos;i++){
-						if (this.board.getCell(i, zombie.getCell().getCoord()[1]).isLocked(Direction.EAST)){
-							return false;
-						}
-					}
-					return true;
-				}
-
-			}
- 		}	
+	public boolean canAttackZombie(Zombie zombie) {
+		int distance = Math.abs(zombie.getCell().getCoord()[0] - this.cell.getCoord()[0]) + Math.abs(zombie.getCell().getCoord()[1] - this.cell.getCoord()[1]);
+		return distance <= ((Weapon) this.inHand).getRange()[1] && distance >= ((Weapon) this.inHand).getRange()[0];
 	}
-	return false;
-}
+
+	public List<Zombie> zombieCanBeAttack(){
+		List<Zombie> zombies = new ArrayList<Zombie>();
+		for (Zombie zombie : this.board.getZombies()) {
+			if(canAttackZombie(zombie)){
+				zombies.add(zombie);
+			}
+		}
+		return zombies;	
+	}
 
 	public void attack(Zombie zombie){
 		((Weapon)this.inHand).use(this,zombie);
@@ -279,7 +243,7 @@ public abstract class Player extends Entity{
 			if( this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += "| OPEN DOOR ";
 			}
-			if (this.inHand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
+			if (this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
 				msg += "| ATTACK ";
 			}
 			System.out.println(msg);
@@ -323,7 +287,7 @@ public abstract class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-					if(this.inHand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
+					if(this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
                 		this.attackAction();
 						this.actionPoints -= 1;
 					}
