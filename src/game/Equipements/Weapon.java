@@ -26,7 +26,7 @@ public abstract class Weapon extends Equipement{
         return (int)(Math.random() * 6 + 1);
     }
 
-    public int[] getrange(){
+    public int[] getRange(){
         int[] res= new int[2];
         res[0]=this.minrange;
         res[1]=this.maxrange;
@@ -34,7 +34,7 @@ public abstract class Weapon extends Equipement{
     }
 
     public void use(Player player, Zombie zombie){
-        if (this.damage<=zombie.getresistance()){
+        if (this.damage<=zombie.getResistance()){
             System.out.println(zombie+" cannot be damaged by "+this);
         }
         else if (this.dice() >= this.seuil){

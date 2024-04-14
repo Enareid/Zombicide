@@ -15,7 +15,7 @@ import game.Equipements.Items.MasterKey;
 
 public abstract class Player extends Entity{
   protected List<Equipement> bag;
-	protected Equipement inhand;
+	protected Equipement inHand;
 
 	private int expertiseLevel;
   static final int MAX_LIFE_LEVEL = 5;
@@ -31,10 +31,10 @@ public abstract class Player extends Entity{
         super(Lifepoints,cell, board,3);
         this.expertiseLevel = 0;
         this.bag = new ArrayList<Equipement>();
-				this.inhand = null;
+				this.inHand = null;
     }
 
-	public void AttackAction(){
+	public void attackAction(){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Which one to attack");
 		String msg = "";
@@ -68,16 +68,16 @@ public abstract class Player extends Entity{
 	public boolean canAttackZombie(Zombie zombie){
 		if(this.getInHand().getIsWeapon()){
 			Double distance=this.calculateDistance(this.getCell(),zombie.getCell());
-			int low =((Weapon) this.getInHand()).getrange()[0];
-			int high = ((Weapon) this.getInHand()).getrange()[1];
+			int low =((Weapon) this.getInHand()).getRange()[0];
+			int high = ((Weapon) this.getInHand()).getRange()[1];
 				
 		if(low<distance && distance<high){
-			int zpos= zombie.getCell().getcoord()[1];
-			int spos= this.getCell().getcoord()[1];
-			if(zombie.getCell().getcoord()[0]==this.getCell().getcoord()[0]){
+			int zpos= zombie.getCell().getCoord()[1];
+			int spos= this.getCell().getCoord()[1];
+			if(zombie.getCell().getCoord()[0]==this.getCell().getCoord()[0]){
 				if(zpos<spos){
 					for(int i=zpos;i<spos;i++){
-						if (this.board.getCell(zombie.getCell().getcoord()[0], i).isLocked(Direction.NORTH)){
+						if (this.board.getCell(zombie.getCell().getCoord()[0], i).isLocked(Direction.NORTH)){
 							return false;
 						}
 					}
@@ -85,7 +85,7 @@ public abstract class Player extends Entity{
 				}
 				else if (spos<zpos){
 					for(int i=spos;i<zpos;i++){
-						if (this.board.getCell(zombie.getCell().getcoord()[0], i).isLocked(Direction.NORTH)){
+						if (this.board.getCell(zombie.getCell().getCoord()[0], i).isLocked(Direction.NORTH)){
 							return false;
 						}
 					}
@@ -93,11 +93,11 @@ public abstract class Player extends Entity{
 				}
 			}
 
-			if(zombie.getCell().getcoord()[1]==this.getCell().getcoord()[1]){
+			if(zombie.getCell().getCoord()[1]==this.getCell().getCoord()[1]){
 
 				if(zpos<spos){
 					for(int i=zpos;i<spos;i++){
-						if (this.board.getCell(i, zombie.getCell().getcoord()[1]).isLocked(Direction.EAST)){
+						if (this.board.getCell(i, zombie.getCell().getCoord()[1]).isLocked(Direction.EAST)){
 							return false;
 						}
 					}
@@ -105,7 +105,7 @@ public abstract class Player extends Entity{
 				}
 				else if (spos<zpos){
 					for(int i=spos;i<zpos;i++){
-						if (this.board.getCell(i, zombie.getCell().getcoord()[1]).isLocked(Direction.EAST)){
+						if (this.board.getCell(i, zombie.getCell().getCoord()[1]).isLocked(Direction.EAST)){
 							return false;
 						}
 					}
@@ -119,7 +119,7 @@ public abstract class Player extends Entity{
 }
 
 	public void attack(Zombie zombie){
-		((Weapon)this.inhand).use(this,zombie);
+		((Weapon)this.inHand).use(this,zombie);
 		if (zombie.getLifepoints() <= 0) {
 			try {
 				this.board.getZombies().remove(zombie);
@@ -148,12 +148,12 @@ public abstract class Player extends Entity{
 	 * @return a string representation of the surrounding cells
 	 * @throws Exception if an error occurs during the process
 	 */
-	public void lookaround() throws Exception{
+	public void lookAround() throws Exception{
 		List<Player> players = new ArrayList<Player>();
 		Board board = new ClassicalBoard(this.board.getSize(), players);
-		board.setCells(this.board.createfakeboard());
-		int posx=this.cell.getcoord()[0];
-		int posy=this.cell.getcoord()[1];
+		board.setCells(this.board.createFakeboard());
+		int posx=this.cell.getCoord()[0];
+		int posy=this.cell.getCoord()[1];
 		for(int x=posx-1;x<posx+2;x++){
 			for(int y=posy-1;y<posy+2;y++){
 				if (x>=0 && x<board.getSize() && y>=0 && y<board.getSize()){
@@ -175,7 +175,9 @@ public abstract class Player extends Entity{
 	 * Sets the action points of the player.
 	 * @param actionPoints the action points of the player.
 	 */
-
+	public void setActionPoints(int actionPoints) {
+		this.actionPoints = actionPoints;
+	}
     
 	/**
 	 * Gets the expertise level of the player.
@@ -245,10 +247,10 @@ public abstract class Player extends Entity{
 	public void setInHand(Equipement Equipement) {
 		if(this.bag.contains(Equipement)){
 			this.removeEquipement(Equipement);
-			if (this.inhand != null) {
-				this.bag.add(this.inhand);
+			if (this.inHand != null) {
+				this.bag.add(this.inHand);
 			}
-			this.inhand = Equipement;
+			this.inHand = Equipement;
 		}
 	}
 
@@ -258,7 +260,7 @@ public abstract class Player extends Entity{
 	 * @return the equipment in hand
 	 */
 	public Equipement getInHand() {
-		return this.inhand;
+		return this.inHand;
 	}
 
 	/**
@@ -274,10 +276,10 @@ public abstract class Player extends Entity{
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.getActionPoints());
 			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE ";
-			if( this.inhand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+			if( this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += "| OPEN DOOR ";
 			}
-			if (this.inhand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
+			if (this.inHand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
 				msg += "| ATTACK ";
 			}
 			System.out.println(msg);
@@ -285,7 +287,7 @@ public abstract class Player extends Entity{
         	switch (action) {
             	case "LOOK AROUND" :
 					try{
-                		this.lookaround();
+                		this.lookAround();
 					}
 					catch (Exception e) {
 						System.out.println(e);
@@ -309,7 +311,7 @@ public abstract class Player extends Entity{
                 	break;
     
             	case "OPEN DOOR" :
-					if(this.inhand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+					if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 						this.openDoor();
 						this.actionPoints -= 1;
 					}
@@ -321,8 +323,8 @@ public abstract class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-					if(this.inhand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
-                		this.AttackAction();
+					if(this.inHand.getIsWeapon() && this.cell.getZombie().size() > 0 ){
+                		this.attackAction();
 						this.actionPoints -= 1;
 					}
                 	break;
@@ -333,8 +335,8 @@ public abstract class Player extends Entity{
 
 	public void openDoor(){
 		Cell[][] cells = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		Scanner in = new Scanner(System.in);
 		System.out.println("Where to open door?");
 		String msgDirection = "";
@@ -355,26 +357,26 @@ public abstract class Player extends Entity{
 		switch (direction) {
 			case "N":
 				if (this.northLocked()) {
-					this.inhand = new MasterKey();
-					((MasterKey)this.inhand).use(this,Direction.NORTH);
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.NORTH);
 				}
 				break;
 			case "S":
 				if (this.southLocked()) {
-					this.inhand = new MasterKey();
-					((MasterKey)this.inhand).use(this,Direction.SOUTH);
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.SOUTH);
 				}
 				break;
 			case "E":
 				if (this.eastLocked()) {
-					this.inhand = new MasterKey();
-					((MasterKey)this.inhand).use(this,Direction.EAST);
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.EAST);
 				}
 				break;
 			case "W":
 				if (this.westLocked()) {
-					this.inhand = new MasterKey();
-					((MasterKey)this.inhand).use(this,Direction.WEST);
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.WEST);
 				}
 				break;
 			default:
@@ -385,8 +387,8 @@ public abstract class Player extends Entity{
 
 	public boolean northLocked(){
 		Cell[][] cells = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (x == 0) {
 			return false;
 		}
@@ -395,8 +397,8 @@ public abstract class Player extends Entity{
 
 	public boolean southLocked(){
 		Cell[][] cells = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (x == board.getSize() - 1) {
 			return false;
 		}
@@ -405,8 +407,8 @@ public abstract class Player extends Entity{
 
 	public boolean eastLocked(){
 		Cell[][] cells = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (y == board.getSize() - 1) {
 			return false;
 		}
@@ -415,8 +417,8 @@ public abstract class Player extends Entity{
 
 	public boolean westLocked(){
 		Cell[][] cells = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (y == 0) {
 			return false;
 		}
@@ -426,7 +428,7 @@ public abstract class Player extends Entity{
 
 	public void equip() {
 		Scanner in = new Scanner(System.in);
-		System.out.println("You are holding : " + this.inhand);
+		System.out.println("You are holding : " + this.inHand);
 	
 		System.out.print("swap with : ");
 		int i = 1;
@@ -452,8 +454,8 @@ public abstract class Player extends Entity{
 
 	public void move(){
 		Cell[][] cells = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		boolean canMoveNorth = (x > 0) && ((cells[x-1][y] instanceof StreetCell) || ((cells[x-1][y] instanceof BuildingCell) && !(cells[x-1][y].isLocked(Direction.SOUTH))));
 		boolean canMoveSouth = (x < board.getSize() - 1) && ((cells[x+1][y] instanceof StreetCell) || ((cells[x+1][y] instanceof BuildingCell) && !(cells[x+1][y].isLocked(Direction.NORTH))));
 		boolean canMoveEast = (y < board.getSize() - 1) && ((cells[x][y+1] instanceof StreetCell) || ((cells[x][y+1] instanceof BuildingCell) && !(cells[x][y+1].isLocked(Direction.WEST))));
@@ -504,8 +506,8 @@ public abstract class Player extends Entity{
 
 	public void moveNorth() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (x > 0) {
 			try{
 				coord[x][y].removePlayer(this);
@@ -519,8 +521,8 @@ public abstract class Player extends Entity{
 
 	public void moveSouth() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (x < board.getSize() - 1) {
 			try{
 				coord[x][y].removePlayer(this);
@@ -534,8 +536,8 @@ public abstract class Player extends Entity{
 
 	public void moveEast() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (y < board.getSize() - 1) {
 			try{
 				coord[x][y].removePlayer(this);
@@ -550,8 +552,8 @@ public abstract class Player extends Entity{
 
 	public void moveWest() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (y > 0) {
 			try{
 				coord[x][y].removePlayer(this);

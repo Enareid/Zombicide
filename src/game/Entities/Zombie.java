@@ -35,7 +35,7 @@ public abstract class Zombie extends Entity {
 	 *
 	 * @return the resistance of the zombie
 	 */
-	public int getresistance(){
+	public int getResistance(){
 		return this.resistance;
 	}
 
@@ -57,8 +57,8 @@ public abstract class Zombie extends Entity {
  */
     public void moveNorth() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (x > 0) {
 			try{
 				coord[x][y].removeZombie(this);
@@ -77,8 +77,8 @@ public abstract class Zombie extends Entity {
 	 */
 	public void moveSouth() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (x < board.getSize() - 1) {
 			try{
 				coord[x][y].removeZombie(this);
@@ -97,8 +97,8 @@ public abstract class Zombie extends Entity {
 	 */
 	public void moveEast() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (y < board.getSize() - 1) {
 			try{
 				coord[x][y].removeZombie(this);
@@ -117,8 +117,8 @@ public abstract class Zombie extends Entity {
 	 */
 	public void moveWest() {
 		Cell[][] coord = board.getCells();
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
 		if (y > 0) {
 			try{
 				coord[x][y].removeZombie(this);
@@ -164,10 +164,10 @@ public abstract class Zombie extends Entity {
 			return;
 		}
 
-		int x = this.cell.getcoord()[0];
-		int y = this.cell.getcoord()[1];
-		int xPlayer = nearestPlayer.getCell().getcoord()[0];
-		int yPlayer = nearestPlayer.getCell().getcoord()[1];
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
+		int xPlayer = nearestPlayer.getCell().getCoord()[0];
+		int yPlayer = nearestPlayer.getCell().getCoord()[1];
 		boolean canMoveNorth = (x > 0) && ((cells[x-1][y] instanceof StreetCell) || ((cells[x-1][y] instanceof BuildingCell) && !(cells[x-1][y].isLocked(Direction.SOUTH))));
 		boolean canMoveSouth = (x < board.getSize() - 1) && ((cells[x+1][y] instanceof StreetCell) || ((cells[x+1][y] instanceof BuildingCell) && !(cells[x+1][y].isLocked(Direction.NORTH))));
 		boolean canMoveEast = (y < board.getSize() - 1) && ((cells[x][y+1] instanceof StreetCell) || ((cells[x][y+1] instanceof BuildingCell) && !(cells[x][y+1].isLocked(Direction.WEST))));

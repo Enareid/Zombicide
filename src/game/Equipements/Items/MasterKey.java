@@ -16,22 +16,22 @@ public class MasterKey extends Equipement{
 
     public void use(Player player, Direction direction){
         Cell cell = player.getCell();
-        cell.getdoor().get(direction).unlock();
+        cell.getDoor().get(direction).unlock();
         if (direction == Direction.NORTH){
-            Cell cell2 = player.getBoard().getCell(cell.getcoord()[0]-1,cell.getcoord()[1]);
-            cell2.getdoor().get(Direction.SOUTH).unlock();
+            Cell cell2 = player.getBoard().getCell(cell.getCoord()[0]-1,cell.getCoord()[1]);
+            cell2.getDoor().get(Direction.SOUTH).unlock();
         }
         if (direction == Direction.SOUTH){
-            Cell cell2 = player.getBoard().getCell(cell.getcoord()[0]+1,cell.getcoord()[1]);
-            cell2.getdoor().get(Direction.NORTH).unlock();
+            Cell cell2 = player.getBoard().getCell(cell.getCoord()[0]+1,cell.getCoord()[1]);
+            cell2.getDoor().get(Direction.NORTH).unlock();
         }
         if (direction == Direction.EAST){
-            Cell cell2 = player.getBoard().getCell(cell.getcoord()[0],cell.getcoord()[1]+1);
-            cell2.getdoor().get(Direction.WEST).unlock();
+            Cell cell2 = player.getBoard().getCell(cell.getCoord()[0],cell.getCoord()[1]+1);
+            cell2.getDoor().get(Direction.WEST).unlock();
         }
         if (direction == Direction.WEST){
-            Cell cell2 = player.getBoard().getCell(cell.getcoord()[0],cell.getcoord()[1]-1);
-            cell2.getdoor().get(Direction.EAST).unlock();
+            Cell cell2 = player.getBoard().getCell(cell.getCoord()[0],cell.getCoord()[1]-1);
+            cell2.getDoor().get(Direction.EAST).unlock();
         }
     }
 

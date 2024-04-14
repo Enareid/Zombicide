@@ -5,7 +5,6 @@ import game.Cells.StreetCell;
 
 import java.util.*;
 import game.Entities.*;
-import game.Entities.Players.*;
 import game.Entities.Zombies.*;
 
 public abstract class Board {
@@ -50,7 +49,7 @@ public abstract class Board {
         return this.size;   
     }
 
-    public Cell[][] createfakeboard(){
+    public Cell[][] createFakeboard(){
         Cell[][] fakeboard = new Cell[this.size][this.size];
         for (int x = 0; x< this.size; x++){
             for (int y = 0; y < this.size; y++) {

@@ -77,10 +77,10 @@ public abstract class Entity {
 	 * @return The distance between the two cells.
 	 */
 	public double calculateDistance(Cell cell1, Cell cell2) {
-		int x1 = cell1.getcoord()[0];
-		int y1 = cell1.getcoord()[1];
-		int x2 = cell2.getcoord()[0];
-		int y2 = cell2.getcoord()[1];
+		int x1 = cell1.getCoord()[0];
+		int y1 = cell1.getCoord()[1];
+		int x2 = cell2.getCoord()[0];
+		int y2 = cell2.getCoord()[1];
 
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}

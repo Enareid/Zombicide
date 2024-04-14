@@ -55,7 +55,7 @@ public class Cell {
         return cell;
     }
 
-    public int[] getcoord(){
+    public int[] getCoord(){
         return this.coord;
     }
 
@@ -124,7 +124,7 @@ public class Cell {
 
     }
 
-    public void removeplayers(){
+    public void removePlayers(){
         this.players.clear();
     }
 
@@ -177,7 +177,7 @@ public class Cell {
      * 
      * @return the map of doors of this cell
      */
-    public Map<Direction,Door> getdoor(){
+    public Map<Direction,Door> getDoor(){
         return this.doors;
     }
 }
