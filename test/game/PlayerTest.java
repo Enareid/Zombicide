@@ -18,19 +18,21 @@ import game.Entities.Zombies.Walker;
 import game.Equipements.Weapons.*;
 
 
-public class PlayerTest {
+public abstract class PlayerTest{
 
-    private Board board;
-    private Player player;
+    protected abstract Player createPlayer(Board board, Cell cell);
+    protected Player player;
+    protected Board board;
+    protected Cell cell;
+    protected Equipement gun;
 
     @BeforeEach
     public void before() throws Exception{
         List<Player> players = new ArrayList<Player>();
-        Player player = new Fighter(5,null,null);
-        players.add(player);
+        players.add(this.player);
         this.board = new ClassicalBoard(5,players);
         this.board.spawnZombie();
-        this.player=player;
+        this.player = createPlayer(this.board, this.board.getCell(0,0));
     }
 
     @Test
@@ -45,7 +47,7 @@ public class PlayerTest {
 
 
     @Test
-    public void canAttackZombieTestWhenOnSameCellTrue(){
+    public void testCanAttackZombieTestWhenOnSameCellTrue(){
 
         Equipement axe = new Axe();
         this.player.setEquipment(axe);
@@ -62,9 +64,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void canAttackZombieTestWhenUsingRangeNoObstacles() throws Exception{
-
-        Equipement gun = new Gun();
+    public void testCanAttackZombieTestWhenUsingRangeNoObstacles() throws Exception{
         this.player.setEquipment(gun);
         this.player.setInHand(gun);
         Zombie zomb = new Walker(this.board.getCell(1, 1), board);
@@ -77,6 +77,28 @@ public class PlayerTest {
 
 
         }
+    }
+
+    @Test 
+    public void testListZombieCanBeAttackedWhenZombieNotInRange() throws Exception{
+        this.player.setEquipment(gun);
+        this.player.setInHand(gun);
+        Zombie zomb = new Walker(this.board.getCell(1, 1), board);
+        this.board.getCell(1,1).setZombie(zomb);
+        List<Zombie> zombies = this.player.zombieCanBeAttack();
+        assertEquals(0, zombies.size());
+    }
+
+    @Test void testListZombieCanBeAttackedWhenZombieIsInRange() throws Exception{
+        this.player.setEquipment(gun);
+        this.player.setInHand(gun);
+        Zombie zomb = new Walker(this.board.getCell(2, 1), board);
+        this.board.getCell(2,1).setZombie(zomb);
+        List<Zombie> zombies = this.player.zombieCanBeAttack();
+        assertEquals(0, zombies.size());
+        zomb.move();
+        zombies = this.player.zombieCanBeAttack();
+        assertEquals(1, zombies.size());
     }
 
 

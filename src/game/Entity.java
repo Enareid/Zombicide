@@ -1,7 +1,5 @@
 package game;
 
-import game.Entities.*;
-
 public abstract class Entity {
 
     protected int Lifepoints;
