@@ -5,6 +5,7 @@ import game.Cell;
 
 import game.Entities.Zombie;
 
+/** The Abomination class extends zombie class */
 public class Abomination extends Zombie {
     
     /**

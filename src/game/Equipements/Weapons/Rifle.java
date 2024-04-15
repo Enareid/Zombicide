@@ -4,12 +4,19 @@ import game.Equipements.Weapon;
 
 public class Rifle extends Weapon{
     
-      public Rifle(){
-        super(4, 1,1,3, 2);
-        this.isWeapon = true;
-      }
+  /**
+   * Builds a new Rifle.
+   */
+  public Rifle(){
+    super(4, 1,1,3, 2);
+    this.isWeapon = true;
+  }
 
-      public String toString() {
-        return "Rifle";
-      }
+  /**
+   * Returns the string representation of the Rifle.
+   * @return the string representation of the Rifle.
+   */
+  public String toString() {
+    return "Rifle";
+  }
 }

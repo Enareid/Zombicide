@@ -28,7 +28,8 @@ public abstract class Zombie extends Entity {
      * @param Lifepoints the lifepoints of the zombie.
 	 * @param Damage the Damage points of the zombie.
 	 * @param board the board of the zombie.
-	 * @param actionPoints the action points of the zombie.
+	 * @param actionPoint the action points of the zombie.
+	 * @param superArmor if the zombie have a superArmor.
      * @param cell the cell of the zombie.
 	 * @param resistance the resistance points of the zombie.
      */

@@ -4,13 +4,20 @@ import game.Equipements.Weapon;
 
 public class Crowbar extends Weapon{
     
-      public Crowbar(){
-        super(4, 1,0, 0, 1);
-        this.canOpenDoor = true;
-        this.isWeapon = true;
-      }
+  /**
+   * Builds a new Crowbar.
+   */
+  public Crowbar(){
+    super(4, 1,0, 0, 1);
+    this.canOpenDoor = true;
+    this.isWeapon = true;
+  }
 
-      public String toString() {
-        return "Crowbar";
-      }
+  /**
+   * Returns the string representation of the Crowbar.
+   * @return the string representation of the Crowbar.
+   */
+  public String toString() {
+    return "Crowbar";
+  }
 }
