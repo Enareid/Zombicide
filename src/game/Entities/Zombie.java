@@ -13,18 +13,26 @@ import game.Cells.StreetCell;
 
 public abstract class Zombie extends Entity {
 
+	/** The Damage points of the zombie */
     protected int Damage;
+	/** The action points of the zombie */
     protected int actionPoint;
+	/** If the zombie have a superArmor */
     protected boolean superArmor;
-		protected int resistance;
+	/** The resistance points of the zombie */
+	protected int resistance;
 
     /**
      * Builds a new zombie.
      * 
      * @param Lifepoints the lifepoints of the zombie.
+	 * @param Damage the Damage points of the zombie.
+	 * @param board the board of the zombie.
+	 * @param actionPoints the action points of the zombie.
      * @param cell the cell of the zombie.
+	 * @param resistance the resistance points of the zombie.
      */
-    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, boolean bool, Cell cell,int resistance){
+    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, Cell cell,int resistance){
         super(Lifepoints, cell, board, actionPoint);
 				this.resistance=resistance;
 				this.Damage=Damage;
@@ -39,7 +47,6 @@ public abstract class Zombie extends Entity {
 		return this.resistance;
 	}
 
-
 	/**
 	 * Reduces the zombie's lifepoints by the specified amount of damage.
 	 *
@@ -49,12 +56,10 @@ public abstract class Zombie extends Entity {
 		this.Lifepoints -= damage;
 	}
 
-
-
-/**
- * Moves the zombie one cell to the north on the game board.
- * If the zombie is already at the top row, the move is not performed.
- */
+	/**
+ 	 * Moves the zombie one cell to the north on the game board.
+ 	 * If the zombie is already at the top row, the move is not performed.
+ 	 */
     public void moveNorth() {
 		Cell[][] coord = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -130,27 +135,6 @@ public abstract class Zombie extends Entity {
 			}
 		}
 	}
-
-	/**
-	 * Returns the nearest player to the zombie.
-	 *
-	 * @return the nearest player to the zombie, or null if no players are present on the board.
-	 */
-	public Player getNearestPlayer() {
-		Player nearestPlayer = null;
-		double minDistance = Double.MAX_VALUE;
-
-		for (Player player : board.getPlayers()) {
-			double distance = calculateDistance(player.getCell(), this.getCell());
-			if (distance < minDistance) {
-				minDistance = distance;
-				nearestPlayer = player;
-			}
-		}
-
-		return nearestPlayer;
-	}
-
 	/**
 	 * Moves the zombie towards the nearest player on the game board.
 	 * The zombie can move in four directions: north, south, east, and west.
@@ -184,15 +168,33 @@ public abstract class Zombie extends Entity {
 		}
 	}
 
-/**
- * Attacks the nearest player and reduces their life level by the zombie's damage.
- */
+	/**
+	 * Returns the nearest player to the zombie.
+	 *
+	 * @return the nearest player to the zombie, or null if no players are present on the board.
+	 */
+	public Player getNearestPlayer() {
+		Player nearestPlayer = null;
+		double minDistance = Double.MAX_VALUE;
+
+		for (Player player : board.getPlayers()) {
+			double distance = calculateDistance(player.getCell(), this.getCell());
+			if (distance < minDistance) {
+				minDistance = distance;
+				nearestPlayer = player;
+			}
+		}
+
+		return nearestPlayer;
+	}
+
+	/**
+ 	* Attacks the nearest player and reduces their life points by the zombie's damage.
+ 	*/
      public void attack(){
 		Player P =getNearestPlayer();
         P.setLifepoints(P.getLifepoints()-this.Damage);
      }
 	
 	 public abstract String toString();
-
-
 }
