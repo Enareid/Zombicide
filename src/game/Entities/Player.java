@@ -39,149 +39,6 @@ public abstract class Player extends Entity{
     }
 
 	/**
-	 * Run the attack action of the player.
-	 * Give which zombie can be attacked by the player.
-	 * 
-	 * @param zombies the list of all the zombies on the board.
-	 * @param zombiesSub the list of 4 zombies that can be attacked by the player.
-	 */
-	public void attackAction(List<Zombie> zombies, List<Zombie> zombiesSub){
-		Scanner in = new Scanner(System.in);
-		System.out.println("Which one to attack");
-		String msg = "";
-		int count = 0;
-		int index = 0;
-		while(count < zombiesSub.size() && count < 4){
-			msg += zombiesSub.get(count).toString()  + " (" + (count+1) + ") | ";
-			count++;
-		}
-		if(zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))){
-			msg += "Next (5) | ";
-		}
-		if(!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))){
-			msg += "Previous (6) | ";
-		}
-		System.out.println(msg);
-		String action = in.nextLine();
-		switch (action) {
-			case "1":
-				index = zombies.indexOf(zombiesSub.get(0));
-				this.attack(this.board.getZombies().get(index));
-				break;
-			case "2":
-				index = zombies.indexOf(zombiesSub.get(1));
-				this.attack(this.board.getZombies().get(index));
-				break;
-			case "3":
-				index = zombies.indexOf(zombiesSub.get(2));
-				this.attack(this.board.getZombies().get(index));
-				break;
-			case "4":
-				index = zombies.indexOf(zombiesSub.get(3));
-				this.attack(this.board.getZombies().get(index));
-				break;
-			case "5":
-				if (zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))) {
-					index = zombies.indexOf(zombiesSub.get(3));
-					if(index+5 < zombies.size()){
-						List<Zombie> zombies2 = zombies.subList(index+1, index+5);
-						this.attackAction(zombies, zombies2);
-					}
-					else{
-						List<Zombie> zombies2 = zombies.subList(index+1, zombies.size());
-						this.attackAction(zombies, zombies2);
-					}
-				}
-				break;	
-			case "6":
-				if (!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))) {
-					index = zombies.indexOf(zombiesSub.get(0));
-					List<Zombie> zombies2 = this.zombieCanBeAttack().subList(index-4, index);
-					this.attackAction(zombies, zombies2);
-				}
-				break;
-			default:
-				System.out.println("Invalid choice");
-				break;
-		}
-	}
-
-	/**
-	 * Check if the player can attack a zombie.
-	 * 
-	 * @param zombie the zombie to be checked.
-	 * @return true if the player can attack the zombie, false otherwise.
-	 */
-	public boolean canAttackZombie(Zombie zombie) {
-		int distance = Math.abs(zombie.getCell().getCoord()[0] - this.cell.getCoord()[0]) + Math.abs(zombie.getCell().getCoord()[1] - this.cell.getCoord()[1]);
-		return distance <= ((Weapon) this.inHand).getRange()[1] && distance >= ((Weapon) this.inHand).getRange()[0];
-	}
-
-	/**
-	 * Get the zombies that can be attacked by the player.
-	 * 
-	 * @return the zombies that can be attacked by the player.
-	 */
-	public List<Zombie> zombieCanBeAttack(){
-		List<Zombie> zombies = new ArrayList<Zombie>();
-		for (Zombie zombie : this.board.getZombies()) {
-			if(canAttackZombie(zombie)){
-				zombies.add(zombie);
-			}
-		}
-		return zombies;	
-	}
-
-	/**
-	 * Attack a zombie.
-	 * 
-	 * @param zombie the zombie to be attacked.
-	 */
-	public void attack(Zombie zombie){
-		((Weapon)this.inHand).use(this,zombie);
-		if (zombie.getLifepoints() <= 0) {
-			try {
-				this.board.getZombies().remove(zombie);
-				Cell cell = zombie.getCell();
-				cell.removeZombie(zombie);
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-		}
-	}
-
-	/**
-	 * Returns a string representation of the surrounding cells of the player's current position on the board.
-	 * The surrounding cells include the player's current cell and the adjacent cells in all directions.
-	 * 
-	 * @return a string representation of the surrounding cells
-	 * @throws Exception if an error occurs during the process
-	 */
-	public void lookAround() throws Exception{
-		List<Player> players = new ArrayList<Player>();
-		Board board = new ClassicalBoard(this.board.getSize(), players);
-		board.setCells(this.board.createFakeboard());
-		int posx=this.cell.getCoord()[0];
-		int posy=this.cell.getCoord()[1];
-		for(int x=posx-1;x<posx+2;x++){
-			for(int y=posy-1;y<posy+2;y++){
-				if (x>=0 && x<board.getSize() && y>=0 && y<board.getSize()){
-					board.setCell(x, y, this.board.getCell(x, y));
-				}
-			}
-		}
-		System.out.println(board.toString());
-	}
-
-	/**
-	 * Sets the action points of the player.
-	 * @param actionPoints the action points of the player.
-	 */
-	public void setActionPoints(int actionPoints) {
-		this.actionPoints = actionPoints;
-	}
-    
-	/**
 	 * Gets the expertise level of the player.
 	 * @return the expertise level of the player.
 	 */
@@ -225,6 +82,15 @@ public abstract class Player extends Entity{
 	}
 
 	/**
+	 * Returns the equipment currently held by the player.
+	 *
+	 * @return the equipment in hand
+	 */
+	public Equipement getInHand() {
+		return this.inHand;
+	}
+
+	/**
 	 * Sets the specified equipment as the currently held equipment by the player.
 	 * If the equipment is present in the player's bag, it is removed from the bag and set as the in-hand equipment.
 	 *
@@ -238,15 +104,6 @@ public abstract class Player extends Entity{
 			}
 			this.inHand = Equipement;
 		}
-	}
-
-	/**
-	 * Returns the equipment currently held by the player.
-	 *
-	 * @return the equipment in hand
-	 */
-	public Equipement getInHand() {
-		return this.inHand;
 	}
 
 	/**
@@ -317,10 +174,57 @@ public abstract class Player extends Entity{
 						this.actionPoints -= 1;
 					}
                 	break;
-            	}
+            }
+		}
+		this.actionPoints = 3;
+    }
+
+	/**
+	 * Returns a string representation of the surrounding cells of the player's current position on the board.
+	 * The surrounding cells include the player's current cell and the adjacent cells in all directions.
+	 * 
+	 * @return a string representation of the surrounding cells
+	 * @throws Exception if an error occurs during the process
+	 */
+	public void lookAround() throws Exception{
+		List<Player> players = new ArrayList<Player>();
+		Board board = new ClassicalBoard(this.board.getSize(), players);
+		board.setCells(this.board.createFakeboard());
+		int posx=this.cell.getCoord()[0];
+		int posy=this.cell.getCoord()[1];
+		for(int x=posx-1;x<posx+2;x++){
+			for(int y=posy-1;y<posy+2;y++){
+				if (x>=0 && x<board.getSize() && y>=0 && y<board.getSize()){
+					board.setCell(x, y, this.board.getCell(x, y));
+				}
 			}
-			this.actionPoints = 3;
-    	}
+		}
+		System.out.println(board.toString());
+	}
+
+	/**
+	 * Give all the equipments player can equip.
+	 */
+	public void equip() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("You are holding : " + this.inHand);
+		System.out.print("swap with : ");
+		int i = 1;
+		for (Equipement equipement : this.getEquipments()) {
+			System.out.printf(equipement.toString() + " (%d) | " , i);
+			i++;
+		}
+		System.out.print("quit (Q) \n");
+		String input = in.nextLine();
+		if (!input.equals("Q")) {
+			int choice = Integer.parseInt(input);
+			System.out.println("You are equiping : " + this.getEquipments().get(choice-1).toString());
+			this.setInHand(this.getEquipments().get(choice-1));
+		}
+		else {
+			System.out.println("you do nothing");
+		}
+	}
 
 	/**
 	 * Give all the doors player can open.
@@ -435,33 +339,6 @@ public abstract class Player extends Entity{
 			return false;
 		}
 		return (cells[x][y].isLocked(Direction.WEST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y-1] instanceof BuildingCell));
-	}
-
-	/**
-	 * Give all the equipments player can equip.
-	 */
-	public void equip() {
-		Scanner in = new Scanner(System.in);
-		System.out.println("You are holding : " + this.inHand);
-	
-		System.out.print("swap with : ");
-		int i = 1;
-		for (Equipement equipement : this.getEquipments()) {
-			System.out.printf(equipement.toString() + " (%d) | " , i);
-			i++;
-		}
-		System.out.print("quit (Q) \n");
-	
-		String input = in.nextLine();
-		if (!input.equals("Q")) {
-			int choice = Integer.parseInt(input);
-			System.out.println("You are equiping : " + this.getEquipments().get(choice-1).toString());
-			this.setInHand(this.getEquipments().get(choice-1));
-		}
-		else {
-			System.out.println("you do nothing");
-		}
-	
 	}
 
 	/**
@@ -587,6 +464,118 @@ public abstract class Player extends Entity{
 				coord[x][y-1].setPlayer(this);
 			}
 			catch(Exception e){
+				System.out.println(e);
+			}
+		}
+	}
+
+	/**
+	 * Run the attack action of the player.
+	 * Give which zombie can be attacked by the player.
+	 * 
+	 * @param zombies the list of all the zombies on the board.
+	 * @param zombiesSub the list of 4 zombies that can be attacked by the player.
+	 */
+	public void attackAction(List<Zombie> zombies, List<Zombie> zombiesSub){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Which one to attack");
+		String msg = "";
+		int count = 0;
+		int index = 0;
+		while(count < zombiesSub.size() && count < 4){
+			msg += zombiesSub.get(count).toString()  + " (" + (count+1) + ") | ";
+			count++;
+		}
+		if(zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))){
+			msg += "Next (5) | ";
+		}
+		if(!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))){
+			msg += "Previous (6) | ";
+		}
+		System.out.println(msg);
+		String action = in.nextLine();
+		switch (action) {
+			case "1":
+				index = zombies.indexOf(zombiesSub.get(0));
+				this.attack(this.board.getZombies().get(index));
+				break;
+			case "2":
+				index = zombies.indexOf(zombiesSub.get(1));
+				this.attack(this.board.getZombies().get(index));
+				break;
+			case "3":
+				index = zombies.indexOf(zombiesSub.get(2));
+				this.attack(this.board.getZombies().get(index));
+				break;
+			case "4":
+				index = zombies.indexOf(zombiesSub.get(3));
+				this.attack(this.board.getZombies().get(index));
+				break;
+			case "5":
+				if (zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))) {
+					index = zombies.indexOf(zombiesSub.get(3));
+					if(index+5 < zombies.size()){
+						List<Zombie> zombies2 = zombies.subList(index+1, index+5);
+						this.attackAction(zombies, zombies2);
+					}
+					else{
+						List<Zombie> zombies2 = zombies.subList(index+1, zombies.size());
+						this.attackAction(zombies, zombies2);
+					}
+				}
+				break;	
+			case "6":
+				if (!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))) {
+					index = zombies.indexOf(zombiesSub.get(0));
+					List<Zombie> zombies2 = this.zombieCanBeAttack().subList(index-4, index);
+					this.attackAction(zombies, zombies2);
+				}
+				break;
+			default:
+				System.out.println("Invalid choice");
+				break;
+		}
+	}
+
+	/**
+	 * Check if the player can attack a zombie.
+	 * 
+	 * @param zombie the zombie to be checked.
+	 * @return true if the player can attack the zombie, false otherwise.
+	 */
+	public boolean canAttackZombie(Zombie zombie) {
+		int distance = Math.abs(zombie.getCell().getCoord()[0] - this.cell.getCoord()[0]) + Math.abs(zombie.getCell().getCoord()[1] - this.cell.getCoord()[1]);
+		return distance <= ((Weapon) this.inHand).getRange()[1] && distance >= ((Weapon) this.inHand).getRange()[0];
+	}
+
+	/**
+	 * Get the zombies that can be attacked by the player.
+	 * 
+	 * @return the zombies that can be attacked by the player.
+	 */
+	public List<Zombie> zombieCanBeAttack(){
+		List<Zombie> zombies = new ArrayList<Zombie>();
+		for (Zombie zombie : this.board.getZombies()) {
+			if(canAttackZombie(zombie)){
+				zombies.add(zombie);
+			}
+		}
+		return zombies;	
+	}
+
+	/**
+	 * Attack a zombie.
+	 * 
+	 * @param zombie the zombie to be attacked.
+	 */
+	public void attack(Zombie zombie){
+		((Weapon)this.inHand).use(this,zombie);
+		if (zombie.getLifepoints() <= 0) {
+			try {
+				this.board.getZombies().remove(zombie);
+				Cell cell = zombie.getCell();
+				cell.removeZombie(zombie);
+			} catch (Exception e) {
 				System.out.println(e);
 			}
 		}
