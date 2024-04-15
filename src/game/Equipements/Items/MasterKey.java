@@ -7,11 +7,20 @@ import game.Cell;
 
 public class MasterKey extends Equipement{
 
+    /**
+     * Builds a new MasterKey.
+     */
     public MasterKey(){
         super();
         this.canOpenDoor = true;
     }
 
+    /**
+     * Unlocks the door in the direction of the player give.
+     * 
+     * @param player the player using the MasterKey
+     * @param direction the direction of the MasterKey
+     */
     public void use(Player player, Direction direction){
         Cell cell = player.getCell();
         cell.getDoor().get(direction).unlock();
@@ -33,6 +42,10 @@ public class MasterKey extends Equipement{
         }
     }
 
+    /**
+     * Returns the string representation of the MasterKey.
+     * @return the string representation of the MasterKey.
+     */
     public String toString() {
         return "MasterKey";
     }
