@@ -89,6 +89,15 @@ public abstract class Entity {
 	}
 
 	/**
+     * Sets the board of the Entity.
+     * 
+     * @param board the board of the Entity.
+     */
+	public void setBoard(Board board) {
+        this.board = board;
+    }
+
+	/**
 	 * Give if the entity is dead.
 	 * 
 	 * @return True if the entity is dead, false otherwise.

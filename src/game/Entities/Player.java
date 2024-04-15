@@ -174,15 +174,6 @@ public abstract class Player extends Entity{
 	}
 
 	/**
-	 * Sets the board for the player.
-	 * 
-	 * @param board the board to set
-	 */
-	public void setBoard(Board board) {
-		this.board = board;
-	}
-	
-	/**
 	 * Sets the action points of the player.
 	 * @param actionPoints the action points of the player.
 	 */
