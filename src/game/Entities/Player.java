@@ -34,32 +34,48 @@ public abstract class Player extends Entity{
 				this.inHand = null;
     }
 
-	public void attackAction(){
+	public void attackAction(List<Zombie> zombies, List<Zombie> zombiesSub){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Which one to attack");
 		String msg = "";
-		for (Zombie zombie : this.board.getZombies()) {
-			if(canAttackZombie(zombie)){
-				msg += zombie.toString()  + " (" + (this.board.getZombies().indexOf(zombie) + 1) + ") | ";
-			}
+		int count = 0;
+		while(count < zombiesSub.size() && count < 4){
+			msg += zombiesSub.get(count).toString()  + " (" + (count+1) + ") | ";
+			count++;
+		}
+		if(zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))){
+			msg += "Next (5) | ";
+		}
+		if(!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))){
+			msg += "Previous (6) | ";
 		}
 		System.out.println(msg);
 		String action = in.nextLine();
 		switch (action) {
-			case "0":
-				this.attack(this.board.getZombies().get(0));
-				break;
 			case "1":
-				this.attack(this.board.getZombies().get(1));
+				this.attack(zombiesSub.get(0));
 				break;
 			case "2":
-				this.attack(this.board.getZombies().get(2));
+				this.attack(zombiesSub.get(1));
 				break;
 			case "3":
-				this.attack(this.board.getZombies().get(3));
+				this.attack(zombiesSub.get(2));
 				break;
 			case "4":
-				this.attack(this.board.getZombies().get(4));
+				this.attack(zombiesSub.get(3));
+				break;
+			case "5":
+				if (zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))) {
+					List<Zombie> zombies2 = zombiesSub.subList(5, zombiesSub.size());
+					this.attackAction(zombies, zombies2);
+				}
+				break;	
+			case "6":
+				if (!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))) {
+					int index = zombies.indexOf(zombiesSub.get(0));
+					List<Zombie> zombies2 = this.zombieCanBeAttack().subList(index-5, index-1);
+					this.attackAction(zombies, zombies2);
+				}
 				break;
 			default:
 				System.out.println("Invalid choice");
@@ -288,7 +304,7 @@ public abstract class Player extends Entity{
     
             	case "ATTACK" :
 					if(this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
-                		this.attackAction();
+                		this.attackAction(this.zombieCanBeAttack(), this.zombieCanBeAttack());
 						this.actionPoints -= 1;
 					}
                 	break;

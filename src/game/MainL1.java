@@ -28,6 +28,7 @@ public class MainL1 {
                 players.add(p1);
                 Board board = new ClassicalBoard(size, players);
                 board.spawnZombie();
+                board.spawnZombie();
                 
                 Equipement axe = new Axe();
                 Equipement gun = new Gun();
