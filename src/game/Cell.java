@@ -41,6 +41,15 @@ public class Cell {
             this.doors.put(direction,new Door(direction)); // Initialise toutes les portes
         }
     }
+
+    /**
+     * Return the coordinates of the cell
+     * 
+     * @return the coordinates of the cell
+     */
+    public int[] getCoord(){
+        return this.coord;
+    }
     
     /**
      * Returns the player in the cell.
@@ -48,31 +57,6 @@ public class Cell {
      */
     public List<Player> getPlayers() {
         return this.players;
-    }
-
-    public Cell createCopy(){
-        Cell cell = new Cell(this.coord[0],this.coord[1]);
-        return cell;
-    }
-
-    public int[] getCoord(){
-        return this.coord;
-    }
-
-    /**
-     * Returns the zombie in the cell.
-     * @return The zombie in the cell.
-     */
-    public List<Zombie> getZombie() {
-        return this.zombies;
-    }
-
-    /**
-     * Returns the loots in the cell.
-     * @return The loots in the cell.
-     */
-    public List<Equipement> getEquipements() {
-        return this.equipements;
     }
 
     /**
@@ -91,6 +75,32 @@ public class Cell {
     }
 
     /**
+     * Removes a player from the cell.
+     * @param player The player to remove.
+     * @throws Exception if the player is not in the cell.
+     */
+    public void removePlayer(Player player) throws Exception {
+        if (!this.players.remove(player)){
+            throw new Exception("Player not in List");
+        }
+    }
+
+    /**
+     * Removes all the players in the cell
+     */
+    public void removePlayers(){
+        this.players.clear();
+    }
+
+    /**
+     * Returns the zombie in the cell.
+     * @return The zombie in the cell.
+     */
+    public List<Zombie> getZombie() {
+        return this.zombies;
+    }
+
+    /**
      * Sets the zombie in the cell.
      * @param zombie The zombie to set.
      * @throws Exception if the zombie is already in the cell.
@@ -105,30 +115,6 @@ public class Cell {
     }
 
     /**
-     * Adds a equipement in the cell
-     * @param equipement The equipement to add.
-     */
-    public void addEquipement(Equipement equipement) {
-        this.equipements.add(equipement);
-    }
-
-    /**
-     * Removes a player from the cell.
-     * @param player The player to remove.
-     * @throws Exception if the player is not in the cell.
-     */
-    public void removePlayer(Player player) throws Exception {
-        if (!this.players.remove(player)){
-            throw new Exception("Player not in List");
-        }
-
-    }
-
-    public void removePlayers(){
-        this.players.clear();
-    }
-
-    /**
      * Removes a zombie form the cell.
      * @param zombie The zombie to remove.
      * @throws Exception if the zombie is not in the cell.
@@ -137,7 +123,22 @@ public class Cell {
         if (!this.zombies.remove(zombie)){
             throw new Exception("Zombie not in List");
         }
+    }
 
+    /**
+     * Returns the equipements in the cell.
+     * @return The equipements in the cell.
+     */
+    public List<Equipement> getEquipements() {
+        return this.equipements;
+    }
+
+    /**
+     * Adds a equipement in the cell
+     * @param equipement The equipement to add.
+     */
+    public void addEquipement(Equipement equipement) {
+        this.equipements.add(equipement);
     }
 
     /**
@@ -154,15 +155,24 @@ public class Cell {
         }
     }
 
+    /**
+     * Returns all the doors of the cell
+     * 
+     * @return the map of doors of this cell
+     */
+    public Map<Direction,Door> getDoor(){
+        return this.doors;
+    }
+
      /**
      * Opens a door in a given direction
      * 
      * @param direction the direction of the door to open
      */
     public void openDoor(Direction direction) {
-            this.doors.get(direction).unlock(); // Casse la porte en l'ouvrant
+        this.doors.get(direction).unlock(); // Casse la porte en l'ouvrant
     }
-        
+
     /**
      * Give if door is locked
      * 
@@ -174,11 +184,11 @@ public class Cell {
     }
 
     /**
-     * 
-     * @return the map of doors of this cell
+     * Create a copy of the cell
      */
-    public Map<Direction,Door> getDoor(){
-        return this.doors;
+    public Cell createCopy(){
+        Cell cell = new Cell(this.coord[0],this.coord[1]);
+        return cell;
     }
 }
 
