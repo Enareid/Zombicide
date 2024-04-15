@@ -66,14 +66,21 @@ public abstract class Player extends Entity{
 				break;
 			case "5":
 				if (zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))) {
-					List<Zombie> zombies2 = zombiesSub.subList(5, zombiesSub.size());
-					this.attackAction(zombies, zombies2);
+					int index = zombies.indexOf(zombiesSub.get(3));
+					if(index+5 < zombies.size()){
+						List<Zombie> zombies2 = zombies.subList(index+1, index+5);
+						this.attackAction(zombies, zombies2);
+					}
+					else{
+						List<Zombie> zombies2 = zombies.subList(index+1, zombies.size());
+						this.attackAction(zombies, zombies2);
+					}
 				}
 				break;	
 			case "6":
 				if (!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))) {
 					int index = zombies.indexOf(zombiesSub.get(0));
-					List<Zombie> zombies2 = this.zombieCanBeAttack().subList(index-5, index-1);
+					List<Zombie> zombies2 = this.zombieCanBeAttack().subList(index-4, index);
 					this.attackAction(zombies, zombies2);
 				}
 				break;
