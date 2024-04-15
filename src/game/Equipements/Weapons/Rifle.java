@@ -2,6 +2,7 @@ package game.Equipements.Weapons;
 
 import game.Equipements.Weapon;
 
+/** The Rifle class extends Weapon class */
 public class Rifle extends Weapon{
     
   /**

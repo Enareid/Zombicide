@@ -4,6 +4,7 @@ import game.Board;
 import game.Cell;
 import game.Entities.Player;
 
+/** The Healer class extends Player class */
 public class Healer extends Player{
 
     /**

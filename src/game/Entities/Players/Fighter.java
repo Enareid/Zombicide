@@ -4,6 +4,7 @@ import game.Board;
 import game.Cell;
 import game.Entities.Player;
 
+/** The Fighter class extends Player class */
 public class Fighter extends Player{
     
     /**

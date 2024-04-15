@@ -1,6 +1,7 @@
 package game.Equipements.Weapons;
 import game.Equipements.Weapon;
 
+/** The Chainsaw class extends Weapon class */
 public class Chainsaw extends Weapon{
   
    /**

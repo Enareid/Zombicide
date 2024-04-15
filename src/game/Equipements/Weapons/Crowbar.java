@@ -2,6 +2,7 @@ package game.Equipements.Weapons;
 
 import game.Equipements.Weapon;
 
+/** The Crowbar class extends Weapon class */
 public class Crowbar extends Weapon{
     
   /**

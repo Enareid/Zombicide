@@ -4,6 +4,7 @@ import java.util.*;
 
 import game.Entities.*;
 
+/** The Cell class */
 public class Cell {
 
     /** The players in the cell */

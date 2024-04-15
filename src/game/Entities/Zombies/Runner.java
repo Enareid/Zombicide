@@ -4,7 +4,7 @@ import game.Cell;
 import game.Entities.Zombie;
 import game.Board;
 
-
+/** The Runner class extends zombie class */
 public class Runner extends Zombie{
 
     /**

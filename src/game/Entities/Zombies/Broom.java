@@ -3,6 +3,7 @@ import game.Cell;
 import game.Board;
 import game.Entities.Zombie;
 
+/** The Broom class extends zombie class */
 public class Broom extends Zombie{
     
     /**

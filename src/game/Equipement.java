@@ -1,7 +1,7 @@
 package game;
 import game.Entities.Player;
 
-
+/** The Equipement class */
 public abstract class Equipement{
 
 	/** If weapon can open door or not */
@@ -11,9 +11,6 @@ public abstract class Equipement{
 
     /**
      * Builds a new Equipement.
-	 * 
-	 * @param canOpenDoor if the equipement can open a door
-	 * @param isWeapon if the equipement is a weapon
      */
 	public Equipement() {
 		this.canOpenDoor = false;

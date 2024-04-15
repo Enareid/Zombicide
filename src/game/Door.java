@@ -1,5 +1,6 @@
 package game;
 
+/** The Door class */
 public class Door {
 
     /** If the door is locked */

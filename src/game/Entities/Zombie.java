@@ -11,6 +11,7 @@ import game.Entity;
 import game.Cells.BuildingCell;
 import game.Cells.StreetCell;
 
+/** The Zombie class extends Entity class */
 public abstract class Zombie extends Entity {
 
 	/** The Damage points of the zombie */

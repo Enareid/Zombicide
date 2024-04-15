@@ -8,6 +8,7 @@ import game.Cells.BuildingCells.ContinentalCell;
 import game.Cells.BuildingCells.DrugStoreCell;
 import game.Entities.*;
 
+/** The ClassicalBoard class extends Board class */
 public class ClassicalBoard extends Board{
 
     /**

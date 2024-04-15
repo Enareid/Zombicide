@@ -3,6 +3,7 @@ import java.util.*;
 
 import game.Entities.Player;
 
+/** The TrainingBoard class extends ClassicalBoard class */
 public class TrainingBoard extends ClassicalBoard{
 
     /**

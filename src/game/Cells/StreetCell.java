@@ -2,7 +2,7 @@ package game.Cells;
 
 import game.*;
 
-
+/** The StreetCell class extends Cell class */
 public class StreetCell extends Cell{
 
     /** If the cell can spawn a zombie */

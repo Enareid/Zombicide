@@ -2,8 +2,8 @@ package game.Equipements.Items;
 import game.Equipement;
 import game.Entities.Player;
 
-
- public class Map extends Equipement{
+/** The Map class extends Equipement class */
+public class Map extends Equipement{
 
     /**
      * Builds a new Map.

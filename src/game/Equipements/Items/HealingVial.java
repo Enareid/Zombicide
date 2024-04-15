@@ -2,6 +2,7 @@ package game.Equipements.Items;
 import game.Equipement;
 import game.Entities.Player;
 
+/** The HealingVial class extends Equipement class */
 public class HealingVial extends Equipement{
     
     /**

@@ -13,6 +13,7 @@ import java.util.*;
 
 import game.Equipements.Items.MasterKey;
 
+/** The Player class extends Entity class */
 public abstract class Player extends Entity{
 
 	/** The bag of the player */
@@ -94,7 +95,7 @@ public abstract class Player extends Entity{
 	 * Sets the specified equipment as the currently held equipment by the player.
 	 * If the equipment is present in the player's bag, it is removed from the bag and set as the in-hand equipment.
 	 *
-	 * @param equipment The equipment to be set as the in-hand equipment.
+	 * @param Equipement The equipment to be set as the in-hand equipment.
 	 */
 	public void setInHand(Equipement Equipement) {
 		if(this.bag.contains(Equipement)){
@@ -183,7 +184,6 @@ public abstract class Player extends Entity{
 	 * Returns a string representation of the surrounding cells of the player's current position on the board.
 	 * The surrounding cells include the player's current cell and the adjacent cells in all directions.
 	 * 
-	 * @return a string representation of the surrounding cells
 	 * @throws Exception if an error occurs during the process
 	 */
 	public void lookAround() throws Exception{

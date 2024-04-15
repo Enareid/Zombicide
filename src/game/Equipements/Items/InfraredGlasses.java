@@ -3,6 +3,7 @@ package game.Equipements.Items;
 import game.Equipement;
 import game.Entities.Player;
 
+/** The InfraredGlasses class extends Equipement class */
 public class InfraredGlasses extends Equipement{
 
     /**

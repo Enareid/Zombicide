@@ -4,6 +4,7 @@ import game.Cell;
 import game.Cells.BuildingCell;
 import game.Entities.Player;
 
+/** The ContinentalCell class extends BuildingCell class */
 public class ContinentalCell extends BuildingCell{
 
     /** The number of life points restored */

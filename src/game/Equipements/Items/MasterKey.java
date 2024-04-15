@@ -5,6 +5,7 @@ import game.Direction;
 import game.Entities.Player;
 import game.Cell;
 
+/** The MasterKey class extends Equipement class */
 public class MasterKey extends Equipement{
 
     /**

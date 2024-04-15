@@ -3,6 +3,7 @@ package game.Equipements.Items;
 import game.Equipement;
 import game.Entities.Player;
 
+/** The FirstAidKit class extends Equipement class */
 public class FirstAidKit extends Equipement {
 
     /**

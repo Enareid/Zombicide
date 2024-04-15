@@ -1,5 +1,6 @@
 package game;
 
+/** The Entity class */
 public abstract class Entity {
 
 	/** The life points of this entity */

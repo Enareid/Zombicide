@@ -7,6 +7,7 @@ import java.util.*;
 import game.Entities.*;
 import game.Entities.Zombies.*;
 
+/** The Board class */
 public abstract class Board {
 
     /** The cells of the board */

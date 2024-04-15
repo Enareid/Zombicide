@@ -3,6 +3,7 @@ package game.Cells.BuildingCells;
 import game.Cell;
 import game.Cells.BuildingCell;
 
+/** The DrugStoreCell class extends BuildingCell class */
 public class DrugStoreCell extends BuildingCell{
 
     /**
