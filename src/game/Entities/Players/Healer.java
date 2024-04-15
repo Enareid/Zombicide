@@ -6,7 +6,7 @@ import game.Entities.Player;
 
 public class Healer extends Player{
 
-        public Healer(int Lifepoints, Cell cell,Board board){
+    public Healer(int Lifepoints, Cell cell,Board board){
         super(Lifepoints,cell, board);
     }
     
