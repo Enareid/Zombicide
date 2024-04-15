@@ -6,7 +6,7 @@ public class HealingVial extends Equipement{
     
 
     public void use(Player player){
-        player.setLifeLevel(player.getLifeLevel()+1);
+        player.setLifepoints(player.getLifepoints()+1);
         
     }
 

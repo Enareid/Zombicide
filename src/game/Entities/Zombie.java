@@ -189,7 +189,7 @@ public abstract class Zombie extends Entity {
  */
      public void attack(){
 		Player P =getNearestPlayer();
-        P.setLifeLevel(P.getLifeLevel()-this.Damage);
+        P.setLifepoints(P.getLifepoints()-this.Damage);
      }
 	
 	 public abstract String toString();

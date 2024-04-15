@@ -189,22 +189,6 @@ public abstract class Player extends Entity{
 	}
 
 	/**
-	 * Gets the life level of the player.
-	 * @return the life level of the player.
-	 */
-    public int getLifeLevel() {
-		return this.Lifepoints;
-	}
-   
-	/**
-	 * Sets the life level of the player.
-	 * @param Lifepoints the life level of the player.
-	 */
-	public void setLifeLevel(int Lifepoints) {
-		this.Lifepoints = Lifepoints;
-	}
-    
-	/**
 	 * Gets the bag of the player.
 	 * @return the bag of the player.
 	 */

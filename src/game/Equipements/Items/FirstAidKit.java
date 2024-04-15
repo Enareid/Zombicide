@@ -10,7 +10,7 @@ public class FirstAidKit extends Equipement {
     }
 
     public void use(Player receiver){
-        receiver.setLifeLevel(receiver.getLifeLevel()+1);
+        receiver.setLifepoints(receiver.getLifepoints()+1);
         
     }
     

@@ -2,6 +2,7 @@ package game.Cells.BuildingCells;
 
 import game.Cell;
 import game.Cells.BuildingCell;
+import game.Entities.Player;
 
 public class ContinentalCell extends BuildingCell{
 
@@ -25,7 +26,12 @@ public class ContinentalCell extends BuildingCell{
      * Regenerates the player's life points.
      */
     public void regen() {
-        // TODO
+        for (Player player : this.players) {
+            if(player.getLifepoints() < player.getMaxLifeLevel()){
+                player.setLifepoints(player.getLifepoints() + this.lifePointsRestored);
+    
+            }
+        }
     }
 
     public Cell createCopy(){

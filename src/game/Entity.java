@@ -47,8 +47,20 @@ public abstract class Entity {
 		return this.cell;
 	}
 
+	/**
+	 * Gets the lifepoints of the Entity.
+	 * @return the lifepoints of the Entity.
+	 */
     public int getLifepoints() {
         return this.Lifepoints;
+    }
+
+	/**
+     * Sets the lifepoints of the Entity.
+     * @param Lifepoints the lifepoints of the Entity.
+     */
+	public void setLifepoints(int Lifepoints) {
+        this.Lifepoints = Lifepoints;
     }
 
 	/**
