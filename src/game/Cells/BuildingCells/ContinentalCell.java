@@ -29,11 +29,14 @@ public class ContinentalCell extends BuildingCell{
         for (Player player : this.players) {
             if(player.getLifepoints() < player.getMaxLifeLevel()){
                 player.setLifepoints(player.getLifepoints() + this.lifePointsRestored);
-    
             }
         }
     }
 
+    /**
+     * Creates a copy of the cell.
+     * @return a copy of the cell.
+     */
     public Cell createCopy(){
         Cell cell = new ContinentalCell(this.lifePointsRestored,this.coord[0],this.coord[1]);
         return cell;
