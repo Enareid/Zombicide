@@ -15,6 +15,10 @@ public class DrugStoreCell extends BuildingCell{
         super(x,y);
     }
 
+    /**
+     * Creates a copy of the cell.
+     * @return a copy of the cell.
+     */
     public Cell createCopy(){
         Cell cell = new DrugStoreCell(this.coord[0],this.coord[1]);
         return cell;
