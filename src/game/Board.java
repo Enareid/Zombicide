@@ -49,15 +49,71 @@ public abstract class Board {
         return this.size;   
     }
 
-    public Cell[][] createFakeboard(){
-        Cell[][] fakeboard = new Cell[this.size][this.size];
-        for (int x = 0; x< this.size; x++){
-            for (int y = 0; y < this.size; y++) {
-                fakeboard[x][y] = this.cells[x][y].createCopy();
-            }
-        }
-        return fakeboard;
+    /**
+     * Returns the 2D array of cells representing the game board.
+     *
+     * @return the 2D array of cells
+     */
+    public Cell[][] getCells(){
+        return this.cells;
     }
+
+    /**
+     * Sets the cells of the board.
+     * 
+     * @param cells the 2D array of cells to set
+     */
+    public void setCells(Cell[][] cells){
+        this.cells = cells;
+    }
+
+    /**
+     * Returns the cell at the given coordinates.
+     * @param x The x coordinate of the cell.
+     * @param y The y coordinate of the cell.
+     * @return The cell at the given coordinates.
+     */
+    public Cell getCell(int x, int y) {
+        return this.cells[x][y];
+    }
+
+    /**
+     * Sets the cell at the given coordinates.
+     *
+     * @param x    The x coordinate of the cell.
+     * @param y    The y coordinate of the cell.
+     * @param cell The cell to set.
+     */
+    public void setCell(int x, int y, Cell cell) {
+        this.cells[x][y] = cell;
+    }
+
+    /**
+     * Returns the list of zombies on the board.
+     * 
+     * @return the list of zombies
+     */
+    public List<Zombie> getZombies(){
+        return this.zombies;
+    }
+
+    /**
+     * Adds a zombie to the board.
+     * 
+     * @param zombie the zombie to add
+     */
+    public void addZombie(Zombie zombie){
+        this.zombies.add(zombie);
+    }
+
+    /**
+     * Removes a zombie from the board.
+     * 
+     * @param zombie the zombie to remove
+     */
+    public void removeZombie(Zombie zombie){
+        this.zombies.remove(zombie);
+    }  
 
     /**
      * Returns the list of players on the board.
@@ -69,22 +125,26 @@ public abstract class Board {
     }
 
     /**
-     * Returns the 2D array of cells representing the game board.
-     *
-     * @return the 2D array of cells
+     * Adds a player to the board.
+     * 
+     * @param player the player to add
      */
-    public Cell[][] getCells(){
-        return this.cells;
+    public void addPlayer(Player player){
+        this.players.add(player);
     }
 
-    public List<Zombie> getZombies(){
-        return this.zombies;
+    /**
+     * Sets the list of players for the board.
+     * 
+     * @param players the list of players to set
+     */
+    public void setPlayers(List<Player> players){
+        this.players = players;
     }
 
-    public void removeZombie(Zombie zombie){
-        this.zombies.remove(zombie);
-    }  
-
+    /**
+     * Spawns zombies on the board.
+     */
     public void spawnZombie(){
         for (int i = 0; i < this.size; i++){
             for (int j = 0; j < this.size; j++){
@@ -132,57 +192,42 @@ public abstract class Board {
     }
 
     /**
-     * Sets the list of players for the board.
+     * Fills the board with cells.
      * 
-     * @param players the list of players to set
+     * @param x1 the x coordinate of the first cell
+     * @param y1 the y coordinate of the first cell
+     * @param x2 the x coordinate of the second cell
+     * @param y2 the y coordinate of the second cell
+     * @param firstCall true if it is the first call, false otherwise
+     * @param players the players in the board
+     * @throws Exception
      */
-    public void setPlayers(List<Player> players){
-        this.players = players;
-    }
-
-    public void addPlayer(Player player){
-        this.players.add(player);
-    }
-
-    public void addZombie(Zombie zombie){
-        this.zombies.add(zombie);
-    }
-
-    /**
-     * Sets the cells of the board.
-     * 
-     * @param cells the 2D array of cells to set
-     */
-    public void setCells(Cell[][] cells){
-        this.cells = cells;
-    }
-    /**
-     * Returns the cell at the given coordinates.
-     * @param x The x coordinate of the cell.
-     * @param y The y coordinate of the cell.
-     * @return The cell at the given coordinates.
-     */
-    public Cell getCell(int x, int y) {
-        return this.cells[x][y];
-    }
-
-    /**
-     * Définit la cellule aux coordonnées spécifiées.
-     *
-     * @param x    La coordonnée x de la cellule.
-     * @param y    La coordonnée y de la cellule.
-     * @param cell La cellule à définir.
-     */
-    public void setCell(int x, int y, Cell cell) {
-        this.cells[x][y] = cell;
-    }
-
     protected void fillBoard(int x1, int y1, int x2, int y2, boolean firstCall, List<Player> players) throws Exception {
     }
 
+    /**
+     * Initializes the board.
+     * 
+     * @param players the players in the board
+     * @throws Exception
+     */
     protected void initBoard(List<Player> players) throws Exception {
     }
 
+    /**
+     * Creates a copy of the board.
+     * 
+     * @return the copy of the board
+     */
+    public Cell[][] createFakeboard(){
+        Cell[][] fakeboard = new Cell[this.size][this.size];
+        for (int x = 0; x< this.size; x++){
+            for (int y = 0; y < this.size; y++) {
+                fakeboard[x][y] = this.cells[x][y].createCopy();
+            }
+        }
+        return fakeboard;
+    }
 
 /**
      * Print the board
