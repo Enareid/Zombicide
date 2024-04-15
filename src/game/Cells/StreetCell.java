@@ -19,14 +19,10 @@ public class StreetCell extends Cell{
         super(x,y);
         this.canSpawn = false;
     }
-    public Cell createCopy(){
-        Cell cell = new StreetCell(this.coord[0],this.coord[1]);
-        return cell;
-    }
 
     /**
      * Returns if the cell can spawn a zombie.
-     * @return if the cell cans spawn a zombie.
+     * @return if the cell can spawn a zombie.
      */
     public boolean getCanSpawn() {
         return this.canSpawn;
@@ -46,7 +42,13 @@ public class StreetCell extends Cell{
         this.canSpawn = false;
     }
 
-
+    /**
+     * Returns a copy of the cell.
+     */
+    public Cell createCopy(){
+        Cell cell = new StreetCell(this.coord[0],this.coord[1]);
+        return cell;
+    }
 
     /**
      * Returns the string representation of the cell.
@@ -70,6 +72,4 @@ public class StreetCell extends Cell{
         }
         return str;
     }
-
-
 }
