@@ -1,10 +1,8 @@
 package game.Equipements.Items;
 
-import game.Door;
 import game.Equipement;
 import game.Direction;
 import game.Entities.Player;
-import java.util.*;
 import game.Cell;
 
 public class MasterKey extends Equipement{

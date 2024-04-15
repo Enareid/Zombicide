@@ -1,7 +1,6 @@
 package game.Cells;
 
 import game.*;
-import game.Entities.Zombies.*;
 
 
 public class StreetCell extends Cell{

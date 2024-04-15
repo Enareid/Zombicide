@@ -1,12 +1,9 @@
 package game;
 
 import game.Boards.ClassicalBoard;
-import game.Cells.BuildingCell;
-import game.Cells.StreetCell;
 import game.Entities.*;
 import game.Entities.Players.*;
 
-import game.Entities.Zombies.Walker;
 import game.Equipements.Items.InfraredGlasses;
 import game.Equipements.Weapons.*;
 import game.Equipements.Items.MasterKey;
@@ -48,6 +45,7 @@ public class MainL1 {
                     }
                     p1.action();
                     System.out.println(board.getZombies());
+                    System.out.println(board.toString());
                 }
                 scanner.close();
                 break;

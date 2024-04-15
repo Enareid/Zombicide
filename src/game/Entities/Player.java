@@ -39,6 +39,7 @@ public abstract class Player extends Entity{
 		System.out.println("Which one to attack");
 		String msg = "";
 		int count = 0;
+		int index = 0;
 		while(count < zombiesSub.size() && count < 4){
 			msg += zombiesSub.get(count).toString()  + " (" + (count+1) + ") | ";
 			count++;
@@ -53,20 +54,24 @@ public abstract class Player extends Entity{
 		String action = in.nextLine();
 		switch (action) {
 			case "1":
-				this.attack(zombiesSub.get(0));
+				index = zombies.indexOf(zombiesSub.get(0));
+				this.attack(this.board.getZombies().get(index));
 				break;
 			case "2":
-				this.attack(zombiesSub.get(1));
+				index = zombies.indexOf(zombiesSub.get(1));
+				this.attack(this.board.getZombies().get(index));
 				break;
 			case "3":
-				this.attack(zombiesSub.get(2));
+				index = zombies.indexOf(zombiesSub.get(2));
+				this.attack(this.board.getZombies().get(index));
 				break;
 			case "4":
-				this.attack(zombiesSub.get(3));
+				index = zombies.indexOf(zombiesSub.get(3));
+				this.attack(this.board.getZombies().get(index));
 				break;
 			case "5":
 				if (zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))) {
-					int index = zombies.indexOf(zombiesSub.get(3));
+					index = zombies.indexOf(zombiesSub.get(3));
 					if(index+5 < zombies.size()){
 						List<Zombie> zombies2 = zombies.subList(index+1, index+5);
 						this.attackAction(zombies, zombies2);
@@ -79,7 +84,7 @@ public abstract class Player extends Entity{
 				break;	
 			case "6":
 				if (!(this.zombieCanBeAttack().get(0).equals(zombiesSub.get(0)))) {
-					int index = zombies.indexOf(zombiesSub.get(0));
+					index = zombies.indexOf(zombiesSub.get(0));
 					List<Zombie> zombies2 = this.zombieCanBeAttack().subList(index-4, index);
 					this.attackAction(zombies, zombies2);
 				}
@@ -110,7 +115,8 @@ public abstract class Player extends Entity{
 		if (zombie.getLifepoints() <= 0) {
 			try {
 				this.board.getZombies().remove(zombie);
-				this.cell.getZombie().remove(zombie);
+				Cell cell = zombie.getCell();
+				cell.removeZombie(zombie);
 			} catch (Exception e) {
 				System.out.println(e);
 			}
