@@ -32,10 +32,11 @@ public abstract class Zombie extends Entity {
      * @param cell the cell of the zombie.
 	 * @param resistance the resistance points of the zombie.
      */
-    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, Cell cell,int resistance){
+    public Zombie(int Lifepoints, int Damage, Board board, int actionPoint, Boolean superArmor, Cell cell,int resistance){
         super(Lifepoints, cell, board, actionPoint);
 				this.resistance=resistance;
 				this.Damage=Damage;
+				this.superArmor=superArmor;
     }
 
 	/**
