@@ -4,8 +4,8 @@ public class Door {
 
     /** If the door is locked */
     private boolean isLocked;
+    /** The direction of the door. */
     private Direction direction;
-
 
     /**
      * Builds a new door.
@@ -14,6 +14,23 @@ public class Door {
     public Door(Direction direction) {
         this.isLocked = true;
         this.direction = direction;
+    }
+
+    /**
+     * Returns if the door is locked.
+     * @return if the door is locked.
+     */
+    public boolean isLocked() {
+        return this.isLocked;
+    }
+
+    /**
+     * Returns the direction of the door.
+     * 
+     * @return the direction of the door.
+     */
+    public Direction getDirection(){
+        return this.direction;
     }
 
     /**
@@ -28,18 +45,6 @@ public class Door {
      */
     public void unlock() {
         this.isLocked = false;
-    }
-
-    /**
-     * Returns if the door is locked.
-     * @return if the door is locked.
-     */
-    public boolean isLocked() {
-        return this.isLocked;
-    }
-
-    public Direction getDirection(){
-        return this.direction;
     }
 
 }
