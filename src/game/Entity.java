@@ -80,6 +80,15 @@ public abstract class Entity {
 	}
 
 	/**
+	 * Gets the board of the Entity.
+	 * 
+	 * @return the board of the Entity.
+	 */
+	public Board getBoard(){
+		return this.board;
+	}
+
+	/**
 	 * Give if the entity is dead.
 	 * 
 	 * @return True if the entity is dead, false otherwise.

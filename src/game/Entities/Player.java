@@ -14,11 +14,15 @@ import java.util.*;
 import game.Equipements.Items.MasterKey;
 
 public abstract class Player extends Entity{
-  protected List<Equipement> bag;
-	protected Equipement inHand;
 
+	/** The bag of the player */
+    protected List<Equipement> bag;
+	/** Equipement player have in hand */
+	protected Equipement inHand;
+	/** The expertise Level of the player */
 	private int expertiseLevel;
-  static final int MAX_LIFE_LEVEL = 5;
+	/** The max life points player can have */
+    static final int MAX_LIFE_LEVEL = 5;
 
 
     /**
@@ -34,6 +38,13 @@ public abstract class Player extends Entity{
 				this.inHand = null;
     }
 
+	/**
+	 * Run the attack action of the player.
+	 * Give which zombie can be attacked by the player.
+	 * 
+	 * @param zombies the list of all the zombies on the board.
+	 * @param zombiesSub the list of 4 zombies that can be attacked by the player.
+	 */
 	public void attackAction(List<Zombie> zombies, List<Zombie> zombiesSub){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Which one to attack");
@@ -95,11 +106,22 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+	 * Check if the player can attack a zombie.
+	 * 
+	 * @param zombie the zombie to be checked.
+	 * @return true if the player can attack the zombie, false otherwise.
+	 */
 	public boolean canAttackZombie(Zombie zombie) {
 		int distance = Math.abs(zombie.getCell().getCoord()[0] - this.cell.getCoord()[0]) + Math.abs(zombie.getCell().getCoord()[1] - this.cell.getCoord()[1]);
 		return distance <= ((Weapon) this.inHand).getRange()[1] && distance >= ((Weapon) this.inHand).getRange()[0];
 	}
 
+	/**
+	 * Get the zombies that can be attacked by the player.
+	 * 
+	 * @return the zombies that can be attacked by the player.
+	 */
 	public List<Zombie> zombieCanBeAttack(){
 		List<Zombie> zombies = new ArrayList<Zombie>();
 		for (Zombie zombie : this.board.getZombies()) {
@@ -110,6 +132,11 @@ public abstract class Player extends Entity{
 		return zombies;	
 	}
 
+	/**
+	 * Attack a zombie.
+	 * 
+	 * @param zombie the zombie to be attacked.
+	 */
 	public void attack(Zombie zombie){
 		((Weapon)this.inHand).use(this,zombie);
 		if (zombie.getLifepoints() <= 0) {
@@ -121,17 +148,6 @@ public abstract class Player extends Entity{
 				System.out.println(e);
 			}
 		}
-		}
-
-
-
-	/**
-	 * Returns the board associated with this player.
-	 *
-	 * @return the board associated with this player
-	 */
-	public Board getBoard() {
-		return this.board;
 	}
 
 	/**
@@ -156,6 +172,7 @@ public abstract class Player extends Entity{
 		}
 		System.out.println(board.toString());
 	}
+
 	/**
 	 * Sets the board for the player.
 	 * 
@@ -164,6 +181,7 @@ public abstract class Player extends Entity{
 	public void setBoard(Board board) {
 		this.board = board;
 	}
+	
 	/**
 	 * Sets the action points of the player.
 	 * @param actionPoints the action points of the player.
@@ -248,6 +266,9 @@ public abstract class Player extends Entity{
 		return MAX_LIFE_LEVEL;
 	}
 
+	/**
+	 * Give all the action player can do.
+	 */
 	public void action(){
 		while (this.getActionPoints()!= 0){
 			Scanner in = new Scanner(System.in);
@@ -310,6 +331,9 @@ public abstract class Player extends Entity{
 			this.actionPoints = 3;
     	}
 
+	/**
+	 * Give all the doors player can open.
+	 */
 	public void openDoor(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -362,6 +386,11 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+	 * Check if the player can open north door.
+	 * 
+	 * @return true if the player can open north door, false otherwise.
+	 */
 	public boolean northLocked(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -372,6 +401,11 @@ public abstract class Player extends Entity{
 		return (cells[x][y].isLocked(Direction.NORTH)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x-1][y] instanceof BuildingCell));
 	}
 
+	/**
+	 * Check if the player can open south door.
+	 * 
+	 * @return true if the player can open south door, false otherwise.
+	 */
 	public boolean southLocked(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -382,6 +416,11 @@ public abstract class Player extends Entity{
 		return (cells[x][y].isLocked(Direction.SOUTH)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x+1][y] instanceof BuildingCell));
 	}
 
+	/**
+	 * Check if the player can open east door.
+	 * 
+	 * @return true if the player can open east door, false otherwise.
+	 */
 	public boolean eastLocked(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -392,6 +431,11 @@ public abstract class Player extends Entity{
 		return (cells[x][y].isLocked(Direction.EAST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y+1] instanceof BuildingCell));
 	}
 
+	/**
+	 * Check if the player can open west door.
+	 * 
+	 * @return true if the player can open west door, false otherwise.
+	 */
 	public boolean westLocked(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -402,7 +446,9 @@ public abstract class Player extends Entity{
 		return (cells[x][y].isLocked(Direction.WEST)) && ((cells[x][y] instanceof BuildingCell) || ((cells[x][y] instanceof StreetCell) && cells[x][y-1] instanceof BuildingCell));
 	}
 
-
+	/**
+	 * Give all the equipments player can equip.
+	 */
 	public void equip() {
 		Scanner in = new Scanner(System.in);
 		System.out.println("You are holding : " + this.inHand);
@@ -426,9 +472,10 @@ public abstract class Player extends Entity{
 		}
 	
 	}
-	
 
-
+	/**
+	 * Give all the movements player can do.
+	 */
 	public void move(){
 		Cell[][] cells = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -481,6 +528,9 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+	 * Move the player north.
+	 */
 	public void moveNorth() {
 		Cell[][] coord = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -496,6 +546,9 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+	 * Move the player south.
+	 */
 	public void moveSouth() {
 		Cell[][] coord = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -511,6 +564,9 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+     * Move the player east.
+     */
 	public void moveEast() {
 		Cell[][] coord = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -527,6 +583,9 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+     * Move the player west.
+     */
 	public void moveWest() {
 		Cell[][] coord = board.getCells();
 		int x = this.cell.getCoord()[0];
@@ -541,20 +600,4 @@ public abstract class Player extends Entity{
 			}
 		}
 	}
-	public boolean isDead() {
-		if (this.Lifepoints == 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	public void isattacked(int Damage) {
-		this.Lifepoints = this.Lifepoints - Damage;   
-		if (this.Lifepoints<=0) {
-			this.Lifepoints = 0;}
-		isDead();
-   
-	}
-   
-
 }
