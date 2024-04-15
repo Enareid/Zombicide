@@ -2,15 +2,21 @@ package game;
 
 public abstract class Entity {
 
+	/** The life points of this entity */
     protected int Lifepoints;
+	/** The cell of this entity */
     protected Cell cell;
+	/** The board of this entity */
     protected Board board;
+	/** The action points of this entity */
     protected int actionPoints;
 
     /**
      * Builds a new entity.
      * @param Lifepoints the lifepoints of the entity.
      * @param cell the cell of the entity.
+	 * @param board the board of the entity.
+	 * @param actionPoints the action points of the entity.
      */
     public Entity(int Lifepoints, Cell cell, Board board, int actionPoints){
         this.Lifepoints=Lifepoints;
@@ -19,26 +25,7 @@ public abstract class Entity {
         this.actionPoints=actionPoints;
     }
 
-    public void attack() {
-        switch (this.toString()) {
-            case "Fighter":
-                System.out.println("Fighter !!");
-                break;
-    
-        }
-        System.out.println("OMG !!");
-    }
-    
-    	/**
-	 * Sets the cell of the player.
-	 * 
-	 * @param cell the cell of the player.
-	 */
-	public void setCell(Cell cell) {
-		this.cell = cell;
-	}
-    
-    	/**
+    /**
 	 * Gets the cell of the player.
 	 * 
 	 * @return the cell of the player.
@@ -47,8 +34,18 @@ public abstract class Entity {
 		return this.cell;
 	}
 
+    /**
+	 * Sets the cell of the player.
+	 * 
+	 * @param cell the cell of the player.
+	 */
+	public void setCell(Cell cell) {
+		this.cell = cell;
+	}
+
 	/**
 	 * Gets the lifepoints of the Entity.
+	 * 
 	 * @return the lifepoints of the Entity.
 	 */
     public int getLifepoints() {
@@ -57,6 +54,7 @@ public abstract class Entity {
 
 	/**
      * Sets the lifepoints of the Entity.
+	 * 
      * @param Lifepoints the lifepoints of the Entity.
      */
 	public void setLifepoints(int Lifepoints) {
@@ -65,21 +63,32 @@ public abstract class Entity {
 
 	/**
 	 * Gets the action points of the Entity.
+	 * 
 	 * @return the action points of the Entity.
 	 */
 	public int getActionPoints() {
 		return this.actionPoints;
 	}
 
+	/**
+	 * Sets the action points of the Entity.
+	 * 
+	 * @param actionPoints the action points of the Entity.
+	 */
 	public void setActionPoints(int actionPoints) {
 		this.actionPoints = actionPoints;
 	}
 
+	/**
+	 * Give if the entity is dead.
+	 * 
+	 * @return True if the entity is dead, false otherwise.
+	 */
     public boolean isDead() {
         return this.Lifepoints <= 0;
     }
 
-    	/**
+    /**
 	 * Calculates the distance between two cells.
 	 * 
 	 * @param cell1 The first cell.
