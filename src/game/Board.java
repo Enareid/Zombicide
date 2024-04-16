@@ -152,6 +152,9 @@ public abstract class Board {
      * Spawns zombies on the board.
      */
     public void spawnZombie(){
+        for (int i = 0; i < this.size; i++){
+            for (int j = 0; j < this.size; j++){
+                if (this.cells[i][j] instanceof StreetCell && ((StreetCell) this.cells[i][j]).getCanSpawn() && this.zombies.size()>0){
        int playernbr=this.players.size();
        int i=0;
        int exp=0;
@@ -201,7 +204,9 @@ public abstract class Board {
 
        } 
     }
-
+            }
+        }
+    }
     /**
      * Fills the board with cells.
      * 
