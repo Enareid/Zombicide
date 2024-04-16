@@ -12,7 +12,7 @@ import game.Cells.BuildingCell;
 import game.Cells.StreetCell;
 
 /** The Zombie class extends Entity class */
-public abstract class Zombie extends Entity {
+public class Zombie extends Entity {
 
 	/** The Damage points of the zombie */
     protected int Damage;
@@ -198,6 +198,5 @@ public abstract class Zombie extends Entity {
 		Player P =getNearestPlayer();
         P.setLifepoints(P.getLifepoints()-this.Damage);
      }
-	
-	 public abstract String toString();
+
 }

@@ -14,7 +14,7 @@ import java.util.*;
 import game.Equipements.Items.MasterKey;
 
 /** The Player class extends Entity class */
-public abstract class Player extends Entity{
+public class Player extends Entity{
 
 	/** The bag of the player */
     protected List<Equipement> bag;

@@ -38,7 +38,7 @@ public abstract class PlayerTest{
     @Test
     public void testPlayerInitialization() throws Exception {
     
-        assertEquals(5, this.player.getLifeLevel());
+        assertEquals(5, this.player.getLifepoints());
         assertEquals(0, this.player.getExpertiseLevel()); 
         assertEquals(3, this.player.getActionPoints());
         assertEquals(0, this.player.getEquipments().size());
@@ -84,6 +84,7 @@ public abstract class PlayerTest{
         this.player.setEquipment(gun);
         this.player.setInHand(gun);
         Zombie zomb = new Walker(this.board.getCell(1, 1), board);
+        this.board.addZombie(zomb);
         this.board.getCell(1,1).setZombie(zomb);
         List<Zombie> zombies = this.player.zombieCanBeAttack();
         assertEquals(0, zombies.size());
@@ -94,6 +95,7 @@ public abstract class PlayerTest{
         this.player.setInHand(gun);
         Zombie zomb = new Walker(this.board.getCell(2, 1), board);
         this.board.getCell(2,1).setZombie(zomb);
+        this.board.addZombie(zomb);
         List<Zombie> zombies = this.player.zombieCanBeAttack();
         assertEquals(0, zombies.size());
         zomb.move();

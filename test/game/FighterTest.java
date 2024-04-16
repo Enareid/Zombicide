@@ -34,7 +34,7 @@ public class FighterTest extends PlayerTest{
     @Test
     public void testPlayerInitialization() throws Exception {
     
-        assertEquals(10, this.player.getLifeLevel());
+        assertEquals(10, this.player.getLifepoints());
         assertEquals(0, this.player.getExpertiseLevel()); 
         assertEquals(3, this.player.getActionPoints());
         assertEquals(0, this.player.getEquipments().size());

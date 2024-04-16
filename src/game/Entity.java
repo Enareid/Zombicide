@@ -1,7 +1,7 @@
 package game;
 
 /** The Entity class */
-public abstract class Entity {
+public class Entity {
 
 	/** The life points of this entity */
     protected int Lifepoints;
