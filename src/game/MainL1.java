@@ -42,9 +42,7 @@ public class MainL1 {
                     for (Zombie zombie : board.getZombies()) {
                         zombie.move();
                     }
-                    System.out.println(board.getCell(3, 2).getZombie());
-                    p1.action();
-                    
+                    p1.action();            
                 }
                 scanner.close();
                 break;

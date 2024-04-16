@@ -194,6 +194,24 @@ public class Cell {
     }
 
     /**
+     * Returns the noise level of this cell
+     * 
+     * @return the noise level of this cell
+     */
+    public int getNoiseLevel(){
+        return this.noiseLevel;
+    }
+
+    /**
+     * Sets the noise level of this cell
+     * 
+     * @param noiseLevel the noise level to set
+     */
+    public void setNoiseLevel(int noiseLevel){
+        this.noiseLevel = noiseLevel;
+    }
+
+    /**
      * Create a copy of the cell
      */
     public Cell createCopy(){

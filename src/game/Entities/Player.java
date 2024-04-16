@@ -141,7 +141,7 @@ public class Player extends Entity{
 					}
                 	break;
     
-            	case "LOOT" :
+            	case "SNOOP" :
                 	System.out.println("Do loot");
                 	break;
     
