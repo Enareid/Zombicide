@@ -206,7 +206,11 @@ public class Zombie extends Entity {
 	}
 
 	/**
- 	* Attacks the nearest player and reduces their life points by the zombie's damage.
+ 	* This method allows the current entity to attack the nearest player.
+ 	* It reduces the target player's hit points by the damage points of the entity.
+ 	* If the target player's hit points fall to zero or below, the player is eliminated.
+ 	* If the eliminated player is on a building cell, all the equipment they were holding or wearing is added to that cell.
+ 	* Then, the player is removed from the game and from the cell they were on.
  	*/
      public void attack(){
 		Player P =getNearestPlayer();
