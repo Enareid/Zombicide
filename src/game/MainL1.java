@@ -33,8 +33,8 @@ public class MainL1 {
                 Equipement Crowbar = new Crowbar();
                 Equipement Fiole = new InfraredGlasses();
                 MasterKey mk = new MasterKey();
-                p1.setEquipment(IG);
-                p1.setInHand(IG);
+                p1.setEquipment(gun);
+                p1.setInHand(gun);
                 
                 System.out.println(board.toString());
 

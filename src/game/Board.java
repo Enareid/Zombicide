@@ -116,6 +116,11 @@ public abstract class Board {
         this.zombies.remove(zombie);
     }  
 
+    public int getMaxNoise(){
+        //TODO
+        return 0;
+    }
+
     /**
      * Returns the list of players on the board.
      *

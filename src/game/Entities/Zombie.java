@@ -144,7 +144,7 @@ public class Zombie extends Entity {
 	 * The movement is determined by the positions of the zombie and the nearest player,
 	 * as well as the availability of cells in the corresponding directions.
 	 */
-	public void move(){
+	public void moveTowardsPlayer(){
 		Cell[][] cells = board.getCells();
 		Player nearestPlayer = getNearestPlayer();
 		if (nearestPlayer == null) {
@@ -168,6 +168,20 @@ public class Zombie extends Entity {
 			moveEast();
 		} else if (y > yPlayer && canMoveWest) {
 			moveWest();
+		}
+	}
+
+	public void moveTowardsNoise(){
+		Cell cell = this.board.getCell(0, 0);
+		// TODO
+	}
+
+	public void move(){
+		if(this.board.getMaxNoise() != 0){
+			this.moveTowardsNoise();
+		}
+		else{
+			this.moveTowardsPlayer();
 		}
 	}
 
