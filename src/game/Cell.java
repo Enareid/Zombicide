@@ -175,6 +175,15 @@ public class Cell {
     }
 
     /**
+     * Opens all the doors of the cell
+     */
+    public void openAllDoor(){
+        for (Door door : this.doors.values()) {
+            door.unlock();
+        }
+    }
+
+    /**
      * Give if door is locked
      * 
      * @param direction the direction of the door to test
@@ -192,6 +201,12 @@ public class Cell {
         return cell;
     }
 
+    /**
+     * Returns the distance between two cells
+     * 
+     * @param cell the cell to calculate the distance with
+     * @return the distance between the two cells
+     */
     public int calculateDistance(Cell cell) {
         int x1 = this.coord[0];
         int y1 = this.coord[1];

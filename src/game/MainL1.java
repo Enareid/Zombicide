@@ -25,7 +25,7 @@ public class MainL1 {
                 players.add(p1);
                 Board board = new ClassicalBoard(size, players);
                 board.spawnZombie();
-                
+                Equipement IG = new InfraredGlasses();
                 Equipement axe = new Axe();
                 Equipement gun = new Gun();
                 Equipement rifle = new Rifle();
@@ -33,13 +33,12 @@ public class MainL1 {
                 Equipement Crowbar = new Crowbar();
                 Equipement Fiole = new InfraredGlasses();
                 MasterKey mk = new MasterKey();
-                p1.setEquipment(gun);
-                p1.setInHand(gun);
+                p1.setEquipment(IG);
+                p1.setInHand(IG);
                 
                 System.out.println(board.toString());
 
                 for (int i = 0; i < 10; i++) {
-                    System.err.println(p1.zombieCanBeAttack());
                     for (Zombie zombie : board.getZombies()) {
                         zombie.move();
                     }

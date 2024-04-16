@@ -42,4 +42,12 @@ public abstract class Equipement{
 	 * @param target the target of the equipement
 	 */
 	public void use(Player player, Object target) {}
+
+	/**
+	 * Uses the equipement.
+	 * 
+	 * @param player the player using the equipement
+	 * @throws Exception
+	 */
+	public void use(Player player) throws Exception{}
 }

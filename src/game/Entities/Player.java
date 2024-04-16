@@ -123,10 +123,10 @@ public class Player extends Entity{
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.getActionPoints());
 			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE ";
-			if( this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+			if(!(this.inHand == null) && this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += "| OPEN DOOR ";
 			}
-			if (this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
+			if (!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
 				msg += "| ATTACK ";
 			}
 			System.out.println(msg);
@@ -150,8 +150,13 @@ public class Player extends Entity{
                 	break;
     
             	case "USE" :
-                	System.out.println("Do use");
-                	break;
+					try {
+						this.inHand.use(this);
+						this.inHand = null;
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+					break;
                     
             	case "MAKE NOISE" :
                 	System.out.println("Do makeNoise");
