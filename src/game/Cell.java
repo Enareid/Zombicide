@@ -191,6 +191,14 @@ public class Cell {
         Cell cell = new Cell(this.coord[0],this.coord[1]);
         return cell;
     }
+
+    public int calculateDistance(Cell cell) {
+        int x1 = this.coord[0];
+        int y1 = this.coord[1];
+        int x2 = cell.getCoord()[0];
+        int y2 = cell.getCoord()[1];
+        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    }
 }
 
 

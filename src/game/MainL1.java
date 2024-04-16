@@ -39,12 +39,13 @@ public class MainL1 {
                 System.out.println(board.toString());
 
                 for (int i = 0; i < 10; i++) {
+                    System.err.println(p1.zombieCanBeAttack());
                     for (Zombie zombie : board.getZombies()) {
                         zombie.move();
                     }
+                    System.out.println(board.getCell(3, 2).getZombie());
                     p1.action();
-                    System.out.println(board.getZombies());
-                    System.out.println(board.toString());
+                    
                 }
                 scanner.close();
                 break;

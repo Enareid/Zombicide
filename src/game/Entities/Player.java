@@ -496,19 +496,19 @@ public class Player extends Entity{
 		String action = in.nextLine();
 		switch (action) {
 			case "1":
-				index = zombies.indexOf(zombiesSub.get(0));
+				index = this.board.getZombies().indexOf(zombiesSub.get(0));
 				this.attack(this.board.getZombies().get(index));
 				break;
 			case "2":
-				index = zombies.indexOf(zombiesSub.get(1));
+				index = this.board.getZombies().indexOf(zombiesSub.get(1));
 				this.attack(this.board.getZombies().get(index));
 				break;
 			case "3":
-				index = zombies.indexOf(zombiesSub.get(2));
+				index = this.board.getZombies().indexOf(zombiesSub.get(2));
 				this.attack(this.board.getZombies().get(index));
 				break;
 			case "4":
-				index = zombies.indexOf(zombiesSub.get(3));
+				index = this.board.getZombies().indexOf(zombiesSub.get(3));
 				this.attack(this.board.getZombies().get(index));
 				break;
 			case "5":
@@ -544,8 +544,8 @@ public class Player extends Entity{
 	 * @return true if the player can attack the zombie, false otherwise.
 	 */
 	public boolean canAttackZombie(Zombie zombie) {
-		int distance = Math.abs(zombie.getCell().getCoord()[0] - this.cell.getCoord()[0]) + Math.abs(zombie.getCell().getCoord()[1] - this.cell.getCoord()[1]);
-		return distance <= ((Weapon) this.inHand).getRange()[1] && distance >= ((Weapon) this.inHand).getRange()[0];
+		int distance = this.cell.calculateDistance(zombie.getCell());
+		return ((distance <= ((Weapon)this.inHand).getRange()[1]) && (distance >= ((Weapon)this.inHand).getRange()[0]));
 	}
 
 	/**
