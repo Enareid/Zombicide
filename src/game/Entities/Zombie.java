@@ -211,6 +211,22 @@ public class Zombie extends Entity {
      public void attack(){
 		Player P =getNearestPlayer();
         P.setLifepoints(P.getLifepoints()-this.Damage);
+		if (P.getLifepoints() <= 0) {
+			try {
+				if(this.getCell() instanceof BuildingCell){
+					Cell zCell = this.getCell();
+					zCell.addEquipement(P.getInHand());
+					for(int i=0;i<P.getEquipments().size();i++){
+						zCell.addEquipement(P.getEquipments().get(i));
+					}
+				}
+				this.board.getPlayers().remove(P);
+				Cell cell = P.getCell();
+				cell.removePlayer(P);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
      }
 
 }
