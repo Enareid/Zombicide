@@ -12,6 +12,7 @@ import game.Equipements.Weapon;
 import java.util.*;
 
 import game.Equipements.Items.MasterKey;
+import game.Equipements.Weapons.Gun;
 
 /** The Player class extends Entity class */
 public class Player extends Entity{
@@ -35,7 +36,7 @@ public class Player extends Entity{
         super(MAX_LIFE_LEVEL, cell, board,3);
         this.expertiseLevel = 0;
         this.bag = new ArrayList<Equipement>();
-				this.inHand = null;
+		this.inHand = new Gun();
     }
 
 	/**
@@ -141,7 +142,11 @@ public class Player extends Entity{
                 	break;
     
             	case "SNOOP" :
-                	System.out.println("Do loot");
+                	try {
+						this.snoopAction();
+					} catch (Exception e) {
+						System.out.println(e);
+					}
                 	break;
     
             	case "EQUIP" :
@@ -174,7 +179,7 @@ public class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-					if(this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
+					if(!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
                 		this.attackAction(this.zombieCanBeAttack(), this.zombieCanBeAttack());
 						this.actionPoints -= 1;
 					}
@@ -587,5 +592,23 @@ public class Player extends Entity{
 				System.out.println(e);
 			}
 		}
+	}
+
+	public void snoopAction() throws Exception{
+		if (this.cell.getEquipements().size() == 0){
+			System.out.println("No equipement to loot");
+			return;
+		}
+		Scanner in = new Scanner(System.in);
+		System.out.println("Which one to loot");
+		String msg = "";
+		for (int i = 0; i < this.cell.getEquipements().size(); i++) {
+			msg += this.cell.getEquipements().get(i).toString() + " (" + (i+1) + ") | ";
+		}
+		System.out.println(msg);
+		String action = in.nextLine();
+		int index = Integer.parseInt(action);
+		this.bag.add(this.cell.getEquipements().get(index));
+		this.cell.removeEquipement(this.cell.getEquipements().get(index));
 	}
 }
