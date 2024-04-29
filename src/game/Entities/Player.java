@@ -3,6 +3,7 @@ import game.Equipement;
 import game.Boards.ClassicalBoard;
 import game.Cells.BuildingCell;
 import game.Cells.StreetCell;
+import game.Entities.Players.Snooper;
 import game.Board;
 import game.Cell;
 import game.Direction;
@@ -163,7 +164,7 @@ public class Player extends Entity{
 					break;
                     
             	case "MAKE NOISE" :
-                	System.out.println("Do makeNoise");
+                	this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+5);
                 	break;
     
             	case "OPEN DOOR" :
@@ -239,9 +240,6 @@ public class Player extends Entity{
 	 * Give all the doors player can open.
 	 */
 	public void openDoor(){
-		Cell[][] cells = board.getCells();
-		int x = this.cell.getCoord()[0];
-		int y = this.cell.getCoord()[1];
 		Scanner in = new Scanner(System.in);
 		System.out.println("Where to open door?");
 		String msgDirection = "";
@@ -615,5 +613,14 @@ public class Player extends Entity{
 		int index = Integer.parseInt(action);
 		this.bag.add(this.cell.getEquipements().get(index));
 		this.cell.removeEquipement(this.cell.getEquipements().get(index));
+		if(this instanceof Snooper && ((Snooper)this).getFreeSnoop() == 1){
+			((Snooper)this).setFreeSnoop(0);
+		}
+		else{
+			this.actionPoints -= 1;
+			if(this instanceof Snooper){
+				((Snooper)this).setFreeSnoop(1);
+			}
+		}
 	}
 }

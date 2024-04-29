@@ -7,6 +7,8 @@ import game.Entities.Player;
 /** The Snooper class extends Player class */
 public class Snooper extends Player{
 
+    private int freeSnoop;
+
     /**
      * Builds a new Snooper.
      * 
@@ -15,6 +17,25 @@ public class Snooper extends Player{
      */
     public Snooper(Cell cell,Board board){
         super(cell, board);
+        this.freeSnoop = 1;
+    }
+
+    /**
+     * Gets the free snoop of the Snooper.
+     * 
+     * @return the free snoop of the Snooper.
+     */
+    public int getFreeSnoop() {
+        return this.freeSnoop;
+    }
+
+    /**
+     * Sets the free snoop of the Snooper.
+     * 
+     * @param freeSnoop the free snoop of the Snooper.
+     */
+    public void setFreeSnoop(int freeSnoop) {
+        this.freeSnoop = freeSnoop;
     }
     
     /**
