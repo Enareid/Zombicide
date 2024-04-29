@@ -32,8 +32,8 @@ public class Player extends Entity{
 	 * @param Lifepoints the lifepoints of the player.
 	 * @param cell the cell of the player.
      */
-    public Player(int Lifepoints, Cell cell, Board board){
-        super(Lifepoints,cell, board,3);
+    public Player(Cell cell, Board board){
+        super(MAX_LIFE_LEVEL, cell, board,3);
         this.expertiseLevel = 0;
         this.bag = new ArrayList<Equipement>();
 				this.inHand = null;

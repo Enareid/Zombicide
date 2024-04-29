@@ -14,8 +14,8 @@ public class Healer extends Player{
      * @param cell the cell where the Healer will spawn
      * @param board the board where the Healer will spawn
      */
-    public Healer(int Lifepoints, Cell cell,Board board){
-        super(Lifepoints,cell, board);
+    public Healer(Cell cell,Board board){
+        super(cell, board);
     }
     
     /**

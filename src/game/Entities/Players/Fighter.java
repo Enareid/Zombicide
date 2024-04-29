@@ -14,8 +14,8 @@ public class Fighter extends Player{
      * @param cell the cell where the Fighter will spawn
      * @param board the board where the Fighter will spawn
      */
-    public Fighter(int Lifepoints, Cell cell,Board board){
-        super(Lifepoints,cell,board);
+    public Fighter(Cell cell,Board board){
+        super(cell,board);
     }
 
     /**

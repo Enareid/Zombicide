@@ -14,8 +14,8 @@ public class Snooper extends Player{
      * @param cell the cell where the Snooper will spawn
      * @param board the board where the Snooper will spawn
      */
-    public Snooper(int Lifepoints, Cell cell,Board board){
-        super(Lifepoints,cell, board);
+    public Snooper(Cell cell,Board board){
+        super(cell, board);
     }
     
     /**

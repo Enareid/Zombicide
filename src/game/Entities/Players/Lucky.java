@@ -14,8 +14,8 @@ public class Lucky extends Player{
      * @param cell the cell where the Lucky will spawn
      * @param board the board where the Lucky will spawn
      */
-    public Lucky(int Lifepoints, Cell cell,Board board){
-        super(Lifepoints,cell, board);
+    public Lucky(Cell cell,Board board){
+        super(cell, board);
     }
     
     /**

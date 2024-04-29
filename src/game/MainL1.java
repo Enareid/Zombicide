@@ -21,7 +21,7 @@ public class MainL1 {
                 System.out.println("Entrez la taille du plateau:");
                 int size = scanner.nextInt();
                 nbEssais++;
-                Player p1 = new Fighter(10, null, null);
+                Player p1 = new Fighter(null, null);
                 players.add(p1);
                 Board board = new ClassicalBoard(size, players);
                 board.spawnZombie();
