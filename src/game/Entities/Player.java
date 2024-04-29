@@ -594,6 +594,11 @@ public class Player extends Entity{
 		}
 	}
 
+	/**
+	 * Give all the equipements player can loot.
+	 * 
+	 * @throws Exception if the player tries to loot an equipement from an empty cell.
+	 */
 	public void snoopAction() throws Exception{
 		if (this.cell.getEquipements().size() == 0){
 			System.out.println("No equipement to loot");
