@@ -580,7 +580,6 @@ public class Player extends Entity{
 				this.board.getZombies().remove(zombie);
 				Cell cell = zombie.getCell();
 				cell.removeZombie(zombie);
-				this.expertiseLevel+=1;
 			} catch (Exception e) {
 				System.out.println(e);
 			}

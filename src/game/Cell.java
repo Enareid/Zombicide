@@ -71,7 +71,7 @@ public class Cell {
             player.setCell(this);
         }
         else{
-            throw new PlayerPresentException("Player already present");
+            throw new Exception("Player already present");
         }
     }
 

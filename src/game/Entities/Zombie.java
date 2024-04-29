@@ -4,6 +4,8 @@
  */
 package game.Entities;
 
+import java.util.Random;
+
 import game.Board;
 import game.Cell;
 import game.Direction;
@@ -171,13 +173,35 @@ public class Zombie extends Entity {
 		}
 	}
 
+	/**
+	 * Moves the zombie towards the cell with the highest noise level on the game board.
+	 */
 	public void moveTowardsNoise(){
-		Cell cell = this.board.getCell(0, 0);
-		// TODO
+		Cell[][] cells = board.getCells();
+		Cell maxNoiseCell = board.getMaxNoise();
+
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
+		int xMaxNoiseCell = maxNoiseCell.getCoord()[0];
+		int yMaxNoiseCell = maxNoiseCell.getCoord()[1];
+		boolean canMoveNorth = (x > 0) && ((cells[x-1][y] instanceof StreetCell) || ((cells[x-1][y] instanceof BuildingCell) && !(cells[x-1][y].isLocked(Direction.SOUTH))));
+		boolean canMoveSouth = (x < board.getSize() - 1) && ((cells[x+1][y] instanceof StreetCell) || ((cells[x+1][y] instanceof BuildingCell) && !(cells[x+1][y].isLocked(Direction.NORTH))));
+		boolean canMoveEast = (y < board.getSize() - 1) && ((cells[x][y+1] instanceof StreetCell) || ((cells[x][y+1] instanceof BuildingCell) && !(cells[x][y+1].isLocked(Direction.WEST))));
+		boolean canMoveWest = (y > 0) && ((cells[x][y-1] instanceof StreetCell) || ((cells[x][y-1] instanceof BuildingCell) && !(cells[x][y-1].isLocked(Direction.EAST))));
+
+		if (x < xMaxNoiseCell && canMoveSouth) {
+			moveSouth();
+		} else if (x > xMaxNoiseCell && canMoveNorth) {
+			moveNorth();
+		} else if (y < yMaxNoiseCell && canMoveEast) {
+			moveEast();
+		} else if (y > yMaxNoiseCell && canMoveWest) {
+			moveWest();
+		}
 	}
 
 	public void move(){
-		if(this.board.getMaxNoise() != 0){
+		if(this.board.getMaxNoise().getNoiseLevel() != 0){
 			this.moveTowardsNoise();
 		}
 		else{
@@ -201,36 +225,31 @@ public class Zombie extends Entity {
 				nearestPlayer = player;
 			}
 		}
-
 		return nearestPlayer;
 	}
 
 	/**
- 	* This method allows the current entity to attack the nearest player.
- 	* It reduces the target player's hit points by the damage points of the entity.
- 	* If the target player's hit points fall to zero or below, the player is eliminated.
- 	* If the eliminated player is on a building cell, all the equipment they were holding or wearing is added to that cell.
- 	* Then, the player is removed from the game and from the cell they were on.
+ 	* Attacks the nearest player and reduces their life points by the zombie's damage.
+	*
+	* @param player the player to be attacked by the zombie.
  	*/
-     public void attack(){
-		Player P =getNearestPlayer();
-        P.setLifepoints(P.getLifepoints()-this.Damage);
-		if (P.getLifepoints() <= 0) {
-			try {
-				if(this.getCell() instanceof BuildingCell){
-					Cell zCell = this.getCell();
-					zCell.addEquipement(P.getInHand());
-					for(int i=0;i<P.getEquipments().size();i++){
-						zCell.addEquipement(P.getEquipments().get(i));
-					}
-				}
-				this.board.getPlayers().remove(P);
-				Cell cell = P.getCell();
-				cell.removePlayer(P);
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-		}
+     public void attack(Player player){
+		player.setLifepoints(player.getLifepoints() - this.Damage);
      }
 
+	 /**
+	  * Performs the zombie's action.
+	  */
+	 public void action(){
+		for(int i = 0; i < this.actionPoints; i++){
+			if(this.getCell().getPlayers().size() != 0){
+				int randomNum = new Random().nextInt(this.getCell().getPlayers().size());
+				Player randomPlayer = this.getCell().getPlayers().get(randomNum); 
+				this.attack(randomPlayer);
+			}
+			else{
+				this.move();
+			}
+		}
+	}
 }

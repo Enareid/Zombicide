@@ -72,5 +72,4 @@ public class StreetCell extends Cell{
         }
         return str;
     }
-    
 }
