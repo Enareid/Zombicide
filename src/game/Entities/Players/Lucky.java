@@ -10,7 +10,6 @@ public class Lucky extends Player{
     /**
      * Builds a new Lucky.
      * 
-     * @param Lifepoints the lifepoints of the Lucky
      * @param cell the cell where the Lucky will spawn
      * @param board the board where the Lucky will spawn
      */

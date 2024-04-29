@@ -29,7 +29,6 @@ public class Player extends Entity{
     /**
      * Builds a new player.
 	 * 
-	 * @param Lifepoints the lifepoints of the player.
 	 * @param cell the cell of the player.
      */
     public Player(Cell cell, Board board){
@@ -581,6 +580,9 @@ public class Player extends Entity{
 				Cell cell = zombie.getCell();
 				cell.removeZombie(zombie);
 				this.expertiseLevel += 1; 
+				if(this.expertiseLevel == 3 || this.expertiseLevel == 7 || this.expertiseLevel == 11){
+					this.actionPoints += 1;
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 			}

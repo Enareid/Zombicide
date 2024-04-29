@@ -10,7 +10,6 @@ public class Healer extends Player{
     /**
      * Builds a new Healer.
      * 
-     * @param Lifepoints the lifepoints of the Healer
      * @param cell the cell where the Healer will spawn
      * @param board the board where the Healer will spawn
      */

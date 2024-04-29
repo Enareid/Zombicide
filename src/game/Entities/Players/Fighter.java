@@ -10,7 +10,6 @@ public class Fighter extends Player{
     /**
      * Builds a new Fighter.
      * 
-     * @param Lifepoints the lifepoints of the Fighter
      * @param cell the cell where the Fighter will spawn
      * @param board the board where the Fighter will spawn
      */

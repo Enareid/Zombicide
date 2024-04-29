@@ -10,7 +10,6 @@ public class Snooper extends Player{
     /**
      * Builds a new Snooper.
      * 
-     * @param Lifepoints the lifepoints of the Snooper
      * @param cell the cell where the Snooper will spawn
      * @param board the board where the Snooper will spawn
      */
