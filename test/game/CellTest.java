@@ -25,6 +25,19 @@ public class CellTest {
         this.equipement = new MasterKey();
     }
 
+    @Test 
+    public void testGetCoordinates(){
+        assertEquals(0, this.cell.getCoord()[0]);
+        assertEquals(0, this.cell.getCoord()[1]);
+    }
+
+    @Test 
+    public void testGetCoordinatesWhenCellIsNotAtOrigin(){
+        this.cell = new BuildingCell(1,1);
+        assertEquals(1, this.cell.getCoord()[0]);
+        assertEquals(1, this.cell.getCoord()[1]);
+    }
+
     @Test
     public void testGetPlayersIsOk() throws Exception{
             this.cell.setPlayer(this.player);
