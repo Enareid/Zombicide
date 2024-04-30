@@ -38,11 +38,17 @@ public class ClassicalBoardTest extends BoardTest{
         assertEquals(1, this.board.getPlayers().size());
     }
 
-    @Test
-    public void testGetAndSetCell(){
-        Cell cell = new BuildingCell(0,0);
-        this.board.setCell(0, 0, cell);
-        assertEquals(cell, this.board.getCell(0, 0));
+    @Test 
+    public void testFillBoard(){
+        ClassicalBoard board = (ClassicalBoard) this.board;
+        try {
+            board.fillBoard(0, 0, 4, 4, true, board.getPlayers());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        assertEquals(5, board.getSize());
+        assertEquals(0, board.getZombies().size());
+        assertEquals(1, board.getPlayers().size());
     }
     
 }
