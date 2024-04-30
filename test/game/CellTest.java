@@ -3,6 +3,7 @@ package game;
 import org.junit.jupiter.api.*;
 
 import game.Cells.BuildingCell;
+import game.Cells.StreetCell;
 import game.Entities.*;
 import game.Entities.Players.*;
 import game.Entities.Zombies.*;
@@ -141,6 +142,13 @@ public class CellTest {
     @Test 
     public void testGetDoorWhenDoorsInCell(){
         assertEquals(4, this.cell.getDoor().size());
+    }
+
+    @Test 
+    public void testOpenDoorWhenDoorIsClosed() throws Exception{
+        assertTrue(this.cell.isLocked(Direction.NORTH));
+        this.cell.openDoor(Direction.NORTH);
+        assertFalse(this.cell.isLocked(Direction.NORTH));
     }
 
     @Test
