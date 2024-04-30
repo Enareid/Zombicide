@@ -40,6 +40,11 @@ public abstract class BoardTest {
     }
 
     @Test 
+    public void getMaxNoiseWhenNoNoise(){
+        assertEquals(0, this.board.getMaxNoise().noiseLevel);
+    }
+
+    @Test 
     public void testGetSize(){
         assertEquals(5, this.board.getSize());
     }
