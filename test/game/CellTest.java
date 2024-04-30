@@ -151,6 +151,14 @@ public class CellTest {
         assertFalse(this.cell.isLocked(Direction.NORTH));
     }
 
+    @Test 
+    public void testOpenDoorWhenDoorIsOpen() throws Exception{
+        this.cell.openDoor(Direction.NORTH);
+        assertFalse(this.cell.isLocked(Direction.NORTH));
+        this.cell.openDoor(Direction.NORTH);
+        assertFalse(this.cell.isLocked(Direction.NORTH));
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
