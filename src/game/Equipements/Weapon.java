@@ -3,6 +3,7 @@ package game.Equipements;
 import game.Equipement;
 import game.Entities.Player;
 import game.Entities.Zombie;
+import game.Entities.Players.Lucky;
 
 /** The Weapon class extends Equipement class */
 public abstract class Weapon extends Equipement{
@@ -57,6 +58,9 @@ public abstract class Weapon extends Equipement{
     public void use(Player player, Zombie zombie){
         int dice = 0;
         for (int i = 0; i < this.attempts; i++){
+            dice += player.dice();
+        }
+        if (player instanceof Lucky){
             dice += player.dice();
         }
         if (this.damage<=zombie.getResistance()){

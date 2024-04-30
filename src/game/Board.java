@@ -226,6 +226,9 @@ public abstract class Board {
     protected void initBoard(List<Player> players) throws Exception {
     }
 
+    /**
+     * Generates equipement on the board.
+     */
     public void generateEquipement(){
         Random rand = new Random();
         int numberOfEquipement = rand.nextInt(5);

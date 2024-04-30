@@ -682,6 +682,9 @@ public abstract class Player extends Entity{
         return (int)(Math.random() * 6 + 1);
     }
 
+	/**
+	 * Give all informations about players and zombies on the player's cell.
+	 */
 	public void resume(){
 		System.out.println("Players : ");
 		for (Player player : this.board.getPlayers()){
@@ -698,5 +701,10 @@ public abstract class Player extends Entity{
 		}
 	}
 
+	/**
+	 * Returns the string representation of the player.
+	 * 
+	 * @return the string representation of the player.
+	 */
 	public abstract String ToString();
 }
