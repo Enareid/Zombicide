@@ -138,6 +138,11 @@ public class CellTest {
             assertThrows(Exception.class, () -> this.cell.removeEquipement(this.equipement));
     }
 
+    @Test 
+    public void testGetDoorWhenDoorsInCell(){
+        assertEquals(4, this.cell.getDoor().size());
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
