@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public abstract class BoardTest {
 
     protected abstract Board createBoard(int size, List<Player> players);
-    private Board board;
+    protected Board board;
 
     @BeforeEach
     public void before() throws Exception{
@@ -23,6 +23,13 @@ public abstract class BoardTest {
         Player player = new Fighter(null,null);
         players.add(player);
         this.board = createBoard(5,players);
+    }
+
+    @Test 
+    public void testBoardInitialization(){
+        assertEquals(5, this.board.getSize());
+        assertEquals(0, this.board.getZombies().size());
+        assertEquals(1, this.board.getPlayers().size());
     }
 
     @Test
