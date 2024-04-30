@@ -8,16 +8,23 @@ import game.Boards.ClassicalBoard;
 import game.Entities.Player;
 import game.Entities.Zombie;
 import game.Entities.Players.Fighter;
-import game.Entities.Players.Snooper;
 
 public class Game {
     
+    /** Board of the game */
     private Board board;
+    /** True if the game is finished, false else */
     private boolean isOver = false;
 
+    /**
+     * Builds a new Game.
+     */
     public Game() {
     }
 
+    /**
+     * Initializes the game.
+     */
     public void init(){
         List<Player> players = new ArrayList<Player>();
         Scanner scanner = new Scanner(System.in);
@@ -34,6 +41,9 @@ public class Game {
         }
     }
 
+    /**
+     * Plays the game.
+     */
     public void play(){
         this.init();
         board.spawnZombie();
