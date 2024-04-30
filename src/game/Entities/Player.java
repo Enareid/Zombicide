@@ -105,7 +105,7 @@ public abstract class Player extends Entity{
 	public void setInHand(Equipement Equipement) {
 		if(this.bag.contains(Equipement)){
 			this.removeEquipement(Equipement);
-			if (this.inHand != null) {
+			if (this.inHand != null && this.inHand != hand) {
 				this.bag.add(this.inHand);
 			}
 			this.inHand = Equipement;
@@ -188,7 +188,7 @@ public abstract class Player extends Entity{
                 	break;
     
             	case "OPEN DOOR" :
-					if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+					if(!(this.inHand == null) && this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 						this.openDoor();
 						this.actionPoints -= 1;
 						this.inHand = hand;
@@ -214,7 +214,7 @@ public abstract class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-					if(this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
+					if(!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
                 		this.attackAction(this.zombieCanBeAttack(), this.zombieCanBeAttack());
 						this.actionPoints -= 1;
 						this.inHand = hand;
