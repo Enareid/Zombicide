@@ -57,6 +57,12 @@ public class CellTest {
             assertEquals(0, this.cell.getPlayers().size());
     }
 
+    @Test 
+    public void testRemovePlayerWhenPlayerIsNotOnCell(){
+            assertEquals(0, this.cell.getPlayers().size());
+            assertThrows(Exception.class, () -> this.cell.removePlayer(this.player));
+    }
+
     @Test
     public void testGetZombie() throws Exception{
             this.cell.setZombie(this.zombie);
