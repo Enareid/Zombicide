@@ -17,7 +17,7 @@ import game.Equipements.Items.MasterKey;
 import game.Equipements.Weapons.Gun;
 
 /** The Player class extends Entity class */
-public class Player extends Entity{
+public abstract class Player extends Entity{
 
 	/** The bag of the player */
     protected List<Equipement> bag;
@@ -150,7 +150,7 @@ public class Player extends Entity{
                 	break;
 				
 				case "RESUME" :
-					System.out.println(this.toString());
+					this.resume();
 					break;
     
             	case "SNOOP" :
@@ -670,4 +670,22 @@ public class Player extends Entity{
     public int dice(){
         return (int)(Math.random() * 6 + 1);
     }
+
+	public void resume(){
+		System.out.println("Players : ");
+		for (Player player : this.board.getPlayers()){
+			if(this.equals(player)){
+				System.out.println(player.ToString() + '\n');
+			}
+			else{
+				System.out.println(player.toString() + '\n');
+			}
+		}
+		System.out.println("Zombies : ");
+		for (Zombie zombie : this.getCell().getZombie()){
+			System.out.println(zombie.toString() + '\n');
+		}
+	}
+
+	public abstract String ToString();
 }

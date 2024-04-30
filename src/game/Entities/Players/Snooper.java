@@ -42,6 +42,14 @@ public class Snooper extends Player{
      * Returns the string representation of the Snooper.
      * @return the string representation of the Snooper.
      */
+    public String ToString() {
+		return "Snooper (you)" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Free snoop : " + this.freeSnoop + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
+    }
+
+    /**
+     * Returns the string representation of the Snooper.
+     * @return the string representation of the Snooper.
+     */
     public String toString() {
 		return "Snooper" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Free snoop : " + this.freeSnoop + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }

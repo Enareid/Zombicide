@@ -34,11 +34,9 @@ public class Game {
         System.out.println("Entrez le nombre de joueurs : ");
         int nbPlayers = scanner.nextInt();
         for (int i = 0; i < nbPlayers; i ++){
+            scanner.nextLine();
             System.out.println("Choissisez votre classe : FIGHTER, LUCKY, SNOOPER, HEALER");
             String classe = scanner.nextLine();
-            if(i != nbPlayers){
-                scanner.nextLine();
-            }
             switch(classe){
                 case "FIGHTER":
                     Player f = new Fighter(null, null);
@@ -57,8 +55,7 @@ public class Game {
                     players.add(h);
                     break;
                 default:
-                    Player fd = new Fighter(null, null);
-                    players.add(fd);
+                    System.out.println("Classe invalide");
                     break;
                 }
         }

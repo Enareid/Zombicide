@@ -21,6 +21,14 @@ public class Lucky extends Player{
      * Returns the string representation of the Lucky.
      * @return the string representation of the Lucky.
      */
+    public String ToString() {
+		return "Lucky (you)" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
+    }
+
+    /**
+     * Returns the string representation of the Lucky.
+     * @return the string representation of the Lucky.
+     */
     public String toString() {
 		return "Lucky" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }

@@ -30,6 +30,14 @@ public class Fighter extends Player{
      * Returns the string representation of the Fighter.
      * @return the string representation of the Fighter.
      */
+    public String ToString() {
+		return "Fighter (you)" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
+    }
+
+    /**
+     * Returns the string representation of the Fighter.
+     * @return the string representation of the Fighter.
+     */
     public String toString() {
 		return "Fighter" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }
