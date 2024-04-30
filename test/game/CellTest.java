@@ -159,6 +159,19 @@ public class CellTest {
         assertFalse(this.cell.isLocked(Direction.NORTH));
     }
 
+    @Test 
+    public void testOpenAllDoorsWhenAllDoorsIsClosed() throws Exception{
+        assertTrue(this.cell.isLocked(Direction.NORTH));
+        assertTrue(this.cell.isLocked(Direction.SOUTH));
+        assertTrue(this.cell.isLocked(Direction.EAST));
+        assertTrue(this.cell.isLocked(Direction.WEST));
+        this.cell.openAllDoor();
+        assertFalse(this.cell.isLocked(Direction.NORTH));
+        assertFalse(this.cell.isLocked(Direction.SOUTH));
+        assertFalse(this.cell.isLocked(Direction.EAST));
+        assertFalse(this.cell.isLocked(Direction.WEST));
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
