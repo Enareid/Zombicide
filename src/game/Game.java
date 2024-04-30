@@ -83,6 +83,9 @@ public class Game {
         int nbRounds = 0;
         this.init();
         while(!isOver){
+            for (Player player : board.getPlayers()) {
+                player.setActionPoints(player.getDynamiqueActionPoints());
+            }
             for (int i = 0; i < nbZombieToSpawn(); i++) {
                 board.spawnZombie();
             }

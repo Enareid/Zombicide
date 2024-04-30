@@ -68,11 +68,10 @@ public abstract class Weapon extends Equipement{
         }
         else if (dice >= this.seuil){
             zombie.takeDamage(damage);
-            System.out.println("You hit the zombie");
+            System.out.println("You hit the zombie " + zombie);
         }
         else{
             System.out.println("You missed your shot");
         }
-        System.out.println(zombie.getLifepoints());
     }
 }

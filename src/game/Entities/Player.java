@@ -29,6 +29,8 @@ public abstract class Player extends Entity{
 	/** The max life points player can have */
     static final int MAX_LIFE_LEVEL = 5;
 
+	protected int dynamiqueActionPoints = 3;
+
 	static Hand hand = new Hand();
 
 
@@ -118,6 +120,15 @@ public abstract class Player extends Entity{
 	 */
     public int getMaxLifeLevel() {
 		return MAX_LIFE_LEVEL;
+	}
+
+	/**
+	 * Get the dynamic action points of the player.
+	 * 
+	 * @return the dynamic action points of the player.
+	 */
+	public int getDynamiqueActionPoints() {
+		return this.dynamiqueActionPoints;
 	}
 
 	/**
@@ -216,7 +227,6 @@ public abstract class Player extends Entity{
                 	break;
             }
 		}
-		this.actionPoints = 3;
     }
 
 	/**
@@ -613,7 +623,7 @@ public abstract class Player extends Entity{
 				cell.removeZombie(zombie);
 				this.expertiseLevel += 1; 
 				if(this.expertiseLevel == 3 || this.expertiseLevel == 7 || this.expertiseLevel == 11){
-					this.actionPoints += 1;
+					this.dynamiqueActionPoints += 1;
 				}
 				Random rand = new Random();
 				int randomNum = rand.nextInt(100);
