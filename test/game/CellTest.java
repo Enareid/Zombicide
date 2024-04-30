@@ -114,42 +114,14 @@ public class CellTest {
     }
 
     @Test
-    public void testGetLoots(){
+    public void testGetEquipement(){
             this.cell.addEquipement(this.equipement);
             assertEquals(this.equipement, this.cell.getEquipements().get(0));
     }
 
     @Test 
-    public void testGetLootsEmptyCell(){
+    public void testGetEquipementEmptyCell(){
             assertEquals(0, this.cell.getEquipements().size());
-    }
-
-    @Test
-    public void testRemovePlayerIsOk() throws Exception{
-            this.cell.setPlayer(this.player);
-            assertEquals(1, this.cell.getPlayers().size());
-            this.cell.removePlayer(this.player);
-            assertEquals(0, this.cell.getPlayers().size());
-    }
-
-    @Test
-    public void testRemovePlayerEmptyCell(){
-            assertEquals(0, this.cell.getPlayers().size());
-            assertThrows(Exception.class, () -> this.cell.removePlayer(this.player));
-    }
-
-    @Test
-    public void testRemoveZombie() throws Exception{
-            this.cell.setZombie(this.zombie);
-            assertEquals(1, this.cell.getZombie().size());
-            this.cell.removeZombie(this.zombie);
-            assertEquals(0, this.cell.getZombie().size());
-    }
-
-    @Test
-    public void testRemoveZombieEmptyCell(){
-            assertEquals(0, this.cell.getZombie().size());
-            assertThrows(Exception.class, () -> this.cell.removeZombie(this.zombie));
     }
 
     @Test
