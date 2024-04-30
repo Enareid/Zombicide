@@ -145,4 +145,11 @@ public abstract class BoardTest {
         this.board.addPlayer(player);
         assertEquals(2, this.board.getPlayers().size());
     }
+
+    @Test 
+    public void testSpawnZombiesWhenPlayersHaveZeroExpertiseLevel(){
+        assertEquals(0, this.board.getZombies().size());
+        this.board.spawnZombie();
+        assertEquals(4, this.board.getZombies().size());
+    }
 }
