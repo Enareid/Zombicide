@@ -8,6 +8,7 @@ import game.Boards.ClassicalBoard;
 import game.Entities.Player;
 import game.Entities.Zombie;
 import game.Entities.Players.Fighter;
+import game.Entities.Players.Snooper;
 
 public class Game {
     
@@ -40,10 +41,15 @@ public class Game {
             for (Zombie zombie : board.getZombies()) {
                 zombie.action();
             }
-            for (Player player : board.getPlayers()) {
-                player.action();
+            if(board.getPlayers().size() != 0){
+                for (Player player : board.getPlayers()) {
+                    player.action();
+                }
             }
-            
+            if(board.getPlayers().size() == 0 || board.getZombies().size() == 0){
+                isOver = true;
+            }
         }
+        System.out.println("Game Over");
     }
 }

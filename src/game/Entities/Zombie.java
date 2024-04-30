@@ -235,6 +235,7 @@ public class Zombie extends Entity {
  	*/
      public void attack(Player player){
 		player.setLifepoints(player.getLifepoints() - this.Damage);
+		player.isDead();
      }
 
 	 /**

@@ -164,7 +164,8 @@ public class Player extends Entity{
 					break;
                     
             	case "MAKE NOISE" :
-                	this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+5);
+                	this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+1);
+					this.actionPoints -= 1;
                 	break;
     
             	case "OPEN DOOR" :
@@ -618,9 +619,23 @@ public class Player extends Entity{
 		}
 		else{
 			this.actionPoints -= 1;
-			if(this instanceof Snooper){
-				((Snooper)this).setFreeSnoop(1);
-			}
 		}
+	}
+
+	/**
+	 * Check if the player is dead.
+	 */
+	public boolean isDead(){
+		if (this.getLifepoints() <= 0) {
+			try {
+				this.board.getPlayers().remove(this);
+				Cell cell = this.cell;
+				cell.removePlayer(this);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			return true;
+		}
+		return false;
 	}
 }
