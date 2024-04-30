@@ -40,8 +40,15 @@ public abstract class BoardTest {
     }
 
     @Test 
-    public void getMaxNoiseWhenNoNoise(){
+    public void testGetMaxNoiseWhenNoNoise(){
         assertEquals(0, this.board.getMaxNoise().noiseLevel);
+    }
+
+    @Test 
+    public void testGetMaxNoiseWhenNoise(){
+        Cell cell = this.board.getCell(0, 0);
+        cell.setNoiseLevel(5);;
+        assertEquals(5, this.board.getMaxNoise().noiseLevel);
     }
 
     @Test 
