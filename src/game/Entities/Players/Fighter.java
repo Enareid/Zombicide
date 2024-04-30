@@ -18,6 +18,15 @@ public class Fighter extends Player{
     }
 
     /**
+     * Emulate a dice.
+     * 
+     * @return a random number between 1 and 6
+     */
+    public int dice(){
+        return (int)(Math.random() * 6 + 1) + 1;
+    }
+
+    /**
      * Returns the string representation of the Fighter.
      * @return the string representation of the Fighter.
      */

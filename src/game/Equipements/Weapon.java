@@ -37,15 +37,6 @@ public abstract class Weapon extends Equipement{
     }
 
     /**
-     * Emulate a dice.
-     * 
-     * @return a random number between 1 and 6
-     */
-    public int dice(){
-        return (int)(Math.random() * 6 + 1);
-    }
-
-    /**
      * Returns range of the weapon.
      * 
      * @return range of the weapon
@@ -67,7 +58,7 @@ public abstract class Weapon extends Equipement{
         if (this.damage<=zombie.getResistance()){
             System.out.println(zombie+" cannot be damaged by "+this);
         }
-        else if (this.dice() >= this.seuil){
+        else if (player.dice() >= this.seuil){
             zombie.takeDamage(damage);
             System.out.println("You hit the zombie");
         }

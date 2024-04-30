@@ -36,7 +36,7 @@ public class Game {
         for (int i = 0; i < nbPlayers; i ++){
             System.out.println("Choissisez votre classe : FIGHTER, LUCKY, SNOOPER, HEALER");
             String classe = scanner.nextLine();
-            if(i != nbPlayers - 1){
+            if(i != nbPlayers){
                 scanner.nextLine();
             }
             switch(classe){

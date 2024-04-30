@@ -647,4 +647,13 @@ public class Player extends Entity{
 		}
 		return false;
 	}
+
+	/**
+     * Emulate a dice.
+     * 
+     * @return a random number between 1 and 6
+     */
+    public int dice(){
+        return (int)(Math.random() * 6 + 1);
+    }
 }
