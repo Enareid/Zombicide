@@ -31,29 +31,36 @@ public class Game {
         System.out.println("Entrez la taille du plateau : ");
         int size = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Choissisez votre classe : FIGHTER, LUCKY, SNOOPER, HEALER");
-        String classe = scanner.nextLine();
-        switch(classe){
-            case "FIGHTER":
-                Player f = new Fighter(null, null);
-                players.add(f);
-                break;
-            case "LUCKY":
-                Player l = new Lucky(null, null);
-                players.add(l);
-                break;
-            case "SNOOPER":
-                Player s = new Snooper(null, null);
-                players.add(s);
-                break;
-            case "HEALER":
-                Player h = new Healer(null, null);
-                players.add(h);
-                break;
-            default:
-                Player fd = new Fighter(null, null);
-                players.add(fd);
-                break;
+        System.out.println("Entrez le nombre de joueurs : ");
+        int nbPlayers = scanner.nextInt();
+        for (int i = 0; i < nbPlayers; i ++){
+            System.out.println("Choissisez votre classe : FIGHTER, LUCKY, SNOOPER, HEALER");
+            String classe = scanner.nextLine();
+            if(i != nbPlayers - 1){
+                scanner.nextLine();
+            }
+            switch(classe){
+                case "FIGHTER":
+                    Player f = new Fighter(null, null);
+                    players.add(f);
+                    break;
+                case "LUCKY":
+                    Player l = new Lucky(null, null);
+                    players.add(l);
+                    break;
+                case "SNOOPER":
+                    Player s = new Snooper(null, null);
+                    players.add(s);
+                    break;
+                case "HEALER":
+                    Player h = new Healer(null, null);
+                    players.add(h);
+                    break;
+                default:
+                    Player fd = new Fighter(null, null);
+                    players.add(fd);
+                    break;
+                }
         }
         try{
             Board board = new ClassicalBoard(size, players);
