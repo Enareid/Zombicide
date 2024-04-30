@@ -12,8 +12,9 @@ import game.Entities.Players.Fighter;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class BoardTest {
+public abstract class BoardTest {
 
+    protected abstract Board createBoard(int size, List<Player> players);
     private Board board;
 
     @BeforeEach
@@ -21,7 +22,7 @@ public class BoardTest {
         List<Player> players = new ArrayList<Player>();
         Player player = new Fighter(null,null);
         players.add(player);
-        this.board = new ClassicalBoard(5,players);
+        this.board = createBoard(5,players);
     }
 
     @Test
