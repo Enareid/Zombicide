@@ -123,7 +123,10 @@ public class Player extends Entity{
 		while (this.getActionPoints()!= 0){
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.getActionPoints());
-			String msg = "LOOK AROUND | LOOT | EQUIP | USE | MAKE NOISE | MOVE ";
+			String msg = "LOOK AROUND | EQUIP | USE | MAKE NOISE | MOVE ";
+			if(this.getCell() instanceof BuildingCell){
+				msg += "| SNOOP ";
+			}
 			if(!(this.inHand == null) && this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += "| OPEN DOOR ";
 			}
@@ -143,10 +146,12 @@ public class Player extends Entity{
                 	break;
     
             	case "SNOOP" :
-                	try {
-						this.snoopAction();
-					} catch (Exception e) {
-						System.out.println(e);
+					if(this.getCell() instanceof BuildingCell){
+                		try {
+							this.snoopAction();
+						} catch (Exception e) {
+							System.out.println(e);
+						}
 					}
                 	break;
     
