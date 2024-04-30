@@ -80,6 +80,7 @@ public class Game {
      * Plays the game.
      */
     public void play(){
+        int nbRounds = 0;
         this.init();
         while(!isOver){
             for (int i = 0; i < nbZombieToSpawn(); i++) {
@@ -93,11 +94,16 @@ public class Game {
                     player.action();
                 }
             }
-            if(board.getPlayers().size() == 0 || board.getZombies().size() == 0){
+            if(board.getPlayers().size() == 0){
                 isOver = false;
+                System.out.println("Game Over ! Vous avez survécu "+nbRounds+" rounds");
             }
+            if(board.getZombies().size() == 0){
+                isOver = true;
+                System.out.println("Victoire ! Vous avez gagné en "+nbRounds+" rounds");
+            }
+            nbRounds++;
         }
-        System.out.println("Game Over");
     }
 
     /**
