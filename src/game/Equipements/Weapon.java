@@ -55,10 +55,14 @@ public abstract class Weapon extends Equipement{
      * @param zombie the zombie being attacked
      */
     public void use(Player player, Zombie zombie){
+        int dice = 0;
+        for (int i = 0; i < this.attempts; i++){
+            dice += player.dice();
+        }
         if (this.damage<=zombie.getResistance()){
             System.out.println(zombie+" cannot be damaged by "+this);
         }
-        else if (player.dice() >= this.seuil){
+        else if (dice >= this.seuil){
             zombie.takeDamage(damage);
             System.out.println("You hit the zombie");
         }

@@ -612,6 +612,12 @@ public abstract class Player extends Entity{
 				if(this.expertiseLevel == 3 || this.expertiseLevel == 7 || this.expertiseLevel == 11){
 					this.actionPoints += 1;
 				}
+				Random rand = new Random();
+				int randomNum = rand.nextInt(100);
+				if(randomNum < 30){
+					MasterKey mk = new MasterKey();
+					this.setEquipment(mk);
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 			}
