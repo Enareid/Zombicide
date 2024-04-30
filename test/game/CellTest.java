@@ -49,6 +49,14 @@ public class CellTest {
             assertEquals(0, this.cell.getPlayers().size());
     }
 
+    @Test 
+    public void testRemovePlayerWhenPlayerIsOnCell() throws Exception{
+            this.cell.setPlayer(this.player);
+            assertEquals(1, this.cell.getPlayers().size());
+            this.cell.removePlayer(this.player);
+            assertEquals(0, this.cell.getPlayers().size());
+    }
+
     @Test
     public void testGetZombie() throws Exception{
             this.cell.setZombie(this.zombie);
