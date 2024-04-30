@@ -157,4 +157,11 @@ public abstract class BoardTest {
         this.board.generateEquipement();
         assertTrue(this.board.getCell(0, 0).getEquipements().size() > 0);
     }
+
+    @Test 
+    public void testCreateFakeboard(){
+        Cell[][] fakeBoard = this.board.createFakeboard();
+        assertEquals(this.board.getSize(), fakeBoard.length);
+        assertEquals(this.board.getSize(), fakeBoard[0].length);
+    }
 }
