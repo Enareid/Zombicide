@@ -115,4 +115,9 @@ public abstract class BoardTest {
         this.board.removeZombie(zombie);
         assertEquals(0, this.board.getZombies().size());
     }
+
+    @Test 
+    public void testGetPlayersWhenPlayersInBoard(){
+        assertEquals(1, this.board.getPlayers().size());
+    }
 }
