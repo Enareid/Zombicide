@@ -3,6 +3,7 @@ import game.Equipement;
 import game.Boards.ClassicalBoard;
 import game.Cells.BuildingCell;
 import game.Cells.StreetCell;
+import game.Entities.Players.Healer;
 import game.Entities.Players.Snooper;
 import game.Board;
 import game.Cell;
@@ -124,6 +125,9 @@ public class Player extends Entity{
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.getActionPoints());
 			String msg = "LOOK AROUND | RESUME | EQUIP | USE | MAKE NOISE | MOVE ";
+			if(this instanceof Healer){
+				msg += "| HEAL ";
+			}
 			if(this.getCell() instanceof BuildingCell){
 				msg += "| SNOOP ";
 			}
@@ -187,6 +191,16 @@ public class Player extends Entity{
             	case "MOVE" :
 					this.move();
 					this.actionPoints -= 1;
+					break;
+
+				case "HEAL" :
+					if(this instanceof Healer){
+						int randumNum = (int)(Math.random() * this.board.getPlayers().size());
+ 						Player randPlayer = this.board.getPlayers().get(randumNum);
+						if(randPlayer.getLifepoints() + 1 <= randPlayer.getMaxLifeLevel()){
+							randPlayer.setLifepoints(randPlayer.getLifepoints() + 1);
+						}
+					}
 					break;
     
             	case "ATTACK" :
