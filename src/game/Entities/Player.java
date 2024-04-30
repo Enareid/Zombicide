@@ -123,7 +123,7 @@ public class Player extends Entity{
 		while (this.getActionPoints()!= 0){
 			Scanner in = new Scanner(System.in);
 			System.out.println("What to do ? / Number of action's points : " + this.getActionPoints());
-			String msg = "LOOK AROUND | EQUIP | USE | MAKE NOISE | MOVE ";
+			String msg = "LOOK AROUND | RESUME | EQUIP | USE | MAKE NOISE | MOVE ";
 			if(this.getCell() instanceof BuildingCell){
 				msg += "| SNOOP ";
 			}
@@ -144,6 +144,10 @@ public class Player extends Entity{
 						System.out.println(e);
 					}
                 	break;
+				
+				case "RESUME" :
+					System.out.println(this.toString());
+					break;
     
             	case "SNOOP" :
 					if(this.getCell() instanceof BuildingCell){
