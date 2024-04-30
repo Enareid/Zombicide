@@ -92,6 +92,11 @@ public class Game {
         System.out.println("Game Over");
     }
 
+    /**
+     * Returns the number of zombies to spawn.
+     * 
+     * @return the number of zombies to spawn
+     */
     public double nbZombieToSpawn(){
         int totalExperience = 0;
         for (Player player : board.getPlayers()) {
