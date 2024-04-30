@@ -32,6 +32,11 @@ public abstract class BoardTest {
         assertEquals(1, this.board.getPlayers().size());
     }
 
+    @Test 
+    public void testGetSize(){
+        assertEquals(5, this.board.getSize());
+    }
+
     @Test
     public void testGetAndSetCell(){
         Cell cell = new BuildingCell(0,0);
