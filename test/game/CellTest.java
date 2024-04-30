@@ -186,6 +186,11 @@ public class CellTest {
         assertFalse(this.cell.isLocked(Direction.WEST));
     }
 
+    @Test 
+    public void testGetNoiseLevelWhenNoiseLevelIsNull(){
+        assertEquals(0, this.cell.getNoiseLevel());
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
