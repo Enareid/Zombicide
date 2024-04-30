@@ -15,6 +15,7 @@ import java.util.*;
 
 import game.Equipements.Items.MasterKey;
 import game.Equipements.Weapons.Gun;
+import game.Equipements.Weapons.Hand;
 
 /** The Player class extends Entity class */
 public abstract class Player extends Entity{
@@ -27,6 +28,8 @@ public abstract class Player extends Entity{
 	private int expertiseLevel;
 	/** The max life points player can have */
     static final int MAX_LIFE_LEVEL = 5;
+
+	static Hand hand = new Hand();
 
 
     /**
@@ -170,7 +173,10 @@ public abstract class Player extends Entity{
             	case "USE" :
 					try {
 						this.inHand.use(this);
-						this.inHand = null;
+						this.inHand = hand;
+						if(this.getEquipments().contains(this.inHand)){
+							this.inHand = null;
+						}
 					} catch (Exception e) {
 						System.out.println(e);
 					}
@@ -185,7 +191,10 @@ public abstract class Player extends Entity{
 					if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 						this.openDoor();
 						this.actionPoints -= 1;
-						this.inHand = null;
+						this.inHand = hand;
+						if(this.getEquipments().contains(this.inHand)){
+							this.inHand = null;
+						}
 					}
 					break;
     
@@ -205,10 +214,13 @@ public abstract class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-					if(!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
+					if(this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
                 		this.attackAction(this.zombieCanBeAttack(), this.zombieCanBeAttack());
 						this.actionPoints -= 1;
-						this.inHand = null;
+						this.inHand = hand;
+						if(this.getEquipments().contains(this.inHand)){
+							this.inHand = null;
+						}
 					}
                 	break;
             }

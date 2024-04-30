@@ -17,6 +17,6 @@ public class Hand extends Weapon{
    * @return the string representation of the Rifle.
    */
   public String toString() {
-    return "Rifle";
+    return "Hand";
   }
 }
