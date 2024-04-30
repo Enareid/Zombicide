@@ -33,6 +33,13 @@ public abstract class BoardTest {
     }
 
     @Test 
+    public void testGetCells(){
+        Cell[][] cells = this.board.getCells();
+        assertEquals(5, cells.length);
+        assertEquals(5, cells[0].length);
+    }
+
+    @Test 
     public void testGetSize(){
         assertEquals(5, this.board.getSize());
     }
