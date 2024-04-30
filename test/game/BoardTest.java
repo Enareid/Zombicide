@@ -71,4 +71,9 @@ public abstract class BoardTest {
         this.board.setCell(0, 0, cell);
         assertEquals(cell, this.board.getCell(0, 0));
     }
+
+    @Test 
+    public void testGetZombiesWhenNoZombies(){
+        assertEquals(0, this.board.getZombies().size());
+    }
 }
