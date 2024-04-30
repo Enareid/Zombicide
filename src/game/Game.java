@@ -73,8 +73,10 @@ public class Game {
      */
     public void play(){
         this.init();
-        board.spawnZombie();
         while(!isOver){
+            for (int i = 0; i < nbZombieToSpawn(); i++) {
+                board.spawnZombie();
+            }
             for (Zombie zombie : board.getZombies()) {
                 zombie.action();
             }
@@ -88,5 +90,17 @@ public class Game {
             }
         }
         System.out.println("Game Over");
+    }
+
+    public double nbZombieToSpawn(){
+        int totalExperience = 0;
+        for (Player player : board.getPlayers()) {
+            totalExperience += player.getExpertiseLevel();
+        }
+        double averageExperience = totalExperience / board.getPlayers().size();
+        if(averageExperience == 0){
+            return 1;
+        }
+        return Math.ceil(averageExperience / 3);
     }
 }
