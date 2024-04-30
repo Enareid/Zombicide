@@ -78,6 +78,16 @@ public class CellTest {
             assertEquals(0, this.cell.getPlayers().size());
     }
 
+    @Test 
+    public void testRemovePlayersWhenMultiplePlayersOnCell() throws Exception{
+            this.cell.setPlayer(this.player);
+            Player player2 = new Fighter(this.cell,null);
+            this.cell.setPlayer(player2);
+            assertEquals(2, this.cell.getPlayers().size());
+            this.cell.removePlayers();
+            assertEquals(0, this.cell.getPlayers().size());
+    }
+
     @Test
     public void testGetZombie() throws Exception{
             this.cell.setZombie(this.zombie);
