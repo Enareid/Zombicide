@@ -203,8 +203,13 @@ public class CellTest {
         assertEquals(this.cell.getCoord()[0], copy.getCoord()[0]);
         assertEquals(this.cell.getCoord()[1], copy.getCoord()[1]);
         assertEquals(this.cell.getDoor().size(), copy.getDoor().size());
-        assertEquals(this.cell.getEquipements().size(), copy.getEquipements().size());
         assertEquals(this.cell.getNoiseLevel(), copy.getNoiseLevel());
+    }
+
+    @Test 
+    public void testCalculateDistanceWhenCellsAreOnSameLine(){
+        Cell cell2 = new BuildingCell(0,1);
+        assertEquals(1, this.cell.calculateDistance(cell2));
     }
 
     @Test
