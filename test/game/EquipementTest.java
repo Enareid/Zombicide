@@ -21,7 +21,7 @@ public class EquipementTest {
     @BeforeEach
     public void before() throws Exception{
         List<Player> players = new ArrayList<Player>();
-        Player player = new Fighter(5,null,null);
+        Player player = new Fighter(null,null);
         players.add(player);
         this.board = new ClassicalBoard(5,players);
         this.player=player;

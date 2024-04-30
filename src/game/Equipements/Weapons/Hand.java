@@ -8,7 +8,7 @@ public class Hand extends Weapon{
    * Builds a new Rifle.
    */
   public Hand(){
-    super(6, 1,1,1, 1);
+    super(6, 1,0,0, 1);
     this.isWeapon = true;
   }
 
