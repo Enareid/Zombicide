@@ -212,6 +212,12 @@ public class CellTest {
         assertEquals(1, this.cell.calculateDistance(cell2));
     }
 
+    @Test 
+    public void testCalculateDistanceWhenCellsAreOnSameColumn(){
+        Cell cell2 = new BuildingCell(1,0);
+        assertEquals(1, this.cell.calculateDistance(cell2));
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
