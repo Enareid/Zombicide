@@ -197,6 +197,16 @@ public class CellTest {
         assertEquals(5, this.cell.getNoiseLevel());
     }
 
+    @Test 
+    public void testCreateCopyWithEmptyCell(){
+        Cell copy = this.cell.createCopy();
+        assertEquals(this.cell.getCoord()[0], copy.getCoord()[0]);
+        assertEquals(this.cell.getCoord()[1], copy.getCoord()[1]);
+        assertEquals(this.cell.getDoor().size(), copy.getDoor().size());
+        assertEquals(this.cell.getEquipements().size(), copy.getEquipements().size());
+        assertEquals(this.cell.getNoiseLevel(), copy.getNoiseLevel());
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
