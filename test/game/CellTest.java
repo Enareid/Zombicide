@@ -99,6 +99,14 @@ public class CellTest {
             assertEquals(0, this.cell.getZombie().size());
     }
 
+    @Test 
+    public void testRemoveZombieWhenZombieInTheCell() throws Exception{
+            this.cell.setZombie(this.zombie);
+            assertEquals(1, this.cell.getZombie().size());
+            this.cell.removeZombie(this.zombie);
+            assertEquals(0, this.cell.getZombie().size());
+    }
+
     @Test
     public void testGetLoots(){
             this.cell.addEquipement(this.equipement);
