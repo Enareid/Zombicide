@@ -38,7 +38,7 @@ public abstract class Player extends Entity{
         super(MAX_LIFE_LEVEL, cell, board,3);
         this.expertiseLevel = 0;
         this.bag = new ArrayList<Equipement>();
-		this.inHand = new MasterKey();
+		this.inHand = new Gun();
     }
 
 	/**
@@ -185,6 +185,7 @@ public abstract class Player extends Entity{
 					if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 						this.openDoor();
 						this.actionPoints -= 1;
+						this.inHand = null;
 					}
 					break;
     

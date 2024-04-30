@@ -8,6 +8,7 @@ import game.Boards.ClassicalBoard;
 import game.Entities.Player;
 import game.Entities.Zombie;
 import game.Entities.Players.*;
+import game.Equipements.Items.MasterKey;
 
 public class Game {
     
@@ -15,6 +16,8 @@ public class Game {
     private Board board;
     /** True if the game is finished, false else */
     private boolean isOver = false;
+
+    static MasterKey mk = new MasterKey();
 
     /**
      * Builds a new Game.
@@ -41,18 +44,22 @@ public class Game {
                 case "FIGHTER":
                     Player f = new Fighter(null, null);
                     players.add(f);
+                    f.setEquipment(mk);
                     break;
                 case "LUCKY":
                     Player l = new Lucky(null, null);
                     players.add(l);
+                    l.setEquipment(mk);
                     break;
                 case "SNOOPER":
                     Player s = new Snooper(null, null);
                     players.add(s);
+                    s.setEquipment(mk);
                     break;
                 case "HEALER":
                     Player h = new Healer(null, null);
                     players.add(h);
+                    h.setEquipment(mk);
                     break;
                 default:
                     System.out.println("Classe invalide");
