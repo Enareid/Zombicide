@@ -8,6 +8,8 @@ import game.Boards.*;
 import game.Cells.BuildingCell;
 import game.Entities.Player;
 import game.Entities.Players.Fighter;
+import game.Entities.Zombie;
+import game.Entities.Zombies.Walker;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -75,5 +77,13 @@ public abstract class BoardTest {
     @Test 
     public void testGetZombiesWhenNoZombies(){
         assertEquals(0, this.board.getZombies().size());
+    }
+
+    @Test 
+    public void testAddZombie(){
+        assertEquals(0, this.board.getZombies().size());
+        Zombie zombie = new Walker(this.board.getCell(0, 0), this.board);
+        this.board.addZombie(zombie);
+        assertEquals(1, this.board.getZombies().size());
     }
 }
