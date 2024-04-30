@@ -137,4 +137,12 @@ public abstract class BoardTest {
         this.board.addPlayer(player);
         assertEquals(2, this.board.getPlayers().size());
     }
+
+    @Test 
+    public void testGetPlayersWhenMultiplePlayersInBoard(){
+        assertEquals(1, this.board.getPlayers().size());
+        Player player = new Fighter(this.board.getCell(0, 0), this.board);
+        this.board.addPlayer(player);
+        assertEquals(2, this.board.getPlayers().size());
+    }
 }
