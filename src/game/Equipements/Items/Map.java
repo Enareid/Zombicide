@@ -18,7 +18,7 @@ public class Map extends Equipement{
      * @param player the player using the Map
      */
     public void use(Player player){
-        player.getBoard().toString();
+        System.out.println(player.getBoard().toString());
     }
 
     /**

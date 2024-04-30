@@ -134,10 +134,10 @@ public abstract class Player extends Entity{
 			if(this.getCell() instanceof BuildingCell){
 				msg += "| SNOOP ";
 			}
-			if(!(this.inHand == null) && this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+			if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 				msg += "| OPEN DOOR ";
 			}
-			if (!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
+			if (this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
 				msg += "| ATTACK ";
 			}
 			System.out.println(msg);
@@ -174,9 +174,6 @@ public abstract class Player extends Entity{
 					try {
 						this.inHand.use(this);
 						this.inHand = hand;
-						if(this.getEquipments().contains(this.inHand)){
-							this.inHand = null;
-						}
 					} catch (Exception e) {
 						System.out.println(e);
 					}
@@ -188,13 +185,10 @@ public abstract class Player extends Entity{
                 	break;
     
             	case "OPEN DOOR" :
-					if(!(this.inHand == null) && this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+					if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
 						this.openDoor();
 						this.actionPoints -= 1;
 						this.inHand = hand;
-						if(this.getEquipments().contains(this.inHand)){
-							this.inHand = null;
-						}
 					}
 					break;
     
@@ -214,13 +208,10 @@ public abstract class Player extends Entity{
 					break;
     
             	case "ATTACK" :
-					if(!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
+					if(this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
                 		this.attackAction(this.zombieCanBeAttack(), this.zombieCanBeAttack());
 						this.actionPoints -= 1;
 						this.inHand = hand;
-						if(this.getEquipments().contains(this.inHand)){
-							this.inHand = null;
-						}
 					}
                 	break;
             }
