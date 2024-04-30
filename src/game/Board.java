@@ -6,6 +6,9 @@ import game.Cells.StreetCell;
 import java.util.*;
 import game.Entities.*;
 import game.Entities.Zombies.*;
+import game.Equipements.Items.*;
+import game.Equipements.Weapons.*;
+import game.Equipements.Items.Map;
 
 /** The Board class */
 public abstract class Board {
@@ -221,6 +224,60 @@ public abstract class Board {
      * @throws Exception
      */
     protected void initBoard(List<Player> players) throws Exception {
+    }
+
+    public void generateEquipement(){
+        Random rand = new Random();
+        int numberOfEquipement = rand.nextInt(5);
+        for (int i = 0; i < numberOfEquipement; i++){
+            for (int j = 0; j < this.size; j++){
+                for (int k = 0; k < this.size; k++){
+                    if (this.cells[j][k] instanceof BuildingCell){
+                        int z = rand.nextInt(100);
+                        if (z < 10){
+                            Gun gun = new Gun();
+                            this.cells[j][k].addEquipement(gun);
+                        }
+                        else if (z < 20){
+                            Rifle rifle = new Rifle();
+                            this.cells[j][k].addEquipement(rifle);
+                        }
+                        else if (z < 30){
+                            Crowbar crowbar = new Crowbar();
+                            this.cells[j][k].addEquipement(crowbar);
+                        }
+                        else if (z < 40){
+                            Chainsaw chainsaw = new Chainsaw();
+                            this.cells[j][k].addEquipement(chainsaw);
+                        }
+                        else if (z < 50){
+                            Axe axe = new Axe();
+                            this.cells[j][k].addEquipement(axe);
+                        }
+                        else if (z < 60){
+                            FirstAidKit firstAidKit = new FirstAidKit();
+                            this.cells[j][k].addEquipement(firstAidKit);
+                        }
+                        else if (z < 70){
+                            HealingVial healingVial = new HealingVial();
+                            this.cells[j][k].addEquipement(healingVial);
+                        }
+                        else if (z < 80){
+                            InfraredGlasses infraredGlasses = new InfraredGlasses();
+                            this.cells[j][k].addEquipement(infraredGlasses);
+                        }
+                        else if (z < 90){
+                            Map map = new Map();
+                            this.cells[j][k].addEquipement(map);
+                        }
+                        else{
+                            MasterKey masterKey = new MasterKey();
+                            this.cells[j][k].addEquipement(masterKey);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /**

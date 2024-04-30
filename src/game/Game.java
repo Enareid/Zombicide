@@ -61,6 +61,7 @@ public class Game {
         }
         try{
             Board board = new ClassicalBoard(size, players);
+            board.generateEquipement();
             this.board = board;
         }
         catch(Exception e){
@@ -86,7 +87,7 @@ public class Game {
                 }
             }
             if(board.getPlayers().size() == 0 || board.getZombies().size() == 0){
-                isOver = true;
+                isOver = false;
             }
         }
         System.out.println("Game Over");

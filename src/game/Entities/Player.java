@@ -38,7 +38,7 @@ public abstract class Player extends Entity{
         super(MAX_LIFE_LEVEL, cell, board,3);
         this.expertiseLevel = 0;
         this.bag = new ArrayList<Equipement>();
-		this.inHand = new Gun();
+		this.inHand = new MasterKey();
     }
 
 	/**
@@ -207,6 +207,7 @@ public abstract class Player extends Entity{
 					if(!(this.inHand == null) && this.inHand.getIsWeapon() && this.zombieCanBeAttack().size() > 0 ){
                 		this.attackAction(this.zombieCanBeAttack(), this.zombieCanBeAttack());
 						this.actionPoints -= 1;
+						this.inHand = null;
 					}
                 	break;
             }
@@ -634,7 +635,7 @@ public abstract class Player extends Entity{
 		}
 		System.out.println(msg);
 		String action = in.nextLine();
-		int index = Integer.parseInt(action);
+		int index = Integer.parseInt(action) - 1;
 		this.bag.add(this.cell.getEquipements().get(index));
 		this.cell.removeEquipement(this.cell.getEquipements().get(index));
 		if(this instanceof Snooper && ((Snooper)this).getFreeSnoop() == 1){
