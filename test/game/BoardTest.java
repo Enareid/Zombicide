@@ -18,6 +18,8 @@ public abstract class BoardTest {
 
     protected abstract Board createBoard(int size, List<Player> players);
     protected Board board;
+    protected Player player;
+    protected List<Player> players;
 
     @BeforeEach
     public void before() throws Exception{
@@ -119,5 +121,12 @@ public abstract class BoardTest {
     @Test 
     public void testGetPlayersWhenPlayersInBoard(){
         assertEquals(1, this.board.getPlayers().size());
+    }
+
+    @Test 
+    public void testGetPlayersWhenNoPlayersInBoard(){
+        assertEquals(1, this.board.getPlayers().size());
+        this.board.getPlayers().remove(0);
+        assertEquals(0, this.board.getPlayers().size());
     }
 }
