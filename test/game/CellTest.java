@@ -191,6 +191,12 @@ public class CellTest {
         assertEquals(0, this.cell.getNoiseLevel());
     }
 
+    @Test 
+    public void testGetNoiseLevelWhenNoiseLevelIsNotNull(){
+        this.cell.setNoiseLevel(5);
+        assertEquals(5, this.cell.getNoiseLevel());
+    }
+
     @Test
     public void testToString(){
         assertEquals("B        ", this.cell.toString());
