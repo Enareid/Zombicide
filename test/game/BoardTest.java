@@ -86,4 +86,14 @@ public abstract class BoardTest {
         this.board.addZombie(zombie);
         assertEquals(1, this.board.getZombies().size());
     }
+
+    @Test 
+    public void testRemoveZombieWhenZombieInBoard(){
+        assertEquals(0, this.board.getZombies().size());
+        Zombie zombie = new Walker(this.board.getCell(0, 0), this.board);
+        this.board.addZombie(zombie);
+        assertEquals(1, this.board.getZombies().size());
+        this.board.removeZombie(zombie);
+        assertEquals(0, this.board.getZombies().size());
+    }
 }
