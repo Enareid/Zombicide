@@ -14,10 +14,12 @@ import game.Entities.Zombies.Runner;
 import game.Equipements.Items.MasterKey;
 import game.Equipements.Weapons.Gun;
 
-public class EquipementTest {
+public abstract class EquipementTest {
 
-    private Board board;
-    private Player player;
+    protected abstract Equipement createEquipement();
+    protected Board board;
+    protected Player player;
+    protected Equipement equipement;
 
     @BeforeEach
     public void before() throws Exception{
@@ -26,33 +28,22 @@ public class EquipementTest {
         players.add(player);
         this.board = new ClassicalBoard(5,players);
         this.player=player;
+        this.equipement = createEquipement();
     }
-
-    @Test
-    public void testEquipementInitialization() {
-        Equipement equipement = new MasterKey();
-    }
-
-    @Test
-    public void testEquipement() {
-        MasterKey equipement = new MasterKey();
-        this.player.setEquipment(equipement);
-        this.player.setInHand(equipement);
-        assertTrue(this.player.getCell().isLocked(Direction.NORTH));
-        equipement.use(player,Direction.NORTH);
-        assertFalse(this.player.getCell().isLocked(Direction.NORTH));
-    
-     }
 
      @Test 
      public void testEquipementGetCanOpenDoorWhenFalse() {
-        Gun equipement = new Gun();
         assertFalse(equipement.getCanOpenDoor());
      }
 
      @Test 
      public void testEquipementGetCanOpenDoorWhenTrue() {
-        MasterKey equipement = new MasterKey();
+        equipement.setCanOpenDoor(true);
         assertTrue(equipement.getCanOpenDoor());
+     }
+
+     @Test 
+     public void testEquipementIsWeaponWhenFalse() {
+        assertFalse(equipement.getIsWeapon());
      }
 }

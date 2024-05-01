@@ -27,12 +27,30 @@ public abstract class Equipement{
 	}
 
 	/**
+	 * Set if the equipement can open a door.
+	 * 
+	 * @param canOpenDoor if the equipement can open a door
+	 */
+	public void setCanOpenDoor(boolean canOpenDoor) {
+		this.canOpenDoor = canOpenDoor;
+	}
+
+	/**
 	 * Returns if the equipement is a weapon.
 	 * 
 	 * @return if the equipement is a weapon
 	 */
 	public boolean getIsWeapon() {
 		return this.isWeapon;
+	}
+
+	/**
+	 * Set if the equipement is a weapon.
+	 * 
+	 * @param isWeapon if the equipement is a weapon
+	 */
+	public void setIsWeapon(boolean isWeapon) {
+		this.isWeapon = isWeapon;
 	}
 
 	/**
