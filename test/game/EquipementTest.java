@@ -12,6 +12,7 @@ import game.Entities.Player;
 import game.Entities.Players.Fighter;
 import game.Entities.Zombies.Runner;
 import game.Equipements.Items.MasterKey;
+import game.Equipements.Weapons.Gun;
 
 public class EquipementTest {
 
@@ -41,5 +42,11 @@ public class EquipementTest {
         equipement.use(player,Direction.NORTH);
         assertFalse(this.player.getCell().isLocked(Direction.NORTH));
     
+     }
+
+     @Test 
+     public void testEquipementGetCanOpenDoorWhenFalse() {
+        Gun equipement = new Gun();
+        assertFalse(equipement.getCanOpenDoor());
      }
 }
