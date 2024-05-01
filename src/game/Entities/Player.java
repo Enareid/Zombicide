@@ -18,7 +18,7 @@ import game.Equipements.Weapons.Gun;
 import game.Equipements.Weapons.Hand;
 
 /** The Player class extends Entity class */
-public abstract class Player extends Entity{
+public class Player extends Entity{
 
 	/** The bag of the player */
     protected List<Equipement> bag;
@@ -716,5 +716,7 @@ public abstract class Player extends Entity{
 	 * 
 	 * @return the string representation of the player.
 	 */
-	public abstract String ToString();
+	public String ToString(){
+		return "Player (you)" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
+	}
 }
