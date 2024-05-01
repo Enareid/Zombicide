@@ -46,4 +46,10 @@ public abstract class EquipementTest {
      public void testEquipementIsWeaponWhenFalse() {
         assertFalse(equipement.getIsWeapon());
      }
+
+     @Test 
+     public void testEquipementIsWeaponWhenTrue() {
+        equipement.setIsWeapon(true);
+        assertTrue(equipement.getIsWeapon());
+     }
 }
