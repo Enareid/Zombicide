@@ -4,24 +4,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import game.Equipements.Weapon;
-import game.Equipements.Weapons.Axe;
+import game.Equipements.Weapons.Chainsaw;
 
-public class AxeTest extends WeaponTest{
+public class ChainsawTest extends WeaponTest{
 
     protected Equipement createEquipement(){
-        return new Axe();
+        return new Chainsaw();
     }
-    protected Equipement Axe;
+    private Equipement chainsaw;
 
     @BeforeEach
     public void before() throws Exception{
         super.before();
-        this.Axe = createEquipement();
+        this.chainsaw = createEquipement();
     }
 
     @Test
     public void testToString() {
-        assertEquals("Axe", Axe.toString());
+        assertEquals("Chainsaw", chainsaw.toString());
     }
     
 }
