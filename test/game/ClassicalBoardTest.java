@@ -50,5 +50,4 @@ public class ClassicalBoardTest extends BoardTest{
         assertEquals(0, board.getZombies().size());
         assertEquals(1, board.getPlayers().size());
     }
-    
 }
