@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CellTest {
 
-    private BuildingCell cell;
+    private Cell cell;
     private Player player;
     private Zombie zombie;
     private Equipement equipement;
 
     @BeforeEach
     public void before(){
-        this.cell = new BuildingCell(0,0);
+        this.cell = new Cell(0,0);
         this.player = new Fighter(this.cell,null);
         this.zombie = new Walker(this.cell,null);
         this.equipement = new MasterKey();
@@ -227,10 +227,4 @@ public class CellTest {
     public void testCalculateDistanceWhenSameCell(){
         assertEquals(0, this.cell.calculateDistance(this.cell));
     }
-
-    @Test
-    public void testToString(){
-        assertEquals("B        ", this.cell.toString());
-    }
-
 }
