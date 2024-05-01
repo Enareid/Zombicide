@@ -2,7 +2,6 @@ package game;
 
 import org.junit.jupiter.api.*;
 
-import game.PlayerTest;
 import game.Boards.ClassicalBoard;
 
 import static org.junit.jupiter.api.Assertions.*;

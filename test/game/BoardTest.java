@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import game.Boards.*;
 import game.Cells.BuildingCell;
 import game.Entities.Player;
 import game.Entities.Players.Fighter;

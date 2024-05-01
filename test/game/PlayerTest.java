@@ -13,7 +13,6 @@ import game.Boards.*;
 
 import game.Entities.Player;
 import game.Entities.Zombie;
-import game.Entities.Players.*;
 import game.Entities.Zombies.Walker;
 import game.Equipements.Weapons.*;
 

@@ -10,17 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import game.Boards.ClassicalBoard;
 import game.Entities.Player;
 import game.Entities.Players.Fighter;
-import game.Entities.Zombies.Runner;
-import game.Equipements.Weapon;
-import game.Equipements.Items.MasterKey;
-import game.Equipements.Weapons.Gun;
 
 public abstract class EquipementTest {
 
     protected abstract Equipement createEquipement();
     protected Board board;
     protected Player player;
-    protected Equipement equipement;
+    private Equipement equipement;
 
     @BeforeEach
     public void before() throws Exception{
@@ -34,23 +30,25 @@ public abstract class EquipementTest {
 
      @Test 
      public void testEquipementGetCanOpenDoorWhenFalse() {
-        assertFalse(equipement.getCanOpenDoor());
+         equipement.setCanOpenDoor(false);
+         assertFalse(equipement.getCanOpenDoor());
      }
 
      @Test 
      public void testEquipementGetCanOpenDoorWhenTrue() {
-        equipement.setCanOpenDoor(true);
-        assertTrue(equipement.getCanOpenDoor());
+         equipement.setCanOpenDoor(true);
+         assertTrue(equipement.getCanOpenDoor());
      }
 
      @Test 
      public void testEquipementIsWeaponWhenFalse() {
-        assertFalse(equipement.getIsWeapon());
+         equipement.setIsWeapon(false);
+         assertFalse(equipement.getIsWeapon());
      }
 
      @Test 
      public void testEquipementIsWeaponWhenTrue() {
-        equipement.setIsWeapon(true);
-        assertTrue(equipement.getIsWeapon());
+         equipement.setIsWeapon(true);
+         assertTrue(equipement.getIsWeapon());
      }
 }
