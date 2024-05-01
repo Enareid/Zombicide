@@ -49,4 +49,10 @@ public class EquipementTest {
         Gun equipement = new Gun();
         assertFalse(equipement.getCanOpenDoor());
      }
+
+     @Test 
+     public void testEquipementGetCanOpenDoorWhenTrue() {
+        MasterKey equipement = new MasterKey();
+        assertTrue(equipement.getCanOpenDoor());
+     }
 }
