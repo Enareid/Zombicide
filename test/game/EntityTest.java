@@ -1,12 +1,8 @@
 package game;
-
 import java.util.*;
-
 import org.junit.jupiter.api.*;
-
 import game.Boards.*;
 import game.Entities.Player;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EntityTest {
