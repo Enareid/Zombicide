@@ -104,6 +104,17 @@ public class Weapon extends Equipement{
     }
 
     /**
+     * Set the range of the weapon.
+     * 
+     * @param minrange the minimum range of the weapon
+     * @param maxrange the maximum range of the weapon
+     */
+    public void setRange(int minrange, int maxrange){
+        this.minrange = minrange;
+        this.maxrange = maxrange;
+    }
+
+    /**
      * Use the weapon.
      * 
      * @param player the player using the weapon

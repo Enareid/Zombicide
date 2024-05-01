@@ -11,6 +11,7 @@ import game.Boards.ClassicalBoard;
 import game.Entities.Player;
 import game.Entities.Players.Fighter;
 import game.Entities.Zombies.Runner;
+import game.Equipements.Weapon;
 import game.Equipements.Items.MasterKey;
 import game.Equipements.Weapons.Gun;
 
