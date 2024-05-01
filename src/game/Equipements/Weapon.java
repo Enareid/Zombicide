@@ -6,7 +6,7 @@ import game.Entities.Zombie;
 import game.Entities.Players.Lucky;
 
 /** The Weapon class extends Equipement class */
-public abstract class Weapon extends Equipement{
+public class Weapon extends Equipement{
 
     /** The seuil who weapon succes his attack */
     protected int seuil;
@@ -34,6 +34,60 @@ public abstract class Weapon extends Equipement{
         this.damage = damage;
         this.minrange = minrange;
         this.maxrange = maxrange;
+        this.attempts = attempts;
+    }
+
+    /**
+     * Returns the seuil of the weapon.
+     * 
+     * @return the seuil of the weapon
+     */
+    public int getSeuil(){
+        return this.seuil;
+    }
+
+    /**
+     * Set the seuil of the weapon.
+     * 
+     * @param seuil the seuil of the weapon
+     */
+    public void setSeuil(int seuil){
+        this.seuil = seuil;
+    }
+
+    /**
+     * Returns the damage of the weapon.
+     * 
+     * @return the damage of the weapon
+     */
+    public int getDamage(){
+        return this.damage;
+    }
+
+    /**
+     * Set the damage of the weapon.
+     * 
+     * @param damage the damage of the weapon
+     */
+    public void setDamage(int damage){
+        this.damage = damage;
+    }
+
+    /**
+     * Returns the number of dice to roll for the weapon.
+     * 
+     * @return the number of dice to roll for the weapon
+     */
+    public int getAttempts(){
+        return this.attempts;
+    }
+
+    /**
+     * Set the number of dice to roll for the weapon.
+     * 
+     * @param attempts the number of dice to roll for the weapon
+     */
+    public void setAttempts(int attempts){
         this.attempts = attempts;
     }
 
