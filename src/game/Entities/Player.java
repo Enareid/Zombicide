@@ -529,7 +529,7 @@ public class Player extends Entity{
 		int count = 0;
 		int index = 0;
 		while(count < zombiesSub.size() && count < 4){
-			msg += zombiesSub.get(count).toString()  + " (" + (count+1) + ") | ";
+			msg += zombiesSub.get(count).toString()  + " (" + (count+1) + ") " + "(On cell : " + zombiesSub.get(count).getCell().getCoord()[1] + "," + zombiesSub.get(count).getCell().getCoord()[0] + ") |" ;
 			count++;
 		}
 		if(zombiesSub.size() >= 4 && !(zombiesSub.get(3).equals(zombies.get(zombies.size()-1)))){

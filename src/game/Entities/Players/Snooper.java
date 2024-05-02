@@ -43,7 +43,7 @@ public class Snooper extends Player{
      * @return the string representation of the Snooper.
      */
     public String ToString() {
-		return "Snooper (you)" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Free snoop : " + this.freeSnoop + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
+      return "Fighter (you)" + " | Position : (" + this.getCell().getCoord()[1] + "," + this.getCell().getCoord()[0] + ")" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }
 
     /**
@@ -51,6 +51,6 @@ public class Snooper extends Player{
      * @return the string representation of the Snooper.
      */
     public String toString() {
-		return "Snooper" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Free snoop : " + this.freeSnoop + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
+		  return "Snooper" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Free snoop : " + this.freeSnoop + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }
 }

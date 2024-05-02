@@ -22,8 +22,7 @@ public class Healer extends Player{
      * @return the string representation of the Healer.
      */
     public String ToString() {
-		return "Healer (you)" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
-
+      return "Healer (you)" + " | Position : (" + this.getCell().getCoord()[1] + "," + this.getCell().getCoord()[0] + ")" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }
 
     /**
@@ -31,7 +30,6 @@ public class Healer extends Player{
      * @return the string representation of the Healer.
      */
     public String toString() {
-		return "Healer" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
-
+		  return "Healer" + " | Life points : " + this.getLifepoints() + " | Action points : " + this.getActionPoints() + " | Expertise level : " + this.getExpertiseLevel() + " | Equipements : " + this.getEquipments() + " | In hand : " + this.getInHand();
     }
 }
