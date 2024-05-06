@@ -234,7 +234,7 @@ public class Player extends Entity{
 	 */
 	public void randomAction(){
 		Random rand = new Random();
-		int randomNum = rand.nextInt(6);
+		int randomNum = rand.nextInt(7);
 		switch (randomNum) {
 			case 0:
 				if(this instanceof Healer){
@@ -263,6 +263,15 @@ public class Player extends Entity{
 				break;
 			case 5:
 				this.move();
+				break;
+			case 6:
+				if(this.getCell() instanceof BuildingCell){
+					try {
+						this.snoopAction();
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+				}
 				break;
 			}
 	}
