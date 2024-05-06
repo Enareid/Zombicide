@@ -248,7 +248,7 @@ public class Player extends Entity{
 				this.resume();
 				break;
 			case 2:
-				this.equip();
+				this.randomEquip();
 				break;
 			case 3:
 				try {
@@ -262,7 +262,7 @@ public class Player extends Entity{
 				this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+1);
 				break;
 			case 5:
-				this.move();
+				this.randomMove();
 				break;
 			case 6:
 				if(this.getCell() instanceof BuildingCell){
@@ -320,6 +320,15 @@ public class Player extends Entity{
 		else {
 			System.out.println("you do nothing");
 		}
+	}
+
+	/**
+	 * Equip a random equipment from the player's bag.
+	 */
+	public void randomEquip(){
+		Random rand = new Random();
+		int randomNum = rand.nextInt(this.bag.size());
+		this.setInHand(this.bag.get(randomNum));
 	}
 
 	/**
@@ -485,6 +494,28 @@ public class Player extends Entity{
 				break;
 			default:
 				System.out.println("Invalid direction");
+				break;
+		}
+	}
+
+	/**
+	 * Move the player to random direction.
+	 */
+	public void randomMove(){
+		Random rand = new Random();
+		int randomNum = rand.nextInt(4);
+		switch (randomNum) {
+			case 0:
+				this.moveNorth();
+				break;
+			case 1:
+				this.moveSouth();
+				break;
+			case 2:
+				this.moveEast();
+				break;
+			case 3:
+				this.moveWest();
 				break;
 		}
 	}
