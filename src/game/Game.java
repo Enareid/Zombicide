@@ -80,9 +80,10 @@ public class Game {
      * Plays the game.
      */
     public void play(){
-        int nbRounds = 0;
+        int nbRounds = 1;
         this.init();
         while(!isOver){
+            System.out.println("Round "+nbRounds);
             for (Player player : board.getPlayers()) {
                 player.setActionPoints(player.getDynamiqueActionPoints());
             }
@@ -94,9 +95,10 @@ public class Game {
             }
             if(board.getPlayers().size() != 0){
                 for (Player player : board.getPlayers()) {
-                    player.action();
+                    player.randomAction();
                 }
             }
+            System.out.println(board.toString() + "\n");
             if(board.getPlayers().size() == 0){
                 isOver = false;
                 System.out.println("Game Over ! Vous avez survécu "+nbRounds+" rounds");

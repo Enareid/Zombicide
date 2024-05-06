@@ -230,6 +230,44 @@ public class Player extends Entity{
     }
 
 	/**
+	 * Do a random action.
+	 */
+	public void randomAction(){
+		Random rand = new Random();
+		int randomNum = rand.nextInt(6);
+		switch (randomNum) {
+			case 0:
+				if(this instanceof Healer){
+					int randumNum = (int)(Math.random() * this.getCell().getPlayers().size());
+					Player randPlayer = this.getCell().getPlayers().get(randumNum);
+					if(randPlayer.getLifepoints() + 1 <= randPlayer.getMaxLifeLevel()){
+						randPlayer.setLifepoints(randPlayer.getLifepoints() + 1);
+					}
+				}
+			case 1:
+				this.resume();
+				break;
+			case 2:
+				this.equip();
+				break;
+			case 3:
+				try {
+					this.inHand.use(this);
+					this.inHand = hand;
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+				break;
+			case 4:
+				this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+1);
+				break;
+			case 5:
+				this.move();
+				break;
+			}
+	}
+
+	/**
 	 * Returns a string representation of the surrounding cells of the player's current position on the board.
 	 * The surrounding cells include the player's current cell and the adjacent cells in all directions.
 	 * 
