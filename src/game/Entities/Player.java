@@ -267,7 +267,7 @@ public class Player extends Entity{
 			case 6:
 				if(this.getCell() instanceof BuildingCell){
 					try {
-						this.snoopAction();
+						this.randomSnoop();
 					} catch (Exception e) {
 						System.out.println(e);
 					}
@@ -736,6 +736,27 @@ public class Player extends Entity{
 		int index = Integer.parseInt(action) - 1;
 		this.bag.add(this.cell.getEquipements().get(index));
 		this.cell.removeEquipement(this.cell.getEquipements().get(index));
+		if(this instanceof Snooper && ((Snooper)this).getFreeSnoop() == 1){
+			((Snooper)this).setFreeSnoop(0);
+		}
+		else{
+			this.actionPoints -= 1;
+		}
+	}
+
+	/**
+	 * Do the random Snoop action. 
+	 */
+	public void randomSnoop(){
+		Random rand = new Random();
+		int randomNum = rand.nextInt(this.cell.getEquipements().size());
+		this.bag.add(this.cell.getEquipements().get(randomNum));
+		try{
+			this.cell.removeEquipement(this.cell.getEquipements().get(randomNum));
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 		if(this instanceof Snooper && ((Snooper)this).getFreeSnoop() == 1){
 			((Snooper)this).setFreeSnoop(0);
 		}
