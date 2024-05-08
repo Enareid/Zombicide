@@ -78,7 +78,7 @@ public class Game {
         int nbRounds = 1;
         this.init();
         while(!isOver){
-            System.out.println("Round "+nbRounds);
+            System.out.println("Round "+nbRounds + "\n");
             for (Player player : board.getPlayers()) {
                 player.setActionPoints(player.getDynamiqueActionPoints());
             }
