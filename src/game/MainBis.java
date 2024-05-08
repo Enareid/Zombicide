@@ -1,6 +1,6 @@
 package game;
 
-public class MainL1 {
+public class MainBis {
 
     public static void main(String[] args){
         try {
