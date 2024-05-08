@@ -235,7 +235,7 @@ public class Player extends Entity{
 	public void randomAction(){
 		while (this.getActionPoints() != 0){
 			Random rand = new Random();
-			int randomNum = rand.nextInt(7);
+			int randomNum = rand.nextInt(8);
 			switch (randomNum) {
 				case 0:
 					if(this instanceof Healer){
@@ -282,6 +282,11 @@ public class Player extends Entity{
 						} catch (Exception e) {
 							System.out.println(e);
 						}
+					}
+					break;
+				case 7:
+					if(this.inHand.getCanOpenDoor() && (this.northLocked() || this.southLocked() || this.eastLocked() || this.westLocked())){
+						this.randomOpenDoor();
 					}
 					break;
 				}
@@ -391,6 +396,64 @@ public class Player extends Entity{
 				break;
 			default:
 				System.out.println("Invalid direction");
+				break;
+		}
+	}
+
+	/**
+	 * Open a random door.
+	 */
+	public void randomOpenDoor(){
+		Random rand = new Random();
+		int randomNum = rand.nextInt(4);
+		if (!this.northLocked() && !this.southLocked() && !this.eastLocked() && !this.westLocked()) {
+			System.out.println("No door to open");
+			return;
+		}
+		switch (randomNum) {
+			case 0:
+				if (this.northLocked()) {
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.NORTH);
+					this.actionPoints -= 1;
+					this.inHand = hand;
+				}
+				else{
+					this.randomOpenDoor();
+				}
+				break;
+			case 1:
+				if (this.southLocked()) {
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.SOUTH);
+					this.actionPoints -= 1;
+					this.inHand = hand;
+				}
+				else{
+					this.randomOpenDoor();
+				}
+				break;
+			case 2:
+				if (this.eastLocked()) {
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.EAST);
+					this.actionPoints -= 1;
+					this.inHand = hand;
+				}
+				else{
+					this.randomOpenDoor();
+				}
+				break;
+			case 3:
+				if (this.westLocked()) {
+					this.inHand = new MasterKey();
+					((MasterKey)this.inHand).use(this,Direction.WEST);
+					this.actionPoints -= 1;
+					this.inHand = hand;
+				}
+				else{
+					this.randomOpenDoor();
+				}
 				break;
 		}
 	}
