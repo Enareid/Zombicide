@@ -19,18 +19,23 @@ public class Game {
 
     static MasterKey mk = new MasterKey();
 
+    private int size;
+    private int nbPlayers;
+
     /**
      * Builds a new Game.
      */
-    public Game() {
+    public Game(int size, int nbPlayers) {
+        this.size = size;
+        this.nbPlayers = nbPlayers;
     }
 
     /**
      * Initializes the game.
      */
-    public void init(int size, int nbPlayers){
+    public void init(){
         List<Player> players = new ArrayList<Player>();
-        for (int i = 0; i < size ; i++){
+        for (int i = 0; i < nbPlayers ; i++){
             int Random = (int)(Math.random() * 4);
             switch(Random){
                 case 0:
@@ -68,9 +73,9 @@ public class Game {
     /**
      * Plays the game.
      */
-    public void play(int size, int nbPlayers){
+    public void play(){
         int nbRounds = 1;
-        this.init(size, nbPlayers);
+        this.init();
         while(!isOver){
             System.out.println("Round "+nbRounds);
             for (Player player : board.getPlayers()) {
