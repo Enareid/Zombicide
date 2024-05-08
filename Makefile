@@ -16,9 +16,6 @@ all: cls
 cls:
 	$(JAVAC) $(JAVAC_FLAGS) $(SRC_DIR)/$(PACKAGE_DIR)/*.java
 
-run: jar
-	$(JAVA) -jar Livrable1.jar
-
 test: cls
 	$(JAVAC) -cp $(CONSOLE):$(CLASS_DIR) $(TEST_DIR)/$(PACKAGE_DIR)/*.java
 	$(JAVA) -jar $(CONSOLE) -cp $(TEST_DIR):$(CLASS_DIR) -scan-classpath

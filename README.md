@@ -19,6 +19,30 @@ N'oubliez pas d'ajouter les autres membres de votre équipe aux membres du proje
 
 # Livrables
 
+## Rendu final
+
+Un Makefile est mis a disposition avec les commandes suivantes : 
+- `make` : crée les classes
+- `make cls`  : crée les classes
+- `make test` : exécute les tests
+- `make zombicide.jar` : crée le jar du jeu se jouant automatiquement
+- `make zombicideBis.jar` : crée le jeu du jeu jouable par un humain
+- `make doc` : crée la documentation du projet
+- `make clean` : nettoie le dossier
+
+Le jeu est jouable mais il y a quelques différence avec se qui est demandée :
+- On ne peut faire que des plateau carrée 
+- Le jeu automatique ne respecte pas les demande mais joue au jeu comme un "humain"
+
+Voici l'uml du projet en quatre partie : 
+![MainUml1](Images/MainUml1.png)
+
+![MainUml2](Images/MainUml2.png)
+
+![MainUml3](Images/MainUml3.png)
+
+![MainUml4](Images/MainUml4.png)
+
 ## Livrable 1
 
 ### Atteinte des objectifs
