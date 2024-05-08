@@ -10,7 +10,7 @@ import game.Entities.Zombie;
 import game.Entities.Players.*;
 import game.Equipements.Items.MasterKey;
 
-public class Game {
+public class GameBis {
     
     /** Board of the game */
     private Board board;
@@ -22,38 +22,49 @@ public class Game {
     /**
      * Builds a new Game.
      */
-    public Game() {
+    public GameBis() {
     }
 
     /**
      * Initializes the game.
      */
-    public void init(int size, int nbPlayers){
+    public void init(){
         List<Player> players = new ArrayList<Player>();
-        for (int i = 0; i < size ; i++){
-            int Random = (int)(Math.random() * 4);
-            switch(Random){
-                case 0:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Entrez la taille du plateau : ");
+        int size = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Entrez le nombre de joueurs : ");
+        int nbPlayers = scanner.nextInt();
+        for (int i = 0; i < nbPlayers; i ++){
+            scanner.nextLine();
+            System.out.println("Choissisez votre classe : FIGHTER, LUCKY, SNOOPER, HEALER");
+            String classe = scanner.nextLine();
+            switch(classe){
+                case "FIGHTER":
                     Player f = new Fighter(null, null);
                     players.add(f);
                     f.setEquipment(mk);
                     break;
-                case 1:
+                case "LUCKY":
                     Player l = new Lucky(null, null);
                     players.add(l);
                     l.setEquipment(mk);
                     break;
-                case 2:
+                case "SNOOPER":
                     Player s = new Snooper(null, null);
                     players.add(s);
                     s.setEquipment(mk);
                     break;
-                case 3:
+                case "HEALER":
                     Player h = new Healer(null, null);
                     players.add(h);
                     h.setEquipment(mk);
                     break;
-        }
+                default:
+                    System.out.println("Classe invalide");
+                    break;
+                }
         }
         try{
             Board board = new ClassicalBoard(size, players);
@@ -68,9 +79,9 @@ public class Game {
     /**
      * Plays the game.
      */
-    public void play(int size, int nbPlayers){
+    public void play(){
         int nbRounds = 1;
-        this.init(size, nbPlayers);
+        this.init();
         while(!isOver){
             System.out.println("Round "+nbRounds);
             for (Player player : board.getPlayers()) {
@@ -84,7 +95,7 @@ public class Game {
             }
             if(board.getPlayers().size() != 0){
                 for (Player player : board.getPlayers()) {
-                    player.randomAction();
+                    player.action();
                 }
             }
             System.out.println(board.toString() + "\n");
