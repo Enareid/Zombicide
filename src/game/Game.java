@@ -67,6 +67,7 @@ public class Game {
         }
         catch(Exception e){
             System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -94,7 +95,7 @@ public class Game {
             }
             System.out.println(board.toString() + "\n");
             if(board.getPlayers().size() == 0){
-                isOver = false;
+                isOver = true;
                 System.out.println("Game Over ! Vous avez survécu "+nbRounds+" rounds");
             }
             if(board.getZombies().size() == 0){

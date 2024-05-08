@@ -8,6 +8,7 @@ public class MainBis {
             game.play();
         } catch (Exception e) {
             System.out.println(e);
+            e.printStackTrace();
         }
     }
 }

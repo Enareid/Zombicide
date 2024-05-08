@@ -245,6 +245,7 @@ public class Player extends Entity{
 					}
 				}
 			case 1:
+				System.out.println(this.getClass().getSimpleName() + " do resume ");
 				this.resume();
 				break;
 			case 2:
@@ -252,6 +253,7 @@ public class Player extends Entity{
 				break;
 			case 3:
 				try {
+					System.out.println(this.getClass().getSimpleName() + " use " + this.inHand);
 					this.inHand.use(this);
 					this.inHand = hand;
 				} catch (Exception e) {
@@ -259,6 +261,7 @@ public class Player extends Entity{
 				}
 				break;
 			case 4:
+				System.out.println(this.getClass().getSimpleName() + " make noise ");
 				this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+1);
 				break;
 			case 5:
@@ -314,7 +317,7 @@ public class Player extends Entity{
 		String input = in.nextLine();
 		if (!input.equals("Q")) {
 			int choice = Integer.parseInt(input);
-			System.out.println("You are equiping : " + this.getEquipments().get(choice-1).toString());
+			System.out.println(this.getClass().getSimpleName() + " equip " + this.getEquipments().get(choice-1) + " instead of " + this.inHand);
 			this.setInHand(this.getEquipments().get(choice-1));
 		}
 		else {
@@ -502,20 +505,39 @@ public class Player extends Entity{
 	 * Move the player to random direction.
 	 */
 	public void randomMove(){
+		Cell[][] cells = board.getCells();
+		int x = this.cell.getCoord()[0];
+		int y = this.cell.getCoord()[1];
+		boolean canMoveNorth = (x > 0) && ((cells[x-1][y] instanceof StreetCell) || ((cells[x-1][y] instanceof BuildingCell) && !(cells[x-1][y].isLocked(Direction.SOUTH))));
+		boolean canMoveSouth = (x < board.getSize() - 1) && ((cells[x+1][y] instanceof StreetCell) || ((cells[x+1][y] instanceof BuildingCell) && !(cells[x+1][y].isLocked(Direction.NORTH))));
+		boolean canMoveEast = (y < board.getSize() - 1) && ((cells[x][y+1] instanceof StreetCell) || ((cells[x][y+1] instanceof BuildingCell) && !(cells[x][y+1].isLocked(Direction.WEST))));
+		boolean canMoveWest = (y > 0) && ((cells[x][y-1] instanceof StreetCell) || ((cells[x][y-1] instanceof BuildingCell) && !(cells[x][y-1].isLocked(Direction.EAST))));
 		Random rand = new Random();
 		int randomNum = rand.nextInt(4);
 		switch (randomNum) {
 			case 0:
-				this.moveNorth();
+				if (canMoveNorth){
+					System.out.println(this.getClass().getSimpleName() + " move north ");
+					this.moveNorth();
+				}
 				break;
 			case 1:
-				this.moveSouth();
+				if (canMoveSouth){
+					System.out.println(this.getClass().getSimpleName() + " move south ");
+					this.moveSouth();
+				}
 				break;
 			case 2:
-				this.moveEast();
+				if (canMoveEast){
+					System.out.println(this.getClass().getSimpleName() + " move east ");
+					this.moveEast();
+				}
 				break;
 			case 3:
-				this.moveWest();
+				if (canMoveWest){
+					System.out.println(this.getClass().getSimpleName() + " move west ");
+					this.moveWest();
+				}
 				break;
 		}
 	}
@@ -534,6 +556,7 @@ public class Player extends Entity{
 			}
 			catch(Exception e){
 				System.out.println(e);
+				
 			}
 		}
 	}
@@ -805,8 +828,13 @@ public class Player extends Entity{
 			}
 		}
 		System.out.println("Zombies : ");
-		for (Zombie zombie : this.getCell().getZombie()){
-			System.out.println(zombie.toString() + '\n');
+		if (this.cell.getZombie().size() == 0){
+			System.out.println("No zombies on this cell");
+		}
+		else{
+			for (Zombie zombie : this.cell.getZombie()){
+				System.out.println(zombie.toString() + '\n');
+			}
 		}
 	}
 
