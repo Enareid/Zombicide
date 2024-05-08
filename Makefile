@@ -24,10 +24,10 @@ test: cls
 	$(JAVA) -jar $(CONSOLE) -cp $(TEST_DIR):$(CLASS_DIR) -scan-classpath
 
 zombicide.jar: cls
-	jar cvfe zombicide.jar $(PACKAGE_DIR).$(MAIN) -C $(CLASS_DIR) $(PACKAGE_DIR)
+	jar cvfe jar/zombicide.jar $(PACKAGE_DIR).$(MAIN) -C $(CLASS_DIR) $(PACKAGE_DIR)
 
 zombicideBis.jar: cls
-	jar cvfe zombicideBis.jar $(PACKAGE_DIR).$(MAINBIS) -C $(CLASS_DIR) $(PACKAGE_DIR)
+	jar cvfe jar/zombicideBis.jar $(PACKAGE_DIR).$(MAINBIS) -C $(CLASS_DIR) $(PACKAGE_DIR)
 
 doc: cls
 	javadoc -sourcepath $(SRC_DIR) -subpackages $(PACKAGE_DIR) -d docs

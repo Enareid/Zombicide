@@ -233,50 +233,59 @@ public class Player extends Entity{
 	 * Do a random action.
 	 */
 	public void randomAction(){
-		Random rand = new Random();
-		int randomNum = rand.nextInt(7);
-		switch (randomNum) {
-			case 0:
-				if(this instanceof Healer){
-					int randumNum = (int)(Math.random() * this.getCell().getPlayers().size());
-					Player randPlayer = this.getCell().getPlayers().get(randumNum);
-					if(randPlayer.getLifepoints() + 1 <= randPlayer.getMaxLifeLevel()){
-						randPlayer.setLifepoints(randPlayer.getLifepoints() + 1);
+		while (this.getActionPoints() != 0){
+			Random rand = new Random();
+			int randomNum = rand.nextInt(7);
+			switch (randomNum) {
+				case 0:
+					if(this instanceof Healer){
+						System.out.println(this.getClass().getSimpleName() + " do heal ");
+						int randumNum = (int)(Math.random() * this.getCell().getPlayers().size());
+						Player randPlayer = this.getCell().getPlayers().get(randumNum);
+						if(randPlayer.getLifepoints() + 1 <= randPlayer.getMaxLifeLevel()){
+							randPlayer.setLifepoints(randPlayer.getLifepoints() + 1);
+						}
+						this.actionPoints -= 1;
 					}
-				}
-			case 1:
-				System.out.println(this.getClass().getSimpleName() + " do resume ");
-				this.resume();
-				break;
-			case 2:
-				this.randomEquip();
-				break;
-			case 3:
-				try {
-					System.out.println(this.getClass().getSimpleName() + " use " + this.inHand);
-					this.inHand.use(this);
-					this.inHand = hand;
-				} catch (Exception e) {
-					System.out.println(e);
-				}
-				break;
-			case 4:
-				System.out.println(this.getClass().getSimpleName() + " make noise ");
-				this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+1);
-				break;
-			case 5:
-				this.randomMove();
-				break;
-			case 6:
-				if(this.getCell() instanceof BuildingCell){
+				case 1:
+					System.out.println(this.getClass().getSimpleName() + " do resume ");
+					this.resume();
+					break;
+				case 2:
+					if(this.bag.size() > 0){
+						this.randomEquip();
+					}
+					break;
+				case 3:
 					try {
-						this.randomSnoop();
+						System.out.println(this.getClass().getSimpleName() + " use " + this.inHand);
+						this.inHand.use(this);
+						this.inHand = hand;
+						this.actionPoints -= 1;
 					} catch (Exception e) {
 						System.out.println(e);
 					}
+					break;
+				case 4:
+					System.out.println(this.getClass().getSimpleName() + " make noise ");
+					this.getCell().setNoiseLevel(this.getCell().getNoiseLevel()+1);
+					this.actionPoints -= 1;
+					break;
+				case 5:
+					this.randomMove();
+					this.actionPoints -= 1;
+					break;
+				case 6:
+					if(this.getCell() instanceof BuildingCell){
+						try {
+							this.randomSnoop();
+						} catch (Exception e) {
+							System.out.println(e);
+						}
+					}
+					break;
 				}
-				break;
-			}
+		}
 	}
 
 	/**
@@ -520,11 +529,17 @@ public class Player extends Entity{
 					System.out.println(this.getClass().getSimpleName() + " move north ");
 					this.moveNorth();
 				}
+				else{
+					this.randomMove();
+				}
 				break;
 			case 1:
 				if (canMoveSouth){
 					System.out.println(this.getClass().getSimpleName() + " move south ");
 					this.moveSouth();
+				}
+				else{
+					this.randomMove();
 				}
 				break;
 			case 2:
@@ -532,11 +547,17 @@ public class Player extends Entity{
 					System.out.println(this.getClass().getSimpleName() + " move east ");
 					this.moveEast();
 				}
+				else{
+					this.randomMove();
+				}
 				break;
 			case 3:
 				if (canMoveWest){
 					System.out.println(this.getClass().getSimpleName() + " move west ");
 					this.moveWest();
+				}
+				else{
+					this.randomMove();
 				}
 				break;
 		}
