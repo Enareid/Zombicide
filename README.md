@@ -1,16 +1,10 @@
 # l2s4-projet-2024
-
-Vous devez *forker* ce projet dans votre espace de travail Gitlab (bouton `Fork`) et vidéo sur le [portail](https://www.fil.univ-lille.fr/portail/index.php?dipl=L&sem=S4&ue=Projet&label=Documents)
-Un unique fork doit être réalisé par équipe.
-
-Une fois cela réalisé, supprimer ces premières lignes et remplissez les noms des membres de votre équipe.
-N'oubliez pas d'ajouter les autres membres de votre équipe aux membres du projet, ainsi que votre enseignant·e (statut Maintainer).
-
+Ceci est un projet académique, fait dans le cadre la la licence 2 d'informatique à l'université de Lille.
 # Equipe
 
-- Ali KERBOUS
-- Duc NGUYEN
-- Mazen KALAKECH
+- A. K.
+- D. N.
+- M. K.
 - Stéphane  BOUDIER
 
 # Sujet
@@ -204,17 +198,3 @@ Nous avons donc :
 
 Voici l'UML à la fin de cette semain :
 ![UMLS5](Images/UMLS5.png "L'UML lors de la cinquième semaine")
-
-## Semaine 6
-
-## Semaine 7
-
-## Semaine 8
-
-## Semaine 9
-
-## Semaine 10
-
-## Semaine 11
-
-## Semaine 12
